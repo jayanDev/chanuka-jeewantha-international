@@ -8,7 +8,7 @@
     "dev": "node ./scripts/next-wrapper.cjs dev --webpack",
     "build": "node ./scripts/next-wrapper.cjs build --webpack",
     "start": "node ./scripts/next-wrapper.cjs start",
-    "lint": "eslint",
+    "lint": "eslint src prisma next.config.ts postcss.config.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",

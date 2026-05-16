@@ -30,6 +30,9 @@ const eslintConfig = defineConfig([
     "Resources/**",
     "scratch/**",
     "scripts/**",
+    ".claude/**",
+    "Case Studies/**",
+    "public/**",
   ]),
 ]);
 
