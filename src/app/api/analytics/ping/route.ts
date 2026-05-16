@@ -24,39 +24,6 @@ export async function POST(request: NextRequest) {
   const existingVisitorId = request.cookies.get(VISITOR_COOKIE)?.value ?? null;
   const visitorId = existingVisitorId ?? randomUUID();
 
-  const sessionToken = getTokenFromCookieHeader(cookieHeader);
-  const sessionUser = sessionToken ? await getUserBySessionToken(sessionToken) : null;
-  const userId = sessionUser?.id ?? null;
-
-  const identityKey = userId ? `u_${userId}` : `v_${visitorId}`;
-  const db = getFirebaseDb();
-  const ref = db.collection(ACTIVITY_COLLECTION).doc(identityKey);
-  const snap = await ref.get();
-
-  const current = snap.data() as {
-    firstSeenAtMs?: unknown;
-    totalStayMs?: unknown;
-    pingCount?: unknown;
-  } | undefined;
-
-  const firstSeenAtMs = typeof current?.firstSeenAtMs === "number" ? current.firstSeenAtMs : now;
-  const totalStayMs = typeof current?.totalStayMs === "number" ? current.totalStayMs : 0;
-  const pingCount = typeof current?.pingCount === "number" ? current.pingCount : 0;
-
-  await ref.set(
-    {
-      userId,
-      visitorId,
-      firstSeenAtMs,
-      lastSeenAtMs: now,
-      totalStayMs: totalStayMs + activeMs,
-      pingCount: pingCount + 1,
-      lastPath: path,
-      updatedAtMs: now,
-    },
-    { merge: true },
-  );
-
   const response = NextResponse.json({ ok: true });
   if (!existingVisitorId) {
     response.cookies.set({
@@ -68,6 +35,43 @@ export async function POST(request: NextRequest) {
       secure: process.env.NODE_ENV === "production",
       httpOnly: false,
     });
+  }
+
+  try {
+    const sessionToken = getTokenFromCookieHeader(cookieHeader);
+    const sessionUser = sessionToken ? await getUserBySessionToken(sessionToken) : null;
+    const userId = sessionUser?.id ?? null;
+
+    const identityKey = userId ? `u_${userId}` : `v_${visitorId}`;
+    const db = getFirebaseDb();
+    const ref = db.collection(ACTIVITY_COLLECTION).doc(identityKey);
+    const snap = await ref.get();
+
+    const current = snap.data() as {
+      firstSeenAtMs?: unknown;
+      totalStayMs?: unknown;
+      pingCount?: unknown;
+    } | undefined;
+
+    const firstSeenAtMs = typeof current?.firstSeenAtMs === "number" ? current.firstSeenAtMs : now;
+    const totalStayMs = typeof current?.totalStayMs === "number" ? current.totalStayMs : 0;
+    const pingCount = typeof current?.pingCount === "number" ? current.pingCount : 0;
+
+    await ref.set(
+      {
+        userId,
+        visitorId,
+        firstSeenAtMs,
+        lastSeenAtMs: now,
+        totalStayMs: totalStayMs + activeMs,
+        pingCount: pingCount + 1,
+        lastPath: path,
+        updatedAtMs: now,
+      },
+      { merge: true },
+    );
+  } catch (error) {
+    console.warn("Analytics heartbeat skipped", error);
   }
 
   return response;
