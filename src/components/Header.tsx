@@ -22,13 +22,12 @@ type HeaderProps = {
 
 const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
-  { href: "/catalogue", label: "Catalogue" },
-  { href: "/resources", label: "Resources" },
-  { href: "/ebooks", label: "Ebooks" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/contact", label: "Contact" },
+  { href: "/pricing", label: "International Packages" },
+  { href: "/#process", label: "Process" },
+  { href: "/about", label: "About" },
+  { href: "/#faq", label: "FAQ" },
+  { href: "/contact", label: "Apply Now" },
 ];
 
 export default function Header({ initialUser = null }: HeaderProps) {
@@ -227,8 +226,8 @@ export default function Header({ initialUser = null }: HeaderProps) {
  <Link href="/auth/signin" className="rounded-[10px] border border-zinc-300 px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                   Sign In
                 </Link>
-                <Link href="/auth/signup" className="rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
-                  Sign Up
+                <Link href="/contact" className="rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+                  Apply Now
                 </Link>
               </div>
             ) : (
@@ -395,8 +394,8 @@ export default function Header({ initialUser = null }: HeaderProps) {
  <Link href="/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="rounded-[10px] border border-zinc-300 px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                 Sign In
               </Link>
-              <Link href="/auth/signup" onClick={() => setIsMobileMenuOpen(false)} className="rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
-                Sign Up
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+                Apply Now
               </Link>
             </div>
           ) : (

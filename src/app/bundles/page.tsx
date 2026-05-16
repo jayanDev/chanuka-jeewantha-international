@@ -3,358 +3,106 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Bundle Packages | Save Up to 25% | Chanuka Jeewantha",
+  title: "International Bundle Packages | Chanuka Jeewantha",
   description:
-    "Explore our 3 curated bundle packages: Starter (LKR 9,500), Career (LKR 22,500), and Executive (LKR 45,000). Save up to 25% on combined services.",
+    "Premium international resume, LinkedIn, cover letter, foreign job CV, migration, executive, and C-suite career branding bundles in USD.",
   path: "/bundles",
 });
 
+const bundles = [
+  {
+    name: "International Starter Pack",
+    price: "$179",
+    label: "For Students & Fresh Graduates",
+    includes: ["ATS CV / Resume, Fresh Graduate level", "Cover Letter", "LinkedIn Optimization", "7-day delivery", "Save $98 vs separate services"],
+    cta: "Choose Starter Pack",
+  },
+  {
+    name: "International Career Pack",
+    price: "$349",
+    label: "Most Popular",
+    audience: "Working Professionals",
+    highlighted: true,
+    includes: ["Premium ATS CV / Resume, Professional level", "LinkedIn Optimization", "Cover Letter", "30-day support", "1 round of revisions", "Save $128 vs separate services"],
+    cta: "Choose Career Pack",
+  },
+  {
+    name: "Global Migration Pack",
+    price: "$499",
+    audience: "Professionals migrating between countries",
+    includes: ["Country-Specific ATS CV", "International Foreign Job CV", "LinkedIn Optimization", "Cover Letter, 2 versions for different roles", "60-day support", "Save $176 vs separate services"],
+    cta: "Choose Migration Pack",
+  },
+  {
+    name: "Executive Brand Suite",
+    price: "$899",
+    audience: "Senior Professionals & Executives",
+    includes: ["Executive ATS CV / Resume", "Executive LinkedIn Optimization", "Executive Cover Letter", "International Foreign Job CV", "1-Hour Strategy Consultation", "90-day premium support", "Save $327 vs separate services"],
+    cta: "Choose Executive Brand Suite",
+  },
+  {
+    name: "C-Suite Premium",
+    price: "$1,499",
+    audience: "C-Suite, Directors, Founders",
+    premium: true,
+    includes: ["C-Suite Premium CV / Resume", "Executive LinkedIn Optimization with content strategy", "Cover Letter", "International Foreign Job CV", "2-Hour Strategy Sessions", "6-month support", "Quarterly LinkedIn refresh", "Save $647 vs separate services"],
+    cta: "Choose C-Suite Premium",
+  },
+];
+
 export default function BundlesPage() {
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="w-full bg-gradient-to-b from-[#0A2540] to-[#1B3E66] text-white px-4 py-16 sm:px-6 md:py-24">
-        <div className="max-w-[1512px] mx-auto text-center">
-          <span className="inline-block text-[#C9A961] font-semibold uppercase tracking-[0.18em] mb-4">Smart Pricing</span>
-          <h1 className="font-heading text-[36px] sm:text-[48px] md:text-[64px] font-bold leading-[1.1] mb-6">
-            Bundle Packages That Save You Money
+    <>
+      <section className="w-full bg-foreground px-4 py-[72px] text-center text-background sm:px-6 md:py-[96px]">
+        <div className="mx-auto max-w-5xl">
+          <p className="font-semibold uppercase tracking-[0.18em] text-brand-main">International Bundles</p>
+          <h1 className="mt-4 font-heading text-[38px] font-bold leading-tight text-white md:text-[68px]">
+            Premium bundle packages for global career branding.
           </h1>
-          <p className="text-white/80 text-lg max-w-3xl mx-auto mb-8">
-            Three carefully curated packages designed for different career stages. Get more value, better outcomes, and proven results.
+          <p className="mx-auto mt-5 max-w-3xl text-white/75">
+            Complete resume, CV, LinkedIn, cover letter, foreign job CV, and strategy bundles for international applications and leadership positioning.
           </p>
         </div>
       </section>
 
-      {/* Main Bundles Grid */}
-      <section className="w-full py-16 sm:py-20 md:py-28 px-4 sm:px-6">
-        <div className="max-w-[1512px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            
-            {/* Starter Pack */}
-            <div className="bundle-card bg-white rounded-[20px] border border-zinc-200 p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="font-heading text-[32px] font-bold text-foreground">🎓 Starter Pack</h2>
-              </div>
-              <p className="text-sm font-semibold text-[#C9A961] uppercase tracking-wider mb-4">For Students & Graduates</p>
-              
-              <div className="mb-8 pb-8 border-b border-zinc-200">
-                <p className="text-sm text-zinc-600 mb-2">Total Value</p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-[40px] font-bold text-foreground">LKR 9,500</span>
-                  <span className="text-sm text-zinc-400 line-through">LKR 11,850</span>
-                  <span className="text-sm font-bold text-[#10B981] bg-green-50 px-3 py-1 rounded-full">Save 20%</span>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h3 className="font-semibold text-foreground mb-4">Includes:</h3>
-                <ul className="space-y-3 text-sm text-zinc-700">
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Essentials ATS CV</strong>
-                      <p className="text-zinc-500">LKR 2,950 (student)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Cover Letter</strong>
-                      <p className="text-zinc-500">LKR 1,950 (student)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>LinkedIn Optimization</strong>
-                      <p className="text-zinc-500">LKR 2,950 (student)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>7-day delivery</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>Email support</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>WhatsApp access (via team member)</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="space-y-3">
-                <Link
-                  href="/catalogue?bundle=starter"
-                  className="block w-full text-center px-6 py-3 bg-[#C9A961] text-white font-semibold rounded-[10px] hover:bg-[#B8985A] transition-colors"
-                >
-                  Get Starter Pack →
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 border-2 border-zinc-200 text-foreground font-semibold rounded-[10px] hover:border-[#C9A961] hover:text-[#C9A961] transition-colors"
-                >
-                  Have Questions?
-                </Link>
-              </div>
-            </div>
-
-            {/* Career Pack - Featured */}
-            <div className="bundle-card featured bg-gradient-to-br from-[#C9A961]/10 to-white rounded-[20px] border-2 border-[#C9A961] p-8 shadow-2xl hover:shadow-2xl transition-all hover:-translate-y-2 md:scale-105 md:z-10">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="font-heading text-[32px] font-bold text-foreground">🚀 Career Pack</h2>
-                <span className="bg-[#C9A961] text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider">⭐ POPULAR</span>
-              </div>
-              <p className="text-sm font-semibold text-[#C9A961] uppercase tracking-wider mb-4">For Working Professionals</p>
-              
-              <div className="mb-8 pb-8 border-b border-[#C9A961]/20">
-                <p className="text-sm text-zinc-600 mb-2">Total Value</p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-[40px] font-bold text-foreground">LKR 22,500</span>
-                  <span className="text-sm text-zinc-400 line-through">LKR 30,000</span>
-                  <span className="text-sm font-bold text-[#10B981] bg-green-50 px-3 py-1 rounded-full">Save LKR 7,500</span>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h3 className="font-semibold text-foreground mb-4">Includes:</h3>
-                <ul className="space-y-3 text-sm text-zinc-700">
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Signature ATS CV</strong>
-                      <p className="text-zinc-500">LKR 11,500 (professional)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Cover Letter</strong>
-                      <p className="text-zinc-500">LKR 7,000 (professional)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>LinkedIn Optimization</strong>
-                      <p className="text-zinc-500">LKR 11,500 (professional)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Foreign Job CV</strong>
-                      <p className="text-zinc-500">LKR 14,500 (professional)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>5-day premium delivery</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>30-day post-delivery support</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>Direct WhatsApp access</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="space-y-3">
-                <Link
-                  href="/catalogue?bundle=career"
-                  className="block w-full text-center px-6 py-3 bg-[#C9A961] text-white font-semibold rounded-[10px] hover:bg-[#B8985A] transition-colors"
-                >
-                  Choose Career Pack →
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 border-2 border-[#C9A961] text-[#C9A961] font-semibold rounded-[10px] hover:bg-[#C9A961] hover:text-white transition-colors"
-                >
-                  Have Questions?
-                </Link>
-              </div>
-            </div>
-
-            {/* Executive Pack */}
-            <div className="bundle-card bg-white rounded-[20px] border border-zinc-200 p-8 shadow-lg hover:shadow-2xl transition-all hover:-translate-y-2">
-              <div className="flex items-center justify-between mb-6">
-                <h2 className="font-heading text-[32px] font-bold text-foreground">👑 Executive Pack</h2>
-              </div>
-              <p className="text-sm font-semibold text-[#C9A961] uppercase tracking-wider mb-4">For Senior Professionals</p>
-              
-              <div className="mb-8 pb-8 border-b border-zinc-200">
-                <p className="text-sm text-zinc-600 mb-2">Total Value</p>
-                <div className="flex items-baseline gap-3">
-                  <span className="text-[40px] font-bold text-foreground">LKR 45,000</span>
-                  <span className="text-sm text-zinc-400 line-through">LKR 60,000</span>
-                  <span className="text-sm font-bold text-[#10B981] bg-green-50 px-3 py-1 rounded-full">Save LKR 15,000</span>
-                </div>
-              </div>
-
-              <div className="mb-8">
-                <h3 className="font-semibold text-foreground mb-4">Includes:</h3>
-                <ul className="space-y-3 text-sm text-zinc-700">
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Executive Signature CV</strong>
-                      <p className="text-zinc-500">LKR 22,500 (executive)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Foreign Job CV</strong>
-                      <p className="text-zinc-500">LKR 27,500 (executive)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>LinkedIn Optimization</strong>
-                      <p className="text-zinc-500">LKR 22,500 (executive)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>Cover Letter</strong>
-                      <p className="text-zinc-500">LKR 12,500 (executive)</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <div>
-                      <strong>1-Hour Strategy Consultation</strong>
-                      <p className="text-zinc-500">LKR 27,500 value</p>
-                    </div>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>60-day premium support</span>
-                  </li>
-                  <li className="flex gap-3">
-                    <span className="text-[#C9A961] font-bold">✓</span>
-                    <span>Direct WhatsApp access</span>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="space-y-3">
-                <Link
-                  href="/catalogue?bundle=executive"
-                  className="block w-full text-center px-6 py-3 bg-[#C9A961] text-white font-semibold rounded-[10px] hover:bg-[#B8985A] transition-colors"
-                >
-                  View Executive Pack →
-                </Link>
-                <Link
-                  href="/contact"
-                  className="block w-full text-center px-6 py-3 border-2 border-zinc-200 text-foreground font-semibold rounded-[10px] hover:border-[#C9A961] hover:text-[#C9A961] transition-colors"
-                >
-                  Have Questions?
-                </Link>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="w-full py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-zinc-50">
-        <div className="max-w-[1512px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-heading text-[36px] sm:text-[48px] font-bold text-foreground mb-4">
-              Compare The Bundles
-            </h2>
-            <p className="text-text-body max-w-2xl mx-auto">
-              Choose based on your career stage and budget. All packages include professional quality and satisfaction guarantee.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm border-collapse">
-              <thead>
-                <tr className="bg-[#0A2540] text-white">
-                  <th className="p-4 text-left font-semibold">Feature</th>
-                  <th className="p-4 text-center font-semibold">Starter</th>
-                  <th className="p-4 text-center font-semibold bg-[#C9A961]">Career ⭐</th>
-                  <th className="p-4 text-center font-semibold">Executive</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-zinc-200">
-                <tr className="bg-white hover:bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">Price</td>
-                  <td className="p-4 text-center text-[#10B981] font-bold">LKR 9,500</td>
-                  <td className="p-4 text-center text-[#10B981] font-bold bg-[#C9A961]/5">LKR 22,500</td>
-                  <td className="p-4 text-center text-[#10B981] font-bold">LKR 45,000</td>
-                </tr>
-                <tr className="bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">CV Services</td>
-                  <td className="p-4 text-center">✓ 1 CV</td>
-                  <td className="p-4 text-center bg-[#C9A961]/5">✓ 2 CVs</td>
-                  <td className="p-4 text-center">✓ 2 CVs</td>
-                </tr>
-                <tr className="bg-white hover:bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">LinkedIn + Cover Letter</td>
-                  <td className="p-4 text-center">✓</td>
-                  <td className="p-4 text-center bg-[#C9A961]/5">✓</td>
-                  <td className="p-4 text-center">✓</td>
-                </tr>
-                <tr className="bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">Consultation</td>
-                  <td className="p-4 text-center">—</td>
-                  <td className="p-4 text-center bg-[#C9A961]/5">—</td>
-                  <td className="p-4 text-center">✓ 1 hour</td>
-                </tr>
-                <tr className="bg-white hover:bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">Delivery Time</td>
-                  <td className="p-4 text-center">7 days</td>
-                  <td className="p-4 text-center bg-[#C9A961]/5">5 days</td>
-                  <td className="p-4 text-center">5 days</td>
-                </tr>
-                <tr className="bg-zinc-50">
-                  <td className="p-4 font-semibold text-foreground">Support Duration</td>
-                  <td className="p-4 text-center">Email</td>
-                  <td className="p-4 text-center bg-[#C9A961]/5">30 days + WhatsApp</td>
-                  <td className="p-4 text-center">60 days + WhatsApp</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="w-full py-16 sm:py-20 md:py-28 px-4 sm:px-6 bg-gradient-to-r from-[#0A2540] to-[#1B3E66] text-white">
-        <div className="max-w-[1512px] mx-auto text-center">
-          <h2 className="font-heading text-[36px] sm:text-[48px] font-bold mb-6">
-            Ready to Get Started?
-          </h2>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto mb-8">
-            Choose your bundle above or customize your own package from our full list of services.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/catalogue"
-              className="px-8 py-4 bg-[#C9A961] text-[#0A2540] font-semibold rounded-[10px] hover:bg-[#B8985A] transition-colors"
+      <section className="w-full bg-white py-[72px] md:py-[96px]">
+        <div className="mx-auto grid max-w-[1512px] grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-5">
+          {bundles.map((bundle) => (
+            <article
+              key={bundle.name}
+              className={`flex h-full flex-col rounded-[18px] border p-6 shadow-sm ${
+                bundle.premium
+                  ? "border-zinc-900 bg-zinc-950 text-white"
+                  : bundle.highlighted
+                    ? "border-[#C9A961] bg-[#FFFCF3] shadow-lg"
+                    : "border-zinc-200 bg-white"
+              }`}
             >
-              View All Services
-            </Link>
-            <Link
-              href="/contact"
-              className="px-8 py-4 border-2 border-white text-white font-semibold rounded-[10px] hover:bg-white hover:text-[#0A2540] transition-colors"
-            >
-              Contact Me
-            </Link>
-          </div>
+              {bundle.highlighted && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Most Popular</p>}
+              {bundle.premium && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Premium</p>}
+              <h2 className={`font-heading text-[24px] font-bold ${bundle.premium ? "text-white" : "text-foreground"}`}>{bundle.name}</h2>
+              <p className={`mt-2 text-sm ${bundle.premium ? "text-white/70" : "text-zinc-600"}`}>{bundle.label ?? bundle.audience}</p>
+              <p className={`mt-6 font-heading text-[36px] font-bold ${bundle.premium ? "text-white" : "text-foreground"}`}>{bundle.price}</p>
+              <ul className={`mt-6 flex-grow space-y-3 text-sm ${bundle.premium ? "text-white/80" : "text-zinc-700"}`}>
+                {bundle.includes.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-main" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={`/contact?package=${encodeURIComponent(bundle.name)}`}
+                className={`mt-7 inline-flex min-h-11 items-center justify-center rounded-[10px] px-4 py-3 text-center text-sm font-semibold ${
+                  bundle.premium ? "bg-[#C9A961] text-zinc-950 hover:bg-white" : "bg-brand-main text-white hover:bg-foreground"
+                }`}
+              >
+                {bundle.cta}
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
-    </main>
+    </>
   );
 }

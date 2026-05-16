@@ -59,7 +59,10 @@ type PackageGuideDraft = {
 };
 
 function getPackageOrThrow(slug: string): PackageProduct {
-  const pkg = packageProducts.find((item) => item.slug === slug);
+  const normalizedSlug = slug.endsWith("-supervised")
+    ? slug.replace(/-supervised$/, "-founder-led")
+    : slug;
+  const pkg = packageProducts.find((item) => item.slug === normalizedSlug);
   if (!pkg) {
     throw new Error(`Missing package definition for slug: ${slug}`);
   }

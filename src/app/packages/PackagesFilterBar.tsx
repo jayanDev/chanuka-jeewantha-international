@@ -12,9 +12,8 @@ const SERVICE_PILLS = [
 ];
 
 const TIER_PILLS = [
-  { key: "all", label: "All Tiers" },
-  { key: "founder-led", label: "✨ Signature" },
-  { key: "supervised", label: "📋 Essentials" },
+  { key: "all", label: "All Premium Services" },
+  { key: "founder-led", label: "International Signature Series" },
 ];
 
 type Props = {
@@ -33,8 +32,7 @@ export default function PackagesFilterBar({ activeTier, onTierChange }: Props) {
     }
     const el = document.getElementById(`section-${key}`);
     if (el) {
-      const offset = 80; // account for sticky bar height
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: "smooth" });
     }
   }, []);
@@ -42,7 +40,6 @@ export default function PackagesFilterBar({ activeTier, onTierChange }: Props) {
   return (
     <div className="sticky top-0 z-30 bg-white border-b border-zinc-200 shadow-sm">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 py-3 space-y-2">
-        {/* Service category pills */}
         <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide">
           {SERVICE_PILLS.map((pill) => (
             <button
@@ -59,7 +56,6 @@ export default function PackagesFilterBar({ activeTier, onTierChange }: Props) {
           ))}
         </div>
 
-        {/* Tier filter pills */}
         <div className="flex gap-2 overflow-x-auto pb-0.5 scrollbar-hide">
           {TIER_PILLS.map((pill) => (
             <button
@@ -69,8 +65,6 @@ export default function PackagesFilterBar({ activeTier, onTierChange }: Props) {
                 activeTier === pill.key
                   ? pill.key === "founder-led"
                     ? "bg-[#C9A961] text-white"
-                    : pill.key === "supervised"
-                    ? "bg-zinc-700 text-white"
                     : "bg-foreground text-white"
                   : "bg-zinc-100 text-zinc-500 hover:bg-zinc-200"
               }`}

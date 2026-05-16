@@ -5,10 +5,25 @@ import { getBaseUrl } from "@/lib/site-url";
 import { packageProducts } from "@/lib/packages-catalog";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Pricing & Packages | ATS CV Writing, LinkedIn Optimization & Career Services Sri Lanka",
+  title: "International Resume Writing & LinkedIn Packages | Chanuka Jeewantha",
   description:
-    "View Chanuka Jeewantha's career service packages including ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and consultation packages for Sri Lankan professionals.",
+    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding packages for global professionals.",
   path: "/pricing",
+  keywords: [
+    "international resume writing",
+    "global CV writing",
+    "ATS resume writing",
+    "LinkedIn profile optimization",
+    "executive resume writing",
+    "foreign job CV",
+    "country-specific CV",
+    "UAE CV writing",
+    "UK CV writing",
+    "Canada resume writing",
+    "Australia resume writing",
+    "executive career branding",
+    "C-suite resume writing",
+  ],
 });
 
 export default function PricingPage() {
@@ -20,8 +35,8 @@ export default function PricingPage() {
   const aggregateOfferLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Professional Career Packages",
-    description: "Professional CV Writing and Career Development Packages",
+    name: "International Resume and Career Branding Packages",
+    description: "Premium international resume, CV, LinkedIn, cover letter, and career branding packages",
     provider: {
       "@type": "Person",
       name: "Chanuka Jeewantha",
@@ -31,7 +46,7 @@ export default function PricingPage() {
       offerCount: offerCount,
       lowPrice: lowPrice,
       highPrice: highPrice,
-      priceCurrency: "LKR",
+      priceCurrency: "USD",
       url: `${getBaseUrl()}/pricing`,
     },
   };

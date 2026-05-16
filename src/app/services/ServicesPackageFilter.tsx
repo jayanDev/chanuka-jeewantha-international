@@ -78,7 +78,7 @@ export default function ServicesPackageFilter({ lockedServiceKey }: ServicesPack
 
           <label>
             <span className="mb-3 block text-xs font-bold uppercase tracking-[0.14em] text-zinc-500">
-              How many experience do you have?
+              What is your current career level?
             </span>
             <select
               value={experience}
@@ -94,7 +94,7 @@ export default function ServicesPackageFilter({ lockedServiceKey }: ServicesPack
 
           <label>
             <span className="mb-3 block text-xs font-bold uppercase tracking-[0.14em] text-zinc-500">
-              Which service option you prefer?
+              Which service option do you prefer?
             </span>
             <select
               value={serviceOption}
@@ -130,7 +130,7 @@ export default function ServicesPackageFilter({ lockedServiceKey }: ServicesPack
           <article key={pkg.slug} className="rounded-[16px] border border-zinc-200 bg-white p-6 shadow-sm">
             <div className="mb-4 flex flex-wrap gap-2">
               <span className="rounded-full bg-zinc-100 px-3 py-1 text-xs font-semibold text-zinc-700">
-                {pkg.optionKey === "founder-led" ? "Signature Series" : "Essentials"}
+                International Signature Series
               </span>
               <span className="rounded-full bg-brand-main/10 px-3 py-1 text-xs font-semibold text-brand-dark">
                 {pkg.audience}
@@ -160,8 +160,8 @@ export default function ServicesPackageFilter({ lockedServiceKey }: ServicesPack
               <Link href={`/packages/${pkg.slug}`} className="rounded-[10px] border border-zinc-300 px-4 py-2 text-sm font-semibold text-foreground hover:border-brand-main hover:text-brand-main">
                 Details
               </Link>
-              <Link href={`/catalogue?service=${pkg.serviceKey}`} className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
-                Catalogue Order
+              <Link href={`/contact?service=${encodeURIComponent(pkg.name)}`} className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark">
+                Request This Package
               </Link>
             </div>
           </article>

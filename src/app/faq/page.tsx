@@ -5,34 +5,38 @@ import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "FAQ | Career Services Questions",
+  title: "FAQ | International Resume, CV & LinkedIn Services",
   description:
-    "Find answers about ATS CV writing, LinkedIn optimization, coaching sessions, delivery timelines, and career support services.",
+    "Find answers about international resume writing, global CV writing, LinkedIn optimization, country-specific CVs, payments, and premium career branding.",
   path: "/faq",
-  keywords: ["career service FAQ", "CV writing questions", "LinkedIn optimization FAQ"],
+  keywords: ["international resume writing FAQ", "global CV writing FAQ", "LinkedIn optimization FAQ"],
 });
 
 export default function FAQPage() {
   const faqs = [
     {
-      q: "What does 100% ATS-friendly CV writing mean?",
-      a: "It means your CV is structured for both ATS parsing and recruiter readability with clean headings, role-relevant keywords, and clear achievement-focused content."
+      q: "Do you work with clients outside Sri Lanka?",
+      a: "Yes. This international service is designed for professionals targeting global job markets including the UAE, UK, Canada, Australia, Europe, New Zealand, and remote roles."
     },
     {
-      q: "Who are your services best for?",
-      a: "I support fresh graduates, mid-level professionals, career switchers, international applicants, and anyone who is not getting interviews despite applying regularly."
+      q: "Do you write resumes or CVs?",
+      a: "Both. The document structure is adapted based on your target country, industry, career level, and application purpose."
     },
     {
-      q: "Do you provide LinkedIn optimization as well?",
-      a: "Yes. I optimize your headline, About section, experience descriptions, skills strategy, and profile positioning for stronger recruiter visibility and personal branding."
+      q: "Can you create a country-specific CV?",
+      a: "Yes. The Foreign Job CV / International Format service is designed for country-specific applications and global job markets."
     },
     {
-      q: "Can you help if I am changing industries?",
-      a: "Absolutely. I help career switchers reframe transferable skills, build role-aligned narratives, and create practical roadmaps to move into new fields."
+      q: "Do you guarantee interviews or jobs?",
+      a: "No. The service improves the quality, positioning, ATS compatibility, and recruiter-readiness of your career documents, but job outcomes depend on market conditions, experience, applications, and employer decisions."
     },
     {
-      q: "Do you offer coaching and roadmap sessions?",
-      a: "Yes. Career coaching and roadmap advice are available to help you identify the right next role, close skill gaps, and execute a realistic growth plan."
+      q: "What payment methods are available?",
+      a: "International payment methods such as Wise, PayPal, Payoneer, Stripe, or bank transfer can be confirmed after your enquiry is reviewed."
+    },
+    {
+      q: "How do I start?",
+      a: "Submit your current CV / resume, target role, target country, and preferred package through the enquiry form."
     }
   ];
 
@@ -102,9 +106,9 @@ export default function FAQPage() {
 
  <div className="mx-auto mt-16 max-w-4xl text-center bg-zinc-50 p-12 rounded-[24px] border border-zinc-200">
              <h3 className="text-[28px] font-bold font-heading mb-4 text-foreground">Still have questions?</h3>
-             <p className="text-text-body mb-8 text-lg">Can't find the answer you're looking for? Please chat to our friendly team.</p>
+             <p className="text-text-body mb-8 text-lg">Submit an international enquiry and we will review the best service direction.</p>
              <Link href="/contact" className="px-[32px] py-[16px] bg-brand-main hover:bg-brand-dark text-white rounded-[10px] font-medium transition-colors inline-block">
-               Get in Touch
+               Submit International Enquiry
              </Link>
           </div>
         </div>

@@ -3,9 +3,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import PackagesPageClient from "./PackagesPageClient";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Browse All Packages | CV, LinkedIn & Cover Letter Pricing | Chanuka Jeewantha",
+  title: "Browse International Signature Series Packages | Chanuka Jeewantha",
   description:
-    "Browse every CV writing, LinkedIn, and cover letter package with prices, delivery times, and what's included. Compare Signature (founder-led) and Essentials (supervised) tiers.",
+    "Browse premium USD International Signature Series resume, CV, LinkedIn, cover letter, foreign job CV, graphical CV, and consultation packages.",
   path: "/packages",
 });
 

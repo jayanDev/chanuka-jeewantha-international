@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import CatalogueClient from "@/app/catalogue/CatalogueClient";
+import { redirect } from "next/navigation";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "CV Writing Services & Pricing | Signature & Essentials Tiers | Chanuka Jeewantha",
+  title: "International Enquiry | Chanuka Jeewantha",
   description:
-    "Choose Signature Series (premium, personally crafted) or Essentials (team-crafted, supervised) tiers. ATS CV, LinkedIn, Cover Letter, Foreign Job CV. Bundle discounts up to 25%.",
+    "Submit an international career branding enquiry for premium resume writing, CV writing, LinkedIn optimization, and executive career branding.",
   path: "/catalogue",
 });
 
 export default function CataloguePage() {
-  return <CatalogueClient />;
+  redirect("/contact");
 }

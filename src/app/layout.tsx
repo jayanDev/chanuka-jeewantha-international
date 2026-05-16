@@ -4,7 +4,6 @@ import { Suspense } from "react";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import WhatsAppOrderButton from "@/components/WhatsAppOrderButton";
 import BackToTop from "@/components/BackToTop";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AnalyticsHeartbeat from "@/components/AnalyticsHeartbeat";
@@ -29,14 +28,14 @@ const organizationLd = {
   image: `${siteUrl}/images/hero-chanuka.jpg`,
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
-    "Professional CV Writing Services, ATS Friendly CV maker, Cover Letter Writing, and LinkedIn Optimization by Career Specialist Chanuka Jeewantha.",
-  areaServed: "Sri Lanka",
+    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding by Chanuka Jeewantha.",
+  areaServed: "Worldwide",
   contactPoint: {
     "@type": "ContactPoint",
     telephone: "+94-77-390-2230",
     contactType: "customer service",
-    areaServed: "LK",
-    availableLanguage: ["English", "Sinhala"],
+    areaServed: "Worldwide",
+    availableLanguage: ["English"],
   },
   sameAs: [
     "https://www.linkedin.com/in/chanuka-jeewantha/",
@@ -52,7 +51,7 @@ const websiteLd = {
   "@id": websiteId,
   url: siteUrl,
   name: "Chanuka Jeewantha",
-  inLanguage: "en-LK",
+  inLanguage: "en",
   publisher: {
     "@id": organizationId,
   },
@@ -98,13 +97,13 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "ATS Friendly CV Maker & Professional CV Writing Services | Chanuka Jeewantha",
+    default: "Global Resume & LinkedIn Optimization Services | Chanuka Jeewantha",
     template: "%s | Chanuka Jeewantha",
   },
   applicationName: "Chanuka Jeewantha",
   manifest: "/site.webmanifest",
   description:
-    "Ranked #1 CV maker in Sri Lanka. I provide Professional CV Writing Services, ATS-friendly CV design, Cover Letter Writing, and complete LinkedIn Optimization.",
+    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding for global professionals.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -138,13 +137,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Chanuka Jeewantha - Career Development Specialist",
+    title: "Chanuka Jeewantha - Global Career Branding",
     description:
-      "ATS-friendly CV writing, LinkedIn optimization, personal branding assets, and career strategy services.",
+      "Premium ATS-friendly resumes, international CVs, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding.",
     type: "website",
     url: siteUrl,
     siteName: "Chanuka Jeewantha",
-    locale: "en_LK",
+    locale: "en_US",
     images: [
       {
         url: "/images/hero-chanuka.jpg",
@@ -156,9 +155,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chanuka Jeewantha - Career Development Specialist",
+    title: "Chanuka Jeewantha - Global Career Branding",
     description:
-      "Career-focused CV, LinkedIn, coaching, and roadmap services designed for real hiring outcomes.",
+      "Premium global resume, CV, LinkedIn, cover letter, and career strategy services for international opportunities.",
     images: ["/images/hero-chanuka.jpg"],
     creator: "@chanukajeewantha",
     site: "@chanukajeewantha",
@@ -177,7 +176,7 @@ export default async function RootLayout({
 
   return (
     <html
-      lang="en-LK"
+      lang="en"
       className={`${plusJakarta.variable} ${poppins.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
@@ -214,7 +213,6 @@ export default async function RootLayout({
           {children}
         </main>
         <Footer />
-        <WhatsAppOrderButton />
         <BackToTop />
       </body>
     </html>

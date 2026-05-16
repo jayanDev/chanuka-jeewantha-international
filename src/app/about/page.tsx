@@ -6,9 +6,9 @@ import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Chanuka Jeewantha | Professional CV Writer & Linkedin Optimization Expert",
+  title: "About Chanuka Jeewantha | Founder-Led Premium Career Branding",
   description:
-    "Chanuka Jeewantha is a Career Specialist providing CV Writing Services, Professional CV making, and ATS Friendly CV optimization in Sri Lanka.",
+    "Learn about Chanuka Jeewantha's founder-led premium international resume, CV, LinkedIn optimization, and executive career branding service.",
   path: "/about",
 });
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <span className="text-brand-main">About</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            Career growth is not guesswork, it is <span className="text-brand-main">strategy and proof</span>
+            International career growth is built through <span className="text-brand-main">strategy, proof, and positioning</span>
           </h1>
         </div>
       </section>
@@ -74,13 +74,13 @@ export default function AboutPage() {
                 />
               </div>
               <p className="text-[20px] md:text-[24px] text-foreground font-medium leading-relaxed">
-                I am Chanuka Jeewantha, a Professional CV Writer and Career Development Specialist helping people present themselves clearly, confidently, and competitively.
+                I am Chanuka Jeewantha, a founder-led premium career branding specialist helping global professionals present themselves clearly, confidently, and competitively.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                With 8+ years of experience, I help candidates align their CV, LinkedIn, portfolio, and personal brand to real hiring behavior. My approach is practical and results-focused, built around ATS performance, recruiter readability, and achievement-based positioning.
+                With 8+ years of experience, I help candidates align their resume, CV, LinkedIn profile, portfolio, and personal brand to modern international hiring behavior. My approach is practical and strategy-first, built around ATS performance, recruiter readability, country-specific direction, and achievement-based positioning.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                I support fresh graduates, mid-level professionals, career switchers, and international applicants through role-specific strategy, clear communication, and proof-driven career storytelling.
+                I support students, fresh graduates, professionals, senior professionals, executives, C-suite leaders, diaspora clients, and international applicants through role-specific strategy, clear communication, and proof-driven career storytelling.
               </p>
             </div>
           </div>

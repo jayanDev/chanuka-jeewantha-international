@@ -11,7 +11,8 @@ export type ExperienceKey =
   | "fresh-graduate"
   | "professional"
   | "senior-professional"
-  | "executive";
+  | "executive"
+  | "c-suite";
 
 export type ServiceOptionKey = "founder-led" | "supervised";
 
@@ -58,12 +59,12 @@ export type CatalogueSelection = {
 };
 
 export const paymentInstructions = {
-  bank: "Bank of Ceylon",
-  accountName: "W.A.C. Jeewantha",
-  accountNumber: "0079282859",
-  branch: "Makola Branch",
+  bank: "International payment method to be confirmed",
+  accountName: "Chanuka Jeewantha",
+  accountNumber: "Shared after enquiry approval",
+  branch: "Global remote service",
   methodNote:
-    "Please make a bank transfer to confirm your order and use your name or mobile number as the payment reference.",
+    "International payment options such as Wise, PayPal, Payoneer, Stripe, or bank transfer can be confirmed after your profile review.",
 };
 
 export const serviceOptions: Array<{
@@ -77,56 +78,56 @@ export const serviceOptions: Array<{
   {
     key: "ats-cv",
     number: 1,
-    title: "ATS Friendly Professional CV Writing",
+    title: "International ATS Resume / CV Writing",
     shortTitle: "ATS CV Writing",
-    categoryTitle: "ATS Friendly Professional CV Writing Packages",
+    categoryTitle: "ATS CV Writing",
     description:
-      "Professional, ATS-friendly CV writing built around recruiter readability, keywords, and measurable career value.",
+      "Premium ATS-friendly CV and resume writing tailored to your target role, industry, country, and career level.",
   },
   {
     key: "linkedin",
     number: 2,
-    title: "LinkedIn Account Optimization",
+    title: "LinkedIn Profile Optimization",
     shortTitle: "LinkedIn Optimization",
-    categoryTitle: "LinkedIn Account Optimization Packages",
+    categoryTitle: "LinkedIn Optimization",
     description:
-      "LinkedIn profile positioning for stronger recruiter discovery, personal branding, and profile conversion.",
+      "A recruiter-focused LinkedIn profile rewrite designed to improve positioning, keyword strength, and global visibility.",
   },
   {
     key: "cover-letter",
     number: 3,
-    title: "Professional Cover Letter Writing",
+    title: "Cover Letter Writing",
     shortTitle: "Cover Letter Writing",
-    categoryTitle: "Professional Cover Letter Writing Packages",
+    categoryTitle: "Cover Letter Writing",
     description:
-      "Role-aligned cover letters that connect your experience to the vacancy with a clear, confident message.",
+      "Professionally written cover letters tailored to target roles, industries, and international job applications.",
   },
   {
     key: "foreign-cv",
     number: 4,
-    title: "Foreign Job CV Writing",
+    title: "Foreign Job CV / International Format",
     shortTitle: "Foreign Job CV",
-    categoryTitle: "Foreign Job CV Writing Packages",
+    categoryTitle: "Foreign Job CV / International Format",
     description:
-      "CV writing for international job markets with stronger positioning for overseas applications.",
+      "Country-specific CV and resume writing for candidates applying to global markets, migration-based opportunities, and international employers.",
   },
   {
     key: "graphical-cv",
     number: 5,
-    title: "Graphical CV Writing / Resume Writing",
+    title: "Graphical CV / Premium Design",
     shortTitle: "Graphical CV",
-    categoryTitle: "Graphical CV Writing / Resume Writing Packages",
+    categoryTitle: "Graphical CV / Premium Design",
     description:
-      "Modern visual CV and resume writing for situations where presentation and personal brand matter.",
+      "A premium visual CV option for selected industries where professional presentation and personal branding matter.",
   },
   {
     key: "consultation",
     number: 6,
-    title: "Consultation",
-    shortTitle: "Consultation",
-    categoryTitle: "Career Consultation Packages",
+    title: "Career Consultation",
+    shortTitle: "Career Consultation",
+    categoryTitle: "Career Consultation",
     description:
-      "One-to-one career direction, CV/profile advice, and job-search strategy consultation.",
+      "Founder-led career strategy sessions for professionals, senior professionals, executives, and C-suite leaders who need direction and job market clarity.",
   },
 ];
 
@@ -136,31 +137,12 @@ export const experienceOptions: Array<{
   title: string;
   shortTitle: string;
 }> = [
-  { key: "student", number: 1, title: "Student (No Experience)", shortTitle: "Student" },
-  {
-    key: "fresh-graduate",
-    number: 2,
-    title: "Fresh Graduate (0-12 Months of Experience)",
-    shortTitle: "Fresh Graduate",
-  },
-  {
-    key: "professional",
-    number: 3,
-    title: "Professional Level (1-5 Years of Experience)",
-    shortTitle: "Professional",
-  },
-  {
-    key: "senior-professional",
-    number: 4,
-    title: "Senior Professional Level (6-12 Years of Experience)",
-    shortTitle: "Senior Professional",
-  },
-  {
-    key: "executive",
-    number: 5,
-    title: "Executive Level (More than 12 Years of Experience)",
-    shortTitle: "Executive",
-  },
+  { key: "student", number: 1, title: "Student", shortTitle: "Student" },
+  { key: "fresh-graduate", number: 2, title: "Fresh Graduate", shortTitle: "Fresh Graduate" },
+  { key: "professional", number: 3, title: "Professional", shortTitle: "Professional" },
+  { key: "senior-professional", number: 4, title: "Senior Professional", shortTitle: "Senior Professional" },
+  { key: "executive", number: 5, title: "Executive", shortTitle: "Executive" },
+  { key: "c-suite", number: 6, title: "C-Suite / Director", shortTitle: "C-Suite / Director" },
 ];
 
 export const serviceOptionChoices: Array<{
@@ -173,58 +155,65 @@ export const serviceOptionChoices: Array<{
   {
     key: "founder-led",
     number: 1,
-    title: "Signature Series Premium Packages",
+    title: "International Signature Series",
     shortTitle: "Signature Series",
     description:
-      "Personally crafted by Chanuka Jeewantha with premium positioning and strategic development.",
-  },
-  {
-    key: "supervised",
-    number: 2,
-    title: "Essentials Packages",
-    shortTitle: "Essentials",
-    description:
-      "Team-crafted under Chanuka's supervision with quality review and practical delivery.",
+      "Premium, personally crafted by Chanuka for global resume, CV, LinkedIn, and executive career branding needs.",
   },
 ];
 
-const founderLedPrices: Record<ServiceKey, Array<number | { thirtyMin: number; oneHour: number }>> = {
-  "ats-cv": [6500, 8000, 11500, 15500, 22500],
-  linkedin: [6500, 8000, 11500, 15500, 22500],
-  "cover-letter": [4000, 5000, 7000, 8500, 12500],
-  "foreign-cv": [10500, 12500, 14500, 18500, 27500],
-  "graphical-cv": [4000, 5000, 7000, 8500, 12500],
+const signaturePrices: Partial<Record<ServiceKey, Array<number | null | { thirtyMin?: number; oneHour: number; label?: string }>>> = {
+  "ats-cv": [89, 129, 189, 279, 449, 749],
+  linkedin: [89, 129, 189, 279, 449, 749],
+  "cover-letter": [59, 79, 119, 159, 249, 349],
+  "foreign-cv": [129, 169, 239, 329, 499, 849],
+  "graphical-cv": [79, 109, 159, 219, 349, null],
   consultation: [
-    { thirtyMin: 6500, oneHour: 9500 },
-    { thirtyMin: 7500, oneHour: 10500 },
-    { thirtyMin: 10500, oneHour: 14500 },
-    { thirtyMin: 13500, oneHour: 18500 },
-    { thirtyMin: 18500, oneHour: 27500 },
+    null,
+    null,
+    { thirtyMin: 99, oneHour: 149 },
+    { thirtyMin: 129, oneHour: 199 },
+    { thirtyMin: 179, oneHour: 279 },
+    { oneHour: 399, label: "1 hour strategy session" },
   ],
 };
 
-const supervisedPrices: Partial<Record<ServiceKey, number[]>> = {
-  "ats-cv": [2950, 3950, 4950, 5950, 8950],
-  linkedin: [2950, 3950, 4950, 5950, 8950],
-  "cover-letter": [1950, 2450, 2950, 3450, 5450],
-  "foreign-cv": [3450, 4450, 5950, 6950, 9950],
-  "graphical-cv": [1950, 2450, 2950, 3450, 4450],
-};
-
-const optionTone: Record<ServiceOptionKey, string[]> = {
-  "founder-led": [
-    "Signature Series: Personally crafted by Chanuka Jeewantha",
-    "Premium positioning for your selected career level",
-    "Industry-specific strategic positioning and country optimization",
-    "30-day post-delivery support with premium quality",
-    "Limited to 2 new clients per day for exclusivity",
+const signatureFeatures: Record<ServiceKey, string[]> = {
+  "ats-cv": [
+    "ATS-friendly structure for international job platforms",
+    "Role, industry, and country-specific positioning",
+    "Achievement-led career storytelling",
+    "Premium, personally crafted by Chanuka",
   ],
-  supervised: [
-    "Essentials: Team-crafted under Chanuka's supervision",
-    "Quality reviewed by Chanuka with practical delivery",
-    "Standard ATS-friendly format with basic optimization",
-    "7-day delivery with email-based support",
-    "Budget-friendly option for students and graduates",
+  linkedin: [
+    "Recruiter-focused headline and About section rewrite",
+    "Keyword strategy for global visibility",
+    "Experience section repositioning",
+    "Premium, personally crafted by Chanuka",
+  ],
+  "cover-letter": [
+    "Role-aligned cover letter writing",
+    "International application tone and structure",
+    "Clear value proposition for target employers",
+    "Premium, personally crafted by Chanuka",
+  ],
+  "foreign-cv": [
+    "Country-specific CV or resume direction",
+    "International employer and migration-market positioning",
+    "ATS and recruiter readability review",
+    "Premium, personally crafted by Chanuka",
+  ],
+  "graphical-cv": [
+    "Premium visual CV presentation",
+    "Personal branding focused layout",
+    "Best suited for selected creative and client-facing roles",
+    "Premium, personally crafted by Chanuka",
+  ],
+  consultation: [
+    "Founder-led career strategy session",
+    "Target role, market, and positioning review",
+    "Practical next-step direction",
+    "Premium, personally crafted by Chanuka",
   ],
 };
 
@@ -237,78 +226,68 @@ function slugify(input: string): string {
 
 function getPriceValue(
   serviceKey: ServiceKey,
-  optionKey: ServiceOptionKey,
   experienceIndex: number
 ): { priceLkr: number; priceNote?: string } | null {
-  if (optionKey === "supervised") {
-    const row = supervisedPrices[serviceKey];
-    if (!row) return null;
-    return { priceLkr: row[experienceIndex] };
-  }
+  const value = signaturePrices[serviceKey]?.[experienceIndex];
+  if (!value) return null;
 
-  const value = founderLedPrices[serviceKey][experienceIndex];
   if (typeof value === "number") {
     return { priceLkr: value };
   }
 
+  if (value.thirtyMin) {
+    return {
+      priceLkr: value.thirtyMin,
+      priceNote: `${formatLkr(value.thirtyMin)} (30 min) / ${formatLkr(value.oneHour)} (1 hour)`,
+    };
+  }
+
   return {
-    priceLkr: value.thirtyMin,
-    priceNote: `${formatLkr(value.thirtyMin)} (30 min) / ${formatLkr(value.oneHour)} (1 Hr)`,
+    priceLkr: value.oneHour,
+    priceNote: `${formatLkr(value.oneHour)} (${value.label ?? "1 hour"})`,
   };
 }
 
 function makePackage(
   service: (typeof serviceOptions)[number],
   experience: (typeof experienceOptions)[number],
-  option: (typeof serviceOptionChoices)[number],
   experienceIndex: number
 ): PackageProduct | null {
-  const price = getPriceValue(service.key, option.key, experienceIndex);
+  const price = getPriceValue(service.key, experienceIndex);
   if (!price) return null;
 
-  const code = `${service.number}${experience.number}${option.number}`;
-  const optionName = option.shortTitle;
-  const name = `${experience.shortTitle} ${service.shortTitle} - ${optionName}`;
-  const delivery = service.key === "consultation" ? "Scheduled after payment confirmation" : "3-7 Days";
+  const code = `${service.number}${experience.number}1`;
+  const name = `${experience.shortTitle} ${service.shortTitle} - International Signature Series`;
+  const delivery = service.key === "consultation" ? "Scheduled after enquiry approval" : "Premium timeline confirmed after profile review";
 
   return {
-    slug: slugify(`${service.key}-${experience.key}-${option.key}`),
+    slug: slugify(`${service.key}-${experience.key}-founder-led`),
     code,
     name,
     category: service.shortTitle,
     categoryKey: service.key,
     serviceKey: service.key,
     experienceKey: experience.key,
-    optionKey: option.key,
+    optionKey: "founder-led",
     audience: experience.title,
-    description: `${service.title} for ${experience.title.toLowerCase()} through the ${option.shortTitle.toLowerCase()} service option.`,
+    description: `${service.title} for ${experience.title.toLowerCase()} clients targeting international opportunities.`,
     idealFor:
       service.key === "consultation"
-        ? "Ideal when you need direct career direction before deciding your next application, CV, LinkedIn, or job market strategy."
-        : `Ideal for ${experience.title.toLowerCase()} who need ${service.shortTitle.toLowerCase()} with ${option.shortTitle.toLowerCase()} quality control.`,
+        ? "Ideal when you need direct career direction before selecting documents, target countries, or job market strategy."
+        : `Ideal for ${experience.title.toLowerCase()} clients who need premium international ${service.shortTitle.toLowerCase()} with founder-led positioning.`,
     priceLkr: price.priceLkr,
     priceNote: price.priceNote,
     delivery,
-    features: [
-      ...optionTone[option.key],
-      service.key === "consultation"
-        ? "Action-focused consultation notes and next-step guidance"
-        : "Editable final document or improvement guidance where applicable",
-    ],
-    cta: "Order This Package",
-    isMostPopular:
-      service.key === "ats-cv" &&
-      experience.key === "professional" &&
-      option.key === "founder-led",
+    features: signatureFeatures[service.key],
+    cta: "Apply for This Service",
+    isMostPopular: service.key === "ats-cv" && experience.key === "professional",
   };
 }
 
 export const packageProducts: PackageProduct[] = serviceOptions.flatMap((service) =>
-  experienceOptions.flatMap((experience, experienceIndex) =>
-    serviceOptionChoices
-      .map((option) => makePackage(service, experience, option, experienceIndex))
-      .filter((item): item is PackageProduct => Boolean(item))
-  )
+  experienceOptions
+    .map((experience, experienceIndex) => makePackage(service, experience, experienceIndex))
+    .filter((item): item is PackageProduct => Boolean(item))
 );
 
 export const packageCategories: PackageCategory[] = serviceOptions.map((service) => ({
@@ -320,8 +299,10 @@ export const packageCategories: PackageCategory[] = serviceOptions.map((service)
 }));
 
 export function formatLkr(price: number): string {
-  return `LKR ${price.toLocaleString("en-LK")}`;
+  return `$${price.toLocaleString("en-US")}`;
 }
+
+export const formatUsd = formatLkr;
 
 export function getPackageDisplayPrice(pkg: PackageProduct): string {
   return pkg.priceNote ?? formatLkr(pkg.priceLkr);
@@ -349,15 +330,7 @@ export function getFilteredPackages(selection: CatalogueSelection): PackageProdu
   );
 }
 
-export function getSupervisedBundleDiscount(serviceKeys: ServiceKey[]): number {
-  const keys = new Set(serviceKeys);
-  const hasCv = keys.has("ats-cv");
-  const hasCover = keys.has("cover-letter");
-  const hasLinkedin = keys.has("linkedin");
-
-  if (hasCv && hasCover && hasLinkedin) return 20;
-  if (hasCv && hasLinkedin) return 15;
-  if (hasCv && hasCover) return 10;
+export function getSupervisedBundleDiscount(): number {
   return 0;
 }
 
@@ -368,20 +341,15 @@ export function calculateCatalogueTotal(packages: PackageProduct[]): {
   totalLkr: number;
 } {
   const subtotalLkr = packages.reduce((sum, pkg) => sum + pkg.priceLkr, 0);
-  const allSupervised = packages.length > 0 && packages.every((pkg) => pkg.optionKey === "supervised");
-  const discountPercent = allSupervised
-    ? getSupervisedBundleDiscount(packages.map((pkg) => pkg.serviceKey))
-    : 0;
-  const discountLkr = Math.round((subtotalLkr * discountPercent) / 100);
 
   return {
     subtotalLkr,
-    discountPercent,
-    discountLkr,
-    totalLkr: Math.max(0, subtotalLkr - discountLkr),
+    discountPercent: 0,
+    discountLkr: 0,
+    totalLkr: subtotalLkr,
   };
 }
 
 export function getFounderLedAvailabilityLabel(): string {
-  return Math.random() > 0.5 ? "Only 1 premium slot remaining today" : "1 of 2 premium slots available today";
+  return "Premium international intake slots are reviewed before confirmation";
 }

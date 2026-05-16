@@ -86,7 +86,7 @@ export function buildProductSchema(input: ProductSchemaInput) {
     },
     offers: {
       "@type": "Offer",
-      priceCurrency: "LKR",
+      priceCurrency: "USD",
       price: input.priceLkr,
       url: absoluteUrl,
       availability: input.availability ?? "https://schema.org/InStock",
@@ -104,8 +104,8 @@ export function buildOfferCatalogSchema(categories: OfferCatalogCategoryInput[])
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "Career Services Pricing",
-    serviceType: "CV Writing and Career Development Services",
+    name: "International Career Branding Pricing",
+    serviceType: "International resume, CV, LinkedIn, and career branding services",
     provider: {
       "@type": "Organization",
       name: "Chanuka Jeewantha",
@@ -125,7 +125,7 @@ export function buildOfferCatalogSchema(categories: OfferCatalogCategoryInput[])
             description: item.description,
             url: `${baseUrl}${normalizePath(item.path)}`,
           },
-          priceCurrency: "LKR",
+          priceCurrency: "USD",
           price: item.priceLkr,
           url: `${baseUrl}${normalizePath(item.path)}`,
         })),
@@ -217,4 +217,3 @@ export function buildReviewListSchema(
     })),
   };
 }
-

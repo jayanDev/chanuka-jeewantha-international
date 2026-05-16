@@ -8,10 +8,19 @@ import { industryLandingPages } from "@/lib/industry-pages";
 import ServicesPackageFilter from "@/app/services/ServicesPackageFilter";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "CV Writing Services & Linkedin Optimization Sri Lanka | Services",
+  title: "Global Career Branding Services | Resume, CV & LinkedIn Optimization",
   description:
-    "Expert CV writing services. Get an ATS Friendly CV, Cover Letter Writing, and Linkedin Optimization by Chanuka Jeewantha.",
+    "Premium global resume, CV, LinkedIn optimization, cover letter, foreign job CV, and executive career branding services by Chanuka Jeewantha.",
   path: "/services",
+  keywords: [
+    "international resume writing",
+    "global CV writing",
+    "ATS resume writing",
+    "LinkedIn profile optimization",
+    "executive resume writing",
+    "foreign job CV",
+    "country-specific CV",
+  ],
 });
 
 export default function ServicesPage() {
@@ -23,34 +32,34 @@ export default function ServicesPage() {
 
   const services = [
     {
-      title: "ATS Friendly Professional CV Writing",
-      desc: "Founder-led and supervised CV packages across student, fresh graduate, professional, senior professional, and executive levels.",
+      title: "ATS CV / Resume Writing",
+      desc: "Premium ATS-friendly CV and resume writing tailored to your target role, industry, country, and career level.",
       isMostPopular: true,
       href: "/services/packages/ats-cv",
     },
     {
-      title: "LinkedIn Account Optimization",
-      desc: "Profile positioning packages for stronger recruiter discovery, keywords, and personal branding.",
+      title: "LinkedIn Profile Optimization",
+      desc: "A recruiter-focused LinkedIn profile rewrite designed to improve positioning, keyword strength, and global visibility.",
       href: "/services/packages/linkedin",
     },
     {
-      title: "Professional Cover Letter Writing",
-      desc: "Role-aligned cover letters for local and overseas job applications.",
+      title: "Cover Letter Writing",
+      desc: "Professionally written cover letters tailored to target roles, industries, and international job applications.",
       href: "/services/packages/cover-letter",
     },
     {
-      title: "Foreign Job CV Writing",
-      desc: "International-market CV packages for Middle East, UK/Europe, Australia/New Zealand, Canada, and other target markets.",
+      title: "Foreign Job CV / International Format CV",
+      desc: "Country-specific CV and resume writing for candidates applying to global markets, migration-based opportunities, and international employers.",
       href: "/services/packages/foreign-cv",
     },
     {
-      title: "Graphical CV Writing / Resume Writing",
-      desc: "Modern visual CV and resume writing packages when presentation and personal brand need stronger impact.",
+      title: "Graphical CV / Premium Design CV",
+      desc: "A premium visual CV option for selected industries where professional presentation and personal branding matter.",
       href: "/services/packages/graphical-cv",
     },
     {
-      title: "Consultation",
-      desc: "Founder-led career consultation packages for direction, strategy, and application positioning.",
+      title: "Career Consultation",
+      desc: "Founder-led career strategy sessions for professionals, senior professionals, executives, and C-suite leaders who need direction, positioning, and job market clarity.",
       href: "/services/packages/consultation",
     },
     {
@@ -84,8 +93,8 @@ export default function ServicesPage() {
             <span className="text-brand-main text-xs">/</span>
             <span className="text-brand-main">Services</span>
           </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            Career Development Services Built for <span className="text-brand-main">Modern Hiring Systems</span>
+          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
+            Global Career Branding Services for <span className="text-brand-main">International Opportunities</span>
           </h1>
         </div>
       </section>
@@ -94,12 +103,12 @@ export default function ServicesPage() {
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
             <div>
-              <span className="text-brand-main font-semibold tracking-wider uppercase mb-2 block">Our Service</span>
+              <span className="text-brand-main font-semibold tracking-wider uppercase mb-2 block">Premium Services</span>
               <h2 className="text-[30px] sm:text-[40px] md:text-[56px] font-bold font-heading text-foreground leading-[1.1]">
-                What I Help You <span className="text-brand-light pl-2">Achieve.</span>
+                Resume, CV, LinkedIn, and Career Strategy Support.
               </h2>
               <span className="mt-3 inline-block rounded-full bg-brand-main/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark">
-                Priority Service: CV Writing
+                Priority Service: International ATS Resume / CV Writing
               </span>
             </div>
           </div>
@@ -137,7 +146,7 @@ export default function ServicesPage() {
 
           <div className="mt-10 rounded-[16px] border border-[#e1f5fe] bg-[#f0f9ff]/60 p-6 text-center">
             <p className="text-text-body text-lg">
-              Use the filters below to compare every package by service type, experience level, and founder-led or supervised delivery.
+              Use the filters below to compare International Signature Series pricing by service type and career level.
             </p>
           </div>
 
@@ -150,7 +159,7 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-4 text-[26px] font-bold font-heading text-foreground">Use free career tools before you buy</h2>
               <p className="mt-3 text-text-body">
-                Try the ATS audit, LinkedIn headline generator, and interview story bank to improve readiness and create stronger entry points into paid services.
+                Try the ATS audit, LinkedIn headline generator, and interview story bank to improve readiness before requesting premium international support.
               </p>
               <Link href="/tools" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-main">
                 Explore Free Tools
@@ -164,7 +173,7 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-4 text-[26px] font-bold font-heading text-foreground">Book workshops for campuses and institutes</h2>
               <p className="mt-3 text-text-body">
-                Extend the same career strategy to student communities, university career units, and professional groups through practical workshops.
+                Extend international career strategy to student communities, university career units, and professional groups through practical workshops.
               </p>
               <Link href="/workshops" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-main">
                 View Workshops

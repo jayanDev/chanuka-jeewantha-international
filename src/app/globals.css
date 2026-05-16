@@ -586,6 +586,12 @@ input:focus, textarea:focus, select:focus {
   box-shadow: 0 0 0 3px rgba(201, 169, 97, 0.15);
 }
 
+.form-input {
+  width: 100%;
+  background-color: #fafafa;
+  border-color: #e4e4e7;
+}
+
 label {
   font-family: var(--font-body);
   font-size: 14px;

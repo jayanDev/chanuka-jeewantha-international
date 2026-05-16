@@ -6,12 +6,12 @@ import { packageCategories, type ServiceKey } from "@/lib/packages-catalog";
 import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
 
 const slugToCategoryTitle: Record<string, string> = {
-  "ats-cv": "ATS Friendly Professional CV Writing Packages",
-  linkedin: "LinkedIn Account Optimization Packages",
-  "cover-letter": "Professional Cover Letter Writing Packages",
-  "foreign-cv": "Foreign Job CV Writing Packages",
-  "graphical-cv": "Graphical CV Writing / Resume Writing Packages",
-  consultation: "Career Consultation Packages",
+  "ats-cv": "ATS CV Writing",
+  linkedin: "LinkedIn Optimization",
+  "cover-letter": "Cover Letter Writing",
+  "foreign-cv": "Foreign Job CV / International Format",
+  "graphical-cv": "Graphical CV / Premium Design",
+  consultation: "Career Consultation",
 };
 
 export function generateStaticParams() {
@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     title: `${categoryTitle} | Chanuka Jeewantha`,
-    description: `Explore ${categoryTitle.toLowerCase()} designed for ATS performance, recruiter readability, and practical career outcomes.`,
+    description: `Explore ${categoryTitle.toLowerCase()} designed for international applications, ATS performance, recruiter readability, and premium career positioning.`,
     path: `/services/packages/${slug}`,
     keywords: [categoryTitle, "career package", "job seeker services", "Chanuka Jeewantha"],
   });
@@ -85,7 +85,7 @@ export default async function ServicePackagesBySlugPage({
             <span className="text-brand-main">{category.title.replace(" Packages", "")}</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            {category.title.replace(" Packages", "")} <span className="text-brand-main">Packages</span>
+            {category.title} <span className="text-brand-main">Packages</span>
           </h1>
         </div>
       </section>

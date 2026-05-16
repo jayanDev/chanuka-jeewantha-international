@@ -6,16 +6,16 @@ import { getBaseUrl } from "@/lib/site-url";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact Chanuka Jeewantha | CV Writing & Career Services Sri Lanka",
+  title: "Apply for International Career Branding | Chanuka Jeewantha",
   description:
-    "Get in touch with Chanuka Jeewantha for professional CV writing, LinkedIn optimization, cover letter writing, and career coaching services in Sri Lanka. Fast response via WhatsApp.",
+    "Submit an international enquiry for premium resume writing, ATS CV writing, LinkedIn optimization, foreign job CVs, and executive career branding.",
   path: "/contact",
   keywords: [
-    "contact chanuka jeewantha",
-    "cv writing service contact",
-    "career services sri lanka",
-    "linkedin optimization contact",
-    "whatsapp cv order",
+    "international resume writing enquiry",
+    "global CV writing application",
+    "LinkedIn optimization enquiry",
+    "foreign job CV application",
+    "executive career branding",
   ],
 });
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
     name: "Contact Chanuka Jeewantha",
     url: `${baseUrl}/contact`,
     description:
-      "Contact page for professional CV writing, LinkedIn optimization, and career coaching services by Chanuka Jeewantha.",
+      "International enquiry page for premium resume writing, LinkedIn optimization, and executive career branding services by Chanuka Jeewantha.",
     mainEntity: {
       "@type": "Person",
       name: "Chanuka Jeewantha",
@@ -42,8 +42,8 @@ export default function ContactPage() {
         "@type": "ContactPoint",
         telephone: "+94-77-390-2230",
         contactType: "customer service",
-        areaServed: "LK",
-        availableLanguage: ["English", "Sinhala"],
+        areaServed: "Worldwide",
+        availableLanguage: ["English"],
       },
     },
   };
@@ -84,10 +84,10 @@ export default function ContactPage() {
             <span className="text-brand-main">Contact</span>
           </nav>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.08] max-w-4xl !text-white">
-            Let&apos;s Work <span className="text-brand-main">Together</span>
+            Apply for <span className="text-brand-main">International Career Support</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-text-light">
-            Send your details or reach out directly via WhatsApp for fast, practical career support.
+            Submit your current CV or resume, target market, target role, and preferred premium package for review.
           </p>
         </div>
       </section>
