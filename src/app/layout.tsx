@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BackToTop from "@/components/BackToTop";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import AnalyticsHeartbeat from "@/components/AnalyticsHeartbeat";
+import HeartbeatAnalytics from "@/components/AnalyticsHeartbeat";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SeasonalOfferBanner from "@/components/SeasonalOfferBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
@@ -16,6 +16,7 @@ import { TARGET_SEO_KEYWORDS } from "@/lib/seo";
 
 const siteUrl = getBaseUrl();
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const heartbeatAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_HEARTBEAT_ANALYTICS === "true";
 const organizationId = `${siteUrl}#organization`;
 const websiteId = `${siteUrl}#website`;
 
@@ -202,7 +203,11 @@ export default async function RootLayout({
             <GoogleAnalytics measurementId={gaMeasurementId} />
           </Suspense>
         ) : null}
-        <AnalyticsHeartbeat />
+        {heartbeatAnalyticsEnabled ? (
+          <Suspense fallback={null}>
+            <HeartbeatAnalytics />
+          </Suspense>
+        ) : null}
         <AnnouncementBar />
         <div id="site-nav">
           <Header initialUser={currentUser} />
