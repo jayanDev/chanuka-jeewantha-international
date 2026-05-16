@@ -23,7 +23,7 @@ type HeaderProps = {
 const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/pricing", label: "International Packages" },
+  { href: "/pricing", label: "Packages" },
   { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
   { href: "/#faq", label: "FAQ" },

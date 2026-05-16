@@ -6,17 +6,10 @@ import { getBaseUrl } from "@/lib/site-url";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Apply for International Career Branding | Chanuka Jeewantha",
+  title: "Request Career Branding Support | Chanuka Jeewantha",
   description:
-    "Submit an international enquiry for premium resume writing, ATS CV writing, LinkedIn optimization, foreign job CVs, and executive career branding.",
+    "Submit an enquiry for premium resume writing, ATS-optimized CVs, LinkedIn optimization, cover letters, and executive career branding.",
   path: "/contact",
-  keywords: [
-    "international resume writing enquiry",
-    "global CV writing application",
-    "LinkedIn optimization enquiry",
-    "foreign job CV application",
-    "executive career branding",
-  ],
 });
 
 const baseUrl = getBaseUrl();
@@ -33,17 +26,17 @@ export default function ContactPage() {
     name: "Contact Chanuka Jeewantha",
     url: `${baseUrl}/contact`,
     description:
-      "International enquiry page for premium resume writing, LinkedIn optimization, and executive career branding services by Chanuka Jeewantha.",
+      "Enquiry page for premium resume writing, LinkedIn optimization, and executive career branding services by Chanuka Jeewantha.",
     mainEntity: {
       "@type": "Person",
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+94-77-390-2230",
         contactType: "customer service",
         areaServed: "Worldwide",
         availableLanguage: ["English"],
+        url: `${baseUrl}/contact`,
       },
     },
   };
@@ -84,10 +77,10 @@ export default function ContactPage() {
             <span className="text-brand-main">Contact</span>
           </nav>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.08] max-w-4xl !text-white">
-            Apply for <span className="text-brand-main">International Career Support</span>
+            Request <span className="text-brand-main">premium career support</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-text-light">
-            Submit your current CV or resume, target market, target role, and preferred premium package for review.
+            Submit your current CV or resume, target role, target market, and preferred package for a personal review.
           </p>
         </div>
       </section>

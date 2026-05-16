@@ -59,12 +59,12 @@ export type CatalogueSelection = {
 };
 
 export const paymentInstructions = {
-  bank: "International payment method to be confirmed",
+  bank: "Payment method confirmed after profile review",
   accountName: "Chanuka Jeewantha",
   accountNumber: "Shared after enquiry approval",
-  branch: "Global remote service",
+  branch: "Remote-only service",
   methodNote:
-    "International payment options such as Wise, PayPal, Payoneer, Stripe, or bank transfer can be confirmed after your profile review.",
+    "Wise, PayPal, Payoneer, Stripe, and bank transfer are all supported. Specific payment details are confirmed after your profile review.",
 };
 
 export const serviceOptions: Array<{
@@ -78,11 +78,11 @@ export const serviceOptions: Array<{
   {
     key: "ats-cv",
     number: 1,
-    title: "International ATS Resume / CV Writing",
-    shortTitle: "ATS CV Writing",
-    categoryTitle: "ATS CV Writing",
+    title: "ATS Resume / CV Writing",
+    shortTitle: "ATS Resume / CV",
+    categoryTitle: "ATS Resume / CV Writing",
     description:
-      "Premium ATS-friendly CV and resume writing tailored to your target role, industry, country, and career level.",
+      "Premium ATS-optimized resume and CV writing tailored to your target role, industry, market, and career level.",
   },
   {
     key: "linkedin",
@@ -91,7 +91,7 @@ export const serviceOptions: Array<{
     shortTitle: "LinkedIn Optimization",
     categoryTitle: "LinkedIn Optimization",
     description:
-      "A recruiter-focused LinkedIn profile rewrite designed to improve positioning, keyword strength, and global visibility.",
+      "A recruiter-facing LinkedIn rewrite built around clear positioning, keyword strength, and the credibility signals senior hires are searched on.",
   },
   {
     key: "cover-letter",
@@ -100,16 +100,16 @@ export const serviceOptions: Array<{
     shortTitle: "Cover Letter Writing",
     categoryTitle: "Cover Letter Writing",
     description:
-      "Professionally written cover letters tailored to target roles, industries, and international job applications.",
+      "Tailored cover letters that translate your experience into the language of the role, the company, and the hiring committee.",
   },
   {
     key: "foreign-cv",
     number: 4,
-    title: "Foreign Job CV / International Format",
-    shortTitle: "Foreign Job CV",
-    categoryTitle: "Foreign Job CV / International Format",
+    title: "Modern CV Format for Cross-Border Applications",
+    shortTitle: "Modern CV Format",
+    categoryTitle: "Modern CV Format for Cross-Border Applications",
     description:
-      "Country-specific CV and resume writing for candidates applying to global markets, migration-based opportunities, and international employers.",
+      "Resume and CV formats tailored to the conventions of your target market — for cross-border applications, hiring panels, and recruiter-led searches.",
   },
   {
     key: "graphical-cv",
@@ -118,7 +118,7 @@ export const serviceOptions: Array<{
     shortTitle: "Graphical CV",
     categoryTitle: "Graphical CV / Premium Design",
     description:
-      "A premium visual CV option for selected industries where professional presentation and personal branding matter.",
+      "A premium visual CV for industries where presentation, narrative, and personal brand carry real weight in the hiring decision.",
   },
   {
     key: "consultation",
@@ -127,7 +127,7 @@ export const serviceOptions: Array<{
     shortTitle: "Career Consultation",
     categoryTitle: "Career Consultation",
     description:
-      "Founder-led career strategy sessions for professionals, senior professionals, executives, and C-suite leaders who need direction and job market clarity.",
+      "Founder-led strategy sessions for professionals, executives, and founders who need clarity on positioning, market fit, and their next move.",
   },
 ];
 
@@ -155,10 +155,10 @@ export const serviceOptionChoices: Array<{
   {
     key: "founder-led",
     number: 1,
-    title: "International Signature Series",
+    title: "Signature Series",
     shortTitle: "Signature Series",
     description:
-      "Premium, personally crafted by Chanuka for global resume, CV, LinkedIn, and executive career branding needs.",
+      "Premium, personally written by Chanuka for senior resumes, CVs, LinkedIn, and executive career branding.",
   },
 ];
 
@@ -180,40 +180,40 @@ const signaturePrices: Partial<Record<ServiceKey, Array<number | null | { thirty
 
 const signatureFeatures: Record<ServiceKey, string[]> = {
   "ats-cv": [
-    "ATS-friendly structure for international job platforms",
-    "Role, industry, and country-specific positioning",
+    "ATS-optimized structure built for modern hiring platforms",
+    "Role, industry, and target-market positioning",
     "Achievement-led career storytelling",
-    "Premium, personally crafted by Chanuka",
+    "Premium, personally written by Chanuka",
   ],
   linkedin: [
     "Recruiter-focused headline and About section rewrite",
-    "Keyword strategy for global visibility",
-    "Experience section repositioning",
-    "Premium, personally crafted by Chanuka",
+    "Keyword strategy aligned to your target market",
+    "Experience section repositioning for senior search",
+    "Premium, personally written by Chanuka",
   ],
   "cover-letter": [
     "Role-aligned cover letter writing",
-    "International application tone and structure",
+    "Tone and structure tuned to your target market",
     "Clear value proposition for target employers",
-    "Premium, personally crafted by Chanuka",
+    "Premium, personally written by Chanuka",
   ],
   "foreign-cv": [
-    "Country-specific CV or resume direction",
-    "International employer and migration-market positioning",
+    "CV or resume tailored to your target market's conventions",
+    "Positioning for cross-border applications and hiring panels",
     "ATS and recruiter readability review",
-    "Premium, personally crafted by Chanuka",
+    "Premium, personally written by Chanuka",
   ],
   "graphical-cv": [
     "Premium visual CV presentation",
     "Personal branding focused layout",
     "Best suited for selected creative and client-facing roles",
-    "Premium, personally crafted by Chanuka",
+    "Premium, personally written by Chanuka",
   ],
   consultation: [
     "Founder-led career strategy session",
     "Target role, market, and positioning review",
     "Practical next-step direction",
-    "Premium, personally crafted by Chanuka",
+    "Premium, personally led by Chanuka",
   ],
 };
 
@@ -257,7 +257,7 @@ function makePackage(
   if (!price) return null;
 
   const code = `${service.number}${experience.number}1`;
-  const name = `${experience.shortTitle} ${service.shortTitle} - International Signature Series`;
+  const name = `${experience.shortTitle} ${service.shortTitle} — Signature Series`;
   const delivery = service.key === "consultation" ? "Scheduled after enquiry approval" : "Premium timeline confirmed after profile review";
 
   return {
@@ -270,11 +270,11 @@ function makePackage(
     experienceKey: experience.key,
     optionKey: "founder-led",
     audience: experience.title,
-    description: `${service.title} for ${experience.title.toLowerCase()} clients targeting international opportunities.`,
+    description: `${service.title} for ${experience.title.toLowerCase()} candidates pursuing senior or cross-border opportunities.`,
     idealFor:
       service.key === "consultation"
-        ? "Ideal when you need direct career direction before selecting documents, target countries, or job market strategy."
-        : `Ideal for ${experience.title.toLowerCase()} clients who need premium international ${service.shortTitle.toLowerCase()} with founder-led positioning.`,
+        ? "Ideal when you need direct career direction before selecting documents, target markets, or your next move."
+        : `Ideal for ${experience.title.toLowerCase()} candidates who need premium ${service.shortTitle.toLowerCase()} with founder-led positioning.`,
     priceLkr: price.priceLkr,
     priceNote: price.priceNote,
     delivery,
@@ -351,5 +351,5 @@ export function calculateCatalogueTotal(packages: PackageProduct[]): {
 }
 
 export function getFounderLedAvailabilityLabel(): string {
-  return "Premium international intake slots are reviewed before confirmation";
+  return "Premium intake slots are reviewed personally before confirmation";
 }

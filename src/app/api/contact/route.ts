@@ -40,7 +40,7 @@ export async function POST(request: Request) {
           );
         }
 
-        cvUrl = await saveUploadedFile({ file: cvFile, folder: "international-enquiries/cv" });
+        cvUrl = await saveUploadedFile({ file: cvFile, folder: "enquiries/cv" });
       }
 
       const details = [
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
       body = {
         name: readString(formData, "name"),
         email: readString(formData, "email"),
-        subject: `International enquiry - ${readString(formData, "selectedService") || "Career branding"}`,
+        subject: `Career enquiry — ${readString(formData, "selectedService") || "Career branding"}`,
         message: details,
         website: readString(formData, "website"),
       };

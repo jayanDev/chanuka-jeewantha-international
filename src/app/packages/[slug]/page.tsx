@@ -26,10 +26,10 @@ export async function generateMetadata({ params }: PackagePageProps): Promise<Me
   }
 
   return buildPageMetadata({
-    title: `${pkg.name} | International Signature Series`,
-    description: `${pkg.name} - ${pkg.description ?? pkg.audience}. ${getPackageDisplayPrice(pkg)} in USD.`,
+    title: `${pkg.name} | Signature Series`,
+    description: `${pkg.name} — ${pkg.description ?? pkg.audience}. ${getPackageDisplayPrice(pkg)} in USD.`,
     path: `/packages/${slug}`,
-    keywords: [pkg.name, pkg.category, "international resume writing", "global CV writing"],
+    keywords: [pkg.name, pkg.category],
   });
 }
 
@@ -43,7 +43,7 @@ export default async function PackageSinglePage({ params }: PackagePageProps) {
 
   const breadcrumbLd = buildBreadcrumbList([
     { name: "Home", path: "/" },
-    { name: "International Packages", path: "/pricing" },
+    { name: "Premium Packages", path: "/pricing" },
     { name: pkg.name, path: `/packages/${pkg.slug}` },
   ]);
 
@@ -66,9 +66,9 @@ export default async function PackageSinglePage({ params }: PackagePageProps) {
           <div className="mb-8 flex items-center gap-2 text-white/85">
             <Link href="/" className="hover:text-brand-main">Home</Link>
             <span className="text-brand-main">/</span>
-            <Link href="/pricing" className="hover:text-brand-main">International Packages</Link>
+            <Link href="/pricing" className="hover:text-brand-main">Premium Packages</Link>
           </div>
-          <p className="mb-4 font-semibold uppercase tracking-[0.18em] text-brand-main">International Signature Series</p>
+          <p className="mb-4 font-semibold uppercase tracking-[0.18em] text-brand-main">Signature Series</p>
           <h1 className="font-heading text-[34px] font-bold leading-tight text-white md:text-[62px]">
             {pkg.name}
           </h1>

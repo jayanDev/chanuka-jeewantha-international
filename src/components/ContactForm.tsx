@@ -12,15 +12,15 @@ const careerLevels = [
 ];
 
 const serviceOptions = [
-  "ATS CV Writing",
+  "ATS Resume / CV Writing",
   "LinkedIn Optimization",
   "Cover Letter Writing",
-  "Foreign Job CV / International Format",
+  "Modern CV Format (cross-border applications)",
   "Graphical CV / Premium Design",
   "Career Consultation",
-  "International Starter Pack",
-  "International Career Pack",
-  "Global Migration Pack",
+  "Starter Pack",
+  "Career Pack",
+  "Career Move Pack",
   "Executive Brand Suite",
   "C-Suite Premium",
 ];
@@ -49,7 +49,7 @@ const initialFormState: FormState = {
   careerLevel: "Professional",
   targetRole: "",
   yearsExperience: "",
-  selectedService: "International Career Pack",
+  selectedService: "Career Pack",
   linkedinUrl: "",
   message: "",
   website: "",
@@ -103,28 +103,28 @@ export default function ContactForm() {
       <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <span className="mb-4 block font-semibold uppercase tracking-wider text-brand-main">International Application</span>
+            <span className="mb-4 block font-semibold uppercase tracking-wider text-brand-main">Enquiry</span>
             <h2 className="font-heading text-[36px] font-bold leading-[1.15] text-foreground md:text-[52px]">
-              Submit your international career branding enquiry.
+              Submit your career-branding enquiry.
             </h2>
             <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-text-body">
-              Share your current CV or resume, target country, target role, career level, and preferred service direction. Your profile will be reviewed before the most suitable package is confirmed.
+              Share your current CV or resume, target market, target role, career level, and preferred service direction. Your profile is reviewed personally before the most suitable package is confirmed.
             </p>
             <div className="mt-8 rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm">
-              <h3 className="font-heading text-[22px] font-bold text-foreground">Premium, personally crafted by Chanuka</h3>
+              <h3 className="font-heading text-[22px] font-bold text-foreground">Premium, personally written by Chanuka</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                This is not a budget catalogue flow. The international service is designed for global professionals, diaspora clients, executives, C-suite leaders, and candidates targeting markets such as the UAE, UK, Canada, Australia, Europe, New Zealand, and remote roles.
+                This is not a budget catalogue flow. The service is built for senior professionals, executives, C-suite hires, founders, and candidates competing for serious roles in competitive job markets and remote-first companies.
               </p>
             </div>
           </div>
 
           <div className="rounded-[20px] border border-zinc-200 bg-white p-6 shadow-lg md:p-10">
-            <h3 className="mb-8 font-heading text-[28px] font-bold text-foreground">International Enquiry Form</h3>
+            <h3 className="mb-8 font-heading text-[28px] font-bold text-foreground">Enquiry Form</h3>
             <form className="flex flex-col gap-5" onSubmit={handleSubmit} noValidate>
               <div aria-live="polite" aria-atomic="true">
                 {submitStatus === "success" && (
                   <div className="rounded-[10px] border border-brand-main/20 bg-brand-main/10 p-4 text-brand-dark" role="status">
-                    Thank you for submitting your international career branding enquiry. We will review your details and contact you with the most suitable service direction.
+                    Thank you for submitting your enquiry. Your details will be reviewed personally and you will be contacted with the most suitable service direction.
                   </div>
                 )}
                 {submitStatus === "error" && (
@@ -153,13 +153,13 @@ export default function ContactForm() {
                   <input type="email" value={formData.email} onChange={(e) => updateField("email", e.target.value)} required autoComplete="email" className="form-input" />
                 </Field>
                 <Field label="WhatsApp Number with Country Code" required>
-                  <input value={formData.whatsapp} onChange={(e) => updateField("whatsapp", e.target.value)} required placeholder="+971 50 000 0000" className="form-input" />
+                  <input value={formData.whatsapp} onChange={(e) => updateField("whatsapp", e.target.value)} required placeholder="+1 555 000 0000" className="form-input" />
                 </Field>
                 <Field label="Current Country" required>
                   <input value={formData.currentCountry} onChange={(e) => updateField("currentCountry", e.target.value)} required className="form-input" />
                 </Field>
-                <Field label="Target Country / Market" required>
-                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} required placeholder="UAE, UK, Canada, Australia, Europe, remote..." className="form-input" />
+                <Field label="Target Market" required>
+                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} required placeholder="Country or region you're applying to, or remote-first" className="form-input" />
                 </Field>
                 <Field label="Current Career Level" required>
                   <select value={formData.careerLevel} onChange={(e) => updateField("careerLevel", e.target.value)} required className="form-input">
@@ -210,7 +210,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="mt-2 inline-flex min-h-12 w-full items-center justify-center rounded-[10px] bg-brand-main px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Submitting Enquiry..." : "Submit International Enquiry"}
+                {isSubmitting ? "Submitting Enquiry..." : "Submit Enquiry"}
               </button>
             </form>
           </div>

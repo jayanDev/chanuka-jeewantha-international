@@ -467,7 +467,7 @@ export default async function BlogPostPage({
                       <li>Graduates building their first professional profile.</li>
                       <li>Mid-level professionals targeting better-paying opportunities.</li>
                       <li>Candidates switching industries and needing better positioning.</li>
-                      <li>Professionals applying for international roles.</li>
+                      <li>Professionals applying for cross-border or remote roles.</li>
                       <li>Individuals who need clarity, confidence, and strategic career direction.</li>
                     </ul>
 

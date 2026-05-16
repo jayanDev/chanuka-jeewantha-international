@@ -13,7 +13,7 @@ const SERVICE_PILLS = [
 
 const TIER_PILLS = [
   { key: "all", label: "All Premium Services" },
-  { key: "founder-led", label: "International Signature Series" },
+  { key: "founder-led", label: "Signature Series" },
 ];
 
 type Props = {

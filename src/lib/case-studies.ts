@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
     challenge: [
       "The existing CV buried achievements under dense responsibility language and lacked ATS-friendly keyword alignment.",
       "Recruiters were scanning past the profile because it did not clearly communicate senior technical leadership and product impact.",
-      "The candidate had strong experience but no proof points that matched high-volume international application filters.",
+      "The candidate had strong experience but no proof points that matched high-volume recruiter and ATS filters.",
     ],
     strategy: [
       "Rebuilt the CV with achievement-led storytelling, ATS-safe headings, and concise senior-level positioning.",
@@ -40,7 +40,7 @@ export const caseStudies: CaseStudy[] = [
     outcomes: [
       "A new CV that delivered 14 recruiter interviews within the first eight weeks.",
       "A 97% ATS keyword match score for target senior software engineering roles.",
-      "A signed offer with an LKR 8.4M+ package — 40% above the previous compensation benchmark.",
+      "A signed offer 40% above the previous compensation benchmark.",
     ],
     proofPoints: [
       "High-impact, recruiter-centered achievement bullets",
@@ -138,7 +138,7 @@ export const caseStudies: CaseStudy[] = [
     challenge: [
       "The candidate had strong experience, but proof was spread across a CV, LinkedIn profile, and disconnected documents.",
       "Recruiters and decision-makers had no simple place to review work, positioning, and contact details together.",
-      "The profile needed a clearer authority layer for international and opportunity-led conversations.",
+      "The profile needed a clearer authority layer for inbound and opportunity-led conversations.",
     ],
     strategy: [
       "Built a portfolio-style personal website focused on positioning, achievements, experience, and contact clarity.",

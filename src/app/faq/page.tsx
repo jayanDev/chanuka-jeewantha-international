@@ -5,38 +5,37 @@ import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "FAQ | International Resume, CV & LinkedIn Services",
+  title: "FAQ | Resume, CV & LinkedIn Services",
   description:
-    "Find answers about international resume writing, global CV writing, LinkedIn optimization, country-specific CVs, payments, and premium career branding.",
+    "Answers about premium resume writing, CV formats, LinkedIn optimization, payments, delivery timelines, and the career-branding process.",
   path: "/faq",
-  keywords: ["international resume writing FAQ", "global CV writing FAQ", "LinkedIn optimization FAQ"],
 });
 
 export default function FAQPage() {
   const faqs = [
     {
-      q: "Do you work with clients outside Sri Lanka?",
-      a: "Yes. This international service is designed for professionals targeting global job markets including the UAE, UK, Canada, Australia, Europe, New Zealand, and remote roles."
+      q: "Do you work with clients anywhere in the world?",
+      a: "Yes. The service is delivered fully remotely and designed for professionals applying to roles in competitive job markets, including English-speaking developed economies and remote-first companies."
     },
     {
       q: "Do you write resumes or CVs?",
-      a: "Both. The document structure is adapted based on your target country, industry, career level, and application purpose."
+      a: "Both. The document structure is adapted to your target market, industry, career level, and application purpose."
     },
     {
-      q: "Can you create a country-specific CV?",
-      a: "Yes. The Foreign Job CV / International Format service is designed for country-specific applications and global job markets."
+      q: "Can you tailor a CV for a specific target market?",
+      a: "Yes. Each document is built around the conventions of your target market — format, length, tone, and what recruiters in that market actually look for."
     },
     {
       q: "Do you guarantee interviews or jobs?",
-      a: "No. The service improves the quality, positioning, ATS compatibility, and recruiter-readiness of your career documents, but job outcomes depend on market conditions, experience, applications, and employer decisions."
+      a: "No. The service improves the quality, positioning, ATS compatibility, and recruiter-readiness of your career documents. Outcomes still depend on market conditions, your applications, and employer decisions."
     },
     {
       q: "What payment methods are available?",
-      a: "International payment methods such as Wise, PayPal, Payoneer, Stripe, or bank transfer can be confirmed after your enquiry is reviewed."
+      a: "Wise, PayPal, Payoneer, Stripe, and bank transfer are supported. Specific payment details are confirmed after your enquiry is reviewed."
     },
     {
       q: "How do I start?",
-      a: "Submit your current CV / resume, target role, target country, and preferred package through the enquiry form."
+      a: "Submit your current CV or resume, target role, target market, and preferred package through the enquiry form."
     }
   ];
 
@@ -106,9 +105,9 @@ export default function FAQPage() {
 
  <div className="mx-auto mt-16 max-w-4xl text-center bg-zinc-50 p-12 rounded-[24px] border border-zinc-200">
              <h3 className="text-[28px] font-bold font-heading mb-4 text-foreground">Still have questions?</h3>
-             <p className="text-text-body mb-8 text-lg">Submit an international enquiry and we will review the best service direction.</p>
+             <p className="text-text-body mb-8 text-lg">Submit an enquiry and we will review the best service direction for your goals.</p>
              <Link href="/contact" className="px-[32px] py-[16px] bg-brand-main hover:bg-brand-dark text-white rounded-[10px] font-medium transition-colors inline-block">
-               Submit International Enquiry
+               Submit an Enquiry
              </Link>
           </div>
         </div>

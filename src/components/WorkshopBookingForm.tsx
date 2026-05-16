@@ -128,7 +128,7 @@ export default function WorkshopBookingForm() {
               name="organization"
               type="text"
               maxLength={200}
-              placeholder="e.g. University of Colombo"
+              placeholder="e.g. your university or organization"
               className="w-full rounded-[10px] border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-foreground placeholder:text-zinc-400 focus:border-brand-main focus:bg-white focus:outline-none transition-colors"
             />
           </div>

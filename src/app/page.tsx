@@ -6,114 +6,99 @@ import { buildPageMetadata } from "@/lib/seo";
 import { getCachedPublicReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Global Resume & LinkedIn Optimization Services | Chanuka Jeewantha",
+  title: "Premium Resume, CV & LinkedIn Services | Chanuka Jeewantha",
   description:
-    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding for global professionals.",
+    "Premium resume writing, ATS-optimized CVs, LinkedIn optimization, cover letters, and executive career branding for senior professionals pursuing competitive global roles.",
   path: "/",
-  keywords: [
-    "international resume writing",
-    "global CV writing",
-    "ATS resume writing",
-    "LinkedIn profile optimization",
-    "executive resume writing",
-    "foreign job CV",
-    "country-specific CV",
-    "UAE CV writing",
-    "UK CV writing",
-    "Canada resume writing",
-    "Australia resume writing",
-    "executive career branding",
-    "C-suite resume writing",
-  ],
 });
 
 const audiences = [
-  "Students applying for global internships or graduate roles",
-  "Fresh graduates targeting international opportunities",
-  "Professionals applying to UAE, UK, Australia, Canada, Europe, or remote jobs",
-  "Senior professionals preparing for career transitions or migration",
-  "Executives targeting leadership opportunities",
-  "C-Suite leaders, directors, founders, and consultants needing premium career branding",
+  "High-performing graduates pursuing premium graduate or early-career roles",
+  "Mid-career professionals stepping into senior positions or new industries",
+  "Senior professionals preparing for cross-border moves and career transitions",
+  "Executives and directors competing for leadership and board-level mandates",
+  "Founders, consultants, and C-suite leaders rebuilding their professional brand",
+  "Specialists positioning themselves for remote-first and globally distributed teams",
 ];
 
 const services = [
   {
-    title: "ATS CV / Resume Writing",
-    desc: "Premium ATS-friendly CV and resume writing tailored to your target role, industry, country, and career level.",
+    title: "ATS Resume & CV Writing",
+    desc: "ATS-optimized resumes and CVs engineered for recruiter scrutiny, hiring-manager logic, and the seniority you are actually competing for.",
   },
   {
     title: "LinkedIn Profile Optimization",
-    desc: "A recruiter-focused LinkedIn profile rewrite designed to improve positioning, keyword strength, and global visibility.",
+    desc: "A recruiter-facing LinkedIn rewrite built around clear positioning, keyword strength, and the credibility signals senior hires are searched on.",
   },
   {
     title: "Cover Letter Writing",
-    desc: "Professionally written cover letters tailored to target roles, industries, and international job applications.",
+    desc: "Tailored cover letters that translate your experience into the language of the role, the company, and the hiring committee.",
   },
   {
-    title: "Foreign Job CV / International Format CV",
-    desc: "Country-specific CV and resume writing for candidates applying to global markets, migration-based opportunities, and international employers.",
+    title: "Executive Resume & Modern CV Format",
+    desc: "Senior-level resume and CV formats built for cross-border applications, hiring panels, and recruiter-led searches in competitive markets.",
   },
   {
     title: "Graphical CV / Premium Design CV",
-    desc: "A premium visual CV option for selected industries where professional presentation and personal branding matter.",
+    desc: "A premium visual CV for industries where presentation, narrative, and personal brand carry real weight in the hiring decision.",
   },
   {
     title: "Career Consultation",
-    desc: "Founder-led career strategy sessions for professionals, senior professionals, executives, and C-suite leaders who need direction, positioning, and job market clarity.",
+    desc: "Founder-led strategy sessions for professionals, executives, and founders who need clarity on positioning, market fit, and their next move.",
   },
 ];
 
 const bundles = [
-  ["International Starter Pack", "$179", "For Students & Fresh Graduates"],
-  ["International Career Pack", "$349", "Most Popular"],
-  ["Global Migration Pack", "$499", "For professionals moving between countries"],
+  ["Starter Pack", "$179", "For graduates and early-career candidates"],
+  ["Career Pack", "$349", "Most Popular"],
+  ["Career Move Pack", "$499", "For professionals making a cross-border move"],
   ["Executive Brand Suite", "$899", "For senior professionals and executives"],
   ["C-Suite Premium", "$1,499", "For C-suite, directors, and founders"],
 ];
 
 const reasons = [
-  "Founder-led premium service, not generic template editing",
-  "ATS-friendly, recruiter-focused writing",
-  "International job market positioning",
-  "Country-specific CV and resume direction",
-  "LinkedIn profile optimization for global visibility",
-  "Clear career storytelling for students, professionals, executives, and C-suite leaders",
-  "Premium personal branding approach",
-  "Strategy-first document development",
+  "Founder-led premium service — not template editing or junior outsourcing",
+  "ATS-optimized, recruiter-readable writing that survives keyword screens",
+  "Positioning built for competitive senior and executive-level hiring",
+  "Modern CV and resume formats accepted by global hiring panels",
+  "LinkedIn rewrites designed for recruiter search and inbound opportunity flow",
+  "Clear career storytelling across graduate, professional, and executive levels",
+  "Premium personal branding, not a one-size-fits-all rewrite",
+  "Strategy first, documents second — every page earns its place",
 ];
 
 const processSteps = [
-  ["Submit Your Current CV / Resume", "Share your existing document, target role, target country, and career goals."],
-  ["Profile Review & Direction", "Your career level, industry, strengths, gaps, and target market requirements are reviewed."],
-  ["Strategic Writing & Optimization", "Your CV, LinkedIn, cover letter, or package documents are rewritten with ATS, recruiter, and international positioning in mind."],
+  ["Submit Your Current CV / Resume", "Share your existing document, target role, target market, and career goals."],
+  ["Profile Review & Direction", "Your career level, industry, strengths, gaps, and target-role requirements are reviewed in detail."],
+  ["Strategic Writing & Optimization", "Your CV, LinkedIn, cover letter, or full package is rewritten with ATS, recruiter, and senior-market positioning in mind."],
   ["Review & Refinement", "You receive the completed documents with revision support based on your selected package."],
-  ["Apply With Confidence", "Use your improved career documents for international applications, recruiter outreach, and career opportunities."],
+  ["Apply With Confidence", "Use your refined career documents for applications, recruiter outreach, and inbound opportunities."],
 ];
 
 const faqs = [
   [
-    "Do you work with clients outside Sri Lanka?",
-    "Yes. This international service is designed for professionals targeting global job markets including the UAE, UK, Canada, Australia, Europe, New Zealand, and remote roles.",
+    "Do you work with clients anywhere in the world?",
+    "Yes. The service is delivered remotely and designed for professionals applying to roles in competitive global job markets, including English-speaking developed economies and remote-first companies.",
   ],
   [
     "Do you write resumes or CVs?",
-    "Both. The document structure is adapted based on your target country, industry, career level, and application purpose.",
+    "Both. The document structure is adapted to your target market, industry, career level, and application purpose.",
   ],
   [
-    "Can you create a country-specific CV?",
-    "Yes. The Foreign Job CV / International Format service is designed for country-specific applications and global job markets.",
+    "Can you produce a CV for a specific target market?",
+    "Yes. Each document is tailored to the conventions of your target market — format, length, tone, and what recruiters in that market actually look for.",
   ],
   [
     "Do you guarantee interviews or jobs?",
-    "No. The service improves the quality, positioning, ATS compatibility, and recruiter-readiness of your career documents, but job outcomes depend on market conditions, experience, applications, and employer decisions.",
+    "No. The service improves the quality, positioning, ATS compatibility, and recruiter-readiness of your career documents. Outcomes still depend on market conditions, your applications, and employer decisions.",
   ],
   [
     "What payment methods are available?",
-    "International payment methods such as Wise, PayPal, Payoneer, Stripe, or bank transfer can be confirmed after your enquiry is reviewed.",
+    "Wise, PayPal, Payoneer, Stripe, and bank transfer are all supported. Specific payment details are confirmed after your enquiry is reviewed.",
   ],
   [
     "How do I start?",
-    "Submit your current CV / resume, target role, target country, and preferred package through the enquiry form.",
+    "Submit your current CV or resume, target role, target market, and preferred package through the enquiry form.",
   ],
 ];
 
@@ -148,17 +133,17 @@ export default async function Home() {
               Founder-Led Premium Career Branding
             </span>
             <h1 className="font-heading text-[36px] font-bold leading-[1.05] text-white sm:text-[48px] md:text-[64px]">
-              Global Resume, LinkedIn & Career Branding Services for Professionals Targeting International Opportunities
+              Premium Resume, LinkedIn & Career Branding for Professionals Competing at the Top of the Market
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-relaxed text-white/78 md:text-xl">
-              Premium ATS-friendly CVs, international resumes, LinkedIn profiles, cover letters, and executive career branding documents crafted for global job markets including the UAE, UK, Canada, Australia, Europe, New Zealand, and remote roles.
+              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and full career-branding packages built for senior candidates and remote-first opportunities in competitive global markets.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Link href="/contact" className="btn btn-primary">
-                Apply for International Career Support
+                Request Career Support
               </Link>
               <Link href="/pricing" className="btn btn-secondary border-white/40 text-white hover:bg-white hover:text-foreground">
-                View International Packages
+                View Premium Packages
               </Link>
             </div>
           </div>
@@ -166,7 +151,7 @@ export default async function Home() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-[520px] overflow-hidden rounded-[18px] border border-white/15 shadow-2xl">
             <Image
               src="/images/hero-chanuka.jpg"
-              alt="Chanuka Jeewantha premium international career branding"
+              alt="Chanuka Jeewantha — premium career branding for senior professionals"
               fill
               sizes="(max-width: 1024px) 100vw, 520px"
               className="object-cover"
@@ -178,10 +163,10 @@ export default async function Home() {
 
       <section className="w-full bg-[#FAF8F3] py-8">
         <div className="mx-auto grid max-w-[1512px] grid-cols-2 gap-5 px-4 text-center sm:px-6 md:grid-cols-4">
-          {["Global Resume & CV Writing", "International ATS Resume / CV", "LinkedIn Profile Optimization", "Executive Career Branding"].map((item) => (
+          {["Resume & CV Writing", "ATS-Optimized Resumes", "LinkedIn Optimization", "Executive Career Branding"].map((item) => (
             <div key={item} className="rounded-[12px] border border-zinc-200 bg-white px-4 py-5 shadow-sm">
               <p className="text-sm font-bold text-foreground">{item}</p>
-              <p className="mt-1 text-xs text-zinc-500">Premium international support</p>
+              <p className="mt-1 text-xs text-zinc-500">Founder-led premium service</p>
             </div>
           ))}
         </div>
@@ -192,7 +177,7 @@ export default async function Home() {
           <div className="mb-10 max-w-3xl">
             <span className="text-brand-main font-semibold uppercase tracking-wider">Who This Is For</span>
             <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-foreground md:text-[52px]">
-              Built for professionals competing in global job markets.
+              Built for professionals competing at the senior end of the market.
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -210,7 +195,7 @@ export default async function Home() {
           <div className="mb-10 text-center">
             <span className="text-brand-main font-semibold uppercase tracking-wider">Premium Services</span>
             <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-foreground md:text-[52px]">
-              Global Career Branding Services
+              Premium Career Branding Services
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -231,12 +216,12 @@ export default async function Home() {
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="text-brand-main font-semibold uppercase tracking-wider">International Signature Series</span>
+              <span className="text-brand-main font-semibold uppercase tracking-wider">Signature Series</span>
               <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-foreground md:text-[52px]">
-                Premium international career documents.
+                Premium career documents, personally written.
               </h2>
               <p className="mt-3 max-w-2xl text-zinc-600">
-                Personally crafted for international resumes, global CV writing, LinkedIn optimization, foreign job CVs, and executive career branding.
+                Executive resumes, modern CV formats, LinkedIn rewrites, and cover letters — built personally for senior candidates, not outsourced.
               </p>
             </div>
             <Link href="/pricing#signature-series" className="rounded-[10px] bg-foreground px-5 py-3 text-sm font-semibold text-background hover:bg-brand-dark">
@@ -251,13 +236,13 @@ export default async function Home() {
           <div className="mb-10 text-center">
             <span className="text-brand-main font-semibold uppercase tracking-wider">Bundle Packages</span>
             <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-white md:text-[52px]">
-              Choose a complete international package.
+              Choose a complete career-branding package.
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-5 lg:grid-cols-5">
             {bundles.map(([name, price, label]) => (
-              <article key={name} className={`rounded-[16px] border p-6 ${name === "C-Suite Premium" ? "border-[#C9A961] bg-white text-foreground" : name === "International Career Pack" ? "border-[#C9A961] bg-[#FFFCF3] text-foreground" : "border-white/15 bg-white/5 text-white"}`}>
-                {name === "International Career Pack" && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Most Popular</p>}
+              <article key={name} className={`rounded-[16px] border p-6 ${name === "C-Suite Premium" ? "border-[#C9A961] bg-white text-foreground" : name === "Career Pack" ? "border-[#C9A961] bg-[#FFFCF3] text-foreground" : "border-white/15 bg-white/5 text-white"}`}>
+                {name === "Career Pack" && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Most Popular</p>}
                 <h3 className="font-heading text-[22px] font-bold">{name}</h3>
                 <p className="mt-3 text-[32px] font-bold">{price}</p>
                 <p className="mt-3 text-sm opacity-80">{label}</p>
@@ -277,7 +262,7 @@ export default async function Home() {
           <div>
             <span className="text-brand-main font-semibold uppercase tracking-wider">Why Work With Chanuka</span>
             <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-foreground md:text-[52px]">
-              Why Global Professionals Choose Chanuka Jeewantha
+              Why senior professionals choose Chanuka Jeewantha
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
@@ -295,7 +280,7 @@ export default async function Home() {
           <div className="mb-10 text-center">
             <span className="text-brand-main font-semibold uppercase tracking-wider">Process</span>
             <h2 className="mt-3 font-heading text-[34px] font-bold leading-tight text-foreground md:text-[52px]">
-              How the International Service Works
+              How the service works.
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-5">
@@ -359,13 +344,13 @@ export default async function Home() {
       <section className="w-full bg-foreground py-[72px] text-center text-white md:py-[96px]">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <h2 className="font-heading text-[34px] font-bold leading-tight text-white md:text-[56px]">
-            Start Your International Career Branding
+            Start your career-branding engagement.
           </h2>
           <p className="mx-auto mt-5 max-w-2xl text-white/75">
-            Submit your current CV, target country, target role, and preferred service direction for review.
+            Submit your current CV, target role, target market, and preferred service direction for review.
           </p>
           <Link href="/contact" className="mt-8 inline-flex rounded-[10px] bg-brand-main px-6 py-3 font-semibold text-white hover:bg-white hover:text-foreground">
-            Submit International Enquiry
+            Submit an Enquiry
           </Link>
         </div>
       </section>

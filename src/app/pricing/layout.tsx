@@ -4,9 +4,9 @@ import { buildBreadcrumbList, buildOfferCatalogSchema } from "@/lib/structured-d
 import { packageCategories } from "@/lib/packages-catalog";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "International Resume Writing & LinkedIn Packages | Chanuka Jeewantha",
+  title: "Resume Writing & LinkedIn Packages | Chanuka Jeewantha",
   description:
-    "View premium USD international resume writing, ATS CV writing, LinkedIn optimization, cover letter, foreign job CV, and executive career branding packages.",
+    "View premium USD-priced resume writing, ATS-optimized CV writing, LinkedIn optimization, cover letter, and executive career-branding packages.",
   path: "/pricing",
 });
 

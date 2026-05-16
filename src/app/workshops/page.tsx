@@ -84,7 +84,7 @@ export default function WorkshopsPage() {
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
     },
-    areaServed: "Sri Lanka",
+    areaServed: "Worldwide",
     url: `${baseUrl}/workshops`,
   };
 

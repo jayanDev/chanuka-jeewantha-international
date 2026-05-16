@@ -8,19 +8,10 @@ import { industryLandingPages } from "@/lib/industry-pages";
 import ServicesPackageFilter from "@/app/services/ServicesPackageFilter";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Global Career Branding Services | Resume, CV & LinkedIn Optimization",
+  title: "Premium Career Branding Services | Resume, CV & LinkedIn Optimization",
   description:
-    "Premium global resume, CV, LinkedIn optimization, cover letter, foreign job CV, and executive career branding services by Chanuka Jeewantha.",
+    "Premium resume, CV, LinkedIn optimization, cover letter, and executive career-branding services by Chanuka Jeewantha.",
   path: "/services",
-  keywords: [
-    "international resume writing",
-    "global CV writing",
-    "ATS resume writing",
-    "LinkedIn profile optimization",
-    "executive resume writing",
-    "foreign job CV",
-    "country-specific CV",
-  ],
 });
 
 export default function ServicesPage() {
@@ -32,34 +23,34 @@ export default function ServicesPage() {
 
   const services = [
     {
-      title: "ATS CV / Resume Writing",
-      desc: "Premium ATS-friendly CV and resume writing tailored to your target role, industry, country, and career level.",
+      title: "ATS Resume & CV Writing",
+      desc: "ATS-optimized resumes and CVs engineered for recruiter scrutiny, hiring-manager logic, and the seniority you are actually competing for.",
       isMostPopular: true,
       href: "/services/packages/ats-cv",
     },
     {
       title: "LinkedIn Profile Optimization",
-      desc: "A recruiter-focused LinkedIn profile rewrite designed to improve positioning, keyword strength, and global visibility.",
+      desc: "A recruiter-facing LinkedIn rewrite built around clear positioning, keyword strength, and the credibility signals senior hires are searched on.",
       href: "/services/packages/linkedin",
     },
     {
       title: "Cover Letter Writing",
-      desc: "Professionally written cover letters tailored to target roles, industries, and international job applications.",
+      desc: "Tailored cover letters that translate your experience into the language of the role, the company, and the hiring committee.",
       href: "/services/packages/cover-letter",
     },
     {
-      title: "Foreign Job CV / International Format CV",
-      desc: "Country-specific CV and resume writing for candidates applying to global markets, migration-based opportunities, and international employers.",
+      title: "Modern CV Format for Cross-Border Applications",
+      desc: "Senior-level resume and CV formats tailored to the conventions of your target market — for cross-border applications and recruiter-led searches.",
       href: "/services/packages/foreign-cv",
     },
     {
       title: "Graphical CV / Premium Design CV",
-      desc: "A premium visual CV option for selected industries where professional presentation and personal branding matter.",
+      desc: "A premium visual CV for industries where presentation, narrative, and personal brand carry real weight in the hiring decision.",
       href: "/services/packages/graphical-cv",
     },
     {
       title: "Career Consultation",
-      desc: "Founder-led career strategy sessions for professionals, senior professionals, executives, and C-suite leaders who need direction, positioning, and job market clarity.",
+      desc: "Founder-led strategy sessions for professionals, executives, and founders who need clarity on positioning, market fit, and their next move.",
       href: "/services/packages/consultation",
     },
     {
@@ -94,7 +85,7 @@ export default function ServicesPage() {
             <span className="text-brand-main">Services</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
-            Global Career Branding Services for <span className="text-brand-main">International Opportunities</span>
+            Premium Career Branding Services for <span className="text-brand-main">Senior Professionals</span>
           </h1>
         </div>
       </section>
@@ -108,7 +99,7 @@ export default function ServicesPage() {
                 Resume, CV, LinkedIn, and Career Strategy Support.
               </h2>
               <span className="mt-3 inline-block rounded-full bg-brand-main/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand-dark">
-                Priority Service: International ATS Resume / CV Writing
+                Priority Service: ATS Resume / CV Writing
               </span>
             </div>
           </div>
@@ -146,7 +137,7 @@ export default function ServicesPage() {
 
           <div className="mt-10 rounded-[16px] border border-[#e1f5fe] bg-[#f0f9ff]/60 p-6 text-center">
             <p className="text-text-body text-lg">
-              Use the filters below to compare International Signature Series pricing by service type and career level.
+              Use the filters below to compare Signature Series pricing by service type and career level.
             </p>
           </div>
 
@@ -159,7 +150,7 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-4 text-[26px] font-bold font-heading text-foreground">Use free career tools before you buy</h2>
               <p className="mt-3 text-text-body">
-                Try the ATS audit, LinkedIn headline generator, and interview story bank to improve readiness before requesting premium international support.
+                Try the ATS audit, LinkedIn headline generator, and interview story bank to improve readiness before requesting premium support.
               </p>
               <Link href="/tools" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-main">
                 Explore Free Tools
@@ -173,7 +164,7 @@ export default function ServicesPage() {
               </span>
               <h2 className="mt-4 text-[26px] font-bold font-heading text-foreground">Book workshops for campuses and institutes</h2>
               <p className="mt-3 text-text-body">
-                Extend international career strategy to student communities, university career units, and professional groups through practical workshops.
+                Extend premium career strategy to student communities, university career units, and professional groups through practical workshops.
               </p>
               <Link href="/workshops" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark transition-colors hover:text-brand-main">
                 View Workshops
