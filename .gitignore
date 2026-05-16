@@ -27,6 +27,7 @@
 *.pem
 *firebase-adminsdk*.json
 *service-account*.json
+.claude/
 
 # debug
 npm-debug.log*
