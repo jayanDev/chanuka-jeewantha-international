@@ -29,14 +29,14 @@ const organizationLd = {
   image: `${siteUrl}/images/hero-chanuka.jpg`,
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
-    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding by Chanuka Jeewantha.",
+    "Premium resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha.",
   areaServed: "Worldwide",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+94-77-390-2230",
     contactType: "customer service",
     areaServed: "Worldwide",
     availableLanguage: ["English"],
+    url: `${siteUrl}/contact`,
   },
   sameAs: [
     "https://www.linkedin.com/in/chanuka-jeewantha/",
@@ -98,13 +98,13 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Global Resume & LinkedIn Optimization Services | Chanuka Jeewantha",
+    default: "Premium Resume, CV & LinkedIn Services | Chanuka Jeewantha",
     template: "%s | Chanuka Jeewantha",
   },
   applicationName: "Chanuka Jeewantha",
   manifest: "/site.webmanifest",
   description:
-    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding for global professionals.",
+    "Premium resume writing, ATS-optimized CVs, LinkedIn optimization, cover letters, and executive career branding for senior professionals pursuing roles in global markets.",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -138,13 +138,13 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Chanuka Jeewantha - Global Career Branding",
+    title: "Chanuka Jeewantha — Premium Career Branding",
     description:
-      "Premium ATS-friendly resumes, international CVs, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding.",
+      "Premium ATS-friendly resumes, executive CVs, LinkedIn optimization, cover letters, and career branding for senior professionals.",
     type: "website",
     url: siteUrl,
     siteName: "Chanuka Jeewantha",
-    locale: "en_US",
+    locale: "en",
     images: [
       {
         url: "/images/hero-chanuka.jpg",
@@ -156,9 +156,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chanuka Jeewantha - Global Career Branding",
+    title: "Chanuka Jeewantha — Premium Career Branding",
     description:
-      "Premium global resume, CV, LinkedIn, cover letter, and career strategy services for international opportunities.",
+      "Premium resume, CV, LinkedIn, cover letter, and career strategy services for senior professionals pursuing global opportunities.",
     images: ["/images/hero-chanuka.jpg"],
     creator: "@chanukajeewantha",
     site: "@chanukajeewantha",

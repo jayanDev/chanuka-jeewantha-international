@@ -6,10 +6,10 @@ import { packageCategories, type ServiceKey } from "@/lib/packages-catalog";
 import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
 
 const slugToCategoryTitle: Record<string, string> = {
-  "ats-cv": "ATS CV Writing",
+  "ats-cv": "ATS Resume / CV Writing",
   linkedin: "LinkedIn Optimization",
   "cover-letter": "Cover Letter Writing",
-  "foreign-cv": "Foreign Job CV / International Format",
+  "foreign-cv": "Modern CV Format for Cross-Border Applications",
   "graphical-cv": "Graphical CV / Premium Design",
   consultation: "Career Consultation",
 };
@@ -36,7 +36,7 @@ export async function generateMetadata({
 
   return buildPageMetadata({
     title: `${categoryTitle} | Chanuka Jeewantha`,
-    description: `Explore ${categoryTitle.toLowerCase()} designed for international applications, ATS performance, recruiter readability, and premium career positioning.`,
+    description: `Explore ${categoryTitle.toLowerCase()} built for ATS performance, recruiter readability, and premium career positioning.`,
     path: `/services/packages/${slug}`,
     keywords: [categoryTitle, "career package", "job seeker services", "Chanuka Jeewantha"],
   });

@@ -7,7 +7,7 @@ type QuizAnswers = {
   stage: "student" | "mid" | "senior" | "switcher";
   goal: "callbacks" | "visibility" | "interviews" | "digital-presence" | "complete-brand";
   gap: "cv-none" | "cv-review" | "linkedin" | "proof" | "interviews";
-  target: "local" | "international" | "both";
+  target: "domestic" | "cross-border" | "remote" | "both";
   industry:
     | "software-it"
     | "finance-accounting"
@@ -72,9 +72,10 @@ const questions: QuizQuestion[] = [
     key: "target",
     title: "What hiring market are you targeting?",
     options: [
-      { value: "local", label: "Sri Lanka", description: "Your immediate focus is local job applications." },
-      { value: "international", label: "International", description: "You need stronger global-standard positioning." },
-      { value: "both", label: "Both", description: "You want assets that work across local and overseas applications." },
+      { value: "domestic", label: "Within my home country", description: "Your immediate focus is roles inside your current country." },
+      { value: "cross-border", label: "Cross-border / abroad", description: "You're applying to roles in another country and need market-appropriate positioning." },
+      { value: "remote", label: "Remote-first / global", description: "You're targeting remote-first companies and globally distributed teams." },
+      { value: "both", label: "A mix of all of the above", description: "You want assets that work across markets and remote applications." },
     ],
   },
   {
@@ -122,7 +123,7 @@ function getPrimaryRecommendation(answers: QuizAnswers): Recommendation {
   if (answers.gap === "proof") scores.personalWebsite += 6;
   if (answers.gap === "interviews") scores.cvReview += 3;
 
-  if (answers.target === "international") {
+  if (answers.target === "cross-border" || answers.target === "remote") {
     scores.cvWriting += 2;
     scores.linkedin += 1;
     scores.personalWebsite += 1;
@@ -263,7 +264,7 @@ const initialAnswers: QuizAnswers = {
   stage: "student",
   goal: "callbacks",
   gap: "cv-none",
-  target: "local",
+  target: "domestic",
   industry: "general",
   support: "hybrid",
 };

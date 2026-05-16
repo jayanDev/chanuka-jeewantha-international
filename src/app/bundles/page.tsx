@@ -3,49 +3,49 @@ import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "International Bundle Packages | Chanuka Jeewantha",
+  title: "Bundle Packages | Chanuka Jeewantha",
   description:
-    "Premium international resume, LinkedIn, cover letter, foreign job CV, migration, executive, and C-suite career branding bundles in USD.",
+    "Premium resume, LinkedIn, cover letter, cross-border career-move, executive, and C-suite career-branding bundles in USD.",
   path: "/bundles",
 });
 
 const bundles = [
   {
-    name: "International Starter Pack",
+    name: "Starter Pack",
     price: "$179",
-    label: "For Students & Fresh Graduates",
-    includes: ["ATS CV / Resume, Fresh Graduate level", "Cover Letter", "LinkedIn Optimization", "7-day delivery", "Save $98 vs separate services"],
+    label: "For graduates and early-career candidates",
+    includes: ["ATS Resume / CV — graduate level", "Cover Letter", "LinkedIn Optimization", "7-day delivery", "Save $98 vs separate services"],
     cta: "Choose Starter Pack",
   },
   {
-    name: "International Career Pack",
+    name: "Career Pack",
     price: "$349",
     label: "Most Popular",
-    audience: "Working Professionals",
+    audience: "Mid-career professionals",
     highlighted: true,
-    includes: ["Premium ATS CV / Resume, Professional level", "LinkedIn Optimization", "Cover Letter", "30-day support", "1 round of revisions", "Save $128 vs separate services"],
+    includes: ["Premium ATS Resume / CV — professional level", "LinkedIn Optimization", "Cover Letter", "30-day support", "1 round of revisions", "Save $128 vs separate services"],
     cta: "Choose Career Pack",
   },
   {
-    name: "Global Migration Pack",
+    name: "Career Move Pack",
     price: "$499",
-    audience: "Professionals migrating between countries",
-    includes: ["Country-Specific ATS CV", "International Foreign Job CV", "LinkedIn Optimization", "Cover Letter, 2 versions for different roles", "60-day support", "Save $176 vs separate services"],
-    cta: "Choose Migration Pack",
+    audience: "Professionals making a cross-border move",
+    includes: ["ATS Resume tailored to your target market", "Modern CV format for cross-border applications", "LinkedIn Optimization", "Cover Letter — 2 versions for different roles", "60-day support", "Save $176 vs separate services"],
+    cta: "Choose Career Move Pack",
   },
   {
     name: "Executive Brand Suite",
     price: "$899",
-    audience: "Senior Professionals & Executives",
-    includes: ["Executive ATS CV / Resume", "Executive LinkedIn Optimization", "Executive Cover Letter", "International Foreign Job CV", "1-Hour Strategy Consultation", "90-day premium support", "Save $327 vs separate services"],
+    audience: "Senior professionals and executives",
+    includes: ["Executive ATS Resume / CV", "Executive LinkedIn Optimization", "Executive Cover Letter", "Modern CV format for senior hiring panels", "1-Hour Strategy Consultation", "90-day premium support", "Save $327 vs separate services"],
     cta: "Choose Executive Brand Suite",
   },
   {
     name: "C-Suite Premium",
     price: "$1,499",
-    audience: "C-Suite, Directors, Founders",
+    audience: "C-Suite, directors, and founders",
     premium: true,
-    includes: ["C-Suite Premium CV / Resume", "Executive LinkedIn Optimization with content strategy", "Cover Letter", "International Foreign Job CV", "2-Hour Strategy Sessions", "6-month support", "Quarterly LinkedIn refresh", "Save $647 vs separate services"],
+    includes: ["C-Suite Premium Resume / CV", "Executive LinkedIn Optimization with content strategy", "Cover Letter", "Modern CV format for executive-level panels", "2-Hour Strategy Sessions", "6-month support", "Quarterly LinkedIn refresh", "Save $647 vs separate services"],
     cta: "Choose C-Suite Premium",
   },
 ];
@@ -55,12 +55,12 @@ export default function BundlesPage() {
     <>
       <section className="w-full bg-foreground px-4 py-[72px] text-center text-background sm:px-6 md:py-[96px]">
         <div className="mx-auto max-w-5xl">
-          <p className="font-semibold uppercase tracking-[0.18em] text-brand-main">International Bundles</p>
+          <p className="font-semibold uppercase tracking-[0.18em] text-brand-main">Bundle Packages</p>
           <h1 className="mt-4 font-heading text-[38px] font-bold leading-tight text-white md:text-[68px]">
-            Premium bundle packages for global career branding.
+            Premium career-branding bundles.
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-white/75">
-            Complete resume, CV, LinkedIn, cover letter, foreign job CV, and strategy bundles for international applications and leadership positioning.
+            Complete resume, CV, LinkedIn, cover letter, and strategy bundles — built for senior candidates and competitive job markets.
           </p>
         </div>
       </section>

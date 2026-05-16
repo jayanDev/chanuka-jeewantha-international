@@ -104,8 +104,8 @@ export function buildOfferCatalogSchema(categories: OfferCatalogCategoryInput[])
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "International Career Branding Pricing",
-    serviceType: "International resume, CV, LinkedIn, and career branding services",
+    name: "Premium Career Branding Pricing",
+    serviceType: "Premium resume, CV, LinkedIn, and career branding services",
     provider: {
       "@type": "Organization",
       name: "Chanuka Jeewantha",

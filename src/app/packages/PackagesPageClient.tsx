@@ -16,12 +16,12 @@ export default function PackagesPageClient() {
     <>
       <section className="w-full bg-primary px-4 py-14 text-white sm:px-6 md:py-20">
         <div className="mx-auto max-w-5xl text-center">
-          <p className="font-semibold uppercase tracking-[0.18em] text-brand-main">International Packages</p>
+          <p className="font-semibold uppercase tracking-[0.18em] text-brand-main">Premium Packages</p>
           <h1 className="mt-4 font-heading text-[34px] font-bold leading-[1.08] text-white sm:text-[44px] md:text-[56px]">
-            Browse every International Signature Series package
+            Browse every Signature Series package
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-            USD pricing, premium inclusions, and global career branding services visible upfront.
+            USD pricing, premium inclusions, and the full career-branding service line — visible upfront.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn btn-secondary !border-white/40 !text-white hover:!bg-white/10">
@@ -58,7 +58,7 @@ export default function PackagesPageClient() {
               return (
                 <div key={option.key} className="mb-10 last:mb-0">
                   <div className="mb-4 flex flex-wrap items-center gap-3">
-                    <span className="badge badge-premium">International Signature Series</span>
+                    <span className="badge badge-premium">Signature Series</span>
                     <h3 className="font-heading text-[20px] font-semibold text-foreground">
                       {option.title}
                     </h3>
@@ -118,11 +118,11 @@ export default function PackagesPageClient() {
             Still not sure which one fits?
           </h2>
           <p className="mt-3 text-white/80">
-            Submit your current CV, target country, and target role for a profile review.
+            Submit your current CV, target market, and target role for a personal profile review.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn btn-primary">
-              Submit International Enquiry
+              Submit an Enquiry
             </Link>
           </div>
         </div>

@@ -64,7 +64,7 @@ const rules: Record<ConfigurableBundleSlug, BundleRule> = {
 
 const productBySlug = new Map(packageProducts.map((product) => [product.slug, product]));
 
-const CV_CATEGORY = "ATS CV Writing";
+const CV_CATEGORY = "ATS Resume / CV";
 const COVER_LETTER_CATEGORY = "Cover Letter Writing";
 const LINKEDIN_CATEGORY = "LinkedIn Optimization";
 

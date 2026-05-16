@@ -8,7 +8,7 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "About Chanuka Jeewantha | Founder-Led Premium Career Branding",
   description:
-    "Learn about Chanuka Jeewantha's founder-led premium international resume, CV, LinkedIn optimization, and executive career branding service.",
+    "Founder-led premium resume, CV, LinkedIn optimization, and executive career branding for senior professionals competing in competitive job markets.",
   path: "/about",
 });
 
@@ -45,7 +45,7 @@ export default function AboutPage() {
             <span className="text-brand-main">About</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            International career growth is built through <span className="text-brand-main">strategy, proof, and positioning</span>
+            Senior careers are built through <span className="text-brand-main">strategy, proof, and positioning</span>
           </h1>
         </div>
       </section>
@@ -74,13 +74,13 @@ export default function AboutPage() {
                 />
               </div>
               <p className="text-[20px] md:text-[24px] text-foreground font-medium leading-relaxed">
-                I am Chanuka Jeewantha, a founder-led premium career branding specialist helping global professionals present themselves clearly, confidently, and competitively.
+                I am Chanuka Jeewantha, a founder-led premium career branding specialist helping senior professionals present themselves clearly, confidently, and competitively.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                With 8+ years of experience, I help candidates align their resume, CV, LinkedIn profile, portfolio, and personal brand to modern international hiring behavior. My approach is practical and strategy-first, built around ATS performance, recruiter readability, country-specific direction, and achievement-based positioning.
+                With 8+ years of experience, I help candidates align their resume, CV, LinkedIn profile, portfolio, and personal brand to how modern hiring actually works. The approach is practical and strategy-first — built around ATS performance, recruiter readability, market-specific direction, and achievement-based positioning.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                I support students, fresh graduates, professionals, senior professionals, executives, C-suite leaders, diaspora clients, and international applicants through role-specific strategy, clear communication, and proof-driven career storytelling.
+                I support high-performing graduates, mid-career professionals, senior leaders, executives, C-suite hires, and founders through role-specific strategy, clear communication, and proof-driven career storytelling.
               </p>
             </div>
           </div>

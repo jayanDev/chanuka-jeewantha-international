@@ -81,7 +81,7 @@ const goalFields: Array<{ key: string; label: string; required?: boolean; placeh
   { key: "concerns", label: "Specific concerns, requests, or questions" },
 ];
 
-const targetMarkets = ["Sri Lanka only", "Middle East", "UK/Europe", "Australia / New Zealand", "Canada", "Other"];
+const targetMarkets = ["Home country only", "Cross-border / abroad", "Remote-first / global", "Multiple markets", "Other"];
 const employmentStatuses = [
   "Currently employed - looking to change jobs",
   "Currently employed - open to better opportunities",
@@ -117,7 +117,7 @@ export default function CatalogueClient() {
     english: "Fluent",
     sinhala: "Native",
     tamil: "Not Applicable",
-    targetMarket: "Sri Lanka only",
+    targetMarket: "Home country only",
     employmentStatus: employmentStatuses[0],
     referralSource: "Facebook",
   });

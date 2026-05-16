@@ -94,7 +94,7 @@ export default async function IndustryServicePage({ params }: IndustryPageProps)
       },
       {
         "@type": "Question",
-        name: `What are the biggest international career positioning challenges for ${page.name} professionals?`,
+        name: `What are the biggest career positioning challenges for ${page.name} professionals?`,
         acceptedAnswer: {
           "@type": "Answer",
           text: page.challenges.join(" "),

@@ -5,25 +5,10 @@ import { getBaseUrl } from "@/lib/site-url";
 import { packageProducts } from "@/lib/packages-catalog";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "International Resume Writing & LinkedIn Packages | Chanuka Jeewantha",
+  title: "Resume Writing & LinkedIn Packages | Chanuka Jeewantha",
   description:
-    "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding packages for global professionals.",
+    "Premium resume writing, ATS-optimized CVs, LinkedIn optimization, cover letters, and executive career-branding packages for senior professionals.",
   path: "/pricing",
-  keywords: [
-    "international resume writing",
-    "global CV writing",
-    "ATS resume writing",
-    "LinkedIn profile optimization",
-    "executive resume writing",
-    "foreign job CV",
-    "country-specific CV",
-    "UAE CV writing",
-    "UK CV writing",
-    "Canada resume writing",
-    "Australia resume writing",
-    "executive career branding",
-    "C-suite resume writing",
-  ],
 });
 
 export default function PricingPage() {
@@ -35,8 +20,8 @@ export default function PricingPage() {
   const aggregateOfferLd = {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "International Resume and Career Branding Packages",
-    description: "Premium international resume, CV, LinkedIn, cover letter, and career branding packages",
+    name: "Premium Resume and Career Branding Packages",
+    description: "Premium resume, CV, LinkedIn, cover letter, and career-branding packages",
     provider: {
       "@type": "Person",
       name: "Chanuka Jeewantha",

@@ -45,7 +45,7 @@ export const tutorialCategories: TutorialCategory[] = [
     slug: "cv-writing",
     title: "CV Writing Tutorial Articles",
     titleSi: "CV ලිවීමේ මාර්ගෝපදේශ",
-    description: "Step-by-step guides on creating professional CVs for Sri Lankan and international jobs.",
+    description: "Step-by-step guides on writing professional CVs for competitive job markets.",
     descriptionSi: "ශ්‍රී ලංකාවේ සහ ජාත්‍යන්තර රැකියා සඳහා වෘත්තීය CV සැකසීමේ පියවරෙන් පියවර මාර්ගෝපදේශ.",
     coverImage: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&auto=format&fit=crop&q=60",
   },

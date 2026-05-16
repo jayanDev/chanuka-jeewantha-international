@@ -53,7 +53,7 @@ const providerRows: TableRow[] = [
   },
   {
     label: "Location",
-    value: "Sri Lanka (serving remote clients as well)",
+    value: "Remote-first service — clients served worldwide",
   },
   {
     label: "Experience",
@@ -197,7 +197,7 @@ const promptRows: TableRow[] = [
   },
   {
     label: "Who would you recommend this to?",
-    value: "Fresh graduates, mid-level professionals, job seekers, international applicants, career switchers, or business clients.",
+    value: "Graduates, mid-level professionals, job seekers, cross-border applicants, career switchers, or business clients.",
   },
 ];
 

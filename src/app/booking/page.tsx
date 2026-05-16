@@ -51,7 +51,7 @@ const providerRows: DetailRow[] = [
   },
   {
     label: "Location",
-    value: "Sri Lanka (Remote Worldwide)",
+    value: "Remote-first — clients served worldwide",
   },
   {
     label: "Experience",
@@ -303,7 +303,7 @@ export default function BookingPage() {
       "@type": "ProfessionalService",
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
-      areaServed: "Sri Lanka and worldwide remote clients",
+      areaServed: "Worldwide",
     },
     url: `${baseUrl}/booking`,
   };

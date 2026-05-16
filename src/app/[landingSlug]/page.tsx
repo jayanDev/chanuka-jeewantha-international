@@ -56,8 +56,8 @@ export default async function LandingPage({ params }: LandingPageProps) {
       a: "No professional service can guarantee interviews. However, stronger document quality and better role alignment can improve your application quality and screening performance.",
     },
     {
-      q: "Do you support overseas applications?",
-      a: "Yes. We support both Sri Lankan and international applications by adjusting wording, structure, and relevance based on the target market.",
+      q: "Do you support cross-border applications?",
+      a: "Yes. Documents are adjusted for wording, structure, and relevance based on your target market — whether that's your home country, an overseas role, or remote-first companies.",
     },
     {
       q: "Can I request a review before choosing a package?",

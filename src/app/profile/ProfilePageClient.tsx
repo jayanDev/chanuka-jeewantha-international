@@ -37,7 +37,7 @@ export default function ProfilePageClient() {
   const [name, setName] = useState("");
   const [whatsappNumber, setWhatsappNumber] = useState("");
   const [linkedinUrl, setLinkedinUrl] = useState("");
-  const [timezone, setTimezone] = useState("Asia/Colombo");
+  const [timezone, setTimezone] = useState("UTC");
   const [receiveOfferAlerts, setReceiveOfferAlerts] = useState(true);
   const [receiveOrderAlerts, setReceiveOrderAlerts] = useState(true);
 
@@ -69,7 +69,7 @@ export default function ProfilePageClient() {
         setName(loadedProfile.name);
         setWhatsappNumber(loadedProfile.whatsappNumber || "");
         setLinkedinUrl(loadedProfile.linkedinUrl || "");
-        setTimezone(loadedProfile.timezone || "Asia/Colombo");
+        setTimezone(loadedProfile.timezone || "UTC");
         setReceiveOfferAlerts(Boolean(loadedProfile.receiveOfferAlerts));
         setReceiveOrderAlerts(Boolean(loadedProfile.receiveOrderAlerts));
       } catch (err) {

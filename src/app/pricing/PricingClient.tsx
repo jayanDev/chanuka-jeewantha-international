@@ -5,11 +5,11 @@ import { formatUsd, packageCategories } from "@/lib/packages-catalog";
 
 const bundles = [
   {
-    name: "International Starter Pack",
+    name: "Starter Pack",
     price: "$179",
-    label: "For Students & Fresh Graduates",
+    label: "For graduates and early-career candidates",
     includes: [
-      "ATS CV / Resume, Fresh Graduate level",
+      "ATS Resume / CV — graduate level",
       "Cover Letter",
       "LinkedIn Optimization",
       "7-day delivery",
@@ -18,13 +18,13 @@ const bundles = [
     cta: "Choose Starter Pack",
   },
   {
-    name: "International Career Pack",
+    name: "Career Pack",
     price: "$349",
     label: "Most Popular",
-    audience: "Working Professionals",
+    audience: "Mid-career professionals",
     highlighted: true,
     includes: [
-      "Premium ATS CV / Resume, Professional level",
+      "Premium ATS Resume / CV — professional level",
       "LinkedIn Optimization",
       "Cover Letter",
       "30-day support",
@@ -34,28 +34,28 @@ const bundles = [
     cta: "Choose Career Pack",
   },
   {
-    name: "Global Migration Pack",
+    name: "Career Move Pack",
     price: "$499",
-    audience: "Professionals migrating between countries",
+    audience: "Professionals making a cross-border move",
     includes: [
-      "Country-Specific ATS CV",
-      "International Foreign Job CV",
+      "ATS Resume tailored to your target market",
+      "Modern CV format for cross-border applications",
       "LinkedIn Optimization",
-      "Cover Letter, 2 versions for different roles",
+      "Cover Letter — 2 versions for different roles",
       "60-day support",
       "Save $176 vs separate services",
     ],
-    cta: "Choose Migration Pack",
+    cta: "Choose Career Move Pack",
   },
   {
     name: "Executive Brand Suite",
     price: "$899",
-    audience: "Senior Professionals & Executives",
+    audience: "Senior professionals and executives",
     includes: [
-      "Executive ATS CV / Resume",
+      "Executive ATS Resume / CV",
       "Executive LinkedIn Optimization",
       "Executive Cover Letter",
-      "International Foreign Job CV",
+      "Modern CV format for senior hiring panels",
       "1-Hour Strategy Consultation",
       "90-day premium support",
       "Save $327 vs separate services",
@@ -65,13 +65,13 @@ const bundles = [
   {
     name: "C-Suite Premium",
     price: "$1,499",
-    audience: "C-Suite, Directors, Founders",
+    audience: "C-Suite, directors, and founders",
     premium: true,
     includes: [
-      "C-Suite Premium CV / Resume",
+      "C-Suite Premium Resume / CV",
       "Executive LinkedIn Optimization with content strategy",
       "Cover Letter",
-      "International Foreign Job CV",
+      "Modern CV format for executive-level panels",
       "2-Hour Strategy Sessions",
       "6-month support",
       "Quarterly LinkedIn refresh",
@@ -89,7 +89,7 @@ export default function PricingClient() {
           <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
             {[1, 2, 3, 4, 5].map((i) => (
               <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                INTERNATIONAL PACKAGES
+                PREMIUM PACKAGES
               </span>
             ))}
           </div>
@@ -99,13 +99,13 @@ export default function PricingClient() {
           <div className="flex items-center gap-2 text-text-light font-medium mb-6">
             <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
             <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">International Packages</span>
+            <span className="text-brand-main">Premium Packages</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
-            International Signature Series <span className="text-brand-main">Pricing</span>
+            Signature Series <span className="text-brand-main">Pricing</span>
           </h1>
           <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
-            Premium international career documents personally crafted for global job markets.
+            Premium career documents personally written for senior candidates and competitive job markets.
           </p>
         </div>
       </section>
@@ -115,10 +115,10 @@ export default function PricingClient() {
           <div className="mb-12 text-center">
             <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-main">Premium Bundles</span>
             <h2 className="font-heading text-[30px] font-bold leading-[1.1] text-foreground sm:text-[40px] md:text-[56px]">
-              International Bundle Packages
+              Bundle Packages
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-zinc-600">
-              Complete document suites for professionals who want stronger global positioning across CV, LinkedIn, cover letters, and strategy.
+              Complete document suites for professionals who want stronger positioning across CV, LinkedIn, cover letters, and strategy.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export default function PricingClient() {
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-main">International Signature Series</span>
+              <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-main">Signature Series</span>
               <h2 className="font-heading text-[30px] font-bold leading-[1.1] text-foreground sm:text-[40px] md:text-[56px]">
                 Compare Premium Services
               </h2>
@@ -197,7 +197,7 @@ export default function PricingClient() {
               href="/contact"
               className="inline-flex items-center justify-center rounded-[10px] bg-brand-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
             >
-              Apply for International Career Support
+              Request Career Support
             </Link>
           </div>
 

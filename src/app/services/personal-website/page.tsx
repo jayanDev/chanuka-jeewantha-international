@@ -103,7 +103,7 @@ export default function PersonalWebsiteServicePage() {
 
                 <h3>Ideal for</h3>
                 <ul>
-                  <li>Professionals applying to competitive or international roles</li>
+                  <li>Professionals applying to competitive or cross-border roles</li>
                   <li>People building a stronger LinkedIn and personal brand together</li>
                   <li>Candidates who want a portfolio-style proof layer beyond their CV</li>
                   <li>Freelancers, specialists, and leaders who need more visible authority</li>
