@@ -9,9 +9,10 @@ import { caseStudies } from "@/lib/case-studies";
 import { getBlogCategoryPath, getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
 import { careerTools } from "@/lib/tools";
 import { industryLandingPages } from "@/lib/industry-pages";
+import { tutorialCategories, tutorials } from "@/lib/tutorials";
 
 const baseUrl = getBaseUrl();
-const siteLastUpdated = new Date("2026-04-20T00:00:00.000Z");
+const siteLastUpdated = new Date("2026-05-18T00:00:00.000Z");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
@@ -36,6 +37,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/reviews",
     "/career-quiz",
     "/results",
+    "/catalogue",
     "/workshops",
     "/portfolio",
     "/offers",
@@ -57,6 +59,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy-policy",
     "/terms-and-conditions",
     "/resume",
+    "/tutorials",
+    "/services/packages",
     "/blog",
   ];
 
@@ -123,6 +127,28 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.69,
     }));
 
+  const tutorialCategoryEntries = tutorialCategories.map((item) => ({
+    url: `${baseUrl}/tutorials/category/${item.slug}`,
+    lastModified: siteLastUpdated,
+    changeFrequency: "weekly" as const,
+    priority: 0.68,
+  }));
+
+  const tutorialEntries = tutorials.flatMap((item) => [
+    {
+      url: `${baseUrl}/tutorials/${item.en.slug}`,
+      lastModified: siteLastUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    },
+    {
+      url: `${baseUrl}/tutorials/${item.si.slug}`,
+      lastModified: siteLastUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    },
+  ]);
+
   const packageEntries = packageProducts.map((item) => ({
     url: `${baseUrl}/packages/${item.slug}`,
     lastModified: siteLastUpdated,
@@ -169,6 +195,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticEntries,
     ...blogIndexEntries,
     ...categoryEntries,
+    ...tutorialCategoryEntries,
+    ...tutorialEntries,
     ...blogEntries,
     ...packageEntries,
     ...resourceEntries,
