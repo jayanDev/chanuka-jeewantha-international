@@ -174,6 +174,10 @@ export default async function BlogPostPage({
 
   if (!post) {
     if (fallbackPost) {
+      if (!isIndexableFallbackBlogPost(fallbackPost)) {
+        notFound();
+      }
+
       post = {
         id: fallbackPost.slug,
         slug: fallbackPost.slug,
@@ -310,7 +314,7 @@ export default async function BlogPostPage({
         offers: {
           "@type": "Offer",
           url: `${baseUrl}/packages/${packageInfo.slug}`,
-          priceCurrency: "LKR",
+          priceCurrency: "USD",
           price: packageInfo.priceLkr,
           availability: "https://schema.org/InStock",
           itemCondition: "https://schema.org/NewCondition",
@@ -533,7 +537,7 @@ export default async function BlogPostPage({
 
               {contentPost?.internalLinks && contentPost.internalLinks.length > 0 && (
  <div className="rounded-[20px] border border-zinc-200 bg-white p-6 md:p-8">
-                  <h3 className="text-[24px] font-bold font-heading text-foreground mb-4">Related Backlinks</h3>
+                  <h3 className="text-[24px] font-bold font-heading text-foreground mb-4">Related Articles</h3>
                   <ul className="space-y-2">
                     {contentPost.internalLinks.map((linkItem) => (
                       <li key={`${linkItem.href}-${linkItem.label}`}>

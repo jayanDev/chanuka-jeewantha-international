@@ -52,7 +52,7 @@ export default async function PackageSinglePage({ params }: PackagePageProps) {
     description: `${pkg.description ?? pkg.audience}. Includes: ${pkg.features.slice(0, 3).join(", ")}.`,
     path: `/packages/${pkg.slug}`,
     category: pkg.category,
-    priceLkr: pkg.priceLkr,
+    priceUsd: pkg.priceLkr,
     sku: pkg.slug,
   });
 

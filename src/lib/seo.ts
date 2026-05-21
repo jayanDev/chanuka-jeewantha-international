@@ -15,26 +15,6 @@ type BuildPageMetadataInput = {
 const SITE_NAME = "Chanuka Jeewantha";
 const DEFAULT_OG_IMAGE = "/images/hero-chanuka.jpg";
 
-export const TARGET_SEO_KEYWORDS = [
-  "Chanuka Jeewantha",
-  "ATS resume writing",
-  "ATS friendly CV",
-  "professional CV writing",
-  "executive resume writing",
-  "executive CV writing",
-  "LinkedIn profile optimization",
-  "cover letter writing",
-  "personal branding services",
-  "executive career branding",
-  "C-suite resume writing",
-  "senior leadership resume",
-  "career strategist",
-  "professional resume writer",
-  "modern resume design",
-  "ATS resume checker",
-  "career development services",
-];
-
 function normalizePath(path: string): string {
   if (!path) return "/";
   if (path === "/") return "/";
@@ -51,14 +31,9 @@ export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
   const absoluteUrl = toAbsoluteUrl(canonicalPath);
   const noIndex = input.noIndex === true;
 
-  const mergedKeywords = Array.from(
-    new Set([...TARGET_SEO_KEYWORDS, ...(input.keywords || [])])
-  );
-
   return {
     title: input.title,
     description: input.description,
-    keywords: mergedKeywords,
     alternates: {
       canonical: canonicalPath,
       ...(input.alternateLanguages && Object.keys(input.alternateLanguages).length > 0

@@ -286,7 +286,7 @@ export default function BookingPage() {
       items: category.packages.map((item) => ({
         name: item.name,
         path: `/packages/${item.slug}`,
-        priceLkr: item.priceLkr,
+        priceUsd: item.priceLkr,
         description: item.audience,
       })),
     }))

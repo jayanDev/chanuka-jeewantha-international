@@ -41,6 +41,19 @@ export async function generateMetadata({
     });
   }
 
+  if (page > 1) {
+    return buildNoIndexMetadata({
+      title,
+      description,
+      path: `/blog?page=${page}`,
+      keywords: [
+        "career blog",
+        "ATS CV tips",
+        "LinkedIn optimization guide",
+      ],
+    });
+  }
+
   return buildPageMetadata({
     title,
     description,

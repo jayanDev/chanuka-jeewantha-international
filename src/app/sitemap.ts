@@ -61,7 +61,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/resume",
     "/tutorials",
     "/services/packages",
-    "/blog",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({
@@ -101,22 +100,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const blogEntries = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.publishedAt ?? post.updatedAt,
+    lastModified: post.updatedAt ?? post.publishedAt ?? siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.65,
   }));
 
-  const blogPostsPerPage = 9;
-  const blogTotalPages = Math.max(1, Math.ceil(posts.length / blogPostsPerPage));
-  const blogIndexEntries = Array.from({ length: blogTotalPages }, (_, index) => {
-    const page = index + 1;
-    return {
-      url: page === 1 ? `${baseUrl}/blog` : `${baseUrl}/blog?page=${page}`,
-      lastModified: siteLastUpdated,
-      changeFrequency: "weekly" as const,
-      priority: page === 1 ? 0.72 : 0.62,
-    };
-  });
+  const blogIndexEntries = [{
+    url: `${baseUrl}/blog`,
+    lastModified: siteLastUpdated,
+    changeFrequency: "weekly" as const,
+    priority: 0.72,
+  }];
 
   const categoryEntries = Array.from(new Set(posts.map((post) => post.category)))
     .sort()
@@ -191,7 +185,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  return [
+  const entries = [
     ...staticEntries,
     ...blogIndexEntries,
     ...categoryEntries,
@@ -205,4 +199,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...ebookEntries,
     ...caseStudyEntries,
   ];
+
+  return Array.from(new Map(entries.map((entry) => [entry.url, entry])).values());
 }

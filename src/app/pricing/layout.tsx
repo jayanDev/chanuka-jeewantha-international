@@ -22,7 +22,7 @@ export default function PricingLayout({ children }: { children: React.ReactNode 
       items: category.packages.map((item) => ({
         name: item.name,
         path: `/packages/${item.slug}`,
-        priceLkr: item.priceLkr,
+        priceUsd: item.priceLkr,
         description: item.description ?? item.audience,
       })),
     }))

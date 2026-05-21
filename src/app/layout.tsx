@@ -12,10 +12,10 @@ import SeasonalOfferBanner from "@/components/SeasonalOfferBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
-import { TARGET_SEO_KEYWORDS } from "@/lib/seo";
 
 const siteUrl = getBaseUrl();
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 const heartbeatAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_HEARTBEAT_ANALYTICS === "true";
 const organizationId = `${siteUrl}#organization`;
 const websiteId = `${siteUrl}#website`;
@@ -122,7 +122,6 @@ export const metadata: Metadata = {
       "application/rss+xml": "/feed.xml",
     },
   },
-  keywords: TARGET_SEO_KEYWORDS,
   authors: [{ name: "Chanuka Jeewantha", url: siteUrl }],
   creator: "Chanuka Jeewantha",
   publisher: "Chanuka Jeewantha",
@@ -163,9 +162,13 @@ export const metadata: Metadata = {
     creator: "@chanukajeewantha",
     site: "@chanukajeewantha",
   },
-  verification: {
-    google: "google-site-verification-code", // Will need real code
-  },
+  ...(googleSiteVerification
+    ? {
+        verification: {
+          google: googleSiteVerification,
+        },
+      }
+    : {}),
 };
 
 export default async function RootLayout({

@@ -15,7 +15,7 @@ type ProductSchemaInput = {
   description: string;
   path: string;
   category: string;
-  priceLkr: number;
+  priceUsd: number;
   image?: string;
   sku?: string;
   availability?: "https://schema.org/InStock" | "https://schema.org/OutOfStock";
@@ -26,7 +26,7 @@ type OfferCatalogCategoryInput = {
   items: Array<{
     name: string;
     path: string;
-    priceLkr: number;
+    priceUsd: number;
     description?: string;
   }>;
 };
@@ -87,7 +87,7 @@ export function buildProductSchema(input: ProductSchemaInput) {
     offers: {
       "@type": "Offer",
       priceCurrency: "USD",
-      price: input.priceLkr,
+      price: input.priceUsd,
       url: absoluteUrl,
       availability: input.availability ?? "https://schema.org/InStock",
       seller: {
@@ -126,7 +126,7 @@ export function buildOfferCatalogSchema(categories: OfferCatalogCategoryInput[])
             url: `${baseUrl}${normalizePath(item.path)}`,
           },
           priceCurrency: "USD",
-          price: item.priceLkr,
+          price: item.priceUsd,
           url: `${baseUrl}${normalizePath(item.path)}`,
         })),
       })),

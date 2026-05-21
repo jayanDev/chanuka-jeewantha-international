@@ -24,9 +24,10 @@ const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Packages" },
+  { href: "/blog", label: "Blog" },
+  { href: "/tools", label: "Tools" },
   { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
-  { href: "/#faq", label: "FAQ" },
   { href: "/contact", label: "Apply Now" },
 ];
 
