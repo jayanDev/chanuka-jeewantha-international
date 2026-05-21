@@ -12,7 +12,7 @@ import { industryLandingPages } from "@/lib/industry-pages";
 import { tutorialCategories, tutorials } from "@/lib/tutorials";
 
 const baseUrl = getBaseUrl();
-const siteLastUpdated = new Date("2026-05-18T00:00:00.000Z");
+const siteLastUpdated = new Date("2026-05-21T00:00:00.000Z");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
