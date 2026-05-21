@@ -3,6 +3,7 @@ import { careerGrowthBlogPosts } from "./blog-career-library";
 import { enrichBlogPostContent } from "./blog-content-enrichment";
 import { cvSeriesEn } from "./blog-cv-series-en";
 import { cvSeriesSi } from "./blog-cv-series-si";
+import { usCareerBlogPosts } from "./blog-us-career-library";
 
 export type BlogLink = {
   label: string;
@@ -1280,7 +1281,7 @@ const editorialPosts: BlogPost[] = [
   },
 ];
 
-export const blogPosts: BlogPost[] = [...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn, ...cvSeriesSi].map(enrichBlogPostContent).sort(
+export const blogPosts: BlogPost[] = [...usCareerBlogPosts, ...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn, ...cvSeriesSi].map(enrichBlogPostContent).sort(
   (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
 );
 
