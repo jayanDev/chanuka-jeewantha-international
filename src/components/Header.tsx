@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import SearchModal from "@/components/SearchModal";
 
@@ -32,6 +33,7 @@ const primaryNavLinks: PrimaryNavLink[] = [
 ];
 
 export default function Header({ initialUser = null }: HeaderProps) {
+  const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [user, setUser] = useState<NavUser | null>(initialUser);
@@ -39,6 +41,51 @@ export default function Header({ initialUser = null }: HeaderProps) {
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
   const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
   const profileMenuRef = useRef<HTMLDivElement>(null);
+  const [activeHash, setActiveHash] = useState("");
+
+  useEffect(() => {
+    if (pathname !== "/") {
+      // Schedule reset on next microtask to avoid synchronous setState-in-effect warning
+      const id = setTimeout(() => setActiveHash(""), 0);
+      return () => clearTimeout(id);
+    }
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px",
+      threshold: 0,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          if (id === "process") {
+            setActiveHash("process");
+          }
+        } else {
+          const id = entry.target.getAttribute("id");
+          setActiveHash((prev) => (prev === id ? "" : prev));
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const processEl = document.getElementById("process");
+    if (processEl) observer.observe(processEl);
+
+    const handleScroll = () => {
+      if (window.scrollY < 100) {
+        setActiveHash("");
+      }
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (initialUser) {
@@ -142,8 +189,19 @@ export default function Header({ initialUser = null }: HeaderProps) {
         .join("") || "U"
     : "U";
 
-  const desktopNavLinkClass = "text-[16px] font-medium text-foreground hover:text-brand-main transition-colors";
-  const mobileNavLinkClass = "text-[18px] font-medium text-foreground hover:text-brand-main transition-colors";
+  const getIsActive = (href: string) => {
+    if (href.includes("#")) {
+      const hash = href.split("#")[1];
+      return pathname === "/" && activeHash === hash;
+    }
+    if (href === "/") {
+      return pathname === "/" && activeHash === "";
+    }
+    return pathname === href;
+  };
+
+  const desktopNavLinkClass = "text-[16px] font-medium transition-colors py-1.5 focus-visible:outline-none relative";
+  const mobileNavLinkClass = "text-[18px] font-medium transition-colors py-2 min-w-[44px] min-h-[44px] flex items-center justify-center relative";
   const displayUnreadNotificationCount = user ? unreadNotificationCount : 0;
 
   return (
@@ -151,7 +209,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
       <div className="flex items-center justify-between relative bg-background z-40 py-2">
         {/* Logo Container */}
         <div className="flex-shrink-0 w-auto md:mr-8">
-          <Link href="/" className="text-2xl font-bold font-heading text-foreground">
+          <Link href="/" className="text-2xl font-bold font-heading text-foreground focus-visible:outline-none">
             Chanuka.
           </Link>
         </div>
@@ -160,11 +218,22 @@ export default function Header({ initialUser = null }: HeaderProps) {
         <nav className="hidden md:flex flex-1 items-center">
           <div className="flex flex-1 justify-center">
             <div className="flex items-center gap-6">
-            {primaryNavLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={desktopNavLinkClass}>
-                {link.label}
-              </Link>
-            ))}
+            {primaryNavLinks.map((link) => {
+              const active = getIsActive(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`${desktopNavLinkClass} ${active ? "text-brand-main font-semibold" : "text-foreground hover:text-brand-main"}`}
+                >
+                  {link.label}
+                  {active && (
+                    <span className="absolute -bottom-1 left-0 right-0 h-[2px] bg-[#C9A961] rounded-full" />
+                  )}
+                </Link>
+              );
+            })}
             </div>
           </div>
 
@@ -173,7 +242,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
               type="button"
               onClick={() => setIsSearchOpen(true)}
               aria-label="Search"
- className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-all hover:border-brand-main hover:text-brand-main hover:scale-105"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="11" cy="11" r="8"></circle>
@@ -189,7 +258,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
               <Link
                 href="/notifications"
                 aria-label="Notifications"
- className="relative inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
+                className="relative inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-all hover:border-brand-main hover:text-brand-main hover:scale-105"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v3.2a2 2 0 0 1-.6 1.4L4 17h5" />
@@ -212,7 +281,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
               <Link
                 href="/cart"
                 aria-label="Cart"
- className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
+                className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-all hover:border-brand-main hover:text-brand-main hover:scale-105"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                   <circle cx="8" cy="21" r="1" />
@@ -224,10 +293,10 @@ export default function Header({ initialUser = null }: HeaderProps) {
 
             {!user ? (
               <div className="flex items-center gap-3">
- <Link href="/auth/signin" className="rounded-[10px] border border-zinc-300 px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+                <Link href="/auth/signin" className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-zinc-300 px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                   Sign In
                 </Link>
-                <Link href="/contact" className="rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+                <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
                   Apply Now
                 </Link>
               </div>
@@ -237,10 +306,11 @@ export default function Header({ initialUser = null }: HeaderProps) {
                   type="button"
                   aria-label="Profile menu"
                   onClick={() => setIsProfileMenuOpen((previous) => !previous)}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-foreground text-sm font-bold text-background transition-opacity hover:opacity-90"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-foreground text-sm font-bold text-background transition-opacity hover:opacity-90 focus-visible:outline-none"
                 >
                   {profileInitials}
                 </button>
+
 
                 {isProfileMenuOpen && (
  <div className="absolute right-0 top-full z-50 mt-2 w-64 rounded-[12px] border border-zinc-200 bg-background p-2 shadow-xl">
@@ -295,7 +365,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
         {/* Mobile menu toggle */}
         <div className="flex md:hidden">
           <button 
-            className="rounded bg-brand-main p-2 text-foreground"
+            className="flex h-11 w-11 items-center justify-center rounded bg-brand-main text-foreground focus-visible:outline-none"
             onClick={() => {
               setIsMobileMenuOpen((previous) => {
                 const next = !previous;
@@ -329,23 +399,30 @@ export default function Header({ initialUser = null }: HeaderProps) {
         }`}
       >
         <nav className="flex flex-col items-center gap-6 px-4">
-          {primaryNavLinks.map((link, index) => (
-            <Link
-              key={link.href}
-              ref={index === 0 ? firstMobileLinkRef : undefined}
-              href={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
-              className={mobileNavLinkClass}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {primaryNavLinks.map((link, index) => {
+            const active = getIsActive(link.href);
+            return (
+              <Link
+                key={link.href}
+                ref={index === 0 ? firstMobileLinkRef : undefined}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-current={active ? "page" : undefined}
+                className={`${mobileNavLinkClass} ${active ? "text-brand-main font-semibold" : "text-foreground hover:text-brand-main"}`}
+              >
+                {link.label}
+                {active && (
+                  <span className="absolute bottom-1 left-1/4 right-1/4 h-[2px] bg-[#C9A961] rounded-full" />
+                )}
+              </Link>
+            );
+          })}
 
           {user && (
             <Link
               href="/cart"
               onClick={() => setIsMobileMenuOpen(false)}
- className="inline-flex items-center gap-2 rounded-[10px] border border-zinc-300 px-4 py-2 text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
+              className="inline-flex min-h-11 items-center gap-2 rounded-[10px] border border-zinc-300 px-6 py-2.5 text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <circle cx="8" cy="21" r="1" />
@@ -366,7 +443,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
               href="/notifications"
               aria-label="Notifications"
               onClick={() => setIsMobileMenuOpen(false)}
- className="relative inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
+              className="relative inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-zinc-300 text-foreground transition-all hover:border-brand-main hover:text-brand-main"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M15 17h5l-1.4-1.4A2 2 0 0 1 18 14.2V11a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v3.2a2 2 0 0 1-.6 1.4L4 17h5" />
@@ -392,10 +469,10 @@ export default function Header({ initialUser = null }: HeaderProps) {
           )}
           {!user ? (
             <div className="flex w-full max-w-xs flex-col gap-3">
- <Link href="/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="rounded-[10px] border border-zinc-300 px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+              <Link href="/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-zinc-300 px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                 Sign In
               </Link>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
                 Apply Now
               </Link>
             </div>
@@ -408,7 +485,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
                   void handleSignOut();
                 }
               }}
-              className="text-[18px] font-medium text-foreground hover:text-brand-main transition-colors"
+              className="text-[18px] font-medium text-foreground hover:text-brand-main transition-colors py-2 min-h-[44px]"
             >
               Sign Out
             </button>

@@ -1,9 +1,9 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import CareerQuizClient from "./CareerQuizClient";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
+import PageHero from "@/components/PageHero";
 
 const baseUrl = getBaseUrl();
 
@@ -46,31 +46,15 @@ export default function CareerQuizPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(quizLd) }}
       />
 
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                CAREER QUIZ
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Career Quiz</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.08] max-w-5xl !text-white">
-            Not sure what you need? <span className="text-brand-main">Use the quiz.</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-text-light">
-            Answer a few quick questions and get a practical next-step recommendation across CV writing, LinkedIn optimization, interview prep, and digital presence.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={<>Not sure what you need? <span className="text-[#C9A961]">Use the quiz</span></>}
+        description="Answer a few quick questions and get a practical next-step recommendation across CV writing, LinkedIn optimization, interview prep, and digital presence."
+        marqueeText="CAREER QUIZ"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Career Quiz" }
+        ]}
+      />
 
  <section className="w-full bg-zinc-50 py-[64px] sm:py-[80px] md:py-[96px]">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">

@@ -6,6 +6,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { industryLandingPages } from "@/lib/industry-pages";
 import ServicesPackageFilter from "@/app/services/ServicesPackageFilter";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Premium Career Branding Services | Resume, CV & LinkedIn Optimization",
@@ -67,28 +68,14 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      <section className="reveal-section w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                SERVICES
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Services</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
-            Premium Career Branding Services for <span className="text-brand-main">Senior Professionals</span>
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        title={<>Premium Career Branding Services for <span className="text-[#C9A961]">Senior Professionals</span></>}
+        marqueeText="SERVICES"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Services" }
+        ]}
+      />
 
  <section className="reveal-section w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">

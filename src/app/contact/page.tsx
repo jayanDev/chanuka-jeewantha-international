@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
 import ContactForm from "@/components/ContactForm";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Request Career Branding Support | Chanuka Jeewantha",
@@ -34,7 +34,7 @@ export default function ContactPage() {
       contactPoint: {
         "@type": "ContactPoint",
         contactType: "customer service",
-        areaServed: "Worldwide",
+        areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
         availableLanguage: ["English"],
         url: `${baseUrl}/contact`,
       },
@@ -52,38 +52,15 @@ export default function ContactPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageLd) }}
       />
 
-      {/* Hero Section */}
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div
-          className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap"
-          aria-hidden="true"
-        >
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <span
-                key={i}
-                className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none"
-              >
-                CONTACT
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <nav className="flex items-center gap-2 text-text-light font-medium mb-6" aria-label="Breadcrumb">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs" aria-hidden="true">/</span>
-            <span className="text-brand-main">Contact</span>
-          </nav>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.08] max-w-4xl !text-white">
-            Request <span className="text-brand-main">premium career support</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-text-light">
-            Submit your current CV or resume, target role, target market, and preferred package for a personal review.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={<>Request <span className="text-[#C9A961]">premium career support</span></>}
+        description="Submit your current CV or resume, target role, target market, and preferred package for a personal review."
+        marqueeText="CONTACT"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Contact" }
+        ]}
+      />
 
       {/* Client Contact Form Component */}
       <ContactForm />

@@ -49,3 +49,7 @@ prisma/dev.db
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# internal SEO/AEO/GEO deliverables & AI process docs (not part of the site)
+/Chanuka — SEO/
+UI-POLISH-CHANGELOG.md

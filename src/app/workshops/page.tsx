@@ -4,6 +4,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { getBaseUrl } from "@/lib/site-url";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 import WorkshopBookingForm from "@/components/WorkshopBookingForm";
+import PageHero from "@/components/PageHero";
 
 const baseUrl = getBaseUrl();
 
@@ -84,7 +85,7 @@ export default function WorkshopsPage() {
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
     },
-    areaServed: "Worldwide",
+    areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
     url: `${baseUrl}/workshops`,
   };
 
@@ -110,31 +111,15 @@ export default function WorkshopsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceLd) }}
       />
 
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                WORKSHOPS
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Workshops</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.08] max-w-5xl !text-white">
-            Career workshops for <span className="text-brand-main">universities, institutes, and communities</span>.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-text-light">
-            Practical sessions on ATS CV writing, LinkedIn positioning, interviews, and career strategy for students, graduates, and professional communities.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={<>Career workshops for <span className="text-[#C9A961]">universities, institutes, and communities</span></>}
+        description="Practical sessions on ATS CV writing, LinkedIn positioning, interviews, and career strategy for students, graduates, and professional communities."
+        marqueeText="WORKSHOPS"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Workshops" }
+        ]}
+      />
 
  <section className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px]">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">

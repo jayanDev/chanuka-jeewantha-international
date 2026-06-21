@@ -9,6 +9,9 @@ import {
 } from "@/lib/packages-catalog";
 import PackagesFilterBar from "./PackagesFilterBar";
 
+// Sinhala/LKR ebooks are hidden on the international .com site (they move to the .lk site).
+const SHOW_LOCAL_EBOOKS = false;
+
 export default function PackagesPageClient() {
   const [activeTier, setActiveTier] = useState("all");
 
@@ -41,7 +44,7 @@ export default function PackagesPageClient() {
         >
           <div className="mx-auto max-w-6xl">
             <div className="mb-8 max-w-3xl">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-main">
+              <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-dark-gold">
                 {category.isPriority ? "Priority Service" : "Premium Service"}
               </p>
               <h2 className="mt-2 font-heading text-[26px] font-bold text-foreground sm:text-[34px]">
@@ -111,6 +114,93 @@ export default function PackagesPageClient() {
           </div>
         </section>
       ))}
+
+      {/* Free & Paid Resources / Ebooks Section — hidden on .com (Sinhala/LKR products move to .lk) */}
+      {SHOW_LOCAL_EBOOKS && (
+      <section className="w-full bg-white border-t border-zinc-200 py-12 sm:py-16">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8 text-center md:text-left md:flex md:items-end md:justify-between">
+            <div>
+              <span className="text-brand-dark-gold font-semibold uppercase tracking-wider text-xs block mb-2">Guides & Templates</span>
+              <h2 className="font-heading text-[26px] font-bold text-foreground sm:text-[34px]">
+                Free & Paid Resources / Ebooks
+              </h2>
+              <p className="mt-2 text-text-body max-w-2xl">
+                Self-paced digital products, CV templates, and career strategy books. These are instant digital downloads, separate from our personalized career-writing services.
+              </p>
+            </div>
+            <Link
+              href="/ebooks"
+              className="mt-4 md:mt-0 btn btn-secondary text-sm !py-2.5 !px-5"
+            >
+              Explore All Digital Products
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-[12px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Guide
+                </span>
+                <h3 className="mt-4 font-heading text-[18px] font-bold text-foreground">
+                  කෝටිපතියෙක් වීමේ වේගවත් මග
+                </h3>
+                <p className="mt-2 text-sm text-text-body line-clamp-3">
+                  Fastlane to Wealth - ධනවත් වීමේ කෙටිමග ගවේෂණය. සාමාන්‍ය වේගයෙන් නොව, වේගවත් මාර්ගයක් ඔස්සේ ධනවත් වීම ගැන කියාදෙන ප්‍රායෝගික අදහස් සහ පරිච්ඡේද 60කට වඩා අඩංගු මාර්ගෝපදේශක ebook එකක්.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-base font-bold text-foreground">LKR 950</span>
+                <Link href="/ebooks/kotipathiyek-vime-vegawath-maga" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Ebook &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[12px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Guide
+                </span>
+                <h3 className="mt-4 font-heading text-[18px] font-bold text-foreground">
+                  ගැඹුරු කාර්යය (Deep Work)
+                </h3>
+                <p className="mt-2 text-sm text-text-body line-clamp-3">
+                  අවධානය කැඩී යන ලෝකයේ ගැඹුරු වැඩ පුරුද්දක් ලෙස ගොඩනගාගෙන, ඉක්මනින් ඉගෙනගෙන, උසස් මට්ටමේ ප්‍රතිඵල ලබාගැනීමට උපකාරී වන ප්‍රායෝගික නීති සහ ක්‍රමවල මාර්ගෝපදේශය.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-base font-bold text-foreground">LKR 950</span>
+                <Link href="/ebooks/gaburu-karyaya" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Ebook &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[12px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Template
+                </span>
+                <h3 className="mt-4 font-heading text-[18px] font-bold text-foreground">
+                  Premium ATS CV Templates
+                </h3>
+                <p className="mt-2 text-sm text-text-body line-clamp-3">
+                  Ready-to-use, recruiter-approved resume and CV templates formatted for ATS screening and professional industries.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-base font-bold text-foreground">Free & Paid</span>
+                <Link href="/ebooks" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Templates &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      )}
 
       <section className="w-full bg-primary px-4 py-14 text-white sm:px-6 md:py-20">
         <div className="mx-auto max-w-3xl text-center">

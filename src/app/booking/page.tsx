@@ -11,6 +11,8 @@ import {
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildOfferCatalogSchema } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
+import PageHero from "@/components/PageHero";
+import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Chanuka Jeewantha - Professional CV Writing, Linkedin Account Optimization & Career Development Services",
@@ -303,7 +305,7 @@ export default function BookingPage() {
       "@type": "ProfessionalService",
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
-      areaServed: "Worldwide",
+      areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
     },
     url: `${baseUrl}/booking`,
   };
@@ -323,60 +325,42 @@ export default function BookingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookingServiceLd) }}
       />
 
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <span
-                key={i}
-                className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none"
-              >
-                BOOKING
-              </span>
-            ))}
-          </div>
+      <PageHero
+        title={<>Chanuka Jeewantha - <span className="text-[#C9A961]">Professional CV Writing, LinkedIn Optimization & Career Development Services</span></>}
+        description="This booking page brings your service details, contact information, payment details, and package pricing into one structured view so clients can compare options and place orders faster."
+        marqueeText="BOOKING"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Booking" }
+        ]}
+      >
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappBaseMessage)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-[10px] bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1fb85a]"
+          >
+            Book on WhatsApp
+          </a>
+          <Link
+            href="/pricing"
+            className="inline-flex items-center justify-center rounded-[10px] border border-white/50 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-[#C9A961] hover:text-[#C9A961]"
+          >
+            Open Pricing
+          </Link>
+          <a
+            href={fiverrUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-[10px] border border-white/50 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-[#C9A961] hover:text-[#C9A961]"
+          >
+            Fiverr Orders
+          </a>
         </div>
+      </PageHero>
 
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">
-              Home
-            </Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Booking</span>
-          </div>
-          <h1 className="font-heading text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px] font-bold leading-[1.08] max-w-6xl !text-white">
-            Chanuka Jeewantha - <span className="text-brand-main">Professional CV Writing, Linkedin Account Optimization & Career Development Services</span>
-          </h1>
-          <p className="mt-6 max-w-4xl text-lg text-text-light">
-            This booking page brings your service details, contact information, payment details, and package pricing into one structured view so clients can compare options and place orders faster.
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappBaseMessage)}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-[10px] bg-[#25D366] px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1fb85a]"
-            >
-              Book on WhatsApp
-            </a>
-            <Link
-              href="/pricing"
-              className="inline-flex items-center justify-center rounded-[10px] border border-white/50 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-main hover:text-brand-main"
-            >
-              Open Pricing
-            </Link>
-            <a
-              href={fiverrUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-[10px] border border-white/50 px-5 py-3 text-sm font-semibold text-white transition-colors hover:border-brand-main hover:text-brand-main"
-            >
-              Fiverr Orders
-            </a>
-          </div>
-        </div>
-      </section>
+      <CalendlyEmbed />
 
  <section className="w-full bg-zinc-50 py-[64px] sm:py-[80px] md:py-[96px]">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6 space-y-8">

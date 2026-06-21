@@ -14,7 +14,7 @@ import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
 
 const siteUrl = getBaseUrl();
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim();
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-JBG5EY2YXW";
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 const heartbeatAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_HEARTBEAT_ANALYTICS === "true";
 const organizationId = `${siteUrl}#organization`;
@@ -30,11 +30,11 @@ const organizationLd = {
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
     "Premium resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha.",
-  areaServed: "Worldwide",
+  areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    areaServed: "Worldwide",
+    areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
     availableLanguage: ["English"],
     url: `${siteUrl}/contact`,
   },
@@ -42,6 +42,7 @@ const organizationLd = {
     "https://www.linkedin.com/in/chanuka-jeewantha/",
     "https://www.facebook.com/share/15vdmdB4oE/",
     "https://www.youtube.com/@chanukajeewantha",
+    "https://x.com/chanukajeewan",
     "https://www.fiverr.com/s/kLBDGAb",
   ],
 };
@@ -118,6 +119,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
+    languages: {
+      "en-US": "/",
+      "en-GB": "/",
+      "en-AU": "/",
+      "en-CA": "/",
+      "en-NZ": "/",
+      "x-default": "/",
+    },
     types: {
       "application/rss+xml": "/feed.xml",
     },
@@ -143,7 +152,8 @@ export const metadata: Metadata = {
     type: "website",
     url: siteUrl,
     siteName: "Chanuka Jeewantha",
-    locale: "en",
+    locale: "en_US",
+    alternateLocale: ["en_GB", "en_AU", "en_CA", "en_NZ"],
     images: [
       {
         url: "/images/hero-chanuka.jpg",
@@ -159,8 +169,8 @@ export const metadata: Metadata = {
     description:
       "Premium resume, CV, LinkedIn, cover letter, and career strategy services for senior professionals pursuing global opportunities.",
     images: ["/images/hero-chanuka.jpg"],
-    creator: "@chanukajeewantha",
-    site: "@chanukajeewantha",
+    creator: "@chanukajeewan",
+    site: "@chanukajeewan",
   },
   ...(googleSiteVerification
     ? {
@@ -181,12 +191,13 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${plusJakarta.variable} ${poppins.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
         <link rel="alternate" type="application/rss+xml" title="Chanuka Jeewantha Blog RSS Feed" href={`${siteUrl}/feed.xml`} />
       </head>
-      <body className="min-h-full flex flex-col font-body">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-body">
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:z-[9999] focus:top-4 focus:left-4 focus:rounded-lg focus:bg-brand-main focus:px-4 focus:py-2 focus:text-white focus:font-semibold focus:shadow-lg"

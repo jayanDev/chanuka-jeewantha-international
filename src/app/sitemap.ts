@@ -4,12 +4,10 @@ import { getBaseUrl } from "@/lib/site-url";
 import { blogPosts } from "@/content/blog-posts";
 import { packageProducts } from "@/lib/packages-catalog";
 import { digitalResources } from "@/lib/resources";
-import { ebooks } from "@/lib/ebooks";
 import { caseStudies } from "@/lib/case-studies";
 import { getBlogCategoryPath, getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
 import { careerTools } from "@/lib/tools";
 import { industryLandingPages } from "@/lib/industry-pages";
-import { tutorialCategories, tutorials } from "@/lib/tutorials";
 
 const baseUrl = getBaseUrl();
 const siteLastUpdated = new Date("2026-05-21T00:00:00.000Z");
@@ -30,14 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services/personal-website",
     "/services/industries",
     "/businesses",
-    "/ebooks",
     "/resources",
     "/tools",
     "/booking",
     "/reviews",
     "/career-quiz",
     "/results",
-    "/catalogue",
     "/workshops",
     "/portfolio",
     "/offers",
@@ -59,8 +55,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy-policy",
     "/terms-and-conditions",
     "/resume",
-    "/tutorials",
     "/services/packages",
+    "/cv-writing/usa",
+    "/cv-writing/uk",
+    "/cv-writing/australia",
+    "/cv-writing/canada",
+    "/cv-writing/new-zealand",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({
@@ -88,7 +88,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         select: { slug: true, publishedAt: true, updatedAt: true, category: true },
       });
 
-      const dbSlugs = new Set(dbPosts.map((item) => item.slug));
+      const dbSlugs = new Set(dbPosts.map((item: { slug: string }) => item.slug));
       posts = [
         ...dbPosts,
         ...fallbackPosts.filter((item) => !dbSlugs.has(item.slug)),
@@ -121,28 +121,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.69,
     }));
 
-  const tutorialCategoryEntries = tutorialCategories.map((item) => ({
-    url: `${baseUrl}/tutorials/category/${item.slug}`,
-    lastModified: siteLastUpdated,
-    changeFrequency: "weekly" as const,
-    priority: 0.68,
-  }));
-
-  const tutorialEntries = tutorials.flatMap((item) => [
-    {
-      url: `${baseUrl}/tutorials/${item.en.slug}`,
-      lastModified: siteLastUpdated,
-      changeFrequency: "monthly" as const,
-      priority: 0.65,
-    },
-    {
-      url: `${baseUrl}/tutorials/${item.si.slug}`,
-      lastModified: siteLastUpdated,
-      changeFrequency: "monthly" as const,
-      priority: 0.65,
-    },
-  ]);
-
   const packageEntries = packageProducts.map((item) => ({
     url: `${baseUrl}/packages/${item.slug}`,
     lastModified: siteLastUpdated,
@@ -171,13 +149,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.71,
   }));
 
-  const ebookEntries = ebooks.map((item) => ({
-    url: `${baseUrl}/ebooks/${item.slug}`,
-    lastModified: siteLastUpdated,
-    changeFrequency: "monthly" as const,
-    priority: item.category === "free" ? 0.66 : 0.64,
-  }));
-
   const caseStudyEntries = caseStudies.map((item) => ({
     url: `${baseUrl}/case-studies/${item.slug}`,
     lastModified: new Date(`${item.year}-01-01T00:00:00.000Z`),
@@ -189,14 +160,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticEntries,
     ...blogIndexEntries,
     ...categoryEntries,
-    ...tutorialCategoryEntries,
-    ...tutorialEntries,
     ...blogEntries,
     ...packageEntries,
     ...resourceEntries,
     ...toolEntries,
     ...industryEntries,
-    ...ebookEntries,
     ...caseStudyEntries,
   ];
 

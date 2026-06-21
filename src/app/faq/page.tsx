@@ -3,6 +3,9 @@ import React from "react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
+import { aeoFaqs } from "@/lib/aeo-faqs";
+import FAQSection from "@/components/FAQSection";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "FAQ | Resume, CV & LinkedIn Services",
@@ -39,8 +42,10 @@ export default function FAQPage() {
     }
   ];
 
+  // Merge original + AEO items into one FAQPage JSON-LD block (no duplicates)
+  const allFaqs = [...faqs, ...aeoFaqs];
   const faqLd = buildFaqPageSchema(
-    faqs.map((item) => ({
+    allFaqs.map((item) => ({
       question: item.q,
       answer: item.a,
     }))
@@ -62,28 +67,14 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                FAQ'S
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">FAQ Area</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            Frequently Asked <span className="text-brand-main">Questions.</span>
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        title={<>Frequently Asked <span className="text-[#C9A961]">Questions</span></>}
+        marqueeText="FAQ'S"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "FAQ Area" }
+        ]}
+      />
 
  <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
@@ -102,8 +93,20 @@ export default function FAQPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
 
- <div className="mx-auto mt-16 max-w-4xl text-center bg-zinc-50 p-12 rounded-[24px] border border-zinc-200">
+      {/* AEO-optimized country-specific FAQ — schema suppressed (merged above) */}
+      <FAQSection
+        heading="Pricing, Markets & Getting Started"
+        items={aeoFaqs}
+        renderSchema={false}
+        className="bg-zinc-50 border-t border-zinc-200"
+      />
+
+ <section className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px]">
+        <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
+ <div className="mx-auto max-w-4xl text-center bg-zinc-50 p-12 rounded-[24px] border border-zinc-200">
              <h3 className="text-[28px] font-bold font-heading mb-4 text-foreground">Still have questions?</h3>
              <p className="text-text-body mb-8 text-lg">Submit an enquiry and we will review the best service direction for your goals.</p>
              <Link href="/contact" className="px-[32px] py-[16px] bg-brand-main hover:bg-brand-dark text-white rounded-[10px] font-medium transition-colors inline-block">

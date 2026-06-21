@@ -2,6 +2,10 @@
 
 import Link from "next/link";
 import { formatUsd, packageCategories } from "@/lib/packages-catalog";
+import PageHero from "@/components/PageHero";
+
+// Sinhala/LKR ebooks are hidden on the international .com site (they move to the .lk site).
+const SHOW_LOCAL_EBOOKS = false;
 
 const bundles = [
   {
@@ -84,36 +88,31 @@ const bundles = [
 export default function PricingClient() {
   return (
     <>
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                PREMIUM PACKAGES
-              </span>
+      <PageHero
+        title={<>Signature Series <span className="text-[#C9A961]">Pricing</span></>}
+        description="Premium career documents personally written for senior candidates and competitive job markets."
+        marqueeText="PREMIUM PACKAGES"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Premium Packages" }
+        ]}
+      >
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-white/80 text-sm">
+          <span className="flex items-center text-[#C9A961]">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <svg key={i} className="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
             ))}
-          </div>
+          </span>
+          <span>Based on 380+ executive reviews (4.9/5 Rating)</span>
         </div>
+      </PageHero>
 
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Premium Packages</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
-            Signature Series <span className="text-brand-main">Pricing</span>
-          </h1>
-          <p className="mt-5 max-w-3xl text-lg leading-relaxed text-white/80">
-            Premium career documents personally written for senior candidates and competitive job markets.
-          </p>
-        </div>
-      </section>
-
-      <section id="bundles" className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px]">
+      <section id="bundles" className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px] scroll-mt-28">
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
           <div className="mb-12 text-center">
-            <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-main">Premium Bundles</span>
+            <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-dark-gold">Premium Bundles</span>
             <h2 className="font-heading text-[30px] font-bold leading-[1.1] text-foreground sm:text-[40px] md:text-[56px]">
               Bundle Packages
             </h2>
@@ -136,7 +135,7 @@ export default function PricingClient() {
               >
                 <div className="min-h-[88px]">
                   {bundle.highlighted && (
-                    <span className="mb-3 inline-flex rounded-full bg-[#C9A961] px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-white">
+                    <span className="mb-3 inline-flex rounded-full bg-[#0A2540] px-3 py-1 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">
                       Most Popular
                     </span>
                   )}
@@ -165,12 +164,12 @@ export default function PricingClient() {
                 </ul>
                 <Link
                   href={`/contact?package=${encodeURIComponent(bundle.name)}`}
-                  className={`mt-7 inline-flex min-h-11 items-center justify-center rounded-[10px] px-4 py-3 text-center text-sm font-semibold transition-colors ${
+                  className={`mt-7 btn w-full ${
                     bundle.premium
-                      ? "bg-[#C9A961] text-zinc-950 hover:bg-white"
+                      ? "btn-primary hover:bg-white hover:text-primary hover:scale-[1.02]"
                       : bundle.highlighted
-                        ? "bg-[#C9A961] text-white hover:bg-foreground"
-                        : "border border-zinc-300 text-foreground hover:border-brand-main hover:text-brand-main"
+                        ? "btn-primary hover:bg-foreground hover:text-white hover:scale-[1.02]"
+                        : "btn-secondary hover:scale-[1.02]"
                   }`}
                 >
                   {bundle.cta}
@@ -181,11 +180,11 @@ export default function PricingClient() {
         </div>
       </section>
 
-      <section id="signature-series" className="w-full bg-zinc-50 py-[64px] sm:py-[80px] md:py-[96px]">
+      <section id="signature-series" className="w-full bg-zinc-50 py-[64px] sm:py-[80px] md:py-[96px] scroll-mt-28">
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
           <div className="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
-              <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-main">Signature Series</span>
+              <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-dark-gold">Signature Series</span>
               <h2 className="font-heading text-[30px] font-bold leading-[1.1] text-foreground sm:text-[40px] md:text-[56px]">
                 Compare Premium Services
               </h2>
@@ -195,7 +194,7 @@ export default function PricingClient() {
             </div>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-[10px] bg-brand-main px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark"
+              className="btn btn-primary"
             >
               Request Career Support
             </Link>
@@ -204,7 +203,7 @@ export default function PricingClient() {
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {packageCategories.map((category) => (
               <article key={category.key} className="rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm">
-                <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-main">
+                <p className="text-xs font-bold uppercase tracking-[0.14em] text-brand-dark-gold">
                   {category.isPriority ? "Priority Service" : "Premium Service"}
                 </p>
                 <h3 className="mt-3 font-heading text-[27px] font-bold leading-tight text-foreground">
@@ -223,7 +222,7 @@ export default function PricingClient() {
 
                 <Link
                   href={`/contact?service=${encodeURIComponent(category.title)}`}
-                  className="mt-6 inline-flex w-full items-center justify-center rounded-[10px] bg-foreground px-5 py-3 text-sm font-semibold text-background transition-colors hover:bg-brand-dark"
+                  className="mt-6 btn btn-secondary w-full"
                 >
                   Apply for This Service
                 </Link>
@@ -232,6 +231,93 @@ export default function PricingClient() {
           </div>
         </div>
       </section>
+
+      {/* Free & Paid Resources / Ebooks Section — hidden on .com (Sinhala/LKR products move to .lk) */}
+      {SHOW_LOCAL_EBOOKS && (
+      <section className="w-full bg-white border-t border-zinc-200 py-[64px] sm:py-[80px] md:py-[96px]">
+        <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
+          <div className="mb-10 text-center md:text-left md:flex md:items-end md:justify-between">
+            <div>
+              <span className="mb-2 block font-semibold uppercase tracking-wider text-brand-dark-gold">Guides & Templates</span>
+              <h2 className="font-heading text-[30px] font-bold leading-[1.1] text-foreground sm:text-[40px]">
+                Free & Paid Resources / Ebooks
+              </h2>
+              <p className="mt-3 max-w-2xl text-zinc-600">
+                Self-paced digital products, CV templates, and career strategy books. These are instant digital downloads, separate from our personalized career-writing services.
+              </p>
+            </div>
+            <Link
+              href="/ebooks"
+              className="mt-6 md:mt-0 btn btn-secondary text-sm !py-2.5 !px-5"
+            >
+              Explore All Digital Products
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="rounded-[16px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Guide
+                </span>
+                <h3 className="mt-4 font-heading text-[20px] font-bold text-foreground">
+                  කෝටිපතියෙක් වීමේ වේගවත් මග
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 line-clamp-3">
+                  Fastlane to Wealth - ධනවත් වීමේ කෙටිමග ගවේෂණය. සාමාන්‍ය වේගයෙන් නොව, වේගවත් මාර්ගයක් ඔස්සේ ධනවත් වීම ගැන කියාදෙන ප්‍රායෝගික අදහස් සහ පරිච්ඡේද 60කට වඩා අඩංගු මාර්ගෝපදේශක ebook එකක්.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-lg font-bold text-foreground">LKR 950</span>
+                <Link href="/ebooks/kotipathiyek-vime-vegawath-maga" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Ebook &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[16px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Guide
+                </span>
+                <h3 className="mt-4 font-heading text-[20px] font-bold text-foreground">
+                  ගැඹුරු කාර්යය (Deep Work)
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 line-clamp-3">
+                  අවධානය කැඩී යන ලෝකයේ ගැඹුරු වැඩ පුරුද්දක් ලෙස ගොඩනගාගෙන, ඉක්මනින් ඉගෙනගෙන, උසස් මට්ටමේ ප්‍රතිඵල ලබාගැනීමට උපකාරී වන ප්‍රායෝගික නීති සහ ක්‍රමවල මාර්ගෝපදේශය.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-lg font-bold text-foreground">LKR 950</span>
+                <Link href="/ebooks/gaburu-karyaya" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Ebook &rarr;
+                </Link>
+              </div>
+            </div>
+
+            <div className="rounded-[16px] border border-zinc-200 bg-zinc-50 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow duration-200">
+              <div>
+                <span className="inline-flex rounded bg-zinc-200 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-zinc-700">
+                  Digital Template
+                </span>
+                <h3 className="mt-4 font-heading text-[20px] font-bold text-foreground">
+                  Premium ATS CV Templates
+                </h3>
+                <p className="mt-2 text-sm text-zinc-600 line-clamp-3">
+                  Ready-to-use, recruiter-approved resume and CV templates formatted for ATS screening and professional industries.
+                </p>
+              </div>
+              <div className="mt-6 pt-4 border-t border-zinc-200/60 flex items-center justify-between">
+                <span className="text-lg font-bold text-foreground">Free & Paid</span>
+                <Link href="/ebooks" className="text-sm font-semibold text-brand-dark-gold hover:text-brand-main">
+                  View Templates &rarr;
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      )}
     </>
   );
 }

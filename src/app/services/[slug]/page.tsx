@@ -3,34 +3,66 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import AnimatedServiceTextVisual from "@/components/AnimatedServiceTextVisual";
+import FAQSection from "@/components/FAQSection";
 import SubscribeForm from "@/components/SubscribeForm";
+import { cvWritingFaqs, linkedinFaqs } from "@/lib/aeo-faqs";
 import { formatLkr, packageProducts } from "@/lib/packages-catalog";
 import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
 
-const serviceMetadataMap: Record<string, { label: string; title: string; description: string }> = {
+const serviceMetadataMap: Record<string, { label: string; title: string; description: string; keywords: string[] }> = {
   "cv-writing": {
-    label: "CV Writing",
-    title: "CV Writing Service | ATS-Friendly CV Strategy",
+    label: "Resume & CV Writing",
+    title: "ATS Resume & CV Writing Service",
     description:
-      "Compare Student, Professional, and Executive ATS-friendly CV writing packages with role-aligned positioning, achievement language, and recruiter-ready structure.",
+      "ATS-optimized resume and CV writing for professionals targeting roles in the US, UK, Australia, Canada, and New Zealand. Founder-led, personally written, recruiter-ready.",
+    keywords: [
+      "ATS resume writer",
+      "professional resume writing service",
+      "CV writing service",
+      "ATS-friendly CV",
+      "executive resume writer",
+      "resume writing service USA",
+      "CV writing service UK",
+    ],
   },
   "cover-letter-writing": {
     label: "Cover Letter Writing",
-    title: "Cover Letter Writing Service",
+    title: "Professional Cover Letter Writing",
     description:
-      "Compare Student, Professional, and Executive cover letter writing packages tailored to your career stage, target role, and application goals.",
+      "Professional cover letter writing tailored to your target role, company, and market — for candidates applying across the US, UK, Australia, Canada, and New Zealand.",
+    keywords: [
+      "professional cover letter writing service",
+      "cover letter writer",
+      "executive cover letter",
+      "cover letter writing service USA",
+      "cover letter writing service UK",
+    ],
   },
   "linkedin-optimization": {
-    label: "LinkedIn Account Optimization",
-    title: "LinkedIn Account Optimization Service",
+    label: "LinkedIn Profile Optimization",
+    title: "LinkedIn Profile Optimization Service",
     description:
-      "Compare Student, Professional, and Executive LinkedIn account optimization packages for stronger profile positioning, recruiter visibility, and personal branding.",
+      "Recruiter-facing LinkedIn profile optimization with keyword strategy, positioning, and personal branding for senior professionals in the US, UK, Australia, Canada, and New Zealand.",
+    keywords: [
+      "LinkedIn profile optimization",
+      "LinkedIn optimization service",
+      "LinkedIn makeover",
+      "LinkedIn profile writer",
+      "executive LinkedIn optimization",
+    ],
   },
   "cv-review": {
     label: "CV Review",
-    title: "CV Review Service",
+    title: "CV Review & ATS Resume Audit",
     description:
-      "Get expert feedback on your current CV with practical recommendations for ATS compatibility and stronger interview conversion.",
+      "Expert CV review and ATS resume audit with practical fixes for ATS compatibility, recruiter readiness, and stronger interview conversion across global job markets.",
+    keywords: [
+      "CV review service",
+      "resume review",
+      "free resume review",
+      "ATS resume audit",
+      "professional CV review",
+    ],
   },
 };
 
@@ -54,7 +86,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: entry.title,
     description: entry.description,
     path: `/services/${slug}`,
-    keywords: ["career services", slug.replaceAll("-", " "), "Chanuka Jeewantha"],
+    keywords: [...entry.keywords, "Chanuka Jeewantha"],
   });
 }
 
@@ -98,7 +130,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         </div>
       </section>
 
- <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
+      <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
           <div className="mx-auto max-w-4xl relative w-full aspect-[21/9] bg-zinc-200 rounded-[24px] mb-12 overflow-hidden">
             <AnimatedServiceTextVisual label={entry.label} variant="dark" className="h-full min-h-full rounded-[24px]" />
@@ -147,7 +179,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                 <h3>Explore Related Packages</h3>
                 <div className={relatedPackagesGridClass}>
                   {relatedPackages.map((pkg) => (
- <div key={pkg.slug} className="rounded-[14px] border border-zinc-200 p-4 bg-zinc-50">
+                    <div key={pkg.slug} className="rounded-[14px] border border-zinc-200 p-4 bg-zinc-50">
                       <AnimatedServiceTextVisual label={pkg.name} className="mb-4 min-h-[120px] rounded-[12px]" />
                       <p className="font-semibold text-foreground mb-2">{pkg.name}</p>
                       <p className="text-sm text-text-body mb-3">{pkg.description ?? pkg.audience}</p>
@@ -169,6 +201,21 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
           </article>
         </div>
       </section>
+
+      {slug === "cv-writing" && (
+        <FAQSection
+          heading="CV & Resume Writing — Common Questions"
+          items={cvWritingFaqs}
+          className="bg-zinc-50 border-t border-zinc-200"
+        />
+      )}
+      {slug === "linkedin-optimization" && (
+        <FAQSection
+          heading="LinkedIn Optimization — Common Questions"
+          items={linkedinFaqs}
+          className="bg-zinc-50 border-t border-zinc-200"
+        />
+      )}
 
       <SubscribeForm />
     </>

@@ -32,7 +32,7 @@ export async function GET(request: Request) {
     const header = "id,email,status,createdAt\n";
     const rows = subscribers
       .map(
-        (s) =>
+        (s: { id: string; email: string; status: string; createdAt: Date }) =>
           `${s.id},${s.email},${s.status},${s.createdAt.toISOString()}`
       )
       .join("\n");
@@ -44,8 +44,8 @@ export async function GET(request: Request) {
     });
   }
 
-  const totalActive = subscribers.filter((s) => s.status === "active").length;
-  const totalUnsubscribed = subscribers.filter((s) => s.status === "unsubscribed").length;
+  const totalActive = subscribers.filter((s: { status: string }) => s.status === "active").length;
+  const totalUnsubscribed = subscribers.filter((s: { status: string }) => s.status === "unsubscribed").length;
 
   return NextResponse.json({ subscribers, totalActive, totalUnsubscribed });
 }

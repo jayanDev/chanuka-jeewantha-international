@@ -20,7 +20,7 @@ export async function GET() {
     orderBy: { createdAt: "desc" },
   });
 
-  return NextResponse.json({ saved: items.map((i) => i.productSlug) });
+  return NextResponse.json({ saved: items.map((i: { productSlug: string }) => i.productSlug) });
 }
 
 export async function POST(request: Request) {

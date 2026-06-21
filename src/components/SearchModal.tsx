@@ -55,7 +55,7 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             <input
               ref={inputRef}
               type="text"
-              className="w-full bg-transparent pl-[52px] pr-12 py-4 text-[17px] font-medium text-foreground outline-none placeholder-zinc-400"
+              className="w-full bg-transparent !pl-14 !pr-12 !py-4 text-[17px] font-medium text-foreground outline-none placeholder-zinc-400"
               placeholder="Search CV tips, guides, and tools..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}

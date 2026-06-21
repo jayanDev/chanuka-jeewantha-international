@@ -6,6 +6,7 @@ import { notFound, permanentRedirect } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import BlogCommentForm from "@/components/BlogCommentForm";
 import ServiceSidebarAds from "@/components/ServiceSidebarAds";
+import AuthorBio from "@/components/AuthorBio";
 import { blogPosts, getPostBySlug } from "@/content/blog-posts";
 import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
@@ -260,7 +261,7 @@ export default async function BlogPostPage({
     url: articleUrl,
     mainEntityOfPage: articleUrl,
     image: [articleImageUrl],
-    inLanguage: postLanguage === "si" ? "si" : "en-LK",
+    inLanguage: postLanguage === "si" ? "si" : "en",
     articleSection: post.category,
     wordCount,
     timeRequired: `PT${readingTimeMinutes}M`,
@@ -269,6 +270,21 @@ export default async function BlogPostPage({
       "@type": "Person",
       name: "Chanuka Jeewantha",
       url: `${baseUrl}/about`,
+      jobTitle: "Founder & Lead Resume / CV Writer",
+      image: `${baseUrl}/images/hero-chanuka.jpg`,
+      description:
+        "Founder-led resume, CV, and LinkedIn writer with 380+ senior and executive placements across the US, UK, Australia, Canada, and New Zealand.",
+      knowsAbout: [
+        "Resume writing",
+        "CV writing",
+        "ATS optimization",
+        "LinkedIn optimization",
+        "Executive career branding",
+      ],
+      sameAs: [
+        "https://www.linkedin.com/in/chanuka-jeewantha/",
+        "https://x.com/chanukajeewan",
+      ],
     },
     publisher: {
       "@type": "Organization",
@@ -534,6 +550,8 @@ export default async function BlogPostPage({
                   ))}
                 </div>
               </div>
+
+              <AuthorBio />
 
               {contentPost?.internalLinks && contentPost.internalLinks.length > 0 && (
  <div className="rounded-[20px] border border-zinc-200 bg-white p-6 md:p-8">

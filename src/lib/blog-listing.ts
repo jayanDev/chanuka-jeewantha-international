@@ -55,7 +55,7 @@ async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
       take: 300,
     });
 
-    const dbPosts: BlogListingPost[] = dbPostsRaw.map((item) => {
+    const dbPosts: BlogListingPost[] = dbPostsRaw.map((item: { slug: string; title: string; excerpt: string; category: string; publishedAt: Date | null; coverImage: string | null }) => {
       const contentPost = getPostBySlug(item.slug);
 
       return {

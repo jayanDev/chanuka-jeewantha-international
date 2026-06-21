@@ -133,7 +133,7 @@ export default async function AffiliatePage() {
               <AffiliateDashboardClient
                 profile={profile}
                 baseUrl={baseUrl}
-                activity={activity.map((item) => ({
+                activity={activity.map((item: { id: string; referredEmail: string; packageName: string; createdAt: Date }) => ({
                   id: item.id,
                   referredEmail: item.referredEmail,
                   packageName: item.packageName,

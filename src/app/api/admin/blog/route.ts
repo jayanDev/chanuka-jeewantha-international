@@ -39,7 +39,7 @@ export async function GET(request: Request) {
       select: { id: true, slug: true },
     }).catch(() => []);
 
-    const idToSlug = new Map(dbPosts.map((p) => [p.id, p.slug]));
+    const idToSlug = new Map(dbPosts.map((p: { id: string; slug: string }) => [p.id, p.slug]));
 
     for (const row of commentCounts.value) {
       const slug = idToSlug.get(row.postId) ?? row.postId;

@@ -4,6 +4,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "About Chanuka Jeewantha | Founder-Led Premium Career Branding",
@@ -25,33 +26,17 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
-      {/* 1. Hero Section */}
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        {/* Background Marquee Text */}
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4, 5, 6].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                ABOUT US
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">About</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            Senior careers are built through <span className="text-brand-main">strategy, proof, and positioning</span>
-          </h1>
-        </div>
-      </section>
+      <PageHero
+        title={<>Senior careers are built through <span className="text-[#C9A961]">strategy, proof, and positioning</span></>}
+        marqueeText="ABOUT US"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "About" }
+        ]}
+      />
 
       {/* 2. My Mission / Story Section */}
- <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
+      <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-white">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24">
             {/* Left Column (Sticky/Small) */}
@@ -64,14 +49,20 @@ export default function AboutPage() {
             
             {/* Right Column (Content) */}
             <div className="w-full lg:w-3/4 flex flex-col gap-8">
- <div className="relative w-full h-[400px] rounded-[20px] mb-4 overflow-hidden border border-zinc-200">
-                <Image
-                  src="/images/about-page-chanuka.jpg"
-                  alt="Chanuka Jeewantha profile"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 75vw"
-                  className="object-cover"
-                />
+              <div className="hero-image-wrapper relative w-full max-w-2xl">
+                {/* Elegant backdrop offset frame with hover glow */}
+                <div className="absolute -inset-3 rounded-[24px] border border-[#C9A961]/25 translate-x-3 translate-y-3 pointer-events-none" />
+                <div className="hero-frame-glow absolute -inset-4 rounded-[28px] bg-[#C9A961]/10 blur-xl pointer-events-none" />
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-zinc-200 bg-black shadow-lg">
+                  <Image
+                    src="/images/about-page-chanuka.jpg"
+                    alt="Chanuka Jeewantha profile"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 75vw"
+                    className="object-cover object-[center_10%]"
+                    priority
+                  />
+                </div>
               </div>
               <p className="text-[20px] md:text-[24px] text-foreground font-medium leading-relaxed">
                 I am Chanuka Jeewantha, a founder-led premium career branding specialist helping senior professionals present themselves clearly, confidently, and competitively.
@@ -87,7 +78,7 @@ export default function AboutPage() {
         </div>
       </section>
 
- <section className="w-full py-[40px] sm:py-[56px] bg-zinc-50 border-t border-zinc-200">
+      <section className="w-full py-[40px] sm:py-[56px] bg-[#FAF8F3] border-t border-zinc-200/50">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
           <h2 className="text-[24px] md:text-[30px] font-bold font-heading text-foreground mb-3">
             Explore More Career Support
@@ -96,16 +87,16 @@ export default function AboutPage() {
             Continue with service details, free tools, workshop options, or practical career insights.
           </p>
           <div className="flex flex-wrap gap-3">
- <Link href="/services" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+            <Link href="/services" className="btn btn-secondary-gold text-sm">
               Explore Services
             </Link>
- <Link href="/tools" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+            <Link href="/tools" className="btn btn-secondary-gold text-sm">
               Use Free Tools
             </Link>
- <Link href="/workshops" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+            <Link href="/workshops" className="btn btn-secondary-gold text-sm">
               View Workshops
             </Link>
- <Link href="/blog" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+            <Link href="/blog" className="btn btn-secondary-gold text-sm">
               Read Career Blog
             </Link>
           </div>

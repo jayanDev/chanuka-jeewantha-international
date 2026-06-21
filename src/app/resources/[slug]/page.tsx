@@ -116,7 +116,7 @@ export default async function ResourceSinglePage({ params }: ResourcePageProps) 
     offers: {
       "@type": "Offer",
       url: resourceUrl,
-      priceCurrency: "LKR",
+      priceCurrency: "USD",
       price: isFreeResource ? 0 : resource.priceLkr,
       availability: "https://schema.org/InStock",
       itemCondition: "https://schema.org/NewCondition",

@@ -70,7 +70,7 @@ export default function BundlesPage() {
           {bundles.map((bundle) => (
             <article
               key={bundle.name}
-              className={`flex h-full flex-col rounded-[18px] border p-6 shadow-sm ${
+              className={`flex h-full flex-col rounded-[18px] border p-6 shadow-sm transition-transform hover:-translate-y-1 ${
                 bundle.premium
                   ? "border-zinc-900 bg-zinc-950 text-white"
                   : bundle.highlighted
@@ -78,7 +78,7 @@ export default function BundlesPage() {
                     : "border-zinc-200 bg-white"
               }`}
             >
-              {bundle.highlighted && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Most Popular</p>}
+              {bundle.highlighted && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-brand-dark-gold">Most Popular</p>}
               {bundle.premium && <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#C9A961]">Premium</p>}
               <h2 className={`font-heading text-[24px] font-bold ${bundle.premium ? "text-white" : "text-foreground"}`}>{bundle.name}</h2>
               <p className={`mt-2 text-sm ${bundle.premium ? "text-white/70" : "text-zinc-600"}`}>{bundle.label ?? bundle.audience}</p>
@@ -93,8 +93,12 @@ export default function BundlesPage() {
               </ul>
               <Link
                 href={`/contact?package=${encodeURIComponent(bundle.name)}`}
-                className={`mt-7 inline-flex min-h-11 items-center justify-center rounded-[10px] px-4 py-3 text-center text-sm font-semibold ${
-                  bundle.premium ? "bg-[#C9A961] text-zinc-950 hover:bg-white" : "bg-brand-main text-white hover:bg-foreground"
+                className={`mt-7 btn w-full ${
+                  bundle.premium
+                    ? "btn-primary hover:bg-white hover:text-primary hover:scale-[1.02]"
+                    : bundle.highlighted
+                      ? "btn-primary hover:bg-foreground hover:text-white hover:scale-[1.02]"
+                      : "btn-secondary hover:scale-[1.02]"
                 }`}
               >
                 {bundle.cta}

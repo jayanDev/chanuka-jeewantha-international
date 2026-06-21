@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import PricingClient from "./PricingClient";
+import FAQSection from "@/components/FAQSection";
+import { pricingFaqs } from "@/lib/aeo-faqs";
 import { getBaseUrl } from "@/lib/site-url";
 import { packageProducts } from "@/lib/packages-catalog";
 
@@ -43,6 +45,12 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateOfferLd) }}
       />
       <PricingClient />
+      <FAQSection
+        heading="Pricing & Getting Started"
+        items={pricingFaqs}
+        className="bg-zinc-50 border-t border-zinc-200"
+      />
     </>
   );
 }
+

@@ -10,7 +10,7 @@ export default function AnnouncementBar() {
 
   return (
     <div
-      className="announcement-bar sticky top-0 z-[9999] w-full bg-gradient-to-r from-[#C9A961] to-[#B8985A]"
+      className="announcement-bar sticky top-0 z-40 w-full bg-gradient-to-r from-[#C9A961] to-[#B8985A]"
       id="announcement-bar"
     >
       <div className="announcement-content mx-auto flex max-w-[1512px] items-center justify-between gap-4 px-4 py-3 sm:px-6">

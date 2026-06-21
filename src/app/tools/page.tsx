@@ -5,6 +5,7 @@ import { careerTools } from "@/lib/tools";
 import { buildPageMetadata } from "@/lib/seo";
 import { getBaseUrl } from "@/lib/site-url";
 import { buildBreadcrumbList } from "@/lib/structured-data";
+import PageHero from "@/components/PageHero";
 
 const baseUrl = getBaseUrl();
 
@@ -51,31 +52,15 @@ export default function ToolsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
       />
 
-      <section className="w-full bg-foreground text-background pt-[36px] sm:pt-[50px] pb-[72px] sm:pb-[96px] relative overflow-hidden">
-        <div className="absolute top-[150px] left-0 w-full overflow-hidden opacity-5 pointer-events-none select-none flex whitespace-nowrap">
-          <div className="animate-[marquee_30s_linear_infinite] flex gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <span key={i} className="text-[72px] sm:text-[120px] md:text-[200px] font-heading font-extrabold uppercase leading-none">
-                FREE TOOLS
-              </span>
-            ))}
-          </div>
-        </div>
-
-        <div className="max-w-[1512px] mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 text-text-light font-medium mb-6">
-            <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
-            <span className="text-brand-main text-xs">/</span>
-            <span className="text-brand-main">Tools</span>
-          </div>
-          <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-5xl !text-white">
-            Free tools for <span className="text-brand-main">ATS, LinkedIn, and interviews</span>.
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-text-light">
-            Use these browser-based tools to improve your CV, write stronger cover letters, strengthen your LinkedIn positioning, and prepare better interview stories before you apply.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title={<>Free tools for <span className="text-[#C9A961]">ATS, LinkedIn, and interviews</span></>}
+        description="Use these browser-based tools to improve your CV, write stronger cover letters, strengthen your LinkedIn positioning, and prepare better interview stories before you apply."
+        marqueeText="FREE TOOLS"
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Tools" }
+        ]}
+      />
 
  <section className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px]">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
@@ -85,13 +70,22 @@ export default function ToolsPage() {
                 key={tool.slug}
  className="group overflow-hidden rounded-[22px] border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,0,0,0.1)]"
               >
-                <div className="relative aspect-[5/3] overflow-hidden">
+                <div className="relative aspect-[5/3] overflow-hidden bg-black flex items-center justify-center border-b border-[#C9A961]/15">
+                  {/* Premium gold radial glow behind the portrait on card hover */}
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,97,0.08)_0%,transparent_65%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Elegant inner gold frame */}
+                  <div className="absolute inset-3 rounded-[14px] border border-[#C9A961]/15 pointer-events-none z-10 transition-all duration-300 group-hover:border-[#C9A961]/35 group-hover:scale-[0.98]" />
+                  
+                  {/* Subtle offset gold outline accent */}
+                  <div className="absolute inset-3 rounded-[14px] border border-[#C9A961]/5 translate-x-1 translate-y-1 pointer-events-none z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+
                   <Image
                     src={tool.image}
                     alt={tool.title}
                     fill
-                    sizes="(max-width: 1024px) 100vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain transition-transform duration-500 group-hover:scale-[1.02] p-6 z-0"
                   />
                 </div>
                 <div className="p-6">

@@ -36,7 +36,7 @@ export default function LinkedinHeadlineGeneratorPage() {
     offers: {
       "@type": "Offer",
       price: 0,
-      priceCurrency: "LKR",
+      priceCurrency: "USD",
     },
     creator: {
       "@type": "Person",
