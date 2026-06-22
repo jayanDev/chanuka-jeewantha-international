@@ -41,7 +41,11 @@ export async function POST(request: Request) {
           );
         }
 
-        cvUrl = await saveUploadedFile({ file: cvFile, folder: "enquiries/cv" });
+        try {
+          cvUrl = await saveUploadedFile({ file: cvFile, folder: "enquiries/cv" });
+        } catch (uploadError) {
+          console.error("CV upload failed (continuing without attachment):", uploadError);
+        }
       }
 
       const details = [
@@ -84,14 +88,17 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
 
-    const ip = getClientIp(request);
-    const rate = await checkRateLimit(`contact:${ip}`, 5, 60_000);
-
-    if (!rate.ok) {
-      return NextResponse.json(
-        { error: "Too many requests. Please wait a minute." },
-        { status: 429 }
-      );
+    try {
+      const ip = getClientIp(request);
+      const rate = await checkRateLimit(`contact:${ip}`, 5, 60_000);
+      if (!rate.ok) {
+        return NextResponse.json(
+          { error: "Too many requests. Please wait a minute." },
+          { status: 429 }
+        );
+      }
+    } catch (rateError) {
+      console.error("Rate limit check skipped:", rateError);
     }
 
     // Save to the database (best-effort: a DB issue must NOT block the email).

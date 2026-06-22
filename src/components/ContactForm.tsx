@@ -80,11 +80,13 @@ const initialFormState: FormState = {
   website: "",
 };
 
-type FieldErrors = Partial<Record<keyof FormState | "currentCv", string>>;
+type FieldErrors = Partial<Record<keyof FormState, string>>;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const urlPattern = /^https?:\/\/.+/i;
 
+// Only Name and Email are required. Everything else is optional, and is only
+// validated for format when the visitor actually fills it in.
 function validateField(key: keyof FormState, value: string): string {
   const v = value.trim();
   switch (key) {
@@ -97,27 +99,10 @@ function validateField(key: keyof FormState, value: string): string {
       if (!emailPattern.test(v)) return "Enter a valid email address.";
       return "";
     case "whatsappNumber":
-      if (!v) return "Please enter your WhatsApp number.";
-      if (!/^[0-9\s-]{6,}$/.test(v)) return "Enter a valid phone number (digits only).";
-      return "";
-    case "currentCountry":
-      if (!v) return "Please enter your current country.";
-      return "";
-    case "targetCountry":
-      if (!v) return "Please enter your target market.";
-      return "";
-    case "targetRole":
-      if (!v) return "Please enter your target role.";
-      return "";
-    case "yearsExperience":
-      if (!v) return "Please enter your years of experience.";
+      if (v && !/^[0-9\s-]{6,}$/.test(v)) return "Enter a valid phone number (digits only).";
       return "";
     case "linkedinUrl":
       if (v && !urlPattern.test(v)) return "Enter a valid URL (starting with https://).";
-      return "";
-    case "message":
-      if (!v) return "Please tell us your career goal.";
-      if (v.length < 10) return "Please add a little more detail.";
       return "";
     default:
       return "";
@@ -155,21 +140,16 @@ export default function ContactForm() {
   };
 
   const validateAll = (): boolean => {
-    const keys: (keyof FormState)[] = [
-      "name", "email", "whatsappNumber", "currentCountry", "targetCountry",
-      "targetRole", "yearsExperience", "linkedinUrl", "message",
-    ];
+    const keys: (keyof FormState)[] = ["name", "email", "whatsappNumber", "linkedinUrl"];
     const next: FieldErrors = {};
     keys.forEach((k) => {
       const err = validateField(k, formData[k]);
       if (err) next[k] = err;
     });
-    if (!currentCv) next.currentCv = "Please upload your current CV / resume.";
     setErrors(next);
     setTouched((prev) => {
       const t = { ...prev };
       keys.forEach((k) => (t[k] = true));
-      t.currentCv = true;
       return t;
     });
     return Object.keys(next).length === 0;
@@ -189,7 +169,8 @@ export default function ContactForm() {
         if (key === "countryCode" || key === "whatsappNumber") return;
         payload.append(key, value);
       });
-      payload.append("whatsapp", `${formData.countryCode} ${formData.whatsappNumber}`.trim());
+      const phone = formData.whatsappNumber.trim() ? `${formData.countryCode} ${formData.whatsappNumber}`.trim() : "";
+      payload.append("whatsapp", phone);
       if (currentCv) payload.append("currentCv", currentCv);
 
       const response = await fetch("/api/contact", { method: "POST", body: payload });
@@ -222,7 +203,7 @@ export default function ContactForm() {
               Submit your career-branding enquiry.
             </h2>
             <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-text-body">
-              Share your current CV or resume, target market, target role, career level, and preferred service direction. Your profile is reviewed personally before the most suitable package is confirmed.
+              Just your name and email to start — share as much or as little detail as you like. Your enquiry is reviewed personally before the most suitable package is confirmed.
             </p>
             <div className="mt-8 rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm">
               <h3 className="font-heading text-[22px] font-bold text-foreground">Premium, personally written by Chanuka</h3>
@@ -276,62 +257,61 @@ export default function ContactForm() {
                   <input type="email" value={formData.email} onChange={(e) => updateField("email", e.target.value)} onBlur={() => handleBlur("email")} autoComplete="email" className={inputClass(errors.email)} />
                 </Field>
 
-                <Field label="WhatsApp Number" required error={errors.whatsappNumber}>
+                <Field label="WhatsApp Number" error={errors.whatsappNumber}>
                   <div className="flex gap-2">
-                    <select
+                    <input
+                      list="country-codes"
                       value={formData.countryCode}
                       onChange={(e) => updateField("countryCode", e.target.value)}
-                      aria-label="Country code"
-                      className="form-input w-[112px] shrink-0"
-                    >
+                      aria-label="Country code (type to search)"
+                      placeholder="+1"
+                      className="form-input w-[96px] shrink-0"
+                    />
+                    <datalist id="country-codes">
                       {countryCodes.map((c) => <option key={c.code + c.label} value={c.code}>{c.label}</option>)}
-                    </select>
+                    </datalist>
                     <input
                       value={formData.whatsappNumber}
                       onChange={(e) => updateField("whatsappNumber", e.target.value)}
                       onBlur={() => handleBlur("whatsappNumber")}
                       inputMode="tel"
                       placeholder="555 000 0000"
-                      className={inputClass(errors.whatsappNumber)}
+                      className={`${inputClass(errors.whatsappNumber)} min-w-0 flex-1`}
                     />
                   </div>
                 </Field>
 
-                <Field label="Current Country" required error={errors.currentCountry}>
-                  <input value={formData.currentCountry} onChange={(e) => updateField("currentCountry", e.target.value)} onBlur={() => handleBlur("currentCountry")} className={inputClass(errors.currentCountry)} />
+                <Field label="Current Country">
+                  <input value={formData.currentCountry} onChange={(e) => updateField("currentCountry", e.target.value)} className="form-input" />
                 </Field>
-                <Field label="Target Market" required error={errors.targetCountry}>
-                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} onBlur={() => handleBlur("targetCountry")} placeholder="Country or region you're applying to, or remote-first" className={inputClass(errors.targetCountry)} />
+                <Field label="Target Market">
+                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} placeholder="Country or region you're applying to, or remote-first" className="form-input" />
                 </Field>
-                <Field label="Current Career Level" required>
+                <Field label="Current Career Level">
                   <select value={formData.careerLevel} onChange={(e) => updateField("careerLevel", e.target.value)} className="form-input">
                     {careerLevels.map((level) => <option key={level} value={level}>{level}</option>)}
                   </select>
                 </Field>
-                <Field label="Target Role" required error={errors.targetRole}>
-                  <input value={formData.targetRole} onChange={(e) => updateField("targetRole", e.target.value)} onBlur={() => handleBlur("targetRole")} className={inputClass(errors.targetRole)} />
+                <Field label="Target Role">
+                  <input value={formData.targetRole} onChange={(e) => updateField("targetRole", e.target.value)} className="form-input" />
                 </Field>
-                <Field label="Years of Experience" required error={errors.yearsExperience}>
-                  <input value={formData.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} onBlur={() => handleBlur("yearsExperience")} inputMode="numeric" placeholder="8 years" className={inputClass(errors.yearsExperience)} />
+                <Field label="Years of Experience">
+                  <input value={formData.yearsExperience} onChange={(e) => updateField("yearsExperience", e.target.value)} inputMode="numeric" placeholder="8 years" className="form-input" />
                 </Field>
               </div>
 
-              <Field label="Selected Service or Package" required>
+              <Field label="Selected Service or Package">
                 <select value={formData.selectedService} onChange={(e) => updateField("selectedService", e.target.value)} className="form-input">
                   {serviceOptions.map((service) => <option key={service} value={service}>{service}</option>)}
                 </select>
               </Field>
 
-              <Field label="Upload Current CV / Resume" required error={touched.currentCv ? errors.currentCv : ""}>
+              <Field label="Upload Current CV / Resume (optional)">
                 <input
                   type="file"
                   accept=".pdf,.doc,.docx"
-                  onChange={(event) => {
-                    setCurrentCv(event.target.files?.[0] ?? null);
-                    setTouched((prev) => ({ ...prev, currentCv: true }));
-                    setErrors((prev) => ({ ...prev, currentCv: event.target.files?.[0] ? "" : "Please upload your current CV / resume." }));
-                  }}
-                  className={inputClass(touched.currentCv ? errors.currentCv : "")}
+                  onChange={(event) => setCurrentCv(event.target.files?.[0] ?? null)}
+                  className="form-input"
                 />
               </Field>
 
@@ -339,14 +319,13 @@ export default function ContactForm() {
                 <input type="url" value={formData.linkedinUrl} onChange={(e) => updateField("linkedinUrl", e.target.value)} onBlur={() => handleBlur("linkedinUrl")} placeholder="https://www.linkedin.com/in/..." className={inputClass(errors.linkedinUrl)} />
               </Field>
 
-              <Field label="Message / Career Goal" required error={errors.message}>
+              <Field label="Message / Career Goal">
                 <textarea
                   rows={5}
                   value={formData.message}
                   onChange={(e) => updateField("message", e.target.value)}
-                  onBlur={() => handleBlur("message")}
                   placeholder="Tell me your target role, market, timeline, and what needs to improve."
-                  className={`${inputClass(errors.message)} resize-none`}
+                  className="form-input resize-none"
                 />
               </Field>
 
