@@ -265,7 +265,7 @@ export default function ContactForm() {
                       onChange={(e) => updateField("countryCode", e.target.value)}
                       aria-label="Country code (type to search)"
                       placeholder="+1"
-                      className="form-input w-[96px] shrink-0"
+                      className="form-input !w-[96px] shrink-0"
                     />
                     <datalist id="country-codes">
                       {countryCodes.map((c) => <option key={c.code + c.label} value={c.code}>{c.label}</option>)}
@@ -285,7 +285,7 @@ export default function ContactForm() {
                   <input value={formData.currentCountry} onChange={(e) => updateField("currentCountry", e.target.value)} className="form-input" />
                 </Field>
                 <Field label="Target Market">
-                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} placeholder="Country or region you're applying to, or remote-first" className="form-input" />
+                  <input value={formData.targetCountry} onChange={(e) => updateField("targetCountry", e.target.value)} placeholder="e.g. USA, UK, remote-first" className="form-input" />
                 </Field>
                 <Field label="Current Career Level">
                   <select value={formData.careerLevel} onChange={(e) => updateField("careerLevel", e.target.value)} className="form-input">
