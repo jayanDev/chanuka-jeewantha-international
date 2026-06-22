@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import SearchModal from "@/components/SearchModal";
+import { CALENDLY_URL } from "@/lib/booking-config";
 
 type NavUser = {
   id: string;
@@ -15,6 +16,7 @@ type NavUser = {
 type PrimaryNavLink = {
   href: string;
   label: string;
+  external?: boolean;
 };
 
 type HeaderProps = {
@@ -29,7 +31,7 @@ const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/tools", label: "Tools" },
   { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Apply Now" },
+  { href: CALENDLY_URL, label: "Free Consultation", external: true },
 ];
 
 export default function Header({ initialUser = null }: HeaderProps) {
@@ -219,6 +221,19 @@ export default function Header({ initialUser = null }: HeaderProps) {
           <div className="flex flex-1 justify-center">
             <div className="flex items-center gap-6">
             {primaryNavLinks.map((link) => {
+              if (link.external) {
+                return (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${desktopNavLinkClass} text-brand-main font-semibold hover:text-brand-dark`}
+                  >
+                    {link.label}
+                  </a>
+                );
+              }
               const active = getIsActive(link.href);
               return (
                 <Link
@@ -400,6 +415,20 @@ export default function Header({ initialUser = null }: HeaderProps) {
       >
         <nav className="flex flex-col items-center gap-6 px-4">
           {primaryNavLinks.map((link, index) => {
+            if (link.external) {
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`${mobileNavLinkClass} text-brand-main font-semibold hover:text-brand-dark`}
+                >
+                  {link.label}
+                </a>
+              );
+            }
             const active = getIsActive(link.href);
             return (
               <Link

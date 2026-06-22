@@ -4,6 +4,7 @@ import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { isTrustedOrigin } from "@/lib/security";
 import { contactSchema } from "@/lib/validation";
 import { isAllowedFileType, saveUploadedFile } from "@/lib/upload-storage";
+import { sendEnquiryNotification } from "@/lib/email";
 
 function readString(formData: FormData, key: string): string {
   return String(formData.get(key) ?? "").trim();
@@ -93,14 +94,31 @@ export async function POST(request: Request) {
       );
     }
 
-    await prisma.contactMessage.create({
-      data: {
+    // Save to the database (best-effort: a DB issue must NOT block the email).
+    try {
+      await prisma.contactMessage.create({
+        data: {
+          name: parsed.data.name,
+          email: parsed.data.email,
+          subject: parsed.data.subject,
+          message: parsed.data.message,
+        },
+      });
+    } catch (dbError) {
+      console.error("Enquiry DB save failed:", dbError);
+    }
+
+    // Always email the enquiry to the business inbox.
+    try {
+      await sendEnquiryNotification({
         name: parsed.data.name,
         email: parsed.data.email,
         subject: parsed.data.subject,
         message: parsed.data.message,
-      },
-    });
+      });
+    } catch (emailError) {
+      console.error("Enquiry email notification failed:", emailError);
+    }
 
     return NextResponse.json({ ok: true });
   } catch {

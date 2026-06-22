@@ -3,7 +3,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/site-url";
 import { buildPageMetadata } from "@/lib/seo";
-import { getCachedPublicReviews } from "@/lib/reviews";
+import { featuredReviews, GOOGLE_REVIEWS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/featured-reviews";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import { CALENDLY_URL } from "@/lib/booking-config";
 
@@ -105,8 +105,6 @@ const faqs = [
 ];
 
 export default async function Home() {
-  const publicReviews = await getCachedPublicReviews();
-  const testimonialHighlights = publicReviews.slice(0, 3);
 
   const personLd = {
     "@context": "https://schema.org",
@@ -138,6 +136,12 @@ export default async function Home() {
       bestRating: "5",
       worstRating: "1",
     },
+    review: featuredReviews.map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
+      reviewBody: r.quote,
+    })),
   };
 
   return (
@@ -159,9 +163,6 @@ export default async function Home() {
 
         <div className="mx-auto grid max-w-[1512px] grid-cols-1 items-center gap-16 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] relative z-10">
           <div>
-            <span className="mb-6 inline-flex rounded-full border border-[#C9A961]/35 bg-[#C9A961]/5 px-4.5 py-1.5 text-xs font-bold uppercase tracking-[0.16em] text-[#C9A961]">
-              Founder-Led Premium Career Branding
-            </span>
             {/* Editorial gold accent line */}
             <div className="mb-8 h-px w-16 bg-gradient-to-r from-[#C9A961] to-transparent" />
             <h1 className="font-heading text-[40px] font-bold leading-[1.08] text-white sm:text-[54px] md:text-[68px] tracking-tight max-w-4xl">
@@ -171,29 +172,17 @@ export default async function Home() {
               ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and career-branding suites engineered personally for senior candidates targeting competitive global markets.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row items-center">
-              <Link 
-                href="/contact" 
+              <a
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn inline-flex items-center justify-center bg-gradient-to-r from-[#C9A961] to-[#E0C882] hover:from-[#E0C882] hover:to-[#C9A961] text-[#0A2540] font-bold w-full sm:w-auto rounded-[12px] shadow-[0_4px_24px_rgba(201,169,97,0.3)] hover:shadow-[0_8px_32px_rgba(201,169,97,0.5)] transform hover:-translate-y-0.5 transition-all duration-300 border-none"
               >
                 Request Career Support
-              </Link>
+              </a>
               <Link href="/pricing" className="btn btn-secondary-gold w-full sm:w-auto">
                 View Premium Packages
               </Link>
-              {CALENDLY_URL && (
-                <a
-                  href={CALENDLY_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-[12px] border border-white/30 px-6 py-3 text-[15px] font-semibold text-white transition-colors hover:border-[#C9A961] hover:text-[#C9A961]"
-                >
-                  <svg className="h-[18px] w-[18px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                    <rect x="3" y="4" width="18" height="18" rx="2" />
-                    <path d="M16 2v4M8 2v4M3 10h18" />
-                  </svg>
-                  Book a Free Call
-                </a>
-              )}
             </div>
 
             {/* Scannable Hero Trust Indicator */}
@@ -470,35 +459,41 @@ export default async function Home() {
       {/* 9. Testimonials Section */}
       <section className="w-full bg-white py-20 md:py-28">
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
-          <div className="mb-16 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-            <div>
-              <span className="text-[#8C6D30] font-semibold uppercase tracking-wider text-xs">Client Trust</span>
-              <h2 className="mt-3 font-heading text-[36px] font-bold leading-tight text-[#0A2540] md:text-[52px] tracking-tight">
-                Testimonials and proof.
-              </h2>
+          <div className="mb-16 flex flex-col items-center text-center">
+            <span className="text-[#8C6D30] font-semibold uppercase tracking-wider text-xs">Client Trust</span>
+            <p className="mt-4 font-heading font-bold leading-none text-[#0A2540] text-[88px] md:text-[140px]">
+              {GOOGLE_RATING}<span className="text-[#C9A961]">/5</span>
+            </p>
+            <div className="mt-3 flex items-center gap-1 text-[#C9A961]">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg key={i} className="h-7 w-7 md:h-8 md:w-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+              ))}
             </div>
-            <Link href="/testimonials" className="btn btn-secondary-gold text-sm">
-              See Client Reviews
-            </Link>
+            <p className="mt-5 text-lg md:text-2xl font-semibold text-zinc-700">
+              Rated <span className="text-[#0A2540] font-bold">5.0 / 5</span> across <span className="text-[#0A2540] font-bold">{GOOGLE_REVIEW_COUNT} verified Google reviews</span>
+            </p>
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary-gold text-sm mt-7">
+              Read all {GOOGLE_REVIEW_COUNT} reviews on Google
+            </a>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {testimonialHighlights.map((item) => (
-              <article key={item.id} className="testimonial-card-premium relative rounded-[20px] border border-zinc-200/60 bg-[#FAF8F3] p-8 shadow-sm flex flex-col justify-between overflow-hidden">
+            {featuredReviews.map((item) => (
+              <article key={item.name} className="testimonial-card-premium relative rounded-[20px] border border-zinc-200/60 bg-[#FAF8F3] p-8 shadow-sm flex flex-col justify-between overflow-hidden">
                 <span className="text-[#C9A961]/15 font-heading text-[120px] leading-none absolute -top-4 -left-2 select-none pointer-events-none">&ldquo;</span>
                 <div className="relative z-10 pt-4">
                   {/* 5-star rating */}
                   <div className="mb-4 flex items-center gap-0.5">
-                    {Array.from({ length: 5 }).map((_, i) => (
+                    {Array.from({ length: item.rating }).map((_, i) => (
                       <svg key={i} className="h-4 w-4 fill-[#C9A961]" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
                   </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 italic">&quot;{item.message}&quot;</p>
+                  <p className="text-sm leading-relaxed text-zinc-700 italic">&quot;{item.quote}&quot;</p>
                 </div>
-                <div className="mt-8 border-t border-zinc-200/60 pt-4 relative z-10">
+                <div className="mt-8 border-t border-zinc-200/60 pt-4 relative z-10 flex items-center justify-between">
                   <p className="text-sm font-bold text-[#0A2540]">{item.name}</p>
-                  {item.outcome ? <p className="mt-1 text-xs font-semibold text-[#8C6D30]">{item.outcome}</p> : null}
+                  <span className="text-xs font-semibold text-[#8C6D30]">Verified on Google</span>
                 </div>
               </article>
             ))}
