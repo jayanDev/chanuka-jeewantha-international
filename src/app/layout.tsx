@@ -14,7 +14,9 @@ import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
 
 const siteUrl = getBaseUrl();
-const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID?.trim() || "G-JBG5EY2YXW";
+// GA4 Measurement ID for chanukajeewantha.com. Hardcoded so the correct property
+// is always used, regardless of any stale NEXT_PUBLIC_GA_MEASUREMENT_ID env value.
+const gaMeasurementId = "G-JBG5EY2YXW";
 const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
 const heartbeatAnalyticsEnabled = process.env.NEXT_PUBLIC_ENABLE_HEARTBEAT_ANALYTICS === "true";
 const organizationId = `${siteUrl}#organization`;
