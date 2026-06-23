@@ -28,10 +28,8 @@ const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Packages" },
   { href: "/blog", label: "Blog" },
-  { href: "/tools", label: "Tools" },
-  { href: "/#process", label: "Process" },
   { href: "/about", label: "About" },
-  { href: CALENDLY_URL, label: "Free Consultation", external: true },
+  { href: "/contact", label: "Apply Now" },
 ];
 
 export default function Header({ initialUser = null }: HeaderProps) {
@@ -311,9 +309,9 @@ export default function Header({ initialUser = null }: HeaderProps) {
                 <Link href="/auth/signin" className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-zinc-300 px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                   Sign In
                 </Link>
-                <Link href="/contact" className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
-                  Apply Now
-                </Link>
+                <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-2 text-[15px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+                  Free Consultation
+                </a>
               </div>
             ) : (
               <div ref={profileMenuRef} className="relative">
@@ -501,9 +499,9 @@ export default function Header({ initialUser = null }: HeaderProps) {
               <Link href="/auth/signin" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-[10px] border border-zinc-300 px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                 Sign In
               </Link>
-              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
-                Apply Now
-              </Link>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="inline-flex min-h-11 items-center justify-center rounded-[10px] bg-brand-main px-4 py-3 text-center text-[16px] font-semibold text-foreground transition-colors hover:bg-brand-dark">
+                Free Consultation
+              </a>
             </div>
           ) : (
             <button

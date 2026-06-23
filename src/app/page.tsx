@@ -178,7 +178,7 @@ export default async function Home() {
                 rel="noopener noreferrer"
                 className="btn inline-flex items-center justify-center bg-gradient-to-r from-[#C9A961] to-[#E0C882] hover:from-[#E0C882] hover:to-[#C9A961] text-[#0A2540] font-bold w-full sm:w-auto rounded-[12px] shadow-[0_4px_24px_rgba(201,169,97,0.3)] hover:shadow-[0_8px_32px_rgba(201,169,97,0.5)] transform hover:-translate-y-0.5 transition-all duration-300 border-none"
               >
-                Request Career Support
+                Free Consultation
               </a>
               <Link href="/pricing" className="btn btn-secondary-gold w-full sm:w-auto">
                 View Premium Packages
