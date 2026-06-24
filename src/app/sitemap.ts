@@ -61,6 +61,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/cv-writing/australia",
     "/cv-writing/canada",
     "/cv-writing/new-zealand",
+    "/guides",
+    "/guides/us-resume-vs-uk-cv-vs-australian-resume",
+    "/guides/ats-cv-vs-normal-cv",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({

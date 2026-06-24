@@ -10,6 +10,8 @@ type BuildPageMetadataInput = {
   type?: "website" | "article" | "profile";
   /** hreflang language alternates, e.g. { 'si': '/blog/some-sinhala-slug' } */
   alternateLanguages?: Record<string, string>;
+  /** Open Graph locale, e.g. 'en_US'. Defaults to 'en'. */
+  ogLocale?: string;
 };
 
 const SITE_NAME = "Chanuka Jeewantha";
@@ -68,7 +70,7 @@ export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
       description: input.description,
       url: absoluteUrl,
       siteName: SITE_NAME,
-      locale: "en",
+      locale: input.ogLocale ?? "en",
       type: input.type ?? "website",
       images: [
         {
