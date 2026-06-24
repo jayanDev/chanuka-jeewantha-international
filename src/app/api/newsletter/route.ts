@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit";
 import { isTrustedOrigin } from "@/lib/security";
 import { newsletterSchema } from "@/lib/validation";
+import { sendEnquiryNotification } from "@/lib/email";
 
 export async function POST(request: Request) {
   try {
@@ -34,16 +34,17 @@ export async function POST(request: Request) {
       );
     }
 
-    await prisma.newsletterSubscriber.upsert({
-      where: { email: parsed.data.email.toLowerCase() },
-      create: {
-        email: parsed.data.email.toLowerCase(),
-        status: "active",
-      },
-      update: {
-        status: "active",
-      },
-    });
+    // Email the new subscriber straight to the business inbox (same channel as the contact form).
+    try {
+      await sendEnquiryNotification({
+        name: "Newsletter subscriber",
+        email: parsed.data.email,
+        subject: "New newsletter subscriber",
+        message: `New newsletter signup from the website: ${parsed.data.email}`,
+      });
+    } catch (emailError) {
+      console.error("Newsletter email notification failed:", emailError);
+    }
 
     return NextResponse.json({ ok: true });
   } catch {

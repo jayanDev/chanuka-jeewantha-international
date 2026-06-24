@@ -63,21 +63,28 @@ export default function ResumeComparisonGuide() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
-      <section className="w-full bg-[#0A2540] pt-[40px] pb-[64px] sm:pt-[56px] sm:pb-[80px]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <section className="w-full bg-[#0A2540] pt-[40px] pb-[64px] sm:pt-[56px] sm:pb-[80px] relative overflow-hidden">
+        <div className="pointer-events-none absolute -top-28 right-0 w-[560px] h-[560px] rounded-full bg-brand-main/10 blur-3xl translate-x-1/4" aria-hidden="true" />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex items-center gap-2 text-white/70 font-medium mb-6 text-sm">
             <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
             <span className="text-brand-main text-xs">/</span>
             <Link href="/guides" className="hover:text-brand-main transition-colors">Guides</Link>
           </div>
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-main/30 bg-brand-main/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-main">
+            Cross-market guide
+          </span>
           <h1 className="font-heading text-[30px] sm:text-[44px] font-bold leading-[1.1] text-white">
             US Resume vs UK CV vs Australian Resume
           </h1>
-          <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed">
-            A US resume is a concise one-to-two-page document, a UK CV is a two-page document led by a personal profile,
-            and an Australian resume is a longer two-to-four-page document that often addresses selection criteria. All
-            three avoid photos and personal details, but they differ in length, terminology, and spelling.
-          </p>
+          <div className="mt-6 rounded-xl border-l-[3px] border-brand-main bg-white/5 p-5 backdrop-blur-sm">
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+              <strong className="text-brand-main">Quick answer:</strong> A US resume is a concise one-to-two-page document, a
+              UK CV is a two-page document led by a personal profile, and an Australian resume is a longer two-to-four-page
+              document that often addresses selection criteria. All three avoid photos and personal details, but they differ
+              in length, terminology, and spelling.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -86,7 +93,7 @@ export default function ResumeComparisonGuide() {
           <h2 className="font-heading text-[26px] sm:text-[34px] font-bold leading-tight text-foreground">
             Side-by-side comparison
           </h2>
-          <div className="mt-6 overflow-x-auto">
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 shadow-sm">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
                 <tr className="bg-[#0A2540] text-white">

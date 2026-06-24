@@ -111,9 +111,21 @@ export default function Footer() {
 
         {/* Bottom Section: Social & Copyright */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-white text-sm">
-            &copy; {currentYear} Chanuka Jeewantha. Premium Career Branding Services.
-          </p>
+          <div className="flex flex-col items-center md:items-start gap-1.5">
+            <p className="text-white text-sm">
+              &copy; {currentYear} Chanuka Jeewantha. Premium Career Branding Services.
+            </p>
+            <p className="text-white/55 text-xs">
+              In Sri Lanka?{" "}
+              <a
+                href="https://www.chanukajeewantha.lk/"
+                className="font-semibold text-brand-main hover:underline"
+              >
+                Visit chanukajeewantha.lk
+              </a>{" "}
+              for local services.
+            </p>
+          </div>
           <div className="flex flex-wrap items-center gap-4">
             <a href="https://www.facebook.com/share/15vdmdB4oE/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-brand-main hover:scale-110 hover:opacity-100 transition-all duration-200">
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>

@@ -141,16 +141,18 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="mb-10 rounded-2xl border border-zinc-200 border-t-[3px] border-t-brand-main bg-white p-6 sm:p-7 shadow-sm">
             <p className="text-text-body text-lg leading-relaxed">
-              <strong className="text-foreground">Chanuka Jeewantha</strong> is a professional {doc} writer and career-branding
-              specialist providing ATS-optimized {doc} writing, LinkedIn profile optimization, and cover letters for{" "}
-              {entry.demonym} job seekers targeting roles in {entry.country} — rated {GOOGLE_RATING}/5 from{" "}
+              <strong className="text-foreground">Chanuka Jeewantha</strong> is a professional {doc} writer and
+              career-branding specialist who works remotely with {entry.demonym} professionals — providing ATS-optimized{" "}
+              {doc} writing, LinkedIn profile optimization, and cover letters. Backed by 380+ senior and executive
+              placements across the USA, UK, Australia, Canada, and New Zealand, and rated {GOOGLE_RATING}/5 from{" "}
               {GOOGLE_REVIEW_COUNT} Google reviews.
             </p>
             <ul className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 text-sm text-text-body">
-              <li><span className="font-semibold text-foreground">Markets served:</span> USA, UK, Australia, Canada, New Zealand</li>
+              <li><span className="font-semibold text-foreground">Markets served:</span> USA, UK, Australia, Canada, New Zealand (remote)</li>
+              <li><span className="font-semibold text-foreground">Best for:</span> {entry.specialisms.slice(0, 3).join(", ")} &amp; more</li>
+              <li><span className="font-semibold text-foreground">Proof:</span> 380+ placements · {GOOGLE_RATING}/5 from {GOOGLE_REVIEW_COUNT} reviews</li>
               <li><span className="font-semibold text-foreground">Turnaround:</span> 3–5 business days (express available)</li>
-              <li><span className="font-semibold text-foreground">Included:</span> ATS optimization + cover letter</li>
-              <li><span className="font-semibold text-foreground">Rating:</span> {GOOGLE_RATING}/5 from {GOOGLE_REVIEW_COUNT} Google reviews</li>
+              <li><span className="font-semibold text-foreground">Includes:</span> ATS optimization + cover letter</li>
             </ul>
           </div>
           <span className="text-brand-main font-semibold uppercase tracking-wider text-sm">Overview</span>

@@ -59,22 +59,29 @@ export default function AtsCvGuide() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
 
-      <section className="w-full bg-[#0A2540] pt-[40px] pb-[64px] sm:pt-[56px] sm:pb-[80px]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <section className="w-full bg-[#0A2540] pt-[40px] pb-[64px] sm:pt-[56px] sm:pb-[80px] relative overflow-hidden">
+        <div className="pointer-events-none absolute -top-28 right-0 w-[560px] h-[560px] rounded-full bg-brand-main/10 blur-3xl translate-x-1/4" aria-hidden="true" />
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex items-center gap-2 text-white/70 font-medium mb-6 text-sm">
             <Link href="/" className="hover:text-brand-main transition-colors">Home</Link>
             <span className="text-brand-main text-xs">/</span>
             <Link href="/guides" className="hover:text-brand-main transition-colors">Guides</Link>
           </div>
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full border border-brand-main/30 bg-brand-main/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-brand-main">
+            ATS guide
+          </span>
           <h1 className="font-heading text-[30px] sm:text-[44px] font-bold leading-[1.1] text-white">
             ATS CV vs Normal CV
           </h1>
-          <p className="mt-6 text-base sm:text-lg text-white/85 leading-relaxed">
-            An ATS CV is formatted so applicant tracking software can read it — single column, standard headings, no text
-            trapped in images, standard fonts, and keywords drawn from the job description. A &ldquo;normal&rdquo; or
-            designer CV prioritises visual design, which often fails to parse. Since most employers screen applications
-            with an ATS, an ATS-friendly format is safer for online applications.
-          </p>
+          <div className="mt-6 rounded-xl border-l-[3px] border-brand-main bg-white/5 p-5 backdrop-blur-sm">
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed">
+              <strong className="text-brand-main">Quick answer:</strong> An ATS CV is formatted so applicant tracking
+              software can read it — single column, standard headings, no text trapped in images, standard fonts, and
+              keywords drawn from the job description. A &ldquo;normal&rdquo; or designer CV prioritises visual design,
+              which often fails to parse. Since most employers screen applications with an ATS, an ATS-friendly format is
+              safer for online applications.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -83,7 +90,7 @@ export default function AtsCvGuide() {
           <h2 className="font-heading text-[26px] sm:text-[34px] font-bold leading-tight text-foreground">
             ATS-friendly CV vs designer CV
           </h2>
-          <div className="mt-6 overflow-x-auto">
+          <div className="mt-6 overflow-x-auto rounded-2xl border border-zinc-200 shadow-sm">
             <table className="w-full border-collapse text-left text-sm">
               <thead>
                 <tr className="bg-[#0A2540] text-white">
