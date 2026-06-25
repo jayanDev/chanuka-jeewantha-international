@@ -197,6 +197,7 @@ export default async function RootLayout({
       className={`${plusJakarta.variable} ${poppins.variable} ${playfairDisplay.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
+        <meta name="trustpilot-one-time-domain-verification-id" content="8cebe28a-5167-496a-8a5d-ce46b6d12acf" />
         <link rel="alternate" type="application/rss+xml" title="Chanuka Jeewantha Blog RSS Feed" href={`${siteUrl}/feed.xml`} />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col font-body">
