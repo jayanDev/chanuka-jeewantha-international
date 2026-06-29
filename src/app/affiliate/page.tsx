@@ -6,10 +6,10 @@ import { getBaseUrl } from "@/lib/site-url";
 import AffiliateDashboardClient from "./_components/AffiliateDashboardClient";
 
 export const metadata = buildPageMetadata({
-  title: "Campus Affiliate Network | Earn Free CV Packages",
-  description: "Join the Chanuka Jeewantha campus affiliate program. Refer friends and earn free ATS CV packages, Cover Letters, and Career Ebooks.",
+  title: "Affiliate Network | Earn Free CV Packages",
+  description: "Join the Chanuka Jeewantha affiliate program. Refer friends and earn free ATS CV packages, Cover Letters, and career-branding services.",
   path: "/affiliate",
-  keywords: ["affiliate program", "earn free cv", "campus ambassador sri lanka", "career affiliate"],
+  keywords: ["affiliate program", "earn free cv", "career affiliate"],
 });
 
 function sanitizeReferralSeed(value: string): string {

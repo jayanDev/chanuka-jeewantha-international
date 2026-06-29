@@ -137,9 +137,6 @@ export default function ResourcesPage() {
             <h2 className="text-[22px] font-bold font-heading text-foreground mb-3">Explore More</h2>
             <p className="text-text-body mb-5">Pair these checklists with deeper reading and hands-on services.</p>
             <div className="flex flex-wrap gap-3">
-              <Link href="/ebooks" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
-                Explore Ebooks
-              </Link>
               <Link href="/services" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                 View Services
               </Link>

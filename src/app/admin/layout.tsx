@@ -16,7 +16,6 @@ const adminLinks = [
   { href: "/admin/offers", label: "Offers & Coupons" },
   { href: "/admin/reports", label: "Reports" },
   { href: "/admin/reviews", label: "Reviews" },
-  { href: "/admin/ebooks", label: "Ebooks" },
   { href: "/admin/resources", label: "Resources" },
   { href: "/admin/blog", label: "Blog" },
   { href: "/admin/comments", label: "Comments" },

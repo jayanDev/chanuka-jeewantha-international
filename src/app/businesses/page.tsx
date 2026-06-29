@@ -31,11 +31,11 @@ const businesses = [
     ctaLabel: "View workshops",
   },
   {
-    name: "Digital Career Products",
+    name: "Digital Career Resources",
     type: "Product Line",
     summary:
-      "Templates, checklists, free tools, and guided ebook systems to help candidates execute faster with clear frameworks.",
-    focus: ["Ebooks", "Free Tools", "Application Templates"],
+      "Templates, checklists, and free tools to help candidates execute faster with clear frameworks.",
+    focus: ["Checklists", "Free Tools", "Application Templates"],
     href: "/resources",
     ctaLabel: "Browse resources",
   },
