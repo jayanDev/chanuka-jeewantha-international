@@ -257,10 +257,10 @@ export default async function Home() {
             {/* Editorial gold accent line */}
             <div className="mb-8 h-px w-16 bg-gradient-to-r from-[#C9A961] to-transparent" />
             <h1 className="font-heading text-[40px] font-bold leading-[1.08] text-white sm:text-[54px] md:text-[68px] tracking-tight max-w-4xl">
-              Premium Resume, LinkedIn & Career Branding for Professionals Competing at the Top
+              #1 Premium ATS Resume Writing Service in the <span className="text-[#C9A961]">United States</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl font-light">
-              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and career-branding suites engineered personally for senior candidates targeting competitive global markets.
+              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and full career-branding suites — personally written for US senior candidates and remote-first opportunities. Backed by a 90-day interview guarantee.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row items-center">
               <a

@@ -8,6 +8,9 @@ import { caseStudies } from "@/lib/case-studies";
 import { getBlogCategoryPath, getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
 import { careerTools } from "@/lib/tools";
 import { industryLandingPages } from "@/lib/industry-pages";
+import { industryPages as resumeWriterIndustries } from "@/lib/industry-resume-pages";
+import { cityPages } from "@/lib/city-resume-pages";
+import { careerStagePages } from "@/lib/career-stage-pages";
 
 const baseUrl = getBaseUrl();
 const siteLastUpdated = new Date("2026-05-21T00:00:00.000Z");
@@ -64,6 +67,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/guides",
     "/guides/us-resume-vs-uk-cv-vs-australian-resume",
     "/guides/ats-cv-vs-normal-cv",
+    // US SEO network — hub pages
+    "/resume-writer",
+    "/locations",
+    "/career-stage",
+    // Comparison / buying-decision pages
+    "/best-resume-writing-services-2026",
+    "/resume-writer-cost",
+    "/is-a-resume-writer-worth-it",
+    "/resume-writer-vs-chatgpt",
+    "/professional-resume-writer-vs-template",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({
@@ -152,6 +165,27 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.71,
   }));
 
+  const resumeWriterIndustryEntries = resumeWriterIndustries.map((item) => ({
+    url: `${baseUrl}/resume-writer/${item.slug}`,
+    lastModified: siteLastUpdated,
+    changeFrequency: "monthly" as const,
+    priority: 0.78,
+  }));
+
+  const cityEntries = cityPages.map((item) => ({
+    url: `${baseUrl}/locations/${item.slug}`,
+    lastModified: siteLastUpdated,
+    changeFrequency: "monthly" as const,
+    priority: 0.75,
+  }));
+
+  const careerStageEntries = careerStagePages.map((item) => ({
+    url: `${baseUrl}/career-stage/${item.slug}`,
+    lastModified: siteLastUpdated,
+    changeFrequency: "monthly" as const,
+    priority: 0.74,
+  }));
+
   const caseStudyEntries = caseStudies.map((item) => ({
     url: `${baseUrl}/case-studies/${item.slug}`,
     lastModified: new Date(`${item.year}-01-01T00:00:00.000Z`),
@@ -168,6 +202,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...resourceEntries,
     ...toolEntries,
     ...industryEntries,
+    ...resumeWriterIndustryEntries,
+    ...cityEntries,
+    ...careerStageEntries,
     ...caseStudyEntries,
   ];
 
