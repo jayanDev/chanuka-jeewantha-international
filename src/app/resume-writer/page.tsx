@@ -5,6 +5,8 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 import { buildServiceSchema } from "@/lib/service-schema";
 import { industryPages } from "@/lib/industry-resume-pages";
 import PageCTA from "@/components/PageCTA";
+import Price from "@/components/Price";
+import { parseUsd } from "@/lib/currency";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -85,7 +87,7 @@ export default function ResumeWriterHubPage() {
                 className="group flex h-full flex-col rounded-[16px] border border-zinc-200/80 bg-white p-6 shadow-sm transition-all hover:-translate-y-1 hover:border-[#C9A961]/60 hover:shadow-md"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8C6D30]">
-                  USD {page.priceRange.split(" - ")[0]}+
+                  From <Price usd={parseUsd(page.priceRange.split(" - ")[0])} />
                 </span>
                 <h3 className="mt-3 font-heading text-[20px] font-bold text-[#0A2540] group-hover:text-[#8C6D30]">
                   {page.h1}

@@ -94,6 +94,13 @@ export function convertFromUsd(usd: number, code: CurrencyCode): number {
   return roundNice(usd * cfg.rate, cfg.roundTo);
 }
 
+/** Parse a USD price string like "$1,499" or "$349" into a number. Returns 0 if none. */
+export function parseUsd(value: string): number {
+  const digits = value.replace(/[^0-9.]/g, "");
+  const n = Number.parseFloat(digits);
+  return Number.isFinite(n) ? n : 0;
+}
+
 /** Format a USD amount as a localized currency string, e.g. "CA$485", "Rs 53,500". */
 export function formatPrice(usd: number, code: CurrencyCode): string {
   const cfg = CURRENCIES[code] ?? CURRENCIES[BASE_CURRENCY];

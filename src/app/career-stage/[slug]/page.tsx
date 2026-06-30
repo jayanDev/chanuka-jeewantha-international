@@ -7,6 +7,8 @@ import { buildServiceSchema } from "@/lib/service-schema";
 import { careerStagePages, getCareerStagePage } from "@/lib/career-stage-pages";
 import RelatedPages from "@/components/RelatedPages";
 import PageCTA from "@/components/PageCTA";
+import Price from "@/components/Price";
+import { parseUsd } from "@/lib/currency";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
@@ -168,9 +170,8 @@ export default async function CareerStagePage({ params }: PageProps) {
             <h3 className="mt-3 font-heading text-[24px] font-bold leading-tight text-[#0A2540]">
               {page.recommendedPackage.name}
             </h3>
-            <p className="mt-5 font-heading font-bold leading-none text-[#0A2540]">
-              <span className="text-[22px] font-normal opacity-60">{page.recommendedPackage.price.charAt(0)}</span>
-              <span className="text-[42px]">{page.recommendedPackage.price.slice(1)}</span>
+            <p className="mt-5 font-heading text-[42px] font-bold leading-none text-[#0A2540]">
+              <Price usd={parseUsd(page.recommendedPackage.price)} />
             </p>
             <p className="mt-5 text-sm leading-relaxed text-zinc-700">
               {page.recommendedPackage.blurb}

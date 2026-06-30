@@ -5,6 +5,8 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 import { buildServiceSchema } from "@/lib/service-schema";
 import { careerStagePages } from "@/lib/career-stage-pages";
 import PageCTA from "@/components/PageCTA";
+import Price from "@/components/Price";
+import { parseUsd } from "@/lib/currency";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -62,7 +64,7 @@ export default function CareerStageHubPage() {
                 className="group flex h-full flex-col rounded-[18px] border border-zinc-200/80 bg-white p-7 shadow-sm transition-all hover:-translate-y-1 hover:border-[#C9A961]/60 hover:shadow-md"
               >
                 <span className="text-xs font-bold uppercase tracking-[0.14em] text-[#8C6D30]">
-                  Recommended: {page.recommendedPackage.name} · {page.recommendedPackage.price}
+                  Recommended: {page.recommendedPackage.name} · <Price usd={parseUsd(page.recommendedPackage.price)} />
                 </span>
                 <h2 className="mt-3 font-heading text-[24px] font-bold text-[#0A2540] group-hover:text-[#8C6D30]">
                   {page.h1}
