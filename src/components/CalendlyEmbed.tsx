@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { CALENDLY_URL } from "@/lib/booking-config";
 
 declare global {
@@ -31,10 +31,38 @@ export default function CalendlyEmbed({
   subheading = "Pick a time that suits you — book a career-branding consultation directly.",
   className = "",
 }: CalendlyEmbedProps) {
+  const sectionRef = useRef<HTMLElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+
+  // Defer the heavy Calendly widget (script + iframe) until the section is
+  // near the viewport. This keeps it off the initial mobile load, which is
+  // a major Lighthouse TBT/LCP win on pages where the embed is below the fold.
+  useEffect(() => {
+    if (!CALENDLY_URL || shouldLoad) return;
+    const el = sectionRef.current;
+    if (!el) return;
+
+    if (typeof IntersectionObserver === "undefined") {
+      setShouldLoad(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "400px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [shouldLoad]);
 
   useEffect(() => {
-    if (!CALENDLY_URL) return;
+    if (!CALENDLY_URL || !shouldLoad) return;
     const url = `${CALENDLY_URL}${CALENDLY_URL.includes("?") ? "&" : "?"}hide_gdpr_banner=1`;
 
     const init = () => {
@@ -60,12 +88,12 @@ export default function CalendlyEmbed({
     return () => {
       script?.removeEventListener("load", init);
     };
-  }, []);
+  }, [shouldLoad]);
 
   if (!CALENDLY_URL) return null;
 
   return (
-    <section className={`w-full bg-white py-[64px] sm:py-[88px] ${className}`}>
+    <section ref={sectionRef} className={`w-full bg-white py-[64px] sm:py-[88px] ${className}`}>
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
         <div className="text-center mb-8">
           <span className="text-brand-main font-semibold uppercase tracking-wider text-sm">Booking</span>
@@ -76,9 +104,13 @@ export default function CalendlyEmbed({
         </div>
         <div
           ref={containerRef}
-          className="overflow-hidden rounded-[20px] border border-zinc-200 shadow-sm"
+          className="flex items-center justify-center overflow-hidden rounded-[20px] border border-zinc-200 shadow-sm bg-zinc-50"
           style={{ minWidth: "320px", height: "760px" }}
-        />
+        >
+          {!shouldLoad ? (
+            <span className="text-sm text-zinc-400">Loading scheduling calendar…</span>
+          ) : null}
+        </div>
       </div>
     </section>
   );

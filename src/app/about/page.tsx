@@ -65,9 +65,9 @@ export default function AboutPage() {
                     src="/images/about-page-chanuka.jpg"
                     alt="Chanuka Jeewantha, premium US resume writer and career branding specialist"
                     fill
-                    sizes="(max-width: 1024px) 100vw, 75vw"
+                    sizes="(max-width: 1024px) 100vw, 720px"
                     className="object-cover object-[center_10%]"
-                    priority
+                    loading="lazy"
                   />
                 </div>
               </div>

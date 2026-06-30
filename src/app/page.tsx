@@ -336,9 +336,10 @@ export default async function Home() {
                 src="/images/hero-chanuka.jpg"
                 alt="Chanuka Jeewantha — premium career branding for senior professionals"
                 fill
-                sizes="(max-width: 1024px) 100vw, 440px"
+                sizes="(max-width: 480px) 90vw, 440px"
                 className="object-cover"
                 priority
+                fetchPriority="high"
               />
             </div>
           </div>
