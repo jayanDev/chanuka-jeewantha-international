@@ -180,8 +180,8 @@ export default function ResourcesClient() {
                 onChange={(e) => setFormTier(e.target.value as "read" | "download")}
                 className="w-full rounded-[10px] border border-zinc-200 px-4 py-2.5 text-sm outline-none focus:border-brand-main focus:ring-2 focus:ring-brand-main/10 bg-white"
               >
-                <option value="read">Read Online — {formatLkr(EBOOK_READ_PRICE_LKR)}</option>
-                <option value="download">Download + Read — {formatLkr(EBOOK_DOWNLOAD_PRICE_LKR)}</option>
+                <option value="read">Read Online - {formatLkr(EBOOK_READ_PRICE_LKR)}</option>
+                <option value="download">Download + Read - {formatLkr(EBOOK_DOWNLOAD_PRICE_LKR)}</option>
               </select>
             </div>
             <div className="md:col-span-2">
@@ -254,7 +254,7 @@ export default function ResourcesClient() {
                     <td className="py-3 px-2 text-zinc-400 whitespace-nowrap">
                       {new Date(p.grantedAt).toLocaleDateString("en-LK")}
                     </td>
-                    <td className="py-3 px-2 text-zinc-400 max-w-[150px] truncate">{p.note ?? "—"}</td>
+                    <td className="py-3 px-2 text-zinc-400 max-w-[150px] truncate">{p.note ?? "-"}</td>
                     <td className="py-3 px-2">
                       <button
                         onClick={() => void revokeAccess(p.id)}

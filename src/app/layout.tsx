@@ -142,7 +142,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Chanuka Jeewantha — Premium Career Branding",
+    title: "Chanuka Jeewantha - Premium Career Branding",
     description:
       "Premium ATS-friendly resumes, executive CVs, LinkedIn optimization, cover letters, and career branding for senior professionals.",
     type: "website",
@@ -161,7 +161,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Chanuka Jeewantha — Premium Career Branding",
+    title: "Chanuka Jeewantha - Premium Career Branding",
     description:
       "Premium resume, CV, LinkedIn, cover letter, and career strategy services for senior professionals pursuing global opportunities.",
     images: ["/images/hero-chanuka.jpg"],

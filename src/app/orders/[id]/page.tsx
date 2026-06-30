@@ -323,7 +323,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
           )}
           {order.status === "confirmed" && (
             <div className="rounded-[10px] border border-blue-200 bg-blue-50 p-4 text-sm text-blue-800 space-y-1">
-              <p className="font-semibold">Payment confirmed — work in progress</p>
+              <p className="font-semibold">Payment confirmed - work in progress</p>
               <p>Your order has been confirmed and our team will begin work shortly. We will update you as we progress.</p>
             </div>
           )}
@@ -442,9 +442,9 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
           <h2 className="font-semibold text-foreground mb-3">Payment Details</h2>
           <div className="grid grid-cols-2 gap-y-1.5 gap-x-4">
             <span className="text-zinc-500">Payment by</span>
-            <span>{order.paymentPersonName || "—"}</span>
+            <span>{order.paymentPersonName || "-"}</span>
             <span className="text-zinc-500">WhatsApp</span>
-            <span>{order.paymentWhatsApp || "—"}</span>
+            <span>{order.paymentWhatsApp || "-"}</span>
             {order.paymentRef && (
               <>
                 <span className="text-zinc-500">Payment ref</span>
@@ -459,7 +459,7 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
               </a>
             )}
             {order.paymentSlipUploadFailed && (
-              <span className="text-xs text-amber-700">Slip upload failed — please send via WhatsApp.</span>
+              <span className="text-xs text-amber-700">Slip upload failed - please send via WhatsApp.</span>
             )}
             {order.currentCvUrl && (
               <a href={order.currentCvUrl} target="_blank" rel="noreferrer" className="text-brand-main font-medium text-xs hover:underline">

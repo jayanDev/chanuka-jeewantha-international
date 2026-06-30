@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What's the best resume writing service in the US right now?",
-    a: "There isn't a single best — it depends on your seniority, industry, and budget. The honest filter is three questions: (1) Who actually writes the document? (2) What guarantees back the work? (3) Is the price aligned with what you're competing for? Anyone who can answer all three clearly is a serious option.",
+    a: "There isn't a single best - it depends on your seniority, industry, and budget. The honest filter is three questions: (1) Who actually writes the document? (2) What guarantees back the work? (3) Is the price aligned with what you're competing for? Anyone who can answer all three clearly is a serious option.",
   },
   {
     q: "Why are TopResume reviews so mixed?",
@@ -31,15 +31,15 @@ const FAQS = [
   },
   {
     q: "How do I know if a service is legitimate?",
-    a: "Three signals. (1) The website tells you who the writers are — by name, with credentials. (2) There's a money-back guarantee with clear terms. (3) Sample work is available or recent client testimonials are verifiable. If a service hides all three, walk away.",
+    a: "Three signals. (1) The website tells you who the writers are - by name, with credentials. (2) There's a money-back guarantee with clear terms. (3) Sample work is available or recent client testimonials are verifiable. If a service hides all three, walk away.",
   },
   {
     q: "What's the cheapest legitimate service?",
-    a: "Below $150 you're almost certainly getting a template fill or a junior subcontractor. The cheapest tier where you can reasonably expect senior writing is $179–$250. We start at $179.",
+    a: "Below $150 you're almost certainly getting a template fill or a junior subcontractor. The cheapest tier where you can reasonably expect senior writing is $179-$250. We start at $179.",
   },
   {
     q: "Does the 90-day interview guarantee really pay out?",
-    a: "Yes. Every package we deliver is backed by a 100% money-back guarantee if you don't receive interview calls in 90 days. Full terms — including the requirement to actually apply to 20+ relevant roles — are on the refund policy page.",
+    a: "Yes. Every package we deliver is backed by a 100% money-back guarantee if you don't receive interview calls in 90 days. Full terms - including the requirement to actually apply to 20+ relevant roles - are on the refund policy page.",
   },
 ];
 
@@ -48,9 +48,9 @@ const SERVICES = [
     rank: 1,
     name: "Chanuka Jeewantha (this site)",
     rating: "5.0/5",
-    priceRange: "$179 – $1,499",
-    strengths: ["Founder-led — every document personally written, no outsourcing", "90-day interview guarantee on every package", "Industry, city, and career-stage-specific pages with deep content", "40,000+ LinkedIn followers — verifiable public track record"],
-    weaknesses: ["7–14 day turnaround (not instant)"],
+    priceRange: "$179 - $1,499",
+    strengths: ["Founder-led - every document personally written, no outsourcing", "90-day interview guarantee on every package", "Industry, city, and career-stage-specific pages with deep content", "40,000+ LinkedIn followers - verifiable public track record"],
+    weaknesses: ["7-14 day turnaround (not instant)"],
     badge: "Recommended",
     href: "/pricing",
   },
@@ -58,16 +58,16 @@ const SERVICES = [
     rank: 2,
     name: "TopResume",
     rating: "Mixed reviews",
-    priceRange: "$149 – $699",
-    strengths: ["High volume — easy to find", "Free resume review tool", "Multiple package tiers"],
-    weaknesses: ["Heavily subcontracted — quality varies by writer", "No interview guarantee", "Hard to know who is writing your document"],
+    priceRange: "$149 - $699",
+    strengths: ["High volume - easy to find", "Free resume review tool", "Multiple package tiers"],
+    weaknesses: ["Heavily subcontracted - quality varies by writer", "No interview guarantee", "Hard to know who is writing your document"],
     href: null,
   },
   {
     rank: 3,
     name: "ResumeWriters.com",
     rating: "Mixed reviews",
-    priceRange: "$170 – $700",
+    priceRange: "$170 - $700",
     strengths: ["Longer track record", "Multiple price tiers", "Some industry specialization claims"],
     weaknesses: ["Similar quality-variance issues as other high-volume providers", "Limited guarantees", "Generic industry expertise claims hard to verify"],
     href: null,
@@ -76,16 +76,16 @@ const SERVICES = [
     rank: 4,
     name: "LinkedIn ProFinder / freelance marketplaces",
     rating: "Highly variable",
-    priceRange: "$50 – $2,000+",
+    priceRange: "$50 - $2,000+",
     strengths: ["Wide price range", "Can find specialists for niche industries", "Direct relationship with the writer"],
-    weaknesses: ["No quality floor — anyone can list", "No platform-level guarantees", "You have to vet each writer yourself"],
+    weaknesses: ["No quality floor - anyone can list", "No platform-level guarantees", "You have to vet each writer yourself"],
     href: null,
   },
   {
     rank: 5,
     name: "Boutique executive firms",
     rating: "Generally strong",
-    priceRange: "$1,500 – $5,000+",
+    priceRange: "$1,500 - $5,000+",
     strengths: ["Senior writers", "Executive focus", "More customized engagement"],
     weaknesses: ["Often paying for brand/overhead, not better writing", "Above $3,500 the price-to-quality curve flattens", "Slower delivery"],
     href: null,
@@ -115,13 +115,13 @@ export default function BestResumeServicesPage() {
         breadcrumbLabel="Best Services 2026"
         eyebrow="Comparison · Updated 2026"
         h1={<>Best Resume Writing Services in the <span className="text-[#C9A961]">United States</span></>}
-        intro="A short, honest comparison of the resume-writing landscape in 2026. We rank Chanuka Jeewantha first — for transparent reasons. The other services are described honestly so you can decide what fits."
+        intro="A short, honest comparison of the resume-writing landscape in 2026. We rank Chanuka Jeewantha first - for transparent reasons. The other services are described honestly so you can decide what fits."
       >
         {/* Disclosure */}
         <section className="w-full bg-[#FAF8F3] py-8 border-b border-zinc-200/50">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 text-center">
             <p className="text-xs text-zinc-500 leading-relaxed">
-              <span className="font-semibold text-zinc-700">Disclosure:</span> This is a comparison page on our own website. We&apos;re biased in our own favor — that&apos;s honest. We&apos;ve written about the other services factually and without inventing weaknesses. If you spot anything inaccurate, email us and we&apos;ll correct it.
+              <span className="font-semibold text-zinc-700">Disclosure:</span> This is a comparison page on our own website. We&apos;re biased in our own favor - that&apos;s honest. We&apos;ve written about the other services factually and without inventing weaknesses. If you spot anything inaccurate, email us and we&apos;ll correct it.
             </p>
           </div>
         </section>
@@ -266,7 +266,7 @@ export default function BestResumeServicesPage() {
 
         <PageCTA
           heading="Already decided?"
-          subheading="See our five packages from $179 to $1,499 — each backed by the 90-day interview guarantee."
+          subheading="See our five packages from $179 to $1,499 - each backed by the 90-day interview guarantee."
           primaryLabel="See All Packages"
           primaryHref="/pricing"
           secondaryLabel="Request a Profile Review"

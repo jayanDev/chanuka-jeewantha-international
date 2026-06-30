@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "Will a PDF pass an ATS?",
-    a: "A text-based PDF exported from a word processor usually parses fine. A PDF that is really an image, or one built from heavy graphics and text boxes, often does not — a .docx is the safest format when in doubt.",
+    a: "A text-based PDF exported from a word processor usually parses fine. A PDF that is really an image, or one built from heavy graphics and text boxes, often does not - a .docx is the safest format when in doubt.",
   },
   {
     q: "Should my CV have two columns?",
@@ -40,11 +40,11 @@ const faqs = [
   },
   {
     q: "Can a CV be both ATS-friendly and well-designed?",
-    a: "Yes, within limits. Clean typography, subtle colour, and clear hierarchy are fine. The rule is that anything carrying real information — headings, dates, achievements — must be live, selectable text in a single-column flow, not inside an image or text box.",
+    a: "Yes, within limits. Clean typography, subtle colour, and clear hierarchy are fine. The rule is that anything carrying real information - headings, dates, achievements - must be live, selectable text in a single-column flow, not inside an image or text box.",
   },
   {
     q: "Is an ATS CV worse for human readers?",
-    a: "No. A well-written ATS CV is just as readable for recruiters and hiring managers — it simply avoids design choices that break the software in between.",
+    a: "No. A well-written ATS CV is just as readable for recruiters and hiring managers - it simply avoids design choices that break the software in between.",
   },
 ];
 
@@ -76,7 +76,7 @@ export default function AtsCvGuide() {
           <div className="mt-6 rounded-xl border-l-[3px] border-brand-main bg-white/5 p-5 backdrop-blur-sm">
             <p className="text-base sm:text-lg text-white/90 leading-relaxed">
               <strong className="text-brand-main">Quick answer:</strong> An ATS CV is formatted so applicant tracking
-              software can read it — single column, standard headings, no text trapped in images, standard fonts, and
+              software can read it - single column, standard headings, no text trapped in images, standard fonts, and
               keywords drawn from the job description. A &ldquo;normal&rdquo; or designer CV prioritises visual design,
               which often fails to parse. Since most employers screen applications with an ATS, an ATS-friendly format is
               safer for online applications.
@@ -119,7 +119,7 @@ export default function AtsCvGuide() {
             <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-foreground">What is an ATS?</h2>
             <p className="mt-3 text-text-body text-lg leading-relaxed">
               An applicant tracking system (ATS) is software employers use to collect, parse, and rank job applications.
-              When you apply online, your CV is usually read by the ATS before any human sees it — it extracts your details
+              When you apply online, your CV is usually read by the ATS before any human sees it - it extracts your details
               into a database and scores them against the role. If the software can&rsquo;t read your CV correctly, strong
               experience can be missed entirely.
             </p>
@@ -135,8 +135,8 @@ export default function AtsCvGuide() {
           <div>
             <h2 className="font-heading text-[24px] sm:text-[30px] font-bold text-foreground">When a designed CV is fine</h2>
             <p className="mt-3 text-text-body text-lg leading-relaxed">
-              If you are handing a CV directly to a person — at a networking event, an interview, or for a creative role
-              reviewed by a human — a designed CV can work well. The risk is only with online applications that pass through
+              If you are handing a CV directly to a person - at a networking event, an interview, or for a creative role
+              reviewed by a human - a designed CV can work well. The risk is only with online applications that pass through
               an ATS first.
             </p>
           </div>
@@ -145,7 +145,7 @@ export default function AtsCvGuide() {
             <ul className="mt-3 flex flex-col gap-3">
               {[
                 "Use a single-column layout and standard section headings.",
-                "Keep all key information as live, selectable text — never inside an image or text box.",
+                "Keep all key information as live, selectable text - never inside an image or text box.",
                 "Mirror the wording of the job description for skills and titles, naturally.",
                 "Use a standard font and avoid header/footer content for anything important.",
                 "Export as a text-based PDF or .docx, not an image.",
@@ -175,7 +175,7 @@ export default function AtsCvGuide() {
         </div>
       </section>
 
-      <FAQSection heading="ATS CV vs Normal CV — FAQ" items={faqs} className="bg-zinc-50 border-t border-zinc-200" />
+      <FAQSection heading="ATS CV vs Normal CV - FAQ" items={faqs} className="bg-zinc-50 border-t border-zinc-200" />
     </>
   );
 }

@@ -96,15 +96,15 @@ const ebookCatalog: Ebook[] = [
     title: "මුදලේ මනෝවිද්‍යාව",
     subtitle: "The Psychology of Money - සල්ලි ගැන අපි හිතන විදිහ",
     description:
-      "Morgan Housel ගේ The Psychology of Money පොතේ සිංහල සාරාංශය. ධනය, අත්‍යාශය, සහ සතුට ගැන — සල්ලි ගැන අපේ හිතීමේ රටා සහ ඒවා ජීවිතයට බලපාන හැටි ගැන ප්‍රායෝගික මාර්ගෝපදේශයක්.",
+      "Morgan Housel ගේ The Psychology of Money පොතේ සිංහල සාරාංශය. ධනය, අත්‍යාශය, සහ සතුට ගැන - සල්ලි ගැන අපේ හිතීමේ රටා සහ ඒවා ජීවිතයට බලපාන හැටි ගැන ප්‍රායෝගික මාර්ගෝපදේශයක්.",
     category: "paid",
     priceLkr: EBOOK_READ_PRICE_LKR,
     readPriceLkr: EBOOK_READ_PRICE_LKR,
     downloadPriceLkr: EBOOK_DOWNLOAD_PRICE_LKR,
     coverImage: "/images/The Psychology of Money.png",
     highlights: [
-      "වාසනාව, අවදානම, සහ compounding — ධනය ගොඩනගන මූල තතු",
-      "සැබෑ ධනය කියන්නේ අපිට නොපෙනෙන දේ — Saving, Freedom, සහ Contentment",
+      "වාසනාව, අවදානම, සහ compounding - ධනය ගොඩනගන මූල තතු",
+      "සැබෑ ධනය කියන්නේ අපිට නොපෙනෙන දේ - Saving, Freedom, සහ Contentment",
       "මිනිස් හැසිරීම, Tail Events, සහ Long-term ආයෝජන ක්‍රමය",
     ],
   },
@@ -113,7 +113,7 @@ const ebookCatalog: Ebook[] = [
     title: "LinkedIn Profile Optimization System",
     subtitle: "Professional Profile එක Recruiter Magnet එකක් බවට හරවාගන්නා System",
     description:
-      "LinkedIn Profile Optimization System — ඔබේ LinkedIn profile එක recruiter-ready profile එකක් බවට convert කිරීමට step-by-step guide. Photo සිට Headline, About, Experience, Skills, Recommendations, Featured Section, සහ Network Strategy දක්වා ඔක්කොම cover කරනවා.",
+      "LinkedIn Profile Optimization System - ඔබේ LinkedIn profile එක recruiter-ready profile එකක් බවට convert කිරීමට step-by-step guide. Photo සිට Headline, About, Experience, Skills, Recommendations, Featured Section, සහ Network Strategy දක්වා ඔක්කොම cover කරනවා.",
     category: "paid",
     kind: "resource",
     readPriceLkr: EBOOK_READ_PRICE_LKR,
@@ -159,9 +159,9 @@ export const ebookBundles: EbookBundle[] = [
   {
     slug: "business-starter-bundle",
     title: "Business Starter Bundle",
-    subtitle: "ව්‍යාපාරය පටන් ගන්නා කෙනාට අත්‍යාවශ්‍ය ebooks 3ක් — 25% off",
+    subtitle: "ව්‍යාපාරය පටන් ගන්නා කෙනාට අත්‍යාවශ්‍ය ebooks 3ක් - 25% off",
     description:
-      "ව්‍යාපාරයක් ආරම්භ කිරීමට සිතන ඕනෑම කෙනෙකුට වටිනා book 3ක bundle: ධනවත් වීමේ වේගවත් මාර්ගය, ගැඹුරු ඵලදායිතා ක්‍රමය, සහ ලෝකය හඳුනාගන්නා කුසලතා ගොඩනැගීම — books 3 package deal.",
+      "ව්‍යාපාරයක් ආරම්භ කිරීමට සිතන ඕනෑම කෙනෙකුට වටිනා book 3ක bundle: ධනවත් වීමේ වේගවත් මාර්ගය, ගැඹුරු ඵලදායිතා ක්‍රමය, සහ ලෝකය හඳුනාගන්නා කුසලතා ගොඩනැගීම - books 3 package deal.",
     ebookSlugs: [
       "kotipathiyek-vime-vegawath-maga",
       "gaburu-karyaya",
@@ -170,7 +170,7 @@ export const ebookBundles: EbookBundle[] = [
     discountPercent: 25,
     coverImage: "/images/Business Starter Bundle Cover.png",
     highlights: [
-      "ව්‍යාපාරික mindset, Deep Work productivity, සහ career capital — books 3ක",
+      "ව්‍යාපාරික mindset, Deep Work productivity, සහ career capital - books 3ක",
       "Individual මිළෙන් 25% discount",
       "Books 3ම read + download access ලැබේ",
     ],
@@ -178,9 +178,9 @@ export const ebookBundles: EbookBundle[] = [
   {
     slug: "complete-ebook-collection",
     title: "Complete Ebook Collection",
-    subtitle: "ebooks 4ම — 50% off",
+    subtitle: "ebooks 4ම - 50% off",
     description:
-      "Chanuka Jeewantha ගේ ebooks 4ම එකවර ලබාගන්න. ධනය, productivity, career, සහ financial literacy — සම්පූර්ණ collection 50% discount.",
+      "Chanuka Jeewantha ගේ ebooks 4ම එකවර ලබාගන්න. ධනය, productivity, career, සහ financial literacy - සම්පූර්ණ collection 50% discount.",
     ebookSlugs: [
       "kotipathiyek-vime-vegawath-maga",
       "gaburu-karyaya",

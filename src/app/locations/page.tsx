@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   ...buildPageMetadata({
     title: "Resume Writer Locations Across the United States",
     description:
-      "Premium resume writing service for US professionals — 15 major metros covered. Federal, executive, tech, finance, healthcare, and more.",
+      "Premium resume writing service for US professionals - 15 major metros covered. Federal, executive, tech, finance, healthcare, and more.",
     path: "/locations",
   }),
   title: { absolute: "Resume Writer Locations Across the United States" },
@@ -43,7 +43,7 @@ export default function LocationsIndexPage() {
   ]);
 
   const serviceLd = buildServiceSchema({
-    name: "US Resume Writing Service — All Cities",
+    name: "US Resume Writing Service - All Cities",
     description: "Premium resume writing service available across 15 major US metros, with city-specific hiring intelligence.",
     path: "/locations",
     priceRange: "$179 - $1,499",
@@ -68,7 +68,7 @@ export default function LocationsIndexPage() {
             Resume Writing Across the <span className="text-[#C9A961]">United States</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl font-light">
-            The service is fully remote — used by professionals in every major US metro. Pick the city closest to your target market to see how local hiring works.
+            The service is fully remote - used by professionals in every major US metro. Pick the city closest to your target market to see how local hiring works.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -148,7 +148,7 @@ export default function LocationsIndexPage() {
             We serve clients in every US metro.
           </h2>
           <p className="mt-4 text-zinc-600 leading-relaxed">
-            These 15 cities have dedicated pages because they have the largest concentration of senior hiring activity. We work with clients in every US state remotely — submit a profile review and your engagement is structured around your target market, not where you live.
+            These 15 cities have dedicated pages because they have the largest concentration of senior hiring activity. We work with clients in every US state remotely - submit a profile review and your engagement is structured around your target market, not where you live.
           </p>
           <Link
             href="/contact"
@@ -161,7 +161,7 @@ export default function LocationsIndexPage() {
 
       <PageCTA
         heading="Ready to engage in your city?"
-        subheading="The service is fully remote — fast turnaround, US-tuned writing, 90-day interview guarantee."
+        subheading="The service is fully remote - fast turnaround, US-tuned writing, 90-day interview guarantee."
       />
     </>
   );

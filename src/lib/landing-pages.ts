@@ -367,7 +367,7 @@ export const landingPages: LandingPage[] = [
     outcomes: ["HR කළමනාකරුවන්ගේ අවධානය දිනාගැනීම", "CV එකේ ඇති දුර්වලතා මගහරවා ගැනීම", "අනවශ්‍ය තොරතුරු ඉවත් කර වැදගත් දේ ඉස්මතු කිරීම", "වැඩි සම්මුඛ පරීක්ෂණ අවස්ථා ප්‍රමාණයක්"],
     relatedPackageSlugs: ["ats-cv-professional-supervised", "ats-cv-professional-founder-led", "ats-cv-executive-founder-led"],
     backlinks: ["create-professional-cv-for-jobs-sinhala", "cv-review-service-sinhala", "professional-cv-writing-service-sri-lanka-sinhala"],
-    marketNote: "Slightly pain-point focused—targeting frustrated job hunters.",
+    marketNote: "Slightly pain-point focused-targeting frustrated job hunters.",
   },
   {
     slug: "fresh-graduate-cv-writing-sinhala",

@@ -37,7 +37,7 @@ export const checklists: Checklist[] = [
     title: "The Fastlane Blueprint: කෝටිපතියෙක් වීමේ 205 Checklist",
     subtitle: "Millionaire Fastlane ඇසුරෙන් ව්‍යාපාරයක් ගොඩනගන 205-ශ්‍රේණිගත ක්‍රියාමාර්ග",
     description:
-      "MJ DeMarco ගේ 'The Millionaire Fastlane' පොතේ සාරාංශය ක්‍රියාමාර්ග 205ක් ලෙස සකස් කළ interactive checklist. 17 අදියර හරහා, Sidewalk සිට Fastlane දක්වා ඔබේ ගමන ලකුණු කරගන්න. Fastlane ebook ලිපි links ද ඇතුළත් — කෙලින්ම chapter කියවන්නත් පුළුවන්. පළමු අදියර 2 නොමිලේ — ඉතිරිය unlock කරන්න login කරන්න.",
+      "MJ DeMarco ගේ 'The Millionaire Fastlane' පොතේ සාරාංශය ක්‍රියාමාර්ග 205ක් ලෙස සකස් කළ interactive checklist. 17 අදියර හරහා, Sidewalk සිට Fastlane දක්වා ඔබේ ගමන ලකුණු කරගන්න. Fastlane ebook ලිපි links ද ඇතුළත් - කෙලින්ම chapter කියවන්නත් පුළුවන්. පළමු අදියර 2 නොමිලේ - ඉතිරිය unlock කරන්න login කරන්න.",
     coverImage: "/images/millionaire-fastlane-cover.jpg",
     freeSteps: 2,
     ebookSlug: "kotipathiyek-vime-vegawath-maga",
@@ -46,13 +46,13 @@ export const checklists: Checklist[] = [
       "MJ DeMarco ගේ CENTS ක්‍රමවේදය ඇසුරෙන් නිර්මාණය",
       "Fastlane ebook chapters වෙත direct links",
       "Progress localStorage හි save වේ",
-      "100% නොමිලේ — sign in කළ විගස ඔක්කොම unlock",
+      "100% නොමිලේ - sign in කළ විගස ඔක්කොම unlock",
     ],
     steps: [
       {
         id: 1,
         title: "ඇස් ඇරීම සහ සත්‍යය අවබෝධ කරගැනීම",
-        description: "Ch 1-14 · Sidewalk සිට Fastlane දක්වා ගමනේ පළමු පියවර — ඇත්ත දකින්න.",
+        description: "Ch 1-14 · Sidewalk සිට Fastlane දක්වා ගමනේ පළමු පියවර - ඇත්ත දකින්න.",
         free: true,
         items: [
           { id: "1-1", text: "'Get Rich Quick' කියන්නේ 'ලේසියෙන් සල්ලි හොයන එක' නෙවෙයි කියලා මම තේරුම් ගත්තාද?", ref: "Ch 1" },
@@ -80,7 +80,7 @@ export const checklists: Checklist[] = [
       {
         id: 2,
         title: "වේගවත් මාවතේ මානසිකත්වය",
-        description: "Ch 15-22 · Consumer නොව Producer — Passive Income, Law of Effection.",
+        description: "Ch 15-22 · Consumer නොව Producer - Passive Income, Law of Effection.",
         free: true,
         items: [
           { id: "2-1", text: "සාර්ථකත්වය කියන්නේ එක දවසක සිද්ධියක් (Event) නෙවෙයි, ඒක දිගු ක්‍රියාවලියක් (Process) කියලා මම දන්නවාද?", ref: "Ch 15" },
@@ -103,7 +103,7 @@ export const checklists: Checklist[] = [
       {
         id: 3,
         title: "ඔබේ වාහනය සහ කාලය",
-        description: "Ch 23-28 · ඔබ ඔබේ ව්‍යාපාරයේ රියදුරා — කාලය ඔබේ වටිනාම සම්පත.",
+        description: "Ch 23-28 · ඔබ ඔබේ ව්‍යාපාරයේ රියදුරා - කාලය ඔබේ වටිනාම සම්පත.",
         free: false,
         items: [
           { id: "3-1", text: "මගේ ව්‍යාපාරික ගමනේ රියදුරා (Driver) මමමයි කියලා මම වගකීම ගත්තාද?", ref: "Ch 23" },
@@ -126,7 +126,7 @@ export const checklists: Checklist[] = [
       {
         id: 4,
         title: "අවශ්‍යතාවය සහ ඇතුල්වීම",
-        description: "Ch 29-31 · CENTS ටෙස්ට් — ඔබේ business idea ඇත්ත ගැටලුවක් විසඳනවාද?",
+        description: "Ch 29-31 · CENTS ටෙස්ට් - ඔබේ business idea ඇත්ත ගැටලුවක් විසඳනවාද?",
         free: false,
         items: [
           { id: "4-1", text: "මගේ බිස්නස් අයිඩියා එක CENTS ටෙස්ට් එකෙන් පාස් වුණාද?", ref: "Ch 29" },
@@ -150,7 +150,7 @@ export const checklists: Checklist[] = [
       {
         id: 5,
         title: "පාලනය, පරිමාණය සහ කාලය",
-        description: "Ch 32-34 · Control, Scale, Time — CENTS ෆ්‍රේම්වර්ක් ගැඹුරින්.",
+        description: "Ch 32-34 · Control, Scale, Time - CENTS ෆ්‍රේම්වර්ක් ගැඹුරින්.",
         free: false,
         items: [
           { id: "5-1", text: "මගේ බිස්නස් එකේ සම්පූර්ණ සුක්කානම (Control) මගේ අතේද?", ref: "Ch 32" },
@@ -190,7 +190,7 @@ export const checklists: Checklist[] = [
       {
         id: 7,
         title: "ක්‍රියාත්මක කිරීම සහ වේගය",
-        description: "Ch 37-39 · Execution is everything — MVP ලෝන්ච් කිරීම සහ Feedback.",
+        description: "Ch 37-39 · Execution is everything - MVP ලෝන්ච් කිරීම සහ Feedback.",
         free: false,
         items: [
           { id: "7-1", text: "මගේ ජීවිතේ මට ඕනෙම 'අවසාන ඉලක්කම' (Destined Number) මම ගණනය කරලා ඉවරද?", ref: "Ch 37" },
@@ -209,7 +209,7 @@ export const checklists: Checklist[] = [
       {
         id: 8,
         title: "සුපිරි පාරිභෝගික සේවාව",
-        description: "Ch 40 · SUCS (Superior Unexpected Customer Service) — ලෝකයේ හොඳම service.",
+        description: "Ch 40 · SUCS (Superior Unexpected Customer Service) - ලෝකයේ හොඳම service.",
         free: false,
         items: [
           { id: "8-1", text: "මගේ පාරිභෝගික සේවාව 'Sucks' ද නැත්නම් 'SUCS' (Superior Customer Service) ද?", ref: "Ch 40" },
@@ -229,7 +229,7 @@ export const checklists: Checklist[] = [
       {
         id: 9,
         title: "සන්නාමකරණය සහ අලෙවිකරණය",
-        description: "Ch 41-43 · Brand building, USP, Marketing — Features නෙවෙයි Benefits.",
+        description: "Ch 41-43 · Brand building, USP, Marketing - Features නෙවෙයි Benefits.",
         free: false,
         items: [
           { id: "9-1", text: "මම හදන්නේ නිකම්ම මිලෙන් තරඟ කරන බිස්නස් එකක්ද නැත්නම් 'සන්නාමයක්' (Brand) ද?", ref: "Ch 41" },
@@ -252,7 +252,7 @@ export const checklists: Checklist[] = [
       {
         id: 10,
         title: "ව්‍යාපාරික ඒක-විවාහය සහ පරිමාණය",
-        description: "Ch 44 · F.O.C.U.S — Follow One Course Until Successful.",
+        description: "Ch 44 · F.O.C.U.S - Follow One Course Until Successful.",
         free: false,
         items: [
           { id: "10-1", text: "මම ව්‍යාපාරික ඒක-විවාහය (Monogamy - එක බිස්නස් එකකට පමණක් අවධානය දීම) රකිනවාද?", ref: "Ch 44" },
@@ -272,7 +272,7 @@ export const checklists: Checklist[] = [
       {
         id: 11,
         title: "ව්‍යාපාරය සුපර්චාර්ජ් කිරීම",
-        description: "Ch 45 · Wealth Supercharging — ලාභය reinvest, exit strategy සහ valuation.",
+        description: "Ch 45 · Wealth Supercharging - ලාභය reinvest, exit strategy සහ valuation.",
         free: false,
         items: [
           { id: "11-1", text: "මගේ බිස්නස් එකෙන් එන ලාභය මම ආයෙත් බිස්නස් එකටම ආයෝජනය කරනවාද?", ref: "Ch 45" },
@@ -303,7 +303,7 @@ export const checklists: Checklist[] = [
       {
         id: 13,
         title: "තාක්ෂණය, පද්ධති සහ දත්ත",
-        description: "Systems, automation, data analytics — ව්‍යාපාරය scale කරන ක්‍රමය.",
+        description: "Systems, automation, data analytics - ව්‍යාපාරය scale කරන ක්‍රමය.",
         free: false,
         items: [
           { id: "13-1", text: "මගේ වෙබ් අඩවිය හෝ ඇප් එක කිසිම ලැග් වීමක් (Lag) නැතුව සුමටව වැඩ කරනවාද?", ref: "Ch 34" },
@@ -352,7 +352,7 @@ export const checklists: Checklist[] = [
       {
         id: 16,
         title: "ජීවිතයේ අවසාන ඉලක්කය කරා",
-        description: "Exit, passive income, health, family, giving back — ඇත්ත ධනය.",
+        description: "Exit, passive income, health, family, giving back - ඇත්ත ධනය.",
         free: false,
         items: [
           { id: "16-1", text: "මගේ බිස්නස් එක වික්කොත් ඒ සල්ලි වලින් මම කරන්නේ මොකක්ද කියලා මට අදහසක් තියෙනවාද?", ref: "Ch 45" },
@@ -370,7 +370,7 @@ export const checklists: Checklist[] = [
       {
         id: 17,
         title: "අවසාන පරික්ෂාව",
-        description: "205 ශ්‍රේණිගත ක්‍රියාමාර්ගවල අවසාන review — Fastlane ගමනේ සම්පූර්ණ checklist.",
+        description: "205 ශ්‍රේණිගත ක්‍රියාමාර්ගවල අවසාන review - Fastlane ගමනේ සම්පූර්ණ checklist.",
         free: false,
         items: [
           { id: "17-1", text: "මම 'Slowlane' එකේ මන්දගාමී අදහස් සම්පූර්ණයෙන්ම මගේ ඔළුවෙන් අයින් කළාද?", ref: "Ch 10" },

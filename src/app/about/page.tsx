@@ -75,10 +75,10 @@ export default function AboutPage() {
                 I am Chanuka Jeewantha, a founder-led resume writer and career branding specialist helping US professionals present themselves clearly, confidently, and competitively.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                Over the last 8+ years I&apos;ve written and rebuilt resumes, executive CVs, and LinkedIn profiles for candidates competing in the US job market — from software engineers and healthcare professionals to finance leaders, federal applicants, and C-suite executives. Every document is written personally by me. No outsourcing, no junior staff, no AI-generated filler.
+                Over the last 8+ years I&apos;ve written and rebuilt resumes, executive CVs, and LinkedIn profiles for candidates competing in the US job market - from software engineers and healthcare professionals to finance leaders, federal applicants, and C-suite executives. Every document is written personally by me. No outsourcing, no junior staff, no AI-generated filler.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                My approach is practical and strategy-first — built around the systems that actually decide US hiring: applicant tracking systems (ATS), recruiter scanning behavior, and the achievement-based positioning that hiring managers respond to. I study how US recruiters search, what keywords matter for each role, and how to frame your experience so it reads as senior, credible, and worth a call.
+                My approach is practical and strategy-first - built around the systems that actually decide US hiring: applicant tracking systems (ATS), recruiter scanning behavior, and the achievement-based positioning that hiring managers respond to. I study how US recruiters search, what keywords matter for each role, and how to frame your experience so it reads as senior, credible, and worth a call.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
                 That work has built a following of <strong>40,000+ professionals</strong> on LinkedIn who rely on my career advice, and a <strong>5.0-star rating across 69 verified Google reviews</strong>. I stand behind every package with a 90-day interview guarantee: if you don&apos;t land interview calls, you get your money back.
@@ -138,12 +138,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {[
               {
-                title: "Written personally — never outsourced",
+                title: "Written personally - never outsourced",
                 desc: "Every resume, CV, and LinkedIn profile is written by me from scratch. You work with the person whose name is on the door, not a rotating pool of freelancers.",
               },
               {
                 title: "Built for US hiring systems",
-                desc: "ATS-optimized formatting, US-market keywords, and recruiter-tested structure — so your resume survives the screen and reads as senior to the hiring manager.",
+                desc: "ATS-optimized formatting, US-market keywords, and recruiter-tested structure - so your resume survives the screen and reads as senior to the hiring manager.",
               },
               {
                 title: "Backed by a real guarantee",

@@ -15,7 +15,7 @@ type Props = {
  */
 export default function PriceRange({ range, className }: Props) {
   const { currency } = useCurrency();
-  const parts = range.split(/\s*[-–]\s*/).map((p) => parseUsd(p)).filter((n) => n > 0);
+  const parts = range.split(/\s*[--]\s*/).map((p) => parseUsd(p)).filter((n) => n > 0);
 
   if (parts.length === 0) {
     return <span className={className}>{range}</span>;
@@ -31,7 +31,7 @@ export default function PriceRange({ range, className }: Props) {
 
   return (
     <span className={className} suppressHydrationWarning>
-      {formatPrice(parts[0], currency)} – {formatPrice(parts[parts.length - 1], currency)}
+      {formatPrice(parts[0], currency)} - {formatPrice(parts[parts.length - 1], currency)}
     </span>
   );
 }

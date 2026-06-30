@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "Can ATS systems detect AI-written resumes?",
-    a: "Some yes, most not directly — but ATS systems are increasingly trained to flag low-information resumes that match the AI pattern (heavy buzzwords, weak metrics, generic structure). Recruiters absolutely can spot it. Senior recruiters see 50+ resumes a day and the AI pattern is recognizable to them.",
+    a: "Some yes, most not directly - but ATS systems are increasingly trained to flag low-information resumes that match the AI pattern (heavy buzzwords, weak metrics, generic structure). Recruiters absolutely can spot it. Senior recruiters see 50+ resumes a day and the AI pattern is recognizable to them.",
   },
   {
     q: "What does ChatGPT do well?",
-    a: "Three things. (1) Polish — fixing grammar, tightening sentences. (2) First drafts — taking your raw experience notes and turning them into resume-shaped bullets. (3) Cover letter starting points. For all three, AI is a real productivity gain.",
+    a: "Three things. (1) Polish - fixing grammar, tightening sentences. (2) First drafts - taking your raw experience notes and turning them into resume-shaped bullets. (3) Cover letter starting points. For all three, AI is a real productivity gain.",
   },
   {
     q: "What does ChatGPT do poorly?",
@@ -35,11 +35,11 @@ const FAQS = [
   },
   {
     q: "If I just need a quick first draft, isn't ChatGPT enough?",
-    a: "For entry-level and early-career? Often yes — combine ChatGPT with a strong template and you'll get something usable. For mid-career and above where positioning and judgment matter, you'll likely want a real writer involved before the final version goes out.",
+    a: "For entry-level and early-career? Often yes - combine ChatGPT with a strong template and you'll get something usable. For mid-career and above where positioning and judgment matter, you'll likely want a real writer involved before the final version goes out.",
   },
   {
     q: "Does the 90-day interview guarantee apply if I used AI tools too?",
-    a: "Yes — the guarantee is on the documents we deliver. What you do alongside the engagement (AI tools, networking, applications) doesn't affect eligibility. You just need to actually apply to 20+ relevant roles using our documents in the 90-day window.",
+    a: "Yes - the guarantee is on the documents we deliver. What you do alongside the engagement (AI tools, networking, applications) doesn't affect eligibility. You just need to actually apply to 20+ relevant roles using our documents in the 90-day window.",
   },
 ];
 
@@ -120,7 +120,7 @@ export default function VsChatGPTPage() {
                 </ul>
                 <p className="mt-5 text-sm font-semibold text-rose-700 uppercase tracking-wide">Loses at</p>
                 <ul className="mt-2 space-y-2 text-sm text-zinc-700">
-                  {["Free", "Instant turnaround (7–14 day delivery)"].map((w) => (
+                  {["Free", "Instant turnaround (7-14 day delivery)"].map((w) => (
                     <li key={w} className="flex items-start gap-2">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-rose-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
                       <span>{w}</span>
@@ -141,16 +141,16 @@ export default function VsChatGPTPage() {
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
               <article className="rounded-[16px] bg-white border border-zinc-200/80 p-6">
-                <h3 className="font-heading text-base font-bold text-[#0A2540]">Use ChatGPT when…</h3>
+                <h3 className="font-heading text-base font-bold text-[#0A2540]">Use ChatGPT when...</h3>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-700 list-disc pl-5">
-                  <li>You&apos;re entry-level or 0–2 years experience</li>
+                  <li>You&apos;re entry-level or 0-2 years experience</li>
                   <li>You already have a strong existing resume and need a polish</li>
                   <li>You want a fast first draft you&apos;ll then edit heavily</li>
                   <li>Budget is genuinely zero</li>
                 </ul>
               </article>
               <article className="rounded-[16px] bg-white border border-zinc-200/80 p-6">
-                <h3 className="font-heading text-base font-bold text-[#0A2540]">Hire a writer when…</h3>
+                <h3 className="font-heading text-base font-bold text-[#0A2540]">Hire a writer when...</h3>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-700 list-disc pl-5">
                   <li>You&apos;re mid-career or more senior</li>
                   <li>You&apos;re changing industry, function, or seniority</li>
@@ -195,7 +195,7 @@ export default function VsChatGPTPage() {
           pages={[
             { title: "Resume Writer Cost in 2026", href: "/resume-writer-cost", blurb: "Pricing tiers and what to avoid." },
             { title: "Is a Resume Writer Worth It?", href: "/is-a-resume-writer-worth-it", blurb: "Three situations where it pays for itself." },
-            { title: "Resume Writer vs Template", href: "/professional-resume-writer-vs-template", blurb: "When a $50 template is enough — and when it isn't." },
+            { title: "Resume Writer vs Template", href: "/professional-resume-writer-vs-template", blurb: "When a $50 template is enough - and when it isn't." },
           ]}
         />
 

@@ -31,10 +31,10 @@ const FAQS = [
   },
   {
     q: "When is hiring a resume writer NOT worth it?",
-    a: "Two cases. First, when you already have a strong resume and just need light polishing — DIY or a $50 review is fine. Second, when the bottleneck isn't your resume but your candidate profile (e.g. you're applying to roles you're not qualified for). A resume writer can't manufacture experience you don't have.",
+    a: "Two cases. First, when you already have a strong resume and just need light polishing - DIY or a $50 review is fine. Second, when the bottleneck isn't your resume but your candidate profile (e.g. you're applying to roles you're not qualified for). A resume writer can't manufacture experience you don't have.",
   },
   {
-    q: "What about the 90-day interview guarantee — is that real?",
+    q: "What about the 90-day interview guarantee - is that real?",
     a: "Yes. Every package on this site is backed by a 90-day, 100% money-back guarantee. If you apply to 20+ relevant roles within 90 days and receive zero interview calls, you get a full refund. Full terms on the refund policy page.",
   },
   {
@@ -66,7 +66,7 @@ export default function IsItWorthItPage() {
         breadcrumbLabel="Is a Resume Writer Worth It?"
         eyebrow="Buying decision · 2026"
         h1={<>Is a Professional Resume Writer <span className="text-[#C9A961]">Worth It?</span></>}
-        intro="Short answer: yes, in three specific situations. No, in two others. Here's the honest breakdown — written by someone who would prefer you only buy if it actually pays back."
+        intro="Short answer: yes, in three specific situations. No, in two others. Here's the honest breakdown - written by someone who would prefer you only buy if it actually pays back."
       >
         {/* Worth it */}
         <section className="w-full bg-white py-16 md:py-20">
@@ -119,7 +119,7 @@ export default function IsItWorthItPage() {
 
               <article className="rounded-[18px] bg-white border border-zinc-200/80 p-6">
                 <h3 className="font-heading text-[20px] font-bold leading-tight text-[#0A2540]">The bottleneck isn't your resume</h3>
-                <p className="mt-3 text-zinc-700 leading-relaxed">If you're applying to roles you're not qualified for, no resume rewrite will fix the underlying gap. The honest move is to focus on building the experience (or applying to roles that match what you have). A great writer can sharpen what's there — we can't manufacture what isn't.</p>
+                <p className="mt-3 text-zinc-700 leading-relaxed">If you're applying to roles you're not qualified for, no resume rewrite will fix the underlying gap. The honest move is to focus on building the experience (or applying to roles that match what you have). A great writer can sharpen what's there - we can't manufacture what isn't.</p>
               </article>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function IsItWorthItPage() {
               One paragraph of honest cost-benefit.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-zinc-700">
-              The Career Pack costs $349. If a stronger resume gets you a $90K offer two weeks earlier than a weaker one would have, you've earned about $3,400 in extra time-in-role compensation. If it gets you a $5K higher offer in the same job, you've earned $5,000 in year-one comp alone. Most candidates clear either bar without thinking about it. The math gets cleaner at higher seniorities. The math gets worse if you spend money on a writer when the actual bottleneck is something else — which is why we tell people honestly when it isn&apos;t worth it.
+              The Career Pack costs $349. If a stronger resume gets you a $90K offer two weeks earlier than a weaker one would have, you've earned about $3,400 in extra time-in-role compensation. If it gets you a $5K higher offer in the same job, you've earned $5,000 in year-one comp alone. Most candidates clear either bar without thinking about it. The math gets cleaner at higher seniorities. The math gets worse if you spend money on a writer when the actual bottleneck is something else - which is why we tell people honestly when it isn&apos;t worth it.
             </p>
           </div>
         </section>

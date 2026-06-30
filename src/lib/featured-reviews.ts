@@ -2,7 +2,7 @@
  * Curated, real 5-star Google reviews (verified on the Google Business Profile).
  * Names shortened to first name + initial for privacy. Quotes are genuine
  * excerpts focused on universal service quality (ATS, professionalism,
- * communication) — no client location is claimed.
+ * communication) - no client location is claimed.
  * Source: https://maps.app.goo.gl/7osd53bHxoc9jQwaA  (5.0 ★, 69 reviews)
  */
 

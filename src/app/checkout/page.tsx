@@ -171,7 +171,7 @@ export default function CheckoutPage() {
     const orderRef = orderId || "pending";
     const summary = quoteSummary ?? fallbackSummary;
     const itemLines = selectedItems.map(
-      (item) => `• ${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ""} — ${formatLkr(item.priceLkr * item.quantity)}`
+      (item) => `• ${item.name}${item.quantity > 1 ? ` x${item.quantity}` : ""} - ${formatLkr(item.priceLkr * item.quantity)}`
     );
     const lines = [
       "Hello Chanuka, I placed an order through the website.",

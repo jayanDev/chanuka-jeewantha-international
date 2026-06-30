@@ -2,37 +2,37 @@
 
 :root {
   /* ===== PRIMARY BRAND COLORS ===== */
-  --color-primary: #0A2540;           /* Deep Navy — main brand color */
-  --color-primary-light: #1B3E66;     /* Navy Light — hover states */
-  --color-primary-dark: #061828;      /* Navy Dark — deep shadows */
+  --color-primary: #0A2540;           /* Deep Navy - main brand color */
+  --color-primary-light: #1B3E66;     /* Navy Light - hover states */
+  --color-primary-dark: #061828;      /* Navy Dark - deep shadows */
 
   /* ===== ACCENT COLORS ===== */
-  --color-accent: #C9A961;            /* Gold — premium accent */
-  --color-accent-light: #E0C882;      /* Gold Light — hover/tints */
-  --color-accent-dark: #B8985A;       /* Gold Dark — pressed states */
+  --color-accent: #C9A961;            /* Gold - premium accent */
+  --color-accent-light: #E0C882;      /* Gold Light - hover/tints */
+  --color-accent-dark: #B8985A;       /* Gold Dark - pressed states */
 
   /* ===== BACKGROUND COLORS ===== */
-  --color-bg-white: #FFFFFF;          /* Pure white — main bg */
-  --color-bg-cream: #FAF8F3;          /* Warm cream — section bg */
+  --color-bg-white: #FFFFFF;          /* Pure white - main bg */
+  --color-bg-cream: #FAF8F3;          /* Warm cream - section bg */
   --color-bg-navy: #0A2540;           /* Dark sections, footer */
-  --color-bg-light: #F5F5F0;          /* Light warm gray — cards */
+  --color-bg-light: #F5F5F0;          /* Light warm gray - cards */
 
   /* ===== TEXT COLORS ===== */
-  --color-text-primary: #1F2937;      /* Dark gray — body text */
-  --color-text-secondary: #6B7280;    /* Medium gray — subtitles */
-  --color-text-muted: #9CA3AF;        /* Light gray — captions */
-  --color-text-white: #FFFFFF;        /* White — on dark bg */
-  --color-text-gold: #C9A961;         /* Gold — highlights */
+  --color-text-primary: #1F2937;      /* Dark gray - body text */
+  --color-text-secondary: #6B7280;    /* Medium gray - subtitles */
+  --color-text-muted: #9CA3AF;        /* Light gray - captions */
+  --color-text-white: #FFFFFF;        /* White - on dark bg */
+  --color-text-gold: #C9A961;         /* Gold - highlights */
 
   /* ===== STATUS COLORS ===== */
-  --color-success: #10B981;           /* Green — savings, success */
-  --color-warning: #F59E0B;           /* Amber — notices */
-  --color-error: #EF4444;             /* Red — errors */
+  --color-success: #10B981;           /* Green - savings, success */
+  --color-warning: #F59E0B;           /* Amber - notices */
+  --color-error: #EF4444;             /* Red - errors */
 
   /* ===== BORDER COLORS ===== */
-  --color-border: #E5E7EB;            /* Light gray — default borders */
-  --color-border-gold: #C9A961;       /* Gold — premium borders */
-  --color-border-navy: #0A2540;       /* Navy — strong borders */
+  --color-border: #E5E7EB;            /* Light gray - default borders */
+  --color-border-gold: #C9A961;       /* Gold - premium borders */
+  --color-border-navy: #0A2540;       /* Navy - strong borders */
 
   /* ===== TYPOGRAPHY FAMILIES ===== */
   /* next/font injects --font-playfair and --font-inter on <html> via layout.tsx */
@@ -290,21 +290,21 @@
   }
 }
 
-/* ===== HOMEPAGE PREMIUM POLISH — Hover-triggered only ===== */
+/* ===== HOMEPAGE PREMIUM POLISH - Hover-triggered only ===== */
 
-/* Gold shimmer sweep — triggered by parent :hover, NOT infinite */
+/* Gold shimmer sweep - triggered by parent :hover, NOT infinite */
 @keyframes goldShimmer {
   from { transform: translateX(-100%); }
   to   { transform: translateX(200%); }
 }
 
-/* Subtle glow pulse for hero image frame — triggered by :hover */
+/* Subtle glow pulse for hero image frame - triggered by :hover */
 @keyframes frameGlow {
   0%, 100% { opacity: 0.25; }
   50%      { opacity: 0.55; }
 }
 
-/* Service card gold ribbon — slides in from left on hover */
+/* Service card gold ribbon - slides in from left on hover */
 .service-card::before {
   content: '';
   position: absolute;
@@ -323,7 +323,7 @@
   transform: scaleX(1);
 }
 
-/* FAQ accordion — hover gold left bar + chevron */
+/* FAQ accordion - hover gold left bar + chevron */
 .faq-item {
   border-left: 3px solid transparent;
   transition: border-color 0.25s ease, background-color 0.25s ease;
@@ -431,7 +431,7 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-base);
   line-height: var(--leading-relaxed);
-  /* Smooth theme transitions — only when not doing initial page load */
+  /* Smooth theme transitions - only when not doing initial page load */
   transition: background-color 0.25s ease, color 0.25s ease;
 }
 
@@ -1101,7 +1101,7 @@ body.has-bottom-banner #back-to-top {
   font-weight: var(--weight-semibold);
 }
 
-/* ===== BUNDLE CARD — Solid fallback, no backdrop-blur on mobile ===== */
+/* ===== BUNDLE CARD - Solid fallback, no backdrop-blur on mobile ===== */
 .bundle-card-dark {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.08);

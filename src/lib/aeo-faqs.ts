@@ -1,5 +1,5 @@
 /**
- * AEO-optimized FAQ content — country-specific, conversational Q&A
+ * AEO-optimized FAQ content - country-specific, conversational Q&A
  * designed for AI search engine extraction (ChatGPT, Perplexity, Google AI Overviews).
  *
  * Each answer leads with the direct answer in the first sentence.
@@ -21,7 +21,7 @@ export const aeoFaqs: FaqItem[] = [
   },
   {
     q: "What is an ATS-friendly CV / resume?",
-    a: "An ATS-friendly CV is formatted so Applicant Tracking Systems can parse it correctly — clean structure, standard headings, relevant keywords, and no elements (tables, graphics, columns) that break parsing. Every resume written here is ATS-optimized while staying recruiter- and hiring-manager-readable.",
+    a: "An ATS-friendly CV is formatted so Applicant Tracking Systems can parse it correctly - clean structure, standard headings, relevant keywords, and no elements (tables, graphics, columns) that break parsing. Every resume written here is ATS-optimized while staying recruiter- and hiring-manager-readable.",
   },
   {
     q: "Do you write resumes for the US and CVs for the UK/Australia?",
@@ -37,7 +37,7 @@ export const aeoFaqs: FaqItem[] = [
   },
   {
     q: "Is this service worth it for senior and executive roles?",
-    a: "It is built specifically for senior professionals, executives, C-suite hires, and founders competing for serious roles. The work is founder-led and personally written — not template editing or junior outsourcing.",
+    a: "It is built specifically for senior professionals, executives, C-suite hires, and founders competing for serious roles. The work is founder-led and personally written - not template editing or junior outsourcing.",
   },
   {
     q: "How do I book a consultation or get started?",

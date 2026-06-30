@@ -27,7 +27,7 @@ export async function sendEnquiryNotification(input: EnquiryInput): Promise<void
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({
       access_key: WEB3FORMS_ACCESS_KEY,
-      subject: `New enquiry — ${input.subject}`,
+      subject: `New enquiry - ${input.subject}`,
       from_name: "Chanuka Jeewantha Website",
       name: input.name,
       email: input.email,

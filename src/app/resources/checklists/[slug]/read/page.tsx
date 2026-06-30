@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     });
   }
   return buildPageMetadata({
-    title: `${checklist.title} — Interactive Checklist`,
+    title: `${checklist.title} - Interactive Checklist`,
     description: `Work through the ${checklist.title} step by step. Free for everyone after sign-in.`,
     path: `/resources/checklists/${slug}/read`,
     keywords: [checklist.title, "free checklist", "interactive checklist"],

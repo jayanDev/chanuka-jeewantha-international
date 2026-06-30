@@ -17,7 +17,7 @@ interface CountUpNumberProps {
 
 /**
  * Animates a number counting up from 0 to `end` when the element enters the viewport.
- * Respects `prefers-reduced-motion` — shows the final value immediately if motion is reduced.
+ * Respects `prefers-reduced-motion` - shows the final value immediately if motion is reduced.
  */
 export default function CountUpNumber({
   end,

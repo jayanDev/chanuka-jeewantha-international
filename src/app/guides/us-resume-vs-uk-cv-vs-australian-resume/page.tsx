@@ -7,7 +7,7 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "US Resume vs UK CV vs Australian Resume (2026 Guide)",
   description:
-    "The key differences between a US resume, a UK CV, and an Australian resume — length, photo, spelling, structure, and the ATS systems each market uses.",
+    "The key differences between a US resume, a UK CV, and an Australian resume - length, photo, spelling, structure, and the ATS systems each market uses.",
   path: "/guides/us-resume-vs-uk-cv-vs-australian-resume",
   keywords: [
     "US resume vs UK CV",
@@ -20,7 +20,7 @@ export const metadata: Metadata = buildPageMetadata({
 
 const rows: [string, string, string, string][] = [
   ["Document name", "Resume", "CV", "Resume or CV (used interchangeably)"],
-  ["Typical length", "1 page (2 for senior)", "2 pages", "2–4 pages"],
+  ["Typical length", "1 page (2 for senior)", "2 pages", "2-4 pages"],
   ["Photo", "No", "No", "No"],
   ["Date of birth / marital status", "No", "No", "No"],
   ["Spelling", "US English", "British English", "Australian English"],
@@ -32,7 +32,7 @@ const rows: [string, string, string, string][] = [
 const faqs = [
   {
     q: "Can I use the same resume for the US, UK, and Australia?",
-    a: "Not without changes. The core experience is the same, but length, terminology (resume vs CV), spelling, and format differ by market — so each version should be tailored to the country you are applying in.",
+    a: "Not without changes. The core experience is the same, but length, terminology (resume vs CV), spelling, and format differ by market - so each version should be tailored to the country you are applying in.",
   },
   {
     q: "Is a CV the same as a resume?",
@@ -48,7 +48,7 @@ const faqs = [
   },
   {
     q: "Do all three need ATS optimization?",
-    a: "Yes. Most mid-to-large employers in all three countries screen applications with an applicant tracking system, so a clean, keyword-aligned format matters everywhere — only the specific ATS platforms differ.",
+    a: "Yes. Most mid-to-large employers in all three countries screen applications with an applicant tracking system, so a clean, keyword-aligned format matters everywhere - only the specific ATS platforms differ.",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function ResumeComparisonGuide() {
         </div>
       </section>
 
-      <FAQSection heading="US Resume vs UK CV vs Australian Resume — FAQ" items={faqs} className="bg-zinc-50 border-t border-zinc-200" />
+      <FAQSection heading="US Resume vs UK CV vs Australian Resume - FAQ" items={faqs} className="bg-zinc-50 border-t border-zinc-200" />
     </>
   );
 }

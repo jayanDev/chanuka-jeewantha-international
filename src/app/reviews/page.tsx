@@ -53,7 +53,7 @@ const providerRows: TableRow[] = [
   },
   {
     label: "Location",
-    value: "Remote-first service — clients served worldwide",
+    value: "Remote-first service - clients served worldwide",
   },
   {
     label: "Experience",

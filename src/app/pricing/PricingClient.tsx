@@ -27,11 +27,11 @@ const bundles: PricingBundle[] = [
     saveUsd: 98,
     label: "For graduates and early-career candidates",
     includes: [
-      "ATS Resume / CV — graduate level",
+      "ATS Resume / CV - graduate level",
       "Cover Letter",
       "LinkedIn Optimization",
       "7-day delivery",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Starter Pack",
   },
@@ -43,12 +43,12 @@ const bundles: PricingBundle[] = [
     audience: "Mid-career professionals",
     highlighted: true,
     includes: [
-      "Premium ATS Resume / CV — professional level",
+      "Premium ATS Resume / CV - professional level",
       "LinkedIn Optimization",
       "Cover Letter",
       "30-day support",
       "1 round of revisions",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Career Pack",
   },
@@ -61,9 +61,9 @@ const bundles: PricingBundle[] = [
       "ATS Resume tailored to your target market",
       "Modern CV format for cross-border applications",
       "LinkedIn Optimization",
-      "Cover Letter — 2 versions for different roles",
+      "Cover Letter - 2 versions for different roles",
       "60-day support",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Career Move Pack",
   },
@@ -79,7 +79,7 @@ const bundles: PricingBundle[] = [
       "Modern CV format for senior hiring panels",
       "1-Hour Strategy Consultation",
       "90-day premium support",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Executive Brand Suite",
   },
@@ -97,7 +97,7 @@ const bundles: PricingBundle[] = [
       "2-Hour Strategy Sessions",
       "6-month support",
       "Quarterly LinkedIn refresh",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose C-Suite Premium",
   },
@@ -256,7 +256,7 @@ export default function PricingClient() {
         </div>
       </section>
 
-      {/* Free & Paid Resources / Ebooks Section — hidden on .com (Sinhala/LKR products move to .lk) */}
+      {/* Free & Paid Resources / Ebooks Section - hidden on .com (Sinhala/LKR products move to .lk) */}
       {SHOW_LOCAL_EBOOKS && (
       <section className="w-full bg-white border-t border-zinc-200 py-[64px] sm:py-[80px] md:py-[96px]">
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">

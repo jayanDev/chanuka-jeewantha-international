@@ -1,7 +1,7 @@
 import type { BlogPost } from "./blog-posts";
 
 /**
- * Bespoke authority articles — hand-written, research-backed content
+ * Bespoke authority articles - hand-written, research-backed content
  * designed to rank for high-intent comparison/keyword queries and to be
  * citation-worthy for AI search (answer-first, specific, market-aware).
  */
@@ -22,9 +22,9 @@ export const authorityPosts: BlogPost[] = [
     slug: "us-resume-vs-uk-cv",
     title: "US Resume vs UK CV: Key Differences (2026 Guide)",
     excerpt:
-      "A US resume and a UK CV are not the same document. Here are the differences in terminology, length, format, spelling, and content — and what to change when you apply across markets.",
+      "A US resume and a UK CV are not the same document. Here are the differences in terminology, length, format, spelling, and content - and what to change when you apply across markets.",
     content:
-      "A US resume and a UK CV target the same goal — getting you shortlisted — but they follow different conventions. In the US, a 'resume' is a concise one-to-two-page document. In the UK, a 'CV' is typically two pages led by a personal profile. Using the wrong format for the market is one of the most common reasons strong candidates get overlooked.",
+      "A US resume and a UK CV target the same goal - getting you shortlisted - but they follow different conventions. In the US, a 'resume' is a concise one-to-two-page document. In the UK, a 'CV' is typically two pages led by a personal profile. Using the wrong format for the market is one of the most common reasons strong candidates get overlooked.",
     category: "Career Strategy",
     publishedAt: "2026-06-18",
     author: "Chanuka Jeewantha",
@@ -39,11 +39,11 @@ export const authorityPosts: BlogPost[] = [
       {
         heading: "Resume vs CV: the core difference",
         paragraphs: [
-          "In the United States, a resume is a short, targeted marketing document — one page for most candidates, two for senior or executive profiles. The word 'CV' in the US is reserved for academic, scientific, and research roles and can run many pages.",
-          "In the United Kingdom (and across much of the Commonwealth — Australia, New Zealand, Ireland), the standard job-application document is called a CV and is usually two pages, opening with a concise personal profile or personal statement.",
+          "In the United States, a resume is a short, targeted marketing document - one page for most candidates, two for senior or executive profiles. The word 'CV' in the US is reserved for academic, scientific, and research roles and can run many pages.",
+          "In the United Kingdom (and across much of the Commonwealth - Australia, New Zealand, Ireland), the standard job-application document is called a CV and is usually two pages, opening with a concise personal profile or personal statement.",
         ],
         bullets: [
-          "US: 'resume', 1–2 pages, achievement-led, no personal profile required",
+          "US: 'resume', 1-2 pages, achievement-led, no personal profile required",
           "UK: 'CV', ~2 pages, opens with a personal profile/statement",
           "Both: no photo, no date of birth, no marital status",
         ],
@@ -56,7 +56,7 @@ export const authorityPosts: BlogPost[] = [
         ],
         bullets: [
           "Match spelling to the market (US vs UK English)",
-          "US: lead with a summary + achievements; keep to 1–2 pages",
+          "US: lead with a summary + achievements; keep to 1-2 pages",
           "UK: lead with a personal profile; ~2 pages is normal",
           "Both: tailor keywords to the specific job description for ATS",
         ],
@@ -73,7 +73,7 @@ export const authorityPosts: BlogPost[] = [
       {
         question: "Is a CV the same as a resume?",
         answer:
-          "Not in the US. In the US a resume is a short 1–2 page document and a CV is a longer academic document. In the UK, Australia, and New Zealand, 'CV' is the standard term for the everyday job-application document.",
+          "Not in the US. In the US a resume is a short 1-2 page document and a CV is a longer academic document. In the UK, Australia, and New Zealand, 'CV' is the standard term for the everyday job-application document.",
       },
       {
         question: "How long should a US resume be?",
@@ -95,7 +95,7 @@ export const authorityPosts: BlogPost[] = [
     excerpt:
       "ATS keywords in 2026 are about semantic relevance, not stuffing. Here are the keyword themes that matter, why modern ATS reads meaning, and how to use them without sounding robotic.",
     content:
-      "Applicant tracking systems are used by an estimated 98% of Fortune 500 companies, and they now rank resumes by semantic relevance rather than exact-match keyword counting. The 2026 priority is contextual, natural language that mirrors the target job description — not keyword stuffing.",
+      "Applicant tracking systems are used by an estimated 98% of Fortune 500 companies, and they now rank resumes by semantic relevance rather than exact-match keyword counting. The 2026 priority is contextual, natural language that mirrors the target job description - not keyword stuffing.",
     category: "ATS CV Writing",
     publishedAt: "2026-06-12",
     author: "Chanuka Jeewantha",
@@ -110,8 +110,8 @@ export const authorityPosts: BlogPost[] = [
       {
         heading: "ATS 2.0: from keyword stuffing to semantic relevance",
         paragraphs: [
-          "Modern applicant tracking systems use semantic analysis — they understand meaning and related terms, not just exact string matches. That makes old tactics like cramming a keyword list or hiding white-text keywords both ineffective and risky.",
-          "Studies show roughly 52% of target-job keywords are missing from the average unoptimised resume. The fix is not more keywords — it is the right keywords, used naturally, backed by evidence.",
+          "Modern applicant tracking systems use semantic analysis - they understand meaning and related terms, not just exact string matches. That makes old tactics like cramming a keyword list or hiding white-text keywords both ineffective and risky.",
+          "Studies show roughly 52% of target-job keywords are missing from the average unoptimised resume. The fix is not more keywords - it is the right keywords, used naturally, backed by evidence.",
         ],
         bullets: [
           "ATS now reads context and synonyms, not just exact matches",
@@ -134,8 +134,8 @@ export const authorityPosts: BlogPost[] = [
       {
         heading: "How to use keywords the right way",
         paragraphs: [
-          "Collect 5–8 real job descriptions for your target role and note the skills, tools, and outcomes that repeat. Those repeated terms are what the ATS and the recruiter are looking for.",
-          "Then weave them into your summary, experience bullets, and skills section as evidence — 'cut onboarding time 30% by redesigning the process' beats a bare 'process optimization' tag. Mirror the employer's wording where it is honest and accurate.",
+          "Collect 5-8 real job descriptions for your target role and note the skills, tools, and outcomes that repeat. Those repeated terms are what the ATS and the recruiter are looking for.",
+          "Then weave them into your summary, experience bullets, and skills section as evidence - 'cut onboarding time 30% by redesigning the process' beats a bare 'process optimization' tag. Mirror the employer's wording where it is honest and accurate.",
         ],
         bullets: [
           "Map your keywords to each target role family, not one generic list",
@@ -149,7 +149,7 @@ export const authorityPosts: BlogPost[] = [
       {
         question: "How many keywords should a resume have?",
         answer:
-          "There is no fixed number. Focus on covering the skills, tools, and outcomes that repeat across your target job descriptions, used naturally and backed by evidence — not a maximum keyword count.",
+          "There is no fixed number. Focus on covering the skills, tools, and outcomes that repeat across your target job descriptions, used naturally and backed by evidence - not a maximum keyword count.",
       },
       {
         question: "Does keyword stuffing still work for ATS?",
@@ -159,7 +159,7 @@ export const authorityPosts: BlogPost[] = [
       {
         question: "What are the most important resume keywords in 2026?",
         answer:
-          "Durable skills like project management, data analysis, and stakeholder communication, plus emerging AI-literacy terms — always matched to your specific target role and proven with measurable results.",
+          "Durable skills like project management, data analysis, and stakeholder communication, plus emerging AI-literacy terms - always matched to your specific target role and proven with measurable results.",
       },
     ],
     internalLinks: authorityInternalLinks,

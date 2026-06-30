@@ -10,7 +10,7 @@ import PageHero from "@/components/PageHero";
 export const metadata: Metadata = buildPageMetadata({
   title: "Resume Writing FAQ | Pricing, Delivery & 90-Day Guarantee",
   description:
-    "Answers about premium resume writing for US professionals — pricing, delivery timelines, payment methods, the 90-day interview guarantee, and how the process works.",
+    "Answers about premium resume writing for US professionals - pricing, delivery timelines, payment methods, the 90-day interview guarantee, and how the process works.",
   path: "/faq",
 });
 
@@ -26,7 +26,7 @@ export default function FAQPage() {
     },
     {
       q: "Can you tailor a CV for a specific target market?",
-      a: "Yes. Each document is built around the conventions of your target market — format, length, tone, and what recruiters in that market actually look for."
+      a: "Yes. Each document is built around the conventions of your target market - format, length, tone, and what recruiters in that market actually look for."
     },
     {
       q: "Do you guarantee interviews or jobs?",
@@ -96,7 +96,7 @@ export default function FAQPage() {
         </div>
       </section>
 
-      {/* AEO-optimized country-specific FAQ — schema suppressed (merged above) */}
+      {/* AEO-optimized country-specific FAQ - schema suppressed (merged above) */}
       <FAQSection
         heading="Pricing, Markets & Getting Started"
         items={aeoFaqs}

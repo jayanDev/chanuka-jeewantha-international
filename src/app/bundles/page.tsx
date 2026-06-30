@@ -14,7 +14,7 @@ const bundles = [
     name: "Starter Pack",
     price: "$179",
     label: "For graduates and early-career candidates",
-    includes: ["ATS Resume / CV — graduate level", "Cover Letter", "LinkedIn Optimization", "7-day delivery", "Save $98 vs separate services"],
+    includes: ["ATS Resume / CV - graduate level", "Cover Letter", "LinkedIn Optimization", "7-day delivery", "Save $98 vs separate services"],
     cta: "Choose Starter Pack",
   },
   {
@@ -23,14 +23,14 @@ const bundles = [
     label: "Most Popular",
     audience: "Mid-career professionals",
     highlighted: true,
-    includes: ["Premium ATS Resume / CV — professional level", "LinkedIn Optimization", "Cover Letter", "30-day support", "1 round of revisions", "Save $128 vs separate services"],
+    includes: ["Premium ATS Resume / CV - professional level", "LinkedIn Optimization", "Cover Letter", "30-day support", "1 round of revisions", "Save $128 vs separate services"],
     cta: "Choose Career Pack",
   },
   {
     name: "Career Move Pack",
     price: "$499",
     audience: "Professionals making a cross-border move",
-    includes: ["ATS Resume tailored to your target market", "Modern CV format for cross-border applications", "LinkedIn Optimization", "Cover Letter — 2 versions for different roles", "60-day support", "Save $176 vs separate services"],
+    includes: ["ATS Resume tailored to your target market", "Modern CV format for cross-border applications", "LinkedIn Optimization", "Cover Letter - 2 versions for different roles", "60-day support", "Save $176 vs separate services"],
     cta: "Choose Career Move Pack",
   },
   {
@@ -60,7 +60,7 @@ export default function BundlesPage() {
             Premium career-branding bundles.
           </h1>
           <p className="mx-auto mt-5 max-w-3xl text-white/75">
-            Complete resume, CV, LinkedIn, cover letter, and strategy bundles — built for senior candidates and competitive job markets.
+            Complete resume, CV, LinkedIn, cover letter, and strategy bundles - built for senior candidates and competitive job markets.
           </p>
         </div>
       </section>

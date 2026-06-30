@@ -8,7 +8,7 @@ async function requireAdmin(request: Request) {
   return user;
 }
 
-// GET /api/admin/subscribers — list all newsletter subscribers
+// GET /api/admin/subscribers - list all newsletter subscribers
 export async function GET(request: Request) {
   const admin = await requireAdmin(request);
   if (!admin) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -50,7 +50,7 @@ export async function GET(request: Request) {
   return NextResponse.json({ subscribers, totalActive, totalUnsubscribed });
 }
 
-// PATCH /api/admin/subscribers — update subscriber status
+// PATCH /api/admin/subscribers - update subscriber status
 export async function PATCH(request: Request) {
   const admin = await requireAdmin(request);
   if (!admin) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

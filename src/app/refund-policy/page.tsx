@@ -19,7 +19,7 @@ export default function RefundPolicyPage() {
           Refund Policy &amp; 90-Day Interview Guarantee
         </h1>
         <p className="mt-4 leading-relaxed text-text-body">
-          Every package sold on this site is backed by a 100% money-back guarantee. If you don&apos;t receive any interview calls within 90 days of delivery, you get a full refund — on every package, no exceptions. Full terms are below.
+          Every package sold on this site is backed by a 100% money-back guarantee. If you don&apos;t receive any interview calls within 90 days of delivery, you get a full refund - on every package, no exceptions. Full terms are below.
         </p>
 
         {/* Headline guarantee card */}

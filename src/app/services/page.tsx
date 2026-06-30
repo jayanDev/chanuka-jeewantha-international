@@ -41,7 +41,7 @@ export default function ServicesPage() {
     },
     {
       title: "Modern CV Format for Cross-Border Applications",
-      desc: "Senior-level resume and CV formats tailored to the conventions of your target market — for cross-border applications and recruiter-led searches.",
+      desc: "Senior-level resume and CV formats tailored to the conventions of your target market - for cross-border applications and recruiter-led searches.",
       href: "/services/packages/foreign-cv",
     },
     {

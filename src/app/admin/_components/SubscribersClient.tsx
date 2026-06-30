@@ -103,7 +103,7 @@ export default function SubscribersClient() {
               disabled={loading}
               className="rounded-[10px] bg-foreground px-5 py-2.5 text-sm text-background disabled:opacity-60"
             >
-              {loading ? "Loading…" : "Refresh"}
+              {loading ? "Loading..." : "Refresh"}
             </button>
           </div>
         </div>
@@ -130,7 +130,7 @@ export default function SubscribersClient() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by email…"
+            placeholder="Search by email..."
             aria-label="Search subscribers"
             className="flex-1 rounded-[10px] border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-brand-main"
           />
@@ -152,7 +152,7 @@ export default function SubscribersClient() {
 
       {/* Table */}
       {loading ? (
-        <p className="text-sm text-zinc-500">Loading subscribers…</p>
+        <p className="text-sm text-zinc-500">Loading subscribers...</p>
       ) : displayed.length === 0 ? (
         <div className="rounded-[16px] border border-zinc-200 bg-white p-10 text-center">
           <p className="text-zinc-400 text-sm">No subscribers found.</p>

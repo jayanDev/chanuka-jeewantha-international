@@ -198,7 +198,7 @@ export default function ReportsClient() {
             disabled={loading}
             className="rounded-[10px] bg-foreground px-5 py-2.5 text-sm text-background disabled:opacity-60"
           >
-            {loading ? "Loading…" : "Refresh"}
+            {loading ? "Loading..." : "Refresh"}
           </button>
         </div>
         {error && <p className="mt-3 text-sm text-red-700">{error}</p>}
@@ -243,7 +243,7 @@ export default function ReportsClient() {
         </div>
 
         <div className="p-6">
-          {loading && <p className="text-sm text-zinc-500">Loading…</p>}
+          {loading && <p className="text-sm text-zinc-500">Loading...</p>}
 
           {/* ── Revenue Chart ─────────────────────────────────────────────── */}
           {!loading && tab === "revenue" && data && (
@@ -269,7 +269,7 @@ export default function ReportsClient() {
                       <tr key={row.date} className="border-b border-zinc-50 hover:bg-zinc-50">
                         <td className="py-1.5 pr-4 text-zinc-500">{row.date}</td>
                         <td className={`py-1.5 font-semibold ${row.revenue > 0 ? "text-emerald-700" : "text-zinc-300"}`}>
-                          {row.revenue > 0 ? formatLkr(row.revenue) : "—"}
+                          {row.revenue > 0 ? formatLkr(row.revenue) : "-"}
                         </td>
                       </tr>
                     ))}
@@ -408,7 +408,7 @@ export default function ReportsClient() {
                             <td className="px-4 py-3 text-right text-zinc-500">{coupon.maxTotalUses}</td>
                             <td className="px-4 py-3 text-right font-semibold text-zinc-700">{coupon.orderCount}</td>
                             <td className="px-4 py-3 text-right font-semibold text-emerald-700">
-                              {coupon.discountGivenLkr > 0 ? formatLkr(coupon.discountGivenLkr) : "—"}
+                              {coupon.discountGivenLkr > 0 ? formatLkr(coupon.discountGivenLkr) : "-"}
                             </td>
                           </tr>
                         );

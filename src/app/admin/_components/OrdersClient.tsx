@@ -632,7 +632,7 @@ export default function OrdersClient() {
         const daysSince = order.createdAt
           ? Math.floor((Date.now() - new Date(order.createdAt).getTime()) / 86400000)
           : null;
-        const packageSummary = order.items.map((i) => i.productName).join(", ") || "—";
+        const packageSummary = order.items.map((i) => i.productName).join(", ") || "-";
         const openRevisions = order.revisions.filter((r) => r.status !== "resolved").length;
 
         return (
@@ -820,11 +820,11 @@ export default function OrdersClient() {
               {/* Order info */}
               <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-zinc-600">
                 <span className="text-zinc-400">Paid by</span>
-                <span>{order.paymentPersonName || "—"}</span>
+                <span>{order.paymentPersonName || "-"}</span>
                 <span className="text-zinc-400">Ref</span>
-                <span>{order.paymentRef || "—"}</span>
+                <span>{order.paymentRef || "-"}</span>
                 <span className="text-zinc-400">Placed</span>
-                <span>{order.createdAt ? new Date(order.createdAt ?? 0).toLocaleDateString("en-LK") : "—"}</span>
+                <span>{order.createdAt ? new Date(order.createdAt ?? 0).toLocaleDateString("en-LK") : "-"}</span>
                 <span className="text-zinc-400">Subtotal</span>
                 <span>{formatLkr(order.subtotalLkr || order.totalLkr)}</span>
                 {order.couponDiscountLkr > 0 && (

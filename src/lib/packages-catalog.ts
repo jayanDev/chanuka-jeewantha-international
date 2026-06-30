@@ -109,7 +109,7 @@ export const serviceOptions: Array<{
     shortTitle: "Modern CV Format",
     categoryTitle: "Modern CV Format for Cross-Border Applications",
     description:
-      "Resume and CV formats tailored to the conventions of your target market — for cross-border applications, hiring panels, and recruiter-led searches.",
+      "Resume and CV formats tailored to the conventions of your target market - for cross-border applications, hiring panels, and recruiter-led searches.",
   },
   {
     key: "graphical-cv",
@@ -257,7 +257,7 @@ function makePackage(
   if (!price) return null;
 
   const code = `${service.number}${experience.number}1`;
-  const name = `${experience.shortTitle} ${service.shortTitle} — Signature Series`;
+  const name = `${experience.shortTitle} ${service.shortTitle} - Signature Series`;
   const delivery = service.key === "consultation" ? "Scheduled after enquiry approval" : "Premium timeline confirmed after profile review";
 
   return {

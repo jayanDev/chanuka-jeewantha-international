@@ -4,7 +4,7 @@
 // All package prices on the site are defined in USD (the base/source of truth).
 // This module converts a USD amount into the visitor's local currency for
 // display, using a MAINTAINED rate table below. Update the rates here whenever
-// they drift — no external API is required.
+// they drift - no external API is required.
 //
 // Checkout is manual (a Wise / PayPal / Stripe payment link is sent after the
 // enquiry), so the invoice can be issued in the displayed currency.

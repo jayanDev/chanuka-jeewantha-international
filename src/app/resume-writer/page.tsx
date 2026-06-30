@@ -10,12 +10,12 @@ import { parseUsd } from "@/lib/currency";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: "Resume Writer for Every US Industry — Federal, Tech, Finance, Healthcare",
+    title: "Resume Writer for Every US Industry - Federal, Tech, Finance, Healthcare",
     description:
       "Industry-specific resume writing for US professionals. Federal, executive, software engineering, healthcare, finance, military transition, marketing, sales, MBA.",
     path: "/resume-writer",
   }),
-  title: { absolute: "Resume Writer for Every US Industry — Federal, Tech, Finance, Healthcare" },
+  title: { absolute: "Resume Writer for Every US Industry - Federal, Tech, Finance, Healthcare" },
 };
 
 export default function ResumeWriterHubPage() {
@@ -51,7 +51,7 @@ export default function ResumeWriterHubPage() {
             Resume Writer for <span className="text-[#C9A961]">Every US Industry</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl font-light">
-            Choose your industry to see how we write for it — federal, executive, tech, healthcare, finance, military transition, marketing, sales, MBA. Each page covers what we do, what&apos;s included, and the right package for your situation.
+            Choose your industry to see how we write for it - federal, executive, tech, healthcare, finance, military transition, marketing, sales, MBA. Each page covers what we do, what&apos;s included, and the right package for your situation.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:justify-center">

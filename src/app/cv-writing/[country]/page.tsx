@@ -52,7 +52,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
   const doc = entry.docTerm;
 
   const ratingLd = buildAggregateRatingSchema(
-    `${doc === "resume" ? "Resume" : "CV"} Writing Service — ${entry.country}`,
+    `${doc === "resume" ? "Resume" : "CV"} Writing Service - ${entry.country}`,
     `/cv-writing/${entry.slug}`,
     { ratingValue: Number(GOOGLE_RATING), reviewCount: GOOGLE_REVIEW_COUNT },
   );
@@ -142,7 +142,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
           <div className="mb-10 rounded-2xl border border-zinc-200 border-t-[3px] border-t-brand-main bg-white p-6 sm:p-7 shadow-sm">
             <p className="text-text-body text-lg leading-relaxed">
               <strong className="text-foreground">Chanuka Jeewantha</strong> is a professional {doc} writer and
-              career-branding specialist who works remotely with {entry.demonym} professionals — providing ATS-optimized{" "}
+              career-branding specialist who works remotely with {entry.demonym} professionals - providing ATS-optimized{" "}
               {doc} writing, LinkedIn profile optimization, and cover letters. Backed by 380+ senior and executive
               placements across the USA, UK, Australia, Canada, and New Zealand, and rated {GOOGLE_RATING}/5 from{" "}
               {GOOGLE_REVIEW_COUNT} Google reviews.
@@ -151,7 +151,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
               <li><span className="font-semibold text-foreground">Markets served:</span> USA, UK, Australia, Canada, New Zealand (remote)</li>
               <li><span className="font-semibold text-foreground">Best for:</span> {entry.specialisms.slice(0, 3).join(", ")} &amp; more</li>
               <li><span className="font-semibold text-foreground">Proof:</span> 380+ placements · {GOOGLE_RATING}/5 from {GOOGLE_REVIEW_COUNT} reviews</li>
-              <li><span className="font-semibold text-foreground">Turnaround:</span> 3–5 business days (express available)</li>
+              <li><span className="font-semibold text-foreground">Turnaround:</span> 3-5 business days (express available)</li>
               <li><span className="font-semibold text-foreground">Includes:</span> ATS optimization + cover letter</li>
             </ul>
           </div>
@@ -162,7 +162,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
           <p className="mt-5 text-text-body text-lg leading-relaxed">
             Applying for roles in {entry.country} means competing against candidates who tailor their {doc} to local
             hiring conventions and the applicant tracking systems employers rely on. This service delivers a personally
-            written, ATS-optimized {doc} aligned to {entry.demonym} recruiter expectations — no templates, no junior
+            written, ATS-optimized {doc} aligned to {entry.demonym} recruiter expectations - no templates, no junior
             outsourcing.
           </p>
           <p className="mt-5 text-text-body text-lg leading-relaxed">
@@ -245,8 +245,8 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
             {doc === "resume" ? "Resume" : "CV"} writing for professionals across {entry.country}
           </h2>
           <p className="mt-5 text-text-body text-lg leading-relaxed">
-            The service supports {entry.demonym} professionals nationwide and in every major hiring hub — including{" "}
-            {entry.cities.slice(0, -1).join(", ")}, and {entry.cities[entry.cities.length - 1]} — as well as remote-first
+            The service supports {entry.demonym} professionals nationwide and in every major hiring hub - including{" "}
+            {entry.cities.slice(0, -1).join(", ")}, and {entry.cities[entry.cities.length - 1]} - as well as remote-first
             employers. Wherever you are targeting roles, your {doc} is tailored to local conventions and the expectations
             of recruiters in that market.
           </p>
@@ -298,7 +298,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
               },
               {
                 t: "Review & revisions",
-                d: "You review the draft and we refine it together until it is ready to send — revisions are included.",
+                d: "You review the draft and we refine it together until it is ready to send - revisions are included.",
               },
             ].map((step, i) => (
               <li key={step.t} className="flex gap-4">
@@ -316,7 +316,7 @@ export default async function GeoLandingPage({ params }: { params: Promise<{ cou
       </section>
 
       <FAQSection
-        heading={`${entry.country} ${doc === "resume" ? "Resume" : "CV"} Writing — Common Questions`}
+        heading={`${entry.country} ${doc === "resume" ? "Resume" : "CV"} Writing - Common Questions`}
         items={entry.faqs}
         className="bg-zinc-50 border-t border-zinc-200"
       />

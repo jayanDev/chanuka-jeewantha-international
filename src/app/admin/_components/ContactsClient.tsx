@@ -139,7 +139,7 @@ export default function ContactsClient() {
             disabled={loading}
             className="rounded-[10px] bg-foreground px-5 py-2.5 text-sm text-background disabled:opacity-60"
           >
-            {loading ? "Loading…" : "Refresh"}
+            {loading ? "Loading..." : "Refresh"}
           </button>
         </div>
 
@@ -167,7 +167,7 @@ export default function ContactsClient() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by name, email, subject or message…"
+            placeholder="Search by name, email, subject or message..."
             aria-label="Search contact messages"
             className="w-full rounded-[10px] border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-brand-main"
           />
@@ -178,7 +178,7 @@ export default function ContactsClient() {
 
       {/* Messages */}
       {loading ? (
-        <p className="text-sm text-zinc-500">Loading messages…</p>
+        <p className="text-sm text-zinc-500">Loading messages...</p>
       ) : displayed.length === 0 ? (
         <div className="rounded-[16px] border border-zinc-200 bg-white p-10 text-center">
           <p className="text-zinc-400 text-sm">No messages in this category.</p>
@@ -214,7 +214,7 @@ export default function ContactsClient() {
                       </div>
                       <p className="font-semibold text-foreground text-sm truncate">
                         {msg.name}
-                        {msg.subject ? ` — ${msg.subject}` : ""}
+                        {msg.subject ? ` - ${msg.subject}` : ""}
                       </p>
                       <p className="text-xs text-zinc-500 truncate">{msg.email}</p>
                     </div>

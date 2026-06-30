@@ -51,11 +51,11 @@ function buildCityFaqs(page: CityPage) {
     },
     {
       q: `How long does the engagement take?`,
-      a: `Standard delivery is 7–14 days depending on package. Faster turnarounds can be requested during the enquiry.`,
+      a: `Standard delivery is 7-14 days depending on package. Faster turnarounds can be requested during the enquiry.`,
     },
     {
       q: `Is the 90-day interview guarantee available in ${page.city}?`,
-      a: `Yes. Every package on the site — including engagements with ${page.city} clients — is backed by a 90-day, 100% money-back interview guarantee. Full terms are on the refund policy page.`,
+      a: `Yes. Every package on the site - including engagements with ${page.city} clients - is backed by a 90-day, 100% money-back interview guarantee. Full terms are on the refund policy page.`,
     },
   ];
 }
@@ -234,7 +234,7 @@ export default async function CityResumeWriterPage({ params }: PageProps) {
           <div className="text-center">
             <span className="text-[#8C6D30] font-semibold uppercase tracking-[0.16em] text-xs">FAQ</span>
             <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-[#0A2540] sm:text-[36px] md:text-[42px]">
-              {page.city} resume writing — common questions.
+              {page.city} resume writing - common questions.
             </h2>
           </div>
           <div className="mt-10 space-y-3">

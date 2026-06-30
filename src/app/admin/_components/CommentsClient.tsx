@@ -70,7 +70,7 @@ export default function CommentsClient() {
       </div>
 
       {loading ? (
-        <p className="text-text-body text-sm">Loading comments…</p>
+        <p className="text-text-body text-sm">Loading comments...</p>
       ) : displayed.length === 0 ? (
         <p className="text-text-body text-sm">No {tab} comments.</p>
       ) : (

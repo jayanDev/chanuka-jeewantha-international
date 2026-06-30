@@ -53,7 +53,7 @@ const providerRows: DetailRow[] = [
   },
   {
     label: "Location",
-    value: "Remote-first — clients served worldwide",
+    value: "Remote-first - clients served worldwide",
   },
   {
     label: "Experience",

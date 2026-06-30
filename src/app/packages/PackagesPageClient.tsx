@@ -24,7 +24,7 @@ export default function PackagesPageClient() {
             Browse every Signature Series package
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-            Transparent pricing in your local currency, premium inclusions, and the full career-branding service line — visible upfront.
+            Transparent pricing in your local currency, premium inclusions, and the full career-branding service line - visible upfront.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn btn-secondary !border-white/40 !text-white hover:!bg-white/10">
@@ -115,7 +115,7 @@ export default function PackagesPageClient() {
         </section>
       ))}
 
-      {/* Free & Paid Resources / Ebooks Section — hidden on .com (Sinhala/LKR products move to .lk) */}
+      {/* Free & Paid Resources / Ebooks Section - hidden on .com (Sinhala/LKR products move to .lk) */}
       {SHOW_LOCAL_EBOOKS && (
       <section className="w-full bg-white border-t border-zinc-200 py-12 sm:py-16">
         <div className="mx-auto max-w-6xl">

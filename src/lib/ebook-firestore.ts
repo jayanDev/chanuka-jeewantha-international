@@ -4,8 +4,8 @@
  * (SQLite requires a persistent local file system).
  *
  * Collections:
- *   ebook_purchases  — admin-granted read/download access per email+slug
- *   ebook_progress   — per-user chapter completion tracking
+ *   ebook_purchases  - admin-granted read/download access per email+slug
+ *   ebook_progress   - per-user chapter completion tracking
  */
 import { getFirebaseDb } from "@/lib/firebase-admin";
 

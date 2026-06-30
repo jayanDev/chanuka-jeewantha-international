@@ -106,7 +106,7 @@ export const tutorials: Tutorial[] = [
       title: "How to Write a Professional CV in Sri Lanka: Step-by-Step Guide",
       seoTitle: "How to Write a Professional CV in Sri Lanka | CV Writing Guide",
       metaDescription: "Learn how to write a professional CV in Sri Lanka with this step-by-step guide. Includes CV format, professional summary, skills, work experience, ATS keywords, and common mistakes.",
-      intro: "Are you applying for jobs in Sri Lanka but struggling to get interview calls? The problem usually isn't your qualifications—it's your CV.",
+      intro: "Are you applying for jobs in Sri Lanka but struggling to get interview calls? The problem usually isn't your qualifications-it's your CV.",
       problemExplanation: "Many Sri Lankan job seekers use outdated, cluttered CV formats or copy-paste weak summaries that fail to grab a recruiter's attention. In today's competitive job market, an ordinary resume gets rejected in seconds. You need a document that highlights your true value instantly.",
       whatIsIt: {
         heading: "What Is a Professional CV?",
@@ -332,7 +332,7 @@ export const tutorials: Tutorial[] = [
       title: "How to Create an ATS-Friendly CV for Job Applications",
       seoTitle: "How to Make an ATS-Friendly CV in 2024 | Step by Step Guide",
       metaDescription: "Learn how to format, structure, and keyword-optimize your CV to pass Applicant Tracking Systems and land more job interviews.",
-      intro: "You found the perfect job, spent hours applying, and got an instant rejection email. How? Because a human didn't read your CV—an ATS bot did.",
+      intro: "You found the perfect job, spent hours applying, and got an instant rejection email. How? Because a human didn't read your CV-an ATS bot did.",
       problemExplanation: "Most candidates use highly designed CVs from graphic design tools. Unfortunately, parsing algorithms can't read those visual elements. If the ATS skips your data, you automatically get a low score, meaning HR never sees your application.",
       whatIsIt: {
         heading: "What is an ATS-Friendly CV?",
@@ -588,7 +588,7 @@ export const tutorials: Tutorial[] = [
       },
       commonMistakes: {
         heading: "Common Mistakes",
-        content: "- Writing duties instead of achievements (Focusing on what you *had* to do, instead of what you *succeeded* in doing).\n- Having unexplained long gaps between jobs.\n- Inconsistent date formatting (mixing '2020' with 'May-21').\n- Including irrelevant jobs from 15+ years ago that don’t align with your current career goals."
+        content: "- Writing duties instead of achievements (Focusing on what you *had* to do, instead of what you *succeeded* in doing).\n- Having unexplained long gaps between jobs.\n- Inconsistent date formatting (mixing '2020' with 'May-21').\n- Including irrelevant jobs from 15+ years ago that don't align with your current career goals."
       },
       finalChecklist: [
         "Is my experience in reverse-chronological order?",
@@ -608,7 +608,7 @@ export const tutorials: Tutorial[] = [
       problemExplanation: "බොහෝ අය කරන්නේ තමන්ගේ පරණ රැකියාවේ Job Description එක එහෙම පිටින්ම copy කර CV එකට දැමීමයි. 'Emails වලට පිළිතුරු දීම', 'සාකච්ඡා වලට සහභාගී වීම' වැනි කම්මැලි දෛනික රාජකාරි වලින් ඔබේ සැබෑ හැකියාව පෙන්නුම් කරන්නේ නැත.",
       whatIsIt: {
         heading: "Work Experience කොටස යනු කුමක්ද?",
-        content: "මෙය ඔබගේ වෘත්තීය ඉතිහාසය ආපස්සට (නව රැකියාවේ සිට දක්වා) ලියා දක්වන කොටසයි. අදාළ තනතුර, සමාගම, සේවය කළ කාලය සහ වඩාත්ම වැදගත් වන—එක් එක් රැකියාවේදී ඔබ අත්පත් කරගත් විශේෂ ජයග්‍රහණ මෙහි දැක්වේ."
+        content: "මෙය ඔබගේ වෘත්තීය ඉතිහාසය ආපස්සට (නව රැකියාවේ සිට දක්වා) ලියා දක්වන කොටසයි. අදාළ තනතුර, සමාගම, සේවය කළ කාලය සහ වඩාත්ම වැදගත් වන-එක් එක් රැකියාවේදී ඔබ අත්පත් කරගත් විශේෂ ජයග්‍රහණ මෙහි දැක්වේ."
       },
       whyItMatters: {
         heading: "මෙය වැදගත් වන්නේ ඇයි?",
@@ -768,7 +768,7 @@ export const tutorials: Tutorial[] = [
       title: "How to Choose the Best CV Format for Sri Lankan Jobs",
       seoTitle: "Best CV Format for Sri Lanka Jobs | ATS CV Formats",
       metaDescription: "Confused about which CV format to use? Learn the difference between chronological, functional, and hybrid CVs, and find out which one works best in Sri Lanka.",
-      intro: "A great CV with a bad layout is like a luxury car with square wheels—it’s not going anywhere. The format you choose determines whether recruiters understand your value or toss your application within seconds.",
+      intro: "A great CV with a bad layout is like a luxury car with square wheels-it's not going anywhere. The format you choose determines whether recruiters understand your value or toss your application within seconds.",
       problemExplanation: "Many Sri Lankan job seekers make the mistake of using 'Functional' or 'Skills-based' CVs with heavy graphics. Unfortunately, Applicant Tracking Systems (ATS) and local HR managers struggle to read these, preferring straightforward timelines of your experience.",
       whatIsIt: {
         heading: "What Are the Main CV Formats?",
@@ -881,7 +881,7 @@ export const tutorials: Tutorial[] = [
       title: "How to Write a CV Without Work Experience",
       seoTitle: "Write a CV with No Experience | Entry Level CV Guide",
       metaDescription: "No work experience? No problem. Learn how to write a winning CV using your education, projects, volunteer work, and soft skills.",
-      intro: "Getting your foot in the door is the hardest part. You need experience to get a job, but you need a job to get experience. It’s the ultimate catch-22.",
+      intro: "Getting your foot in the door is the hardest part. You need experience to get a job, but you need a job to get experience. It's the ultimate catch-22.",
       problemExplanation: "Many young applicants leave their 'Experience' section completely blank or fill their CV with irrelevant hobbies. This instantly marks them as unprepared. Employers know you don't have corporate experience, but they still want to see *a track record of doing things*.",
       whatIsIt: {
         heading: "What is a No-Experience CV?",
@@ -894,7 +894,7 @@ export const tutorials: Tutorial[] = [
       stepByStep: [
         {
           heading: "Step 1: Write an Objective-Driven Summary",
-          content: "Since you don’t have professional achievements yet, highlight your academic background, your strongest soft skills, and your enthusiasm for entering the specific industry."
+          content: "Since you don't have professional achievements yet, highlight your academic background, your strongest soft skills, and your enthusiasm for entering the specific industry."
         },
         {
           heading: "Step 2: Move Education to the Top",
@@ -994,7 +994,7 @@ export const tutorials: Tutorial[] = [
       title: "How to Write a CV for Your First Job",
       seoTitle: "First Job CV Format & Guide | Start Your Career",
       metaDescription: "Applying for your very first job? Learn how to structure your CV, what to include, and how to prove you are the right fit with zero professional experience.",
-      intro: "Writing a CV for the first time can be intimidating. You look at templates online and realize you don’t have the flashy titles or 10 years of experience they show.",
+      intro: "Writing a CV for the first time can be intimidating. You look at templates online and realize you don't have the flashy titles or 10 years of experience they show.",
       problemExplanation: "Most first-time job seekers resort to using a standardized form they bought from a local communication shop, filling in generic details. These 'bio-data' formats look highly unprofessional and usually end up in the recycle bin.",
       whatIsIt: {
         heading: "What is a First Job CV?",
@@ -1195,7 +1195,7 @@ export const tutorials: Tutorial[] = [
       ],
       examples: {
         heading: "Internship සහ Project එක ලිවීම - උදාහරණ",
-        content: "**Internship Experience**\n*HR Intern | ABC ආයතනය | Jan 2023 - Jun 2023*\n- නව සේවකයින් 20+ දෙනෙකුගේ Onboarding ක්‍රියාවලිය සාර්ථකව සම්බන්ධීකරණය කිරීම.\n- Excel භාවිතා කරමින් මාසික පැමිණීමේ වාර්තා (Attendance Reports) විශ්ලේෂණය කිරීම.\n\n**Academic Project**\n*අවසන් වසරේ පර්යේෂණය: Supply Chain Optimization*\n- දත්ත විශ්ලේෂණය හරහා ප්‍රවාහන වියදම් 15% කින් අවම කල හැකි නව ක්‍රමවේදයක් යෝජනා කිරීම. මෙයට විශේෂ ‘A’ සාමාර්ථයක් හිමිවිය."
+        content: "**Internship Experience**\n*HR Intern | ABC ආයතනය | Jan 2023 - Jun 2023*\n- නව සේවකයින් 20+ දෙනෙකුගේ Onboarding ක්‍රියාවලිය සාර්ථකව සම්බන්ධීකරණය කිරීම.\n- Excel භාවිතා කරමින් මාසික පැමිණීමේ වාර්තා (Attendance Reports) විශ්ලේෂණය කිරීම.\n\n**Academic Project**\n*අවසන් වසරේ පර්යේෂණය: Supply Chain Optimization*\n- දත්ත විශ්ලේෂණය හරහා ප්‍රවාහන වියදම් 15% කින් අවම කල හැකි නව ක්‍රමවේදයක් යෝජනා කිරීම. මෙයට විශේෂ 'A' සාමාර්ථයක් හිමිවිය."
       },
       commonMistakes: {
         heading: "බොහෝ දෙනෙක් කරන වැරදි",
@@ -1228,7 +1228,7 @@ export const tutorials: Tutorial[] = [
       },
       whyItMatters: {
         heading: "Why It Matters",
-        content: "Companies don't hire interns solely for cheap labor; they use internships to scout future full-time employees. Your CV needs to show that you are an investment worth making—someone who is responsible, eager to learn, and culturally fit for the organization."
+        content: "Companies don't hire interns solely for cheap labor; they use internships to scout future full-time employees. Your CV needs to show that you are an investment worth making-someone who is responsible, eager to learn, and culturally fit for the organization."
       },
       stepByStep: [
         {
@@ -1351,7 +1351,7 @@ export const tutorials: Tutorial[] = [
       },
       {
         "heading": "Step 2: Use Standard Fonts and Headings",
-        "content": "Stick to accessible fonts like Arial, Calibri, or Times New Roman. Use conventional headings like 'Work Experience', 'Education', and 'Skills'—do not use creative titles like 'My Professional Journey' as the system won't recognize them."
+        "content": "Stick to accessible fonts like Arial, Calibri, or Times New Roman. Use conventional headings like 'Work Experience', 'Education', and 'Skills'-do not use creative titles like 'My Professional Journey' as the system won't recognize them."
       },
       {
         "heading": "Step 3: Keyword Optimization",
@@ -1552,11 +1552,11 @@ export const tutorials: Tutorial[] = [
     "title": "LinkedIn Profile Optimization: Get Discovered by Recruiters",
     "seoTitle": "LinkedIn Profile Optimization | Strategies to Get Hired Faster",
     "metaDescription": "Transform your LinkedIn profile into a powerful magnet for jobs. Discover actionable steps to optimize your headline, summary, and experience to attract top employers.",
-    "intro": "In today's corporate world, your LinkedIn profile is just as important—if not more important—than your CV. It functions as your digital reputation and 24/7 networking tool.",
+    "intro": "In today's corporate world, your LinkedIn profile is just as important-if not more important-than your CV. It functions as your digital reputation and 24/7 networking tool.",
     "problemExplanation": "Many professionals treat LinkedIn like a static online CV, leaving fields blank and failing to use the platform's networking features. If your profile is incomplete and lacks proper keywords, recruiters who use LinkedIn Recruiter search tools will never find you.",
     "whatIsIt": {
       "heading": "What is LinkedIn Optimization?",
-      "content": "LinkedIn Optimization involves updating every section of your profile to rank higher in LinkedIn’s internal search algorithm. This makes you easily discoverable to hiring managers and recruiters looking for specific talents."
+      "content": "LinkedIn Optimization involves updating every section of your profile to rank higher in LinkedIn's internal search algorithm. This makes you easily discoverable to hiring managers and recruiters looking for specific talents."
     },
     "whyItMatters": {
       "heading": "Why LinkedIn is Gold for Your Career",
@@ -1665,7 +1665,7 @@ export const tutorials: Tutorial[] = [
     "title": "Mastering the Job Interview: Pre-Interview Prep",
     "seoTitle": "Job Interview Preparation Guide | How to Ace Your Interview",
     "metaDescription": "Learn exactly how to research the company, prepare your answers, and build confidence before walking into a job interview.",
-    "intro": "Getting an interview means your CV did its job. Now it’s up to you to prove that the person on paper is the right fit in real life.",
+    "intro": "Getting an interview means your CV did its job. Now it's up to you to prove that the person on paper is the right fit in real life.",
     "problemExplanation": "Nervousness, blanking out on common questions, or simply not knowing enough about the company are the main reasons highly qualified candidates fail interviews. Going in without preparation is a guaranteed way to lose an opportunity.",
     "whatIsIt": {
       "heading": "What Constitutes Proper Interview Preparation?",
@@ -1892,7 +1892,7 @@ export const tutorials: Tutorial[] = [
     "seoTitle": "How to Explain Gaps in Resume | CV Guide",
     "metaDescription": "Employment gaps shouldn't ruin your career chances. Learn how to address timeline gaps in your resume confidently and professionally.",
     "intro": "Having a gap in your employment history is common, but leaving it unexplained on your CV can raise red flags for recruiters.",
-    "problemExplanation": "When a hiring manager spots an unexplained gap of several months or years on your CV, human nature usually assumes the worst—perhaps you were fired, unmotivated, or lost your skills. Providing no context leaves the recruiter guessing.",
+    "problemExplanation": "When a hiring manager spots an unexplained gap of several months or years on your CV, human nature usually assumes the worst-perhaps you were fired, unmotivated, or lost your skills. Providing no context leaves the recruiter guessing.",
     "whatIsIt": {
       "heading": "What is an Employment Gap?",
       "content": "An employment gap is a period in your professional timeline, typically 6 months or longer, where you were not formally employed. Gaps can happen due to higher studies, health issues, travel, caring for family, or economic downturns."
@@ -1903,12 +1903,12 @@ export const tutorials: Tutorial[] = [
     },
     "stepByStep": [
       {
-        "heading": "Step 1: Don’t Hide It",
+        "heading": "Step 1: Don't Hide It",
         "content": "Never lie about employment dates. Background checks will easily uncover deceit, destroying your credibility immediately. List years instead of exact months if the gap is small, but be ready to clarify."
       },
       {
         "heading": "Step 2: Briefly List it on the CV",
-        "content": "You can create a brief line item in your Experience section. E.g., '2020 – 2021: Career Break / Sabbatical'. Add one bullet point explaining the focus (e.g., 'Focused on family care and completed AWS certification')."
+        "content": "You can create a brief line item in your Experience section. E.g., '2020 - 2021: Career Break / Sabbatical'. Add one bullet point explaining the focus (e.g., 'Focused on family care and completed AWS certification')."
       },
       {
         "heading": "Step 3: Keep Explanations Brief",
@@ -1925,7 +1925,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "In-Interview Pivot Example",
-      "content": "“I took a year off to care for an ailing family member. Fortunately, their health has fully recovered, and during that time I also completed a rigorous online data analytics bootcamp. I am now fully ready and eager to bring these new skills to this role.”"
+      "content": "'I took a year off to care for an ailing family member. Fortunately, their health has fully recovered, and during that time I also completed a rigorous online data analytics bootcamp. I am now fully ready and eager to bring these new skills to this role.'"
     },
     "commonMistakes": {
       "heading": "What Not to Do",
@@ -1962,7 +1962,7 @@ export const tutorials: Tutorial[] = [
       },
       {
         "heading": "පියවර 2: CV එකේම කෙටියෙන් සඳහන් කරන්න",
-        "content": "Experience කොටසේ '2020 – 2021: Career Break' යනුවෙන් සටහන් කර, එහි එක Bullet point එකකින් 'Personal health retreat and completed PMP certification' වැනි සරල හේතුවක් දක්වන්න."
+        "content": "Experience කොටසේ '2020 - 2021: Career Break' යනුවෙන් සටහන් කර, එහි එක Bullet point එකකින් 'Personal health retreat and completed PMP certification' වැනි සරල හේතුවක් දක්වන්න."
       },
       {
         "heading": "පියවර 3: සම්මුඛ පරීක්ෂණයේදී කෙටියෙන් පැහැදිලි කිරීම",
@@ -2025,7 +2025,7 @@ export const tutorials: Tutorial[] = [
       },
       {
         "heading": "Step 3: Ask for Time to Consider",
-        "content": "When they make an offer, never say “yes” immediately on the phone. Show enthusiasm, then say, “Thank you so much! Could I have 24 hours to review the complete package?”"
+        "content": "When they make an offer, never say 'yes' immediately on the phone. Show enthusiasm, then say, 'Thank you so much! Could I have 24 hours to review the complete package?'"
       },
       {
         "heading": "Step 4: Prepare the Counter-Offer",
@@ -2038,7 +2038,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "How to Make the Counter-Offer",
-      "content": "“I am very excited about the offer to join the team. Based on my research on market rates and the extensive technical leadership experience I bring, I was hoping to see a base salary closer to Rs. 250,000. Is there flexibility to bridge this gap?”"
+      "content": "'I am very excited about the offer to join the team. Based on my research on market rates and the extensive technical leadership experience I bring, I was hoping to see a base salary closer to Rs. 250,000. Is there flexibility to bridge this gap?'"
     },
     "commonMistakes": {
       "heading": "Negotiation Killers",
@@ -2247,7 +2247,7 @@ export const tutorials: Tutorial[] = [
       },
       {
         "heading": "Step 2: Use the Right Salutation",
-        "content": "Never use 'Hey'. Use 'Dear Mr. / Ms. [Last Name]'. If you don’t know their name, 'Dear Hiring Manager' or 'Dear [Company Name] Talent Team' is perfectly acceptable."
+        "content": "Never use 'Hey'. Use 'Dear Mr. / Ms. [Last Name]'. If you don't know their name, 'Dear Hiring Manager' or 'Dear [Company Name] Talent Team' is perfectly acceptable."
       },
       {
         "heading": "Step 3: Keep the Body Brief and Focused",
@@ -2264,7 +2264,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "Following-up After an Interview",
-      "content": "“Dear [Name],\n\nThank you for the opportunity to speak yesterday regarding the Marketing Analyst position. I greatly enjoyed learning about the upcoming Q3 strategy. I remain very enthusiastic about the role. Please let me know if you need any further information from my end.\n\nBest regards,\n[Your Name]\n[Phone Number]”"
+      "content": "'Dear [Name],\n\nThank you for the opportunity to speak yesterday regarding the Marketing Analyst position. I greatly enjoyed learning about the upcoming Q3 strategy. I remain very enthusiastic about the role. Please let me know if you need any further information from my end.\n\nBest regards,\n[Your Name]\n[Phone Number]'"
     },
     "commonMistakes": {
       "heading": "Emailing Blunders",
@@ -2318,7 +2318,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "Interview එකකින් පසුව යවන ස්තුති කිරීමේ විද්‍යුත් ලිපිය (Follow-up)",
-      "content": "“Dear [Name],\n\nඊයේ දින මා සමඟ පැවැත්වූ සම්මුඛ සාකච්ඡාවට බොහෝ ස්තූතියි. එහිදී කතා කළ කරුණු අනුව ආයතනයේ ඉදිරි ගමනට සහාය වීමට මා ඉතා කැමැත්තෙන් පසු වෙමි. මේ පිළිබඳව වැඩිදුර තොරතුරු අවශ්‍ය නම් මා සම්බන්ධ කරගන්න.\n\nBest regards,\n[Your Name]\n[Phone Number]”"
+      "content": "'Dear [Name],\n\nඊයේ දින මා සමඟ පැවැත්වූ සම්මුඛ සාකච්ඡාවට බොහෝ ස්තූතියි. එහිදී කතා කළ කරුණු අනුව ආයතනයේ ඉදිරි ගමනට සහාය වීමට මා ඉතා කැමැත්තෙන් පසු වෙමි. මේ පිළිබඳව වැඩිදුර තොරතුරු අවශ්‍ය නම් මා සම්බන්ධ කරගන්න.\n\nBest regards,\n[Your Name]\n[Phone Number]'"
     },
     "commonMistakes": {
       "heading": "සිදුවන ලොකුම වැරදි",
@@ -2377,7 +2377,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "Video Script Concept",
-      "content": "“Hi, my name is [Name] and I specialize in turning complex digital marketing data into high-converting campaigns. Over the last 3 years, I've scaled client revenues by an average of 40%. Unlike a piece of paper, I wanted you to see the actual energy I'll bring to your marketing team. Here is a brief look at my portfolio...”"
+      "content": "'Hi, my name is [Name] and I specialize in turning complex digital marketing data into high-converting campaigns. Over the last 3 years, I've scaled client revenues by an average of 40%. Unlike a piece of paper, I wanted you to see the actual energy I'll bring to your marketing team. Here is a brief look at my portfolio...'"
     },
     "commonMistakes": {
       "heading": "Creative Traps",
@@ -2431,7 +2431,7 @@ export const tutorials: Tutorial[] = [
     ],
     "examples": {
       "heading": "කතා කිරීමට උදාහරණයක්",
-      "content": "“ආයුබෝවන්, මම [නම]. ආයතනයක අලෙවිකරණ දත්ත උපයෝගී කරගෙන විකුණුම් වැඩි කරන Digital Campaigns නිර්මාණය කිරීමට මට වසර 3 ක පළපුරුද්දක් තිබෙනවා. කඩදාසියකට වඩා, මගේ උකටලී නොවන ශක්තිමත් කතා විලාසය ඔබට පෙන්වීමටයි මම මේ වීඩියෝ එක යොමු කළේ.”"
+      "content": "'ආයුබෝවන්, මම [නම]. ආයතනයක අලෙවිකරණ දත්ත උපයෝගී කරගෙන විකුණුම් වැඩි කරන Digital Campaigns නිර්මාණය කිරීමට මට වසර 3 ක පළපුරුද්දක් තිබෙනවා. කඩදාසියකට වඩා, මගේ උකටලී නොවන ශක්තිමත් කතා විලාසය ඔබට පෙන්වීමටයි මම මේ වීඩියෝ එක යොමු කළේ.'"
     },
     "commonMistakes": {
       "heading": "ලොකුම වැරදි",

@@ -87,7 +87,7 @@ export default function BlogClient() {
             disabled={loading}
             className="rounded-[10px] bg-foreground px-5 py-2.5 text-sm text-background disabled:opacity-60"
           >
-            {loading ? "Loading…" : "Refresh"}
+            {loading ? "Loading..." : "Refresh"}
           </button>
         </div>
 
@@ -97,7 +97,7 @@ export default function BlogClient() {
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search by title or slug…"
+            placeholder="Search by title or slug..."
             aria-label="Search blog posts"
             className="flex-1 rounded-[10px] border border-zinc-300 px-4 py-2.5 text-sm outline-none focus:border-brand-main"
           />
@@ -118,7 +118,7 @@ export default function BlogClient() {
 
       {/* Posts table */}
       {loading ? (
-        <p className="text-sm text-zinc-500">Loading posts…</p>
+        <p className="text-sm text-zinc-500">Loading posts...</p>
       ) : displayed.length === 0 ? (
         <div className="rounded-[16px] border border-zinc-200 bg-white p-10 text-center">
           <p className="text-zinc-400 text-sm">No posts found.</p>
@@ -153,7 +153,7 @@ export default function BlogClient() {
                         ? new Date(post.publishedAt).toLocaleDateString("en-GB", {
                             day: "numeric", month: "short", year: "numeric",
                           })
-                        : "—"}
+                        : "-"}
                     </td>
                     <td className="px-5 py-3 text-center">
                       <div className="flex items-center justify-center gap-1.5 flex-wrap">

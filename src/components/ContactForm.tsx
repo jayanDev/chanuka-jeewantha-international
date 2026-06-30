@@ -203,7 +203,7 @@ export default function ContactForm() {
               Submit your career-branding enquiry.
             </h2>
             <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-text-body">
-              Just your name and email to start — share as much or as little detail as you like. Your enquiry is reviewed personally before the most suitable package is confirmed.
+              Just your name and email to start - share as much or as little detail as you like. Your enquiry is reviewed personally before the most suitable package is confirmed.
             </p>
             <div className="mt-8 rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm">
               <h3 className="font-heading text-[22px] font-bold text-foreground">Premium, personally written by Chanuka</h3>
@@ -226,7 +226,7 @@ export default function ContactForm() {
                   </div>
                   <h3 className="font-heading text-[26px] font-bold text-green-700">Enquiry sent successfully!</h3>
                   <p className="mx-auto mt-3 max-w-md text-[15px] leading-relaxed text-green-800/90">
-                    Thank you — your details have been received. Chanuka reviews every enquiry personally and will contact you with the most suitable service direction. Please check your email (and spam folder) for the reply.
+                    Thank you - your details have been received. Chanuka reviews every enquiry personally and will contact you with the most suitable service direction. Please check your email (and spam folder) for the reply.
                   </p>
                 </div>
               )}

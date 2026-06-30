@@ -62,7 +62,7 @@ export default async function CareerStagePage({ params }: PageProps) {
   const related = careerStagePages
     .filter((p) => p.slug !== page.slug)
     .map((p) => ({
-      title: `${p.h1} — Premium Service`,
+      title: `${p.h1} - Premium Service`,
       href: `/career-stage/${p.slug}`,
       blurb: p.intro,
     }));

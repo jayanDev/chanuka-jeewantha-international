@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: PackagePageProps): Promise<Me
 
   return buildPageMetadata({
     title: `${pkg.name} | Signature Series`,
-    description: `${pkg.name} — ${pkg.description ?? pkg.audience}. ${getPackageDisplayPrice(pkg)} in USD.`,
+    description: `${pkg.name} - ${pkg.description ?? pkg.audience}. ${getPackageDisplayPrice(pkg)} in USD.`,
     path: `/packages/${slug}`,
     keywords: [pkg.name, pkg.category],
   });

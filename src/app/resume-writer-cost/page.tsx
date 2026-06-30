@@ -9,7 +9,7 @@ import PageCTA from "@/components/PageCTA";
 
 const TITLE = "Resume Writer Cost: How Much to Pay in 2026 (US Guide)";
 const DESCRIPTION =
-  "What a US resume writer actually costs in 2026 — pricing tiers, what each tier includes, and how to spot underpriced and overpriced services.";
+  "What a US resume writer actually costs in 2026 - pricing tiers, what each tier includes, and how to spot underpriced and overpriced services.";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -23,23 +23,23 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What's the average cost of a professional resume writer in the US?",
-    a: "Mid-market is $300–$600 for a mid-career resume + LinkedIn rewrite. Entry-level packages start around $150–$250. Executive resumes run $700–$1,500. C-suite engagements typically $1,500–$3,500+. Below $100 is almost always a template or junior outsourced writer; above $3,500 is usually a boutique firm with overhead, not necessarily better writing.",
+    a: "Mid-market is $300-$600 for a mid-career resume + LinkedIn rewrite. Entry-level packages start around $150-$250. Executive resumes run $700-$1,500. C-suite engagements typically $1,500-$3,500+. Below $100 is almost always a template or junior outsourced writer; above $3,500 is usually a boutique firm with overhead, not necessarily better writing.",
   },
   {
     q: "Is a more expensive resume writer always better?",
-    a: "No. Above a certain price point, you're paying for brand, overhead, and account managers rather than better writing. What matters is whether your writer has actually written for your seniority and industry — and whether they back the work with a guarantee.",
+    a: "No. Above a certain price point, you're paying for brand, overhead, and account managers rather than better writing. What matters is whether your writer has actually written for your seniority and industry - and whether they back the work with a guarantee.",
   },
   {
     q: "Why do prices vary so much?",
-    a: "Three reasons. First, who actually writes the document — a senior founder vs a junior subcontractor. Second, how much customization is involved — template fills are cheap, real research-led writing is not. Third, what's bundled — a $150 standalone resume is not comparable to a $349 bundle that includes the resume, LinkedIn, and cover letter.",
+    a: "Three reasons. First, who actually writes the document - a senior founder vs a junior subcontractor. Second, how much customization is involved - template fills are cheap, real research-led writing is not. Third, what's bundled - a $150 standalone resume is not comparable to a $349 bundle that includes the resume, LinkedIn, and cover letter.",
   },
   {
     q: "What should I avoid?",
-    a: "Avoid any service that promises a fast template fill for under $100, any service that won't tell you who is actually writing the document, and any service with no money-back guarantee. The interview-guarantee question is the cleanest filter — services that won't stand behind their work usually have a reason.",
+    a: "Avoid any service that promises a fast template fill for under $100, any service that won't tell you who is actually writing the document, and any service with no money-back guarantee. The interview-guarantee question is the cleanest filter - services that won't stand behind their work usually have a reason.",
   },
   {
     q: "Do I really need to spend $500+ for a mid-career resume?",
-    a: "Not always. If you have one specific job in mind and a strong existing resume, a $179–$349 package is enough. If you're competing at the senior end of the market or for very specific roles (FAANG, federal, top-tier banking), the $500+ tier is justified — the difference is meaningful.",
+    a: "Not always. If you have one specific job in mind and a strong existing resume, a $179-$349 package is enough. If you're competing at the senior end of the market or for very specific roles (FAANG, federal, top-tier banking), the $500+ tier is justified - the difference is meaningful.",
   },
 ];
 
@@ -49,7 +49,7 @@ export default function ResumeWriterCostPage() {
     { name: "Resume Writer Cost", path: "/resume-writer-cost" },
   ]);
   const serviceLd = buildServiceSchema({
-    name: "US Resume Writing Service — Cost Guide",
+    name: "US Resume Writing Service - Cost Guide",
     description: DESCRIPTION,
     path: "/resume-writer-cost",
     priceRange: "$179 - $1,499",
@@ -88,27 +88,27 @@ export default function ResumeWriterCostPage() {
                 <tbody className="divide-y divide-zinc-200">
                   <tr className="bg-white">
                     <td className="px-5 py-4 font-bold text-[#0A2540]">Template / DIY</td>
-                    <td className="px-5 py-4 text-zinc-700">$0 – $50</td>
+                    <td className="px-5 py-4 text-zinc-700">$0 - $50</td>
                     <td className="px-5 py-4 text-zinc-600">A template, possibly with light feedback. Best for very early career or extremely simple cases. Not enough for competitive US hiring.</td>
                   </tr>
                   <tr className="bg-zinc-50">
                     <td className="px-5 py-4 font-bold text-[#0A2540]">Outsourced bulk service</td>
-                    <td className="px-5 py-4 text-zinc-700">$80 – $200</td>
-                    <td className="px-5 py-4 text-zinc-600">Junior writer (often subcontracted), 24–48h turnaround, light customization. Quality varies wildly.</td>
+                    <td className="px-5 py-4 text-zinc-700">$80 - $200</td>
+                    <td className="px-5 py-4 text-zinc-600">Junior writer (often subcontracted), 24-48h turnaround, light customization. Quality varies wildly.</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="px-5 py-4 font-bold text-[#0A2540]">Mid-market bundle</td>
-                    <td className="px-5 py-4 text-zinc-700">$250 – $600</td>
+                    <td className="px-5 py-4 text-zinc-700">$250 - $600</td>
                     <td className="px-5 py-4 text-zinc-600">Resume + LinkedIn + cover letter. Senior writer, real customization, revisions included. Best price-to-value tier for mid-career US candidates.</td>
                   </tr>
                   <tr className="bg-zinc-50">
                     <td className="px-5 py-4 font-bold text-[#0A2540]">Executive tier</td>
-                    <td className="px-5 py-4 text-zinc-700">$700 – $1,500</td>
+                    <td className="px-5 py-4 text-zinc-700">$700 - $1,500</td>
                     <td className="px-5 py-4 text-zinc-600">Senior-level positioning, executive LinkedIn, strategy call, longer support window. Right tier for Director / VP / SVP candidates.</td>
                   </tr>
                   <tr className="bg-white">
                     <td className="px-5 py-4 font-bold text-[#0A2540]">C-suite / Boutique</td>
-                    <td className="px-5 py-4 text-zinc-700">$1,500 – $3,500+</td>
+                    <td className="px-5 py-4 text-zinc-700">$1,500 - $3,500+</td>
                     <td className="px-5 py-4 text-zinc-600">CEO / CFO / founder-level work. Multiple documents (resume, board bio, executive bio). Above $3,500 is usually agency overhead, not better writing.</td>
                   </tr>
                 </tbody>
@@ -122,7 +122,7 @@ export default function ResumeWriterCostPage() {
                 $179 to $1,499, founder-led, with a 90-day interview guarantee.
               </h3>
               <p className="mt-3 text-zinc-700 leading-relaxed">
-                Five bundles covering graduate through C-suite. Every package is personally written by the founder — no outsourcing — and backed by a 90-day, 100% money-back guarantee if you don&apos;t receive interview calls.
+                Five bundles covering graduate through C-suite. Every package is personally written by the founder - no outsourcing - and backed by a 90-day, 100% money-back guarantee if you don&apos;t receive interview calls.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/pricing" className="inline-flex items-center justify-center bg-[#0A2540] text-white px-5 py-2.5 rounded-[10px] text-sm font-bold transition-colors hover:bg-[#C9A961] hover:text-[#0A2540]">
@@ -147,7 +147,7 @@ export default function ResumeWriterCostPage() {
               {[
                 {
                   title: "1. Who actually writes the document",
-                  body: "A founder or senior writer charges more — but you get the seniority. A bulk service charges less because the writer is junior or outsourced. Always ask who is writing.",
+                  body: "A founder or senior writer charges more - but you get the seniority. A bulk service charges less because the writer is junior or outsourced. Always ask who is writing.",
                 },
                 {
                   title: "2. How much customization is included",
@@ -197,7 +197,7 @@ export default function ResumeWriterCostPage() {
         <RelatedPages
           heading="Other buying-decision guides"
           pages={[
-            { title: "Is a Resume Writer Worth It?", href: "/is-a-resume-writer-worth-it", blurb: "Honest answer on when it's worth paying — and when it isn't." },
+            { title: "Is a Resume Writer Worth It?", href: "/is-a-resume-writer-worth-it", blurb: "Honest answer on when it's worth paying - and when it isn't." },
             { title: "Resume Writer vs ChatGPT", href: "/resume-writer-vs-chatgpt", blurb: "When AI is enough and when it isn't." },
             { title: "Best Resume Writing Services 2026", href: "/best-resume-writing-services-2026", blurb: "How we compare to TopResume, ResumeWriters, and others." },
           ]}
@@ -205,7 +205,7 @@ export default function ResumeWriterCostPage() {
 
         <PageCTA
           heading="Ready to invest in the right tier?"
-          subheading="See all five packages from $179 to $1,499 — every one backed by the 90-day interview guarantee."
+          subheading="See all five packages from $179 to $1,499 - every one backed by the 90-day interview guarantee."
           primaryLabel="See All Packages"
           primaryHref="/pricing"
           secondaryLabel="Request a Profile Review"

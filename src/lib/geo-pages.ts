@@ -1,5 +1,5 @@
 /**
- * GEO landing page content — per-country resume/CV writing pages.
+ * GEO landing page content - per-country resume/CV writing pages.
  * Targets the brand's five core English-speaking markets with
  * market-specific conventions, keywords, and FAQ for local + AI search.
  */
@@ -34,7 +34,7 @@ export const geoPages: Record<string, GeoPage> = {
     demonym: "American",
     docTerm: "resume",
     lang: "en-US",
-    title: "Resume Writing Service USA — ATS Resumes",
+    title: "Resume Writing Service USA - ATS Resumes",
     description:
       "Professional, ATS-optimized resume writing for the US job market. Founder-led and personally written for American recruiters, hiring managers, and applicant tracking systems.",
     heroEyebrow: "Resume Writing Service · United States",
@@ -43,14 +43,14 @@ export const geoPages: Record<string, GeoPage> = {
       "Personally written, ATS-optimized resumes engineered for US recruiters, hiring managers, and the applicant tracking systems used by 98% of Fortune 500 companies.",
     conventions: [
       "US employers expect a one-page resume (two pages for senior or executive roles), not a multi-page CV.",
-      "No photo, date of birth, marital status, or other personal details — these can trigger bias-screening issues.",
+      "No photo, date of birth, marital status, or other personal details - these can trigger bias-screening issues.",
       "Reverse-chronological format with quantified, achievement-led bullet points (the X-Y-Z impact format).",
       "Heavy ATS optimization: clean structure, standard headings, and role-relevant keywords that pass parsing.",
     ],
     atsSystems: ["Workday", "Oracle Taleo", "iCIMS", "Greenhouse", "Lever", "SAP SuccessFactors"],
     cities: ["New York", "Los Angeles", "Chicago", "San Francisco", "Austin", "Seattle"],
     salaryContext:
-      "US resumes are read against a wide salary band — from roughly $45,000 at entry level to $200,000+ for executive roles. Your resume's job is to justify the next band by framing scope, budget ownership, and measurable impact the way American hiring managers and compensation committees expect to see it.",
+      "US resumes are read against a wide salary band - from roughly $45,000 at entry level to $200,000+ for executive roles. Your resume's job is to justify the next band by framing scope, budget ownership, and measurable impact the way American hiring managers and compensation committees expect to see it.",
     specialisms: ["Executive & C-suite", "Tech & Engineering", "Finance", "Healthcare", "Federal & Government"],
     keywords: [
       "resume writing service USA",
@@ -72,11 +72,11 @@ export const geoPages: Record<string, GeoPage> = {
       },
       {
         q: "Will my resume pass ATS systems used by US companies?",
-        a: "Yes. Every resume is built ATS-first — clean structure, standard headings, and role-relevant keywords — while staying recruiter- and hiring-manager-readable.",
+        a: "Yes. Every resume is built ATS-first - clean structure, standard headings, and role-relevant keywords - while staying recruiter- and hiring-manager-readable.",
       },
       {
         q: "Which ATS systems do you optimize US resumes for?",
-        a: "We optimize for the platforms US employers use most — Workday, Oracle Taleo, iCIMS (used by about a quarter of Fortune 500 companies), Greenhouse, and Lever — with clean parsing and role-relevant keywords.",
+        a: "We optimize for the platforms US employers use most - Workday, Oracle Taleo, iCIMS (used by about a quarter of Fortune 500 companies), Greenhouse, and Lever - with clean parsing and role-relevant keywords.",
       },
       {
         q: "Should a US resume include a photo or personal details?",
@@ -94,23 +94,23 @@ export const geoPages: Record<string, GeoPage> = {
     demonym: "British",
     docTerm: "CV",
     lang: "en-GB",
-    title: "CV Writing Service UK — Professional CVs",
+    title: "CV Writing Service UK - Professional CVs",
     description:
       "Professional, ATS-friendly CV writing for the UK job market. Founder-led and personally written for British recruiters, hiring managers, and applicant tracking systems.",
     heroEyebrow: "CV Writing Service · United Kingdom",
     heroHeading: "Professional CV Writing for the UK Job Market",
     heroSub:
-      "Personally written, ATS-friendly CVs built around UK conventions — a strong personal profile, two-page structure, and the language British recruiters expect.",
+      "Personally written, ATS-friendly CVs built around UK conventions - a strong personal profile, two-page structure, and the language British recruiters expect.",
     conventions: [
       "UK CVs are typically two pages, led by a concise personal profile / personal statement.",
-      "No photo, date of birth, or marital status — UK employers omit these to support fair recruitment.",
+      "No photo, date of birth, or marital status - UK employers omit these to support fair recruitment.",
       "British spelling and terminology throughout (e.g. 'organised', 'programme', 'CV' not 'resume').",
       "Achievement-focused, ATS-friendly structure with clear section headings and relevant keywords.",
     ],
     atsSystems: ["Workday", "SAP SuccessFactors", "Oracle Taleo", "Tribepad", "Eploy", "Greenhouse"],
     cities: ["London", "Manchester", "Birmingham", "Edinburgh", "Leeds", "Bristol"],
     salaryContext:
-      "UK salary expectations run from around £22,000 for early-career roles to £100,000+ at executive level. We position your CV around British norms — a results-led personal profile, realistic salary banding, and notice-period awareness — so it reads correctly to UK recruiters and in-house talent teams.",
+      "UK salary expectations run from around £22,000 for early-career roles to £100,000+ at executive level. We position your CV around British norms - a results-led personal profile, realistic salary banding, and notice-period awareness - so it reads correctly to UK recruiters and in-house talent teams.",
     specialisms: ["Executive & C-suite", "Graduate", "NHS & Healthcare", "Academic", "Finance & Banking"],
     keywords: [
       "CV writing service UK",
@@ -124,7 +124,7 @@ export const geoPages: Record<string, GeoPage> = {
     faqs: [
       {
         q: "How much does a professional CV cost in the UK?",
-        a: "UK CV writing typically ranges from around £70 for early-career CVs to £199+ for executive CVs. Chanuka Jeewantha prices in USD globally — from $179 to $1,499 — with the same transparent rate for UK clients.",
+        a: "UK CV writing typically ranges from around £70 for early-career CVs to £199+ for executive CVs. Chanuka Jeewantha prices in USD globally - from $179 to $1,499 - with the same transparent rate for UK clients.",
       },
       {
         q: "What format do UK employers expect for a CV?",
@@ -160,7 +160,7 @@ export const geoPages: Record<string, GeoPage> = {
     heroEyebrow: "Resume & CV Writing · Australia",
     heroHeading: "Resume & CV Writing for the Australian Job Market",
     heroSub:
-      "Personally written, ATS-optimized resumes and CVs built for Australian recruiters — including support for selection criteria used by government and large organisations.",
+      "Personally written, ATS-optimized resumes and CVs built for Australian recruiters - including support for selection criteria used by government and large organisations.",
     conventions: [
       "In Australia 'resume' and 'CV' are used interchangeably; documents typically run two to three pages.",
       "Government and large-organisation roles often require addressing selection criteria or key capabilities.",
@@ -184,7 +184,7 @@ export const geoPages: Record<string, GeoPage> = {
     faqs: [
       {
         q: "How much does a professional resume cost in Australia?",
-        a: "Australian resume writing ranges widely — from a few hundred dollars to $2,500+ at premium executive agencies. Chanuka Jeewantha offers executive-grade, founder-led writing from $179 to $1,499 USD.",
+        a: "Australian resume writing ranges widely - from a few hundred dollars to $2,500+ at premium executive agencies. Chanuka Jeewantha offers executive-grade, founder-led writing from $179 to $1,499 USD.",
       },
       {
         q: "Do you write to selection criteria for Australian roles?",
@@ -196,7 +196,7 @@ export const geoPages: Record<string, GeoPage> = {
       },
       {
         q: "Which ATS systems do you optimize Australian resumes for?",
-        a: "We optimize for PageUp and JobAdder — both widely used across Australia — as well as Workday and SAP SuccessFactors, with keywords drawn from your target role.",
+        a: "We optimize for PageUp and JobAdder - both widely used across Australia - as well as Workday and SAP SuccessFactors, with keywords drawn from your target role.",
       },
       {
         q: "How long should an Australian resume be?",
@@ -214,7 +214,7 @@ export const geoPages: Record<string, GeoPage> = {
     demonym: "Canadian",
     docTerm: "resume",
     lang: "en-CA",
-    title: "Resume Writing Service Canada — ATS Resumes",
+    title: "Resume Writing Service Canada - ATS Resumes",
     description:
       "Professional, ATS-optimized resume writing for the Canadian job market. Founder-led and personally written for Canadian recruiters and applicant tracking systems.",
     heroEyebrow: "Resume Writing Service · Canada",
@@ -223,7 +223,7 @@ export const geoPages: Record<string, GeoPage> = {
       "Personally written, ATS-optimized resumes built for Canadian recruiters and hiring managers across Toronto, Vancouver, Calgary, Montreal, and remote-first employers.",
     conventions: [
       "Canadian resumes are typically one to two pages, reverse-chronological, with no photo or personal details.",
-      "ATS optimization is essential — most mid-to-large Canadian employers screen with applicant tracking systems.",
+      "ATS optimization is essential - most mid-to-large Canadian employers screen with applicant tracking systems.",
       "Achievement-led bullet points with metrics and role-relevant keywords.",
       "Bilingual (English/French) positioning can be considered for roles that require it.",
     ],
@@ -244,7 +244,7 @@ export const geoPages: Record<string, GeoPage> = {
     faqs: [
       {
         q: "How much does a professional resume cost in Canada?",
-        a: "Canadian resume writing typically ranges from about CAD $200 to $1,000+ for executive resumes. Chanuka Jeewantha prices in USD — from $179 to $1,499 — with each resume personally written.",
+        a: "Canadian resume writing typically ranges from about CAD $200 to $1,000+ for executive resumes. Chanuka Jeewantha prices in USD - from $179 to $1,499 - with each resume personally written.",
       },
       {
         q: "What do Canadian employers expect in a resume?",
@@ -280,7 +280,7 @@ export const geoPages: Record<string, GeoPage> = {
     heroEyebrow: "CV Writing Service · New Zealand",
     heroHeading: "Professional CV Writing for the New Zealand Job Market",
     heroSub:
-      "Personally written, ATS-friendly CVs built around New Zealand conventions — a clear personal profile, locally-aligned tone, and recruiter-ready structure.",
+      "Personally written, ATS-friendly CVs built around New Zealand conventions - a clear personal profile, locally-aligned tone, and recruiter-ready structure.",
     conventions: [
       "New Zealand CVs typically run two to three pages, often opening with a short personal profile.",
       "No photo or date of birth; references may be listed or available on request.",
@@ -290,7 +290,7 @@ export const geoPages: Record<string, GeoPage> = {
     atsSystems: ["Workday", "SAP SuccessFactors", "JobAdder", "Snaphire", "Oracle Taleo"],
     cities: ["Auckland", "Wellington", "Christchurch", "Hamilton", "Tauranga", "Dunedin"],
     salaryContext:
-      "New Zealand salaries run from around NZ$50,000 at entry to NZ$160,000+ for senior roles. We align your CV to the local market — a concise personal profile, NZ spelling, and referees where appropriate — so it lands well with New Zealand recruiters and hiring managers.",
+      "New Zealand salaries run from around NZ$50,000 at entry to NZ$160,000+ for senior roles. We align your CV to the local market - a concise personal profile, NZ spelling, and referees where appropriate - so it lands well with New Zealand recruiters and hiring managers.",
     specialisms: ["Executive & C-suite", "Government & Public Sector", "Graduate", "Healthcare", "Trades & Engineering"],
     keywords: [
       "CV writing service New Zealand",
@@ -304,7 +304,7 @@ export const geoPages: Record<string, GeoPage> = {
     faqs: [
       {
         q: "How much does a professional CV cost in New Zealand?",
-        a: "New Zealand CV writing typically ranges from a few hundred dollars upward. Chanuka Jeewantha prices in USD globally — from $179 to $1,499 — with each CV personally written for the NZ market.",
+        a: "New Zealand CV writing typically ranges from a few hundred dollars upward. Chanuka Jeewantha prices in USD globally - from $179 to $1,499 - with each CV personally written for the NZ market.",
       },
       {
         q: "What format do New Zealand employers expect?",

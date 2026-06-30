@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getRequestUser } from "@/lib/auth-server";
 
-// Only proxy Vercel Blob URLs — prevents the endpoint being used as an open proxy
+// Only proxy Vercel Blob URLs - prevents the endpoint being used as an open proxy
 const VERCEL_BLOB_HOST_PATTERN = /^https:\/\/[^/]+\.(?:vercel-storage\.com|public\.blob\.vercel-storage\.com)\//;
 
 export async function GET(request: NextRequest) {

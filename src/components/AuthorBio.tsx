@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Author bio block — E-E-A-T signal for readers and search engines.
+ * Author bio block - E-E-A-T signal for readers and search engines.
  * Content uses only verified facts from the site (founder-led service,
  * placements, markets, rating). Pairs with the BlogPosting author schema.
  */
@@ -24,7 +24,7 @@ export default function AuthorBio() {
           <h3 className="font-heading text-[20px] font-bold text-foreground">Chanuka Jeewantha</h3>
           <p className="text-sm font-semibold text-brand-main">Founder &amp; Lead Resume / CV Writer</p>
           <p className="mt-3 text-text-body leading-relaxed">
-            Chanuka personally writes every resume, CV, and LinkedIn profile — a founder-led premium service, not template
+            Chanuka personally writes every resume, CV, and LinkedIn profile - a founder-led premium service, not template
             editing or junior outsourcing. With a 4.9/5 rating across 380+ senior and executive placements, he helps
             professionals compete for roles in the United States, United Kingdom, Australia, Canada, and New Zealand.
           </p>

@@ -10,12 +10,12 @@ import { parseUsd } from "@/lib/currency";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
-    title: "Resume Writer by Career Stage — Entry, Mid, Executive, Pivots",
+    title: "Resume Writer by Career Stage - Entry, Mid, Executive, Pivots",
     description:
-      "Resume writing matched to your career stage. Entry-level, mid-career, executive, and career changer engagements — each with stage-specific positioning.",
+      "Resume writing matched to your career stage. Entry-level, mid-career, executive, and career changer engagements - each with stage-specific positioning.",
     path: "/career-stage",
   }),
-  title: { absolute: "Resume Writer by Career Stage — Entry, Mid, Executive, Pivots" },
+  title: { absolute: "Resume Writer by Career Stage - Entry, Mid, Executive, Pivots" },
 };
 
 export default function CareerStageHubPage() {

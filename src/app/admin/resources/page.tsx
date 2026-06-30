@@ -3,7 +3,7 @@ import { buildNoIndexMetadata } from "@/lib/seo";
 import ResourcesClient from "@/app/admin/_components/ResourcesClient";
 
 export const metadata: Metadata = buildNoIndexMetadata({
-  title: "Resources Access — Admin",
+  title: "Resources Access - Admin",
   description: "Manage paid resource access.",
   path: "/admin/resources",
 });

@@ -14,7 +14,7 @@ type FAQSectionProps = {
 
 /**
  * Reusable FAQ accordion section with optional FAQPage JSON-LD.
- * Server component — no "use client" directive.
+ * Server component - no "use client" directive.
  */
 export default function FAQSection({
   heading = "Frequently Asked Questions",

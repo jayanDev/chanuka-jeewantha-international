@@ -66,7 +66,7 @@ export default function WorkshopBookingForm() {
         </div>
         <h3 className="text-[24px] font-bold font-heading text-foreground mb-2">Inquiry Received</h3>
         <p className="text-text-body">
-          Thank you for your interest. I&apos;ll get back to you within 1–2 business days to discuss your workshop requirements.
+          Thank you for your interest. I&apos;ll get back to you within 1-2 business days to discuss your workshop requirements.
         </p>
       </div>
     );
@@ -144,8 +144,8 @@ export default function WorkshopBookingForm() {
             >
               <option value="">Select a range</option>
               <option value="Under 30">Under 30</option>
-              <option value="30–100">30–100</option>
-              <option value="100–300">100–300</option>
+              <option value="30-100">30-100</option>
+              <option value="100-300">100-300</option>
               <option value="300+">300+</option>
             </select>
           </div>
@@ -194,7 +194,7 @@ export default function WorkshopBookingForm() {
           disabled={state === "loading"}
           className="w-full rounded-[10px] bg-brand-main px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark disabled:opacity-60 disabled:cursor-not-allowed"
         >
-          {state === "loading" ? "Sending…" : "Send Workshop Inquiry"}
+          {state === "loading" ? "Sending..." : "Send Workshop Inquiry"}
         </button>
       </form>
     </div>

@@ -149,7 +149,7 @@ export default function ReviewsClient() {
               disabled={deleting === review.id}
               className="ml-auto rounded-[8px] border border-red-200 bg-red-50 px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-100 disabled:opacity-40 transition-colors"
             >
-              {deleting === review.id ? "Deleting…" : "Delete"}
+              {deleting === review.id ? "Deleting..." : "Delete"}
             </button>
           </div>
         </article>

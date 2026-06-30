@@ -8,7 +8,7 @@ async function requireAdmin(request: Request) {
   return user;
 }
 
-// GET /api/admin/contacts — list all contact messages
+// GET /api/admin/contacts - list all contact messages
 export async function GET(request: Request) {
   const admin = await requireAdmin(request);
   if (!admin) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
   return NextResponse.json({ messages });
 }
 
-// PATCH /api/admin/contacts — update status of a message
+// PATCH /api/admin/contacts - update status of a message
 export async function PATCH(request: Request) {
   const admin = await requireAdmin(request);
   if (!admin) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
@@ -45,7 +45,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json({ ok: true });
 }
 
-// DELETE /api/admin/contacts — delete a message
+// DELETE /api/admin/contacts - delete a message
 export async function DELETE(request: Request) {
   const admin = await requireAdmin(request);
   if (!admin) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });

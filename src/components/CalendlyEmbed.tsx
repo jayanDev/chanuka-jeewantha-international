@@ -28,7 +28,7 @@ const WIDGET_SRC = "https://assets.calendly.com/assets/external/widget.js";
  */
 export default function CalendlyEmbed({
   heading = "Book a consultation",
-  subheading = "Pick a time that suits you — book a career-branding consultation directly.",
+  subheading = "Pick a time that suits you - book a career-branding consultation directly.",
   className = "",
 }: CalendlyEmbedProps) {
   const sectionRef = useRef<HTMLElement>(null);
@@ -108,7 +108,7 @@ export default function CalendlyEmbed({
           style={{ minWidth: "320px", height: "760px" }}
         >
           {!shouldLoad ? (
-            <span className="text-sm text-zinc-400">Loading scheduling calendar…</span>
+            <span className="text-sm text-zinc-400">Loading scheduling calendar...</span>
           ) : null}
         </div>
       </div>

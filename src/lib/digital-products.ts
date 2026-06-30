@@ -95,7 +95,7 @@ export const digitalProducts: DigitalProduct[] = [
     title: "මුදලේ මනෝවිද්‍යාව",
     subtitle: "The Psychology of Money - සල්ලි ගැන අපි හිතන විදිහ",
     description:
-      "Morgan Housel ගේ The Psychology of Money පොතේ සිංහල සාරාංශය. ධනය, අත්‍යාශය, සහ සතුට ගැන — සල්ලි ගැන අපේ හිතීමේ රටා සහ ඒවා ජීවිතයට බලපාන හැටි ගැන ප්‍රායෝගික මාර්ගෝපදේශයක්.",
+      "Morgan Housel ගේ The Psychology of Money පොතේ සිංහල සාරාංශය. ධනය, අත්‍යාශය, සහ සතුට ගැන - සල්ලි ගැන අපේ හිතීමේ රටා සහ ඒවා ජීවිතයට බලපාන හැටි ගැන ප්‍රායෝගික මාර්ගෝපදේශයක්.",
     productType: "Ebook",
     category: "paid",
     priceLkr: EBOOK_READ_PRICE_LKR,
@@ -103,8 +103,8 @@ export const digitalProducts: DigitalProduct[] = [
     downloadPriceLkr: EBOOK_DOWNLOAD_PRICE_LKR,
     coverImage: "/images/The Psychology of Money.png",
     highlights: [
-      "වාසනාව, අවදානම, සහ compounding — ධනය ගොඩනගන මූල තතු",
-      "සැබෑ ධනය කියන්නේ අපිට නොපෙනෙන දේ — Saving, Freedom, සහ Contentment",
+      "වාසනාව, අවදානම, සහ compounding - ධනය ගොඩනගන මූල තතු",
+      "සැබෑ ධනය කියන්නේ අපිට නොපෙනෙන දේ - Saving, Freedom, සහ Contentment",
       "මිනිස් හැසිරීම, Tail Events, සහ Long-term ආයෝජන ක්‍රමය",
     ],
   },

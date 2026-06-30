@@ -44,7 +44,7 @@ function buildRelatedPages(page: IndustryPage) {
     .map((s) => industryPages.find((p) => p.slug === s))
     .filter((p): p is IndustryPage => Boolean(p))
     .map((p) => ({
-      title: `${p.h1} — Premium Service`,
+      title: `${p.h1} - Premium Service`,
       href: `/resume-writer/${p.slug}`,
       blurb: p.intro,
     }));

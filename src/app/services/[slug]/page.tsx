@@ -29,7 +29,7 @@ const serviceMetadataMap: Record<string, { label: string; title: string; descrip
     label: "Cover Letter Writing",
     title: "Professional Cover Letter Writing",
     description:
-      "Professional cover letter writing tailored to your target role, company, and market — for candidates applying across the US, UK, Australia, Canada, and New Zealand.",
+      "Professional cover letter writing tailored to your target role, company, and market - for candidates applying across the US, UK, Australia, Canada, and New Zealand.",
     keywords: [
       "professional cover letter writing service",
       "cover letter writer",
@@ -204,14 +204,14 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
 
       {slug === "cv-writing" && (
         <FAQSection
-          heading="CV & Resume Writing — Common Questions"
+          heading="CV & Resume Writing - Common Questions"
           items={cvWritingFaqs}
           className="bg-zinc-50 border-t border-zinc-200"
         />
       )}
       {slug === "linkedin-optimization" && (
         <FAQSection
-          heading="LinkedIn Optimization — Common Questions"
+          heading="LinkedIn Optimization - Common Questions"
           items={linkedinFaqs}
           className="bg-zinc-50 border-t border-zinc-200"
         />

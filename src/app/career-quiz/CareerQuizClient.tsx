@@ -378,7 +378,7 @@ export default function CareerQuizClient() {
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-dark">Ready to Get Started?</p>
           <h3 className="mt-2 text-[20px] font-bold font-heading text-foreground">Book a Free Consultation</h3>
           <p className="mt-3 text-sm leading-relaxed text-zinc-700">
-            Not sure which package fits best? A quick call takes 15 minutes and gives you a clear path forward — no obligation.
+            Not sure which package fits best? A quick call takes 15 minutes and gives you a clear path forward - no obligation.
           </p>
           <div className="mt-4 flex flex-col gap-3">
             <Link

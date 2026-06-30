@@ -49,7 +49,7 @@ export default function ChecklistsIndexPage() {
             Free <span className="text-brand-main">checklists</span> for business and career growth.
           </h1>
           <p className="text-text-light text-[18px] md:text-[22px] max-w-2xl leading-relaxed mt-6">
-            Practical step-by-step guides — completely free. Sign in to unlock every step.
+            Practical step-by-step guides - completely free. Sign in to unlock every step.
           </p>
         </div>
       </section>

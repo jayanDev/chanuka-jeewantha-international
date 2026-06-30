@@ -13,7 +13,7 @@ type PriceProps = {
 
 /**
  * Renders a USD base price formatted into the visitor's selected currency.
- * Reactive to the CurrencyProvider — updates everywhere when the user switches.
+ * Reactive to the CurrencyProvider - updates everywhere when the user switches.
  */
 export default function Price({ usd, className, suffix }: PriceProps) {
   const { currency } = useCurrency();

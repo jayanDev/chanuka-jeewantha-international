@@ -32,7 +32,7 @@ function buildWhatsAppMessage(selected: SelectableItem[]): string {
   for (const item of selected) {
     const price = getItemPrice(item);
     total += price;
-    lines.push(`• ${getItemName(item)} — ${formatLkr(price)}`);
+    lines.push(`• ${getItemName(item)} - ${formatLkr(price)}`);
   }
 
   lines.push("");
@@ -163,7 +163,7 @@ export default function WhatsAppOrderModal({ isOpen, onClose, preSelectedKey }: 
           ))}
         </div>
 
-        {/* Footer — selected summary + send button */}
+        {/* Footer - selected summary + send button */}
         <div className="border-t border-zinc-100 bg-white px-5 py-4 flex-shrink-0">
           {selected.size > 0 ? (
             <div className="mb-3 space-y-1">

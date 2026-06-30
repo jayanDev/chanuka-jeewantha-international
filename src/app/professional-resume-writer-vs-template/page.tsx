@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "Aren't free resume templates good enough?",
-    a: "For early-career and uncomplicated cases, often yes. A clean Google Docs or Word template fills the structure you need and you can do the writing yourself. The limitation is that a template gives you a container, not a strategy — it can't tell you whether to lead with your education, your last role, or your latest project.",
+    a: "For early-career and uncomplicated cases, often yes. A clean Google Docs or Word template fills the structure you need and you can do the writing yourself. The limitation is that a template gives you a container, not a strategy - it can't tell you whether to lead with your education, your last role, or your latest project.",
   },
   {
     q: "What does a writer give you that a template can't?",
@@ -31,11 +31,11 @@ const FAQS = [
   },
   {
     q: "Do I need a Canva-style designed template, or a plain one?",
-    a: "Plain. Canva-style designs with columns, icons, and headshots tend to break ATS parsing at large US employers. Stick to a single-column Word or Google Docs template with standard headings. The visual polish doesn't help — and often hurts.",
+    a: "Plain. Canva-style designs with columns, icons, and headshots tend to break ATS parsing at large US employers. Stick to a single-column Word or Google Docs template with standard headings. The visual polish doesn't help - and often hurts.",
   },
   {
     q: "Are paid templates better than free ones?",
-    a: "Sometimes — better paid templates are cleaner and pre-tested against common ATS systems. But you're still doing all the writing yourself. The template isn't the bottleneck; the strategic judgment is.",
+    a: "Sometimes - better paid templates are cleaner and pre-tested against common ATS systems. But you're still doing all the writing yourself. The template isn't the bottleneck; the strategic judgment is.",
   },
   {
     q: "When does a writer actually pay back?",
@@ -66,7 +66,7 @@ export default function VsTemplatePage() {
         breadcrumbLabel="Resume Writer vs Template"
         eyebrow="Comparison · 2026"
         h1={<>Professional Resume Writer vs <span className="text-[#C9A961]">Template</span></>}
-        intro="A clean template plus your own writing can absolutely work — for the right situation. Here's the honest comparison and when each one is the right move."
+        intro="A clean template plus your own writing can absolutely work - for the right situation. Here's the honest comparison and when each one is the right move."
       >
         {/* Comparison table */}
         <section className="w-full bg-white py-16 md:py-20">
@@ -82,8 +82,8 @@ export default function VsTemplatePage() {
                 </thead>
                 <tbody className="divide-y divide-zinc-200">
                   {[
-                    ["Cost", "$0 – $50", "$179 – $1,499"],
-                    ["Time investment from you", "8–15 hours of writing", "1–2 hours of input"],
+                    ["Cost", "$0 - $50", "$179 - $1,499"],
+                    ["Time investment from you", "8-15 hours of writing", "1-2 hours of input"],
                     ["ATS-clean structure", "If you pick a good template, yes", "Always"],
                     ["Strategic positioning", "Up to you", "Done for you"],
                     ["Cuts weak bullets", "Up to you", "Done for you"],
@@ -113,16 +113,16 @@ export default function VsTemplatePage() {
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2">
               <article className="rounded-[16px] bg-white border border-zinc-200/80 p-6">
-                <h3 className="font-heading text-base font-bold text-[#0A2540]">Template is enough when…</h3>
+                <h3 className="font-heading text-base font-bold text-[#0A2540]">Template is enough when...</h3>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-700 list-disc pl-5">
-                  <li>You&apos;re a graduate or 0–2 years in</li>
+                  <li>You&apos;re a graduate or 0-2 years in</li>
                   <li>Your role is simple and well-understood</li>
                   <li>You have time and patience to write the content yourself</li>
                   <li>You&apos;re not targeting hyper-competitive employers</li>
                 </ul>
               </article>
               <article className="rounded-[16px] bg-white border border-zinc-200/80 p-6">
-                <h3 className="font-heading text-base font-bold text-[#0A2540]">Hire a writer when…</h3>
+                <h3 className="font-heading text-base font-bold text-[#0A2540]">Hire a writer when...</h3>
                 <ul className="mt-3 space-y-2 text-sm text-zinc-700 list-disc pl-5">
                   <li>You&apos;re mid-career or senior</li>
                   <li>You&apos;re changing industry, function, or seniority</li>
@@ -173,7 +173,7 @@ export default function VsTemplatePage() {
 
         <PageCTA
           heading="Ready for more than a template?"
-          subheading="See all five packages from $179 to $1,499 — each with the 90-day interview guarantee."
+          subheading="See all five packages from $179 to $1,499 - each with the 90-day interview guarantee."
           primaryLabel="See All Packages"
           primaryHref="/pricing"
           secondaryLabel="Request a Profile Review"

@@ -9,7 +9,7 @@ interface BeforeAfterSliderProps {
   /** Image shown on the right (after) half */
   afterSrc: string;
   afterAlt: string;
-  /** Initial divider position as percentage 0–100 (default 50) */
+  /** Initial divider position as percentage 0-100 (default 50) */
   initialPosition?: number;
   className?: string;
 }

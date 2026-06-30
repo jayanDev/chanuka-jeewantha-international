@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   ...buildPageMetadata({
     title: HOME_TITLE,
     description:
-      "Premium ATS resume writing for US professionals — executive CVs, LinkedIn optimization, and cover letters. Personally written, with a 90-day interview guarantee.",
+      "Premium ATS resume writing for US professionals - executive CVs, LinkedIn optimization, and cover letters. Personally written, with a 90-day interview guarantee.",
     path: "/",
   }),
   title: { absolute: HOME_TITLE },
@@ -76,10 +76,10 @@ const bundles: Bundle[] = [
     audience: "For graduates & early-career candidates",
     delivery: "7-day delivery",
     includes: [
-      "ATS Resume / CV — graduate level",
+      "ATS Resume / CV - graduate level",
       "Cover Letter",
       "LinkedIn Optimization",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Starter Pack",
   },
@@ -95,7 +95,7 @@ const bundles: Bundle[] = [
       "LinkedIn Optimization",
       "Cover Letter",
       "1 round of revisions",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Career Pack",
   },
@@ -109,8 +109,8 @@ const bundles: Bundle[] = [
       "ATS Resume tailored to your target market",
       "Modern CV format for cross-border roles",
       "LinkedIn Optimization",
-      "Cover Letter — 2 versions",
-      "90-day interview guarantee — 100% money-back",
+      "Cover Letter - 2 versions",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Career Move Pack",
   },
@@ -126,7 +126,7 @@ const bundles: Bundle[] = [
       "Executive Cover Letter",
       "Modern CV format for senior panels",
       "1-Hour Strategy Consultation",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose Executive Suite",
   },
@@ -143,21 +143,21 @@ const bundles: Bundle[] = [
       "Modern CV format for executive panels",
       "2-Hour Strategy Sessions",
       "Quarterly LinkedIn refresh",
-      "90-day interview guarantee — 100% money-back",
+      "90-day interview guarantee - 100% money-back",
     ],
     cta: "Choose C-Suite Premium",
   },
 ];
 
 const reasons = [
-  "Founder-led premium service — not template editing or junior outsourcing",
+  "Founder-led premium service - not template editing or junior outsourcing",
   "ATS-optimized, recruiter-readable writing that survives keyword screens",
   "Positioning built for competitive senior and executive-level hiring",
   "Modern CV and resume formats accepted by global hiring panels",
   "LinkedIn rewrites designed for recruiter search and inbound opportunity flow",
   "Clear career storytelling across graduate, professional, and executive levels",
   "Premium personal branding, not a one-size-fits-all rewrite",
-  "Strategy first, documents second — every page earns its place",
+  "Strategy first, documents second - every page earns its place",
 ];
 
 const processSteps = [
@@ -171,7 +171,7 @@ const processSteps = [
 const faqs = [
   [
     "How does the 90-day interview guarantee work?",
-    "Every package is covered. If you don't receive any interview calls within 90 days of delivery, you get a 100% refund. To qualify you simply need to apply to at least 20 relevant roles in the 90-day window using the documents we deliver. No fine-print games, no partial credits — full money back.",
+    "Every package is covered. If you don't receive any interview calls within 90 days of delivery, you get a 100% refund. To qualify you simply need to apply to at least 20 relevant roles in the 90-day window using the documents we deliver. No fine-print games, no partial credits - full money back.",
   ],
   [
     "Do you work with clients anywhere in the world?",
@@ -183,7 +183,7 @@ const faqs = [
   ],
   [
     "Can you produce a CV for a specific target market?",
-    "Yes. Each document is tailored to the conventions of your target market — format, length, tone, and what recruiters in that market actually look for.",
+    "Yes. Each document is tailored to the conventions of your target market - format, length, tone, and what recruiters in that market actually look for.",
   ],
   [
     "Do you guarantee interviews or jobs?",
@@ -264,7 +264,7 @@ export default async function Home() {
               #1 Premium ATS Resume Writing Service in the <span className="text-[#C9A961]">United States</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl font-light">
-              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and full career-branding suites — personally written for US senior candidates and remote-first opportunities. Backed by a 90-day interview guarantee.
+              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and full career-branding suites - personally written for US senior candidates and remote-first opportunities. Backed by a 90-day interview guarantee.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row items-center">
               <a
@@ -338,7 +338,7 @@ export default async function Home() {
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-white/10 shadow-2xl bg-[#0A2540]">
               <Image
                 src="/images/hero-chanuka.jpg"
-                alt="Chanuka Jeewantha — premium career branding for senior professionals"
+                alt="Chanuka Jeewantha - premium career branding for senior professionals"
                 fill
                 sizes="(max-width: 480px) 90vw, 440px"
                 className="object-cover"
@@ -448,7 +448,7 @@ export default async function Home() {
             <p className="mt-6 text-zinc-600 leading-relaxed max-w-md">
               Every document is personally strategized and written by the founder. No outsourced writing, no generic templates, and no junior staff hand-offs.
             </p>
-            {/* Decorative vertical gold line — desktop only */}
+            {/* Decorative vertical gold line - desktop only */}
             <div className="hidden lg:block absolute right-[54%] top-8 bottom-8 w-px bg-gradient-to-b from-transparent via-[#C9A961]/30 to-transparent" />
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
@@ -481,7 +481,7 @@ export default async function Home() {
                 Premium career documents, personally written.
               </h2>
               <p className="mt-3 text-zinc-600 max-w-2xl text-sm md:text-base">
-                Executive resumes, modern CV formats, LinkedIn rewrites, and cover letters — built personally for senior candidates, not outsourced.
+                Executive resumes, modern CV formats, LinkedIn rewrites, and cover letters - built personally for senior candidates, not outsourced.
               </p>
             </div>
             <Link href="/pricing#signature-series" className="btn btn-secondary-gold shrink-0 text-center relative z-10">
@@ -501,7 +501,7 @@ export default async function Home() {
             <h2 className="mt-3 font-heading text-[36px] font-bold leading-tight text-white md:text-[52px] tracking-tight">
               Choose a complete career-branding package.
             </h2>
-            <p className="mt-3 text-sm text-white/55">Prices shown in your local currency — switch anytime in the menu.</p>
+            <p className="mt-3 text-sm text-white/55">Prices shown in your local currency - switch anytime in the menu.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-stretch">
             {bundles.map((bundle) => {
@@ -517,7 +517,7 @@ export default async function Home() {
                         : "bundle-card-dark text-white"
                   }`}
                 >
-                  {/* Top gold accent line — matches packages page cards */}
+                  {/* Top gold accent line - matches packages page cards */}
                   <span className={`absolute inset-x-0 top-0 h-1 rounded-t-[20px] ${popular ? "bg-[#C9A961]" : "bg-[#C9A961]/70"}`} aria-hidden="true" />
 
                   {/* Popular / Premium badge */}
@@ -566,7 +566,7 @@ export default async function Home() {
                     </li>
                   </ul>
 
-                  {/* CTA button — same as packages page */}
+                  {/* CTA button - same as packages page */}
                   <Link
                     href={`/contact?package=${encodeURIComponent(name)}`}
                     className={`mt-6 inline-flex min-h-11 items-center justify-center rounded-[10px] px-4 py-3 text-center text-sm font-bold transition-colors ${
@@ -619,7 +619,7 @@ export default async function Home() {
               <div className="text-center md:text-left">
                 <span className="text-[#8C6D30] font-semibold uppercase tracking-[0.16em] text-xs">Risk-Free Promise</span>
                 <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-[#0A2540] md:text-[40px] tracking-tight">
-                  Get interview calls in 90 days — or your money back.
+                  Get interview calls in 90 days - or your money back.
                 </h2>
                 <p className="mt-4 text-zinc-700 leading-relaxed md:text-lg">
                   Every package on this site is backed by a <span className="font-bold text-[#0A2540]">100% money-back guarantee</span>. If you don&apos;t receive any interview calls within 90 days of delivery, you get a full refund.
@@ -628,9 +628,9 @@ export default async function Home() {
                 <ul className="mt-6 grid grid-cols-1 gap-2.5 text-sm text-zinc-700 sm:grid-cols-2">
                   {[
                     "Applies to every package",
-                    "Full 100% refund — no partial credits",
+                    "Full 100% refund - no partial credits",
                     "90 days from delivery date",
-                    "Simple claim — no fine-print games",
+                    "Simple claim - no fine-print games",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9A961]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -832,7 +832,7 @@ export default async function Home() {
               <details key={q} className="faq-item group rounded-[16px] border border-zinc-200/80 bg-white p-6 [&_summary::-webkit-details-marker]:hidden">
                 <summary className="flex items-center justify-between cursor-pointer font-heading text-[18px] md:text-[20px] font-bold text-[#0A2540] list-none focus-visible:outline-none select-none">
                   <span>{q}</span>
-                  {/* SVG chevron — rotates on open via CSS */}
+                  {/* SVG chevron - rotates on open via CSS */}
                   <svg className="faq-chevron h-5 w-5 flex-shrink-0 text-[#C9A961]" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
                   </svg>

@@ -66,7 +66,7 @@ export async function POST(request: Request) {
       body = {
         name: readString(formData, "name"),
         email: readString(formData, "email"),
-        subject: `Career enquiry — ${readString(formData, "selectedService") || "Career branding"}`,
+        subject: `Career enquiry - ${readString(formData, "selectedService") || "Career branding"}`,
         message: details,
         website: readString(formData, "website"),
       };

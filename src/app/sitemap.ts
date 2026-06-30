@@ -67,7 +67,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/guides",
     "/guides/us-resume-vs-uk-cv-vs-australian-resume",
     "/guides/ats-cv-vs-normal-cv",
-    // US SEO network — hub pages
+    // US SEO network - hub pages
     "/resume-writer",
     "/locations",
     "/career-stage",

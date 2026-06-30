@@ -6,7 +6,7 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 export const metadata: Metadata = buildPageMetadata({
   title: "Career & CV Guides | Chanuka Jeewantha",
   description:
-    "Reference guides on resume and CV writing across markets — US resume vs UK CV vs Australian resume, ATS CV vs normal CV, and more.",
+    "Reference guides on resume and CV writing across markets - US resume vs UK CV vs Australian resume, ATS CV vs normal CV, and more.",
   path: "/guides",
   keywords: ["CV writing guides", "resume vs CV", "ATS CV guide", "Chanuka Jeewantha"],
 });
@@ -15,7 +15,7 @@ const guides = [
   {
     href: "/guides/us-resume-vs-uk-cv-vs-australian-resume",
     title: "US Resume vs UK CV vs Australian Resume",
-    blurb: "How résumé and CV conventions differ across the US, UK, and Australia — length, photo, spelling, and the ATS systems each market uses.",
+    blurb: "How résumé and CV conventions differ across the US, UK, and Australia - length, photo, spelling, and the ATS systems each market uses.",
     tag: "Cross-market",
     read: "6 min read",
   },
@@ -50,7 +50,7 @@ export default function GuidesIndexPage() {
             Reference guides for résumés, CVs &amp; ATS
           </h1>
           <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/85 leading-relaxed">
-            Clear, practical answers on how résumés and CVs work across markets and applicant tracking systems — written by
+            Clear, practical answers on how résumés and CVs work across markets and applicant tracking systems - written by
             a professional resume writer, not generated filler.
           </p>
         </div>

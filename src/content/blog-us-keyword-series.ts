@@ -5,14 +5,14 @@ import type { BlogPost } from "./blog-posts";
 //
 // Ten informational guides targeting high-intent US resume keywords. These are
 // editorial/guide-intent articles (not sales pages) that link OUT to the
-// commercial landing pages (/resume-writer/*), /pricing, and the home page —
+// commercial landing pages (/resume-writer/*), /pricing, and the home page -
 // a topic-cluster strategy, not keyword spam. Each post is hand-written.
 // -----------------------------------------------------------------------------
 
 const AUTHOR = "Chanuka Jeewantha";
 
 export const usKeywordBlogPosts: BlogPost[] = [
-  // 1 — Resume writing service USA (broad service intent)
+  // 1 - Resume writing service USA (broad service intent)
   {
     slug: "resume-writing-service-usa",
     title: "Resume Writing Service in the USA: What You Actually Get",
@@ -33,7 +33,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "What a real resume writing service includes",
         paragraphs: [
-          "A premium US resume service is a strategy engagement, not a formatting job. Before a single line is written, a good writer studies your target roles, your seniority, and the way employers in your field actually screen candidates. The document is then built around that — not around a generic template.",
+          "A premium US resume service is a strategy engagement, not a formatting job. Before a single line is written, a good writer studies your target roles, your seniority, and the way employers in your field actually screen candidates. The document is then built around that - not around a generic template.",
           "The deliverable is a resume that survives the applicant tracking system, reads as senior and credible to a recruiter, and makes your strongest results impossible to miss. Most engagements also cover a recruiter-facing LinkedIn rewrite and a tailored cover letter, because in the US market those three documents work together.",
         ],
         bullets: [
@@ -50,7 +50,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
           "Ask who actually writes the document, whether the work is tailored to specific roles, and what happens if you don't get interviews. A service confident in its work will stand behind it.",
         ],
         bullets: [
-          "Ask if a real person — not AI or a junior pool — writes your resume",
+          "Ask if a real person - not AI or a junior pool - writes your resume",
           "Ask whether the writing is tailored to your target roles",
           "Ask about revisions and any interview guarantee",
           "Be wary of instant, suspiciously cheap turnarounds",
@@ -59,7 +59,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "What it costs and what's worth paying for",
         paragraphs: [
-          "US resume pricing spans a wide range. Entry-level rewrites start low; executive and federal resumes cost more because they take more strategy and time. The right question isn't 'what's cheapest' — it's 'what gets me interviews for the roles I actually want.'",
+          "US resume pricing spans a wide range. Entry-level rewrites start low; executive and federal resumes cost more because they take more strategy and time. The right question isn't 'what's cheapest' - it's 'what gets me interviews for the roles I actually want.'",
           "If you're weighing options, compare full packages rather than single documents. A bundle that aligns your resume, LinkedIn, and cover letter usually outperforms three pieces bought separately and at cross purposes.",
         ],
       },
@@ -83,19 +83,19 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "Do US resume services also write LinkedIn and cover letters?",
         answer:
-          "The better ones do, and they should — US recruiters cross-check your resume against your LinkedIn. Most premium packages include a LinkedIn rewrite and a tailored cover letter so all three tell one consistent story.",
+          "The better ones do, and they should - US recruiters cross-check your resume against your LinkedIn. Most premium packages include a LinkedIn rewrite and a tailored cover letter so all three tell one consistent story.",
       },
     ],
   },
 
-  // 2 — Professional resume writer USA (how to choose)
+  // 2 - Professional resume writer USA (how to choose)
   {
     slug: "professional-resume-writer-usa",
     title: "How to Choose a Professional Resume Writer in the USA",
     excerpt:
-      "Seven questions to ask before you hire a professional resume writer in the USA — so you pay for strategy and interviews, not a reformatted template.",
+      "Seven questions to ask before you hire a professional resume writer in the USA - so you pay for strategy and interviews, not a reformatted template.",
     content:
-      "Hiring a professional resume writer in the USA is one of the higher-ROI moves in a job search — but only if you pick the right one. The market runs from $40 template flips to premium founder-led services, and the difference shows up in your interview rate. Here's how to choose well.",
+      "Hiring a professional resume writer in the USA is one of the higher-ROI moves in a job search - but only if you pick the right one. The market runs from $40 template flips to premium founder-led services, and the difference shows up in your interview rate. Here's how to choose well.",
     category: "US Resume Writing",
     publishedAt: "2026-06-26",
     author: AUTHOR,
@@ -112,7 +112,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
           "A good writer welcomes these questions. A volume mill will dodge them. Ask them up front and the right choice usually becomes obvious.",
         ],
         bullets: [
-          "Who actually writes my resume — you, a junior team, or AI?",
+          "Who actually writes my resume - you, a junior team, or AI?",
           "Will the writing be tailored to my specific target roles?",
           "How do you handle ATS optimization without keyword stuffing?",
           "Do you also rewrite LinkedIn and cover letters?",
@@ -131,7 +131,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Match the writer to your level",
         paragraphs: [
-          "An entry-level resume and a C-suite resume are different crafts. If you're senior, choose a writer who clearly works at the executive level and can show it. If you're early-career, you don't need to overpay — but you still want someone who writes for the US market, not a generic global template.",
+          "An entry-level resume and a C-suite resume are different crafts. If you're senior, choose a writer who clearly works at the executive level and can show it. If you're early-career, you don't need to overpay - but you still want someone who writes for the US market, not a generic global template.",
         ],
       },
     ],
@@ -149,7 +149,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "How much does a professional resume writer cost in the USA?",
         answer:
-          "It ranges widely — from under $100 for a template service to four figures for executive and federal resumes. Mid-career professionals typically land in the few-hundred-dollar range for a quality, personally written resume plus LinkedIn and a cover letter.",
+          "It ranges widely - from under $100 for a template service to four figures for executive and federal resumes. Mid-career professionals typically land in the few-hundred-dollar range for a quality, personally written resume plus LinkedIn and a cover letter.",
       },
       {
         question: "Should I hire a resume writer or use AI?",
@@ -159,14 +159,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 3 — ATS resume writer
+  // 3 - ATS resume writer
   {
     slug: "ats-resume-writer-guide",
     title: "ATS Resume Writing: How to Pass Applicant Tracking Systems in 2026",
     excerpt:
       "How applicant tracking systems actually work, what gets resumes auto-rejected, and how an ATS resume writer keeps your resume readable for both software and recruiters.",
     content:
-      "Most US resumes are read by software before a human ever sees them. Applicant tracking systems (ATS) parse, score, and rank applications — and a resume that confuses the parser can be filtered out before a recruiter looks. ATS resume writing is the craft of staying readable for the software without writing for robots.",
+      "Most US resumes are read by software before a human ever sees them. Applicant tracking systems (ATS) parse, score, and rank applications - and a resume that confuses the parser can be filtered out before a recruiter looks. ATS resume writing is the craft of staying readable for the software without writing for robots.",
     category: "US ATS Resume",
     publishedAt: "2026-06-24",
     author: AUTHOR,
@@ -180,7 +180,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "What an ATS actually does",
         paragraphs: [
-          "An ATS parses your resume into structured fields — name, titles, dates, skills — then matches them against the job description. Recruiters search and filter inside it. If the parser misreads your layout, your experience can be stored wrong or missed entirely.",
+          "An ATS parses your resume into structured fields - name, titles, dates, skills - then matches them against the job description. Recruiters search and filter inside it. If the parser misreads your layout, your experience can be stored wrong or missed entirely.",
           "The myth is that ATS 'auto-rejects' on a keyword score. In reality, most systems rank and surface candidates for a human; the danger is being ranked low or parsed badly, not a robot saying no.",
         ],
       },
@@ -200,8 +200,8 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "How to write ATS-friendly without keyword stuffing",
         paragraphs: [
-          "Keyword stuffing is the wrong fix — recruiters spot it and it reads badly. The right approach is to describe real experience using the same terms the job description uses, in a clean single-column layout with standard headings.",
-          "Run your draft through an honest checker to see how a parser reads it, then make sure the human version still reads naturally. A good ATS resume passes the software and impresses the recruiter — not one or the other.",
+          "Keyword stuffing is the wrong fix - recruiters spot it and it reads badly. The right approach is to describe real experience using the same terms the job description uses, in a clean single-column layout with standard headings.",
+          "Run your draft through an honest checker to see how a parser reads it, then make sure the human version still reads naturally. A good ATS resume passes the software and impresses the recruiter - not one or the other.",
         ],
       },
     ],
@@ -229,14 +229,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 4 — Executive resume writer USA
+  // 4 - Executive resume writer USA
   {
     slug: "executive-resume-writer-usa",
     title: "Executive Resume Writer in the USA: Resumes for Director, VP, and C-Suite Roles",
     excerpt:
       "What separates an executive resume from a standard one, how US hiring panels read at the senior level, and when to bring in an executive resume writer.",
     content:
-      "An executive resume is a different document from a standard professional resume. At the Director, VP, and C-suite level, US hiring panels aren't scanning for tasks you performed — they're looking for scope, business impact, and evidence you can lead at the level they're hiring for. An executive resume writer builds the document around that.",
+      "An executive resume is a different document from a standard professional resume. At the Director, VP, and C-suite level, US hiring panels aren't scanning for tasks you performed - they're looking for scope, business impact, and evidence you can lead at the level they're hiring for. An executive resume writer builds the document around that.",
     category: "US Executive Resume",
     publishedAt: "2026-06-22",
     author: AUTHOR,
@@ -250,13 +250,13 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Why executive resumes are different",
         paragraphs: [
-          "Below the senior level, a resume proves competence. At the executive level, it has to prove judgment, scale, and outcomes — P&L ownership, teams led, revenue moved, transformations delivered. The writing shifts from 'what I did' to 'what changed because I was there.'",
+          "Below the senior level, a resume proves competence. At the executive level, it has to prove judgment, scale, and outcomes - P&L ownership, teams led, revenue moved, transformations delivered. The writing shifts from 'what I did' to 'what changed because I was there.'",
           "Format changes too. Executive resumes lead with a sharp positioning statement and a record of measurable impact, and they earn the space to run two pages because the scope demands it.",
         ],
         bullets: [
           "Lead with positioning and scope, not a duties list",
           "Quantify business impact: revenue, cost, growth, scale",
-          "Show leadership — teams, budgets, and cross-functional reach",
+          "Show leadership - teams, budgets, and cross-functional reach",
           "Frame a clear narrative for the level you're targeting",
         ],
       },
@@ -289,7 +289,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "How long should an executive resume be?",
         answer:
-          "Two pages is standard and expected at the executive level in the US. The extra space is for quantified impact and leadership scope — not longer duty lists. Three pages is rare and usually only for extensive board or federal contexts.",
+          "Two pages is standard and expected at the executive level in the US. The extra space is for quantified impact and leadership scope - not longer duty lists. Three pages is rare and usually only for extensive board or federal contexts.",
       },
       {
         question: "Do executives still need an ATS-friendly resume?",
@@ -299,14 +299,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 5 — Tech resume writer
+  // 5 - Tech resume writer
   {
     slug: "tech-resume-writer-usa",
     title: "Tech Resume Writer: How Software Engineers Write US Resumes That Get Interviews",
     excerpt:
       "What US tech recruiters and engineering managers look for, how to write impact-driven engineering bullets, and how a tech resume writer positions you for FAANG and startup roles.",
     content:
-      "Strong engineers often write weak resumes — dense walls of responsibilities and a tools list, with no sign of impact. US tech hiring rewards the opposite: clear proof of what you built, the scale it ran at, and the results it drove. A tech resume writer turns engineering work into a resume recruiters and hiring managers actually respond to.",
+      "Strong engineers often write weak resumes - dense walls of responsibilities and a tools list, with no sign of impact. US tech hiring rewards the opposite: clear proof of what you built, the scale it ran at, and the results it drove. A tech resume writer turns engineering work into a resume recruiters and hiring managers actually respond to.",
     category: "US Industry Resumes",
     publishedAt: "2026-06-20",
     author: AUTHOR,
@@ -326,7 +326,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
         bullets: [
           "Lead each bullet with impact, then the technical how",
           "Quantify scale: users, requests, latency, data, dollars",
-          "Show ownership — designed, built, shipped, owned",
+          "Show ownership - designed, built, shipped, owned",
           "Keep the stack relevant to the roles you're targeting",
         ],
       },
@@ -340,7 +340,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "FAANG vs startup positioning",
         paragraphs: [
-          "Big-tech resumes reward scale, rigor, and measurable impact at volume. Startup resumes reward range, ownership, and shipping fast with limited resources. The same career can be framed for either — but the emphasis should change with the target.",
+          "Big-tech resumes reward scale, rigor, and measurable impact at volume. Startup resumes reward range, ownership, and shipping fast with limited resources. The same career can be framed for either - but the emphasis should change with the target.",
         ],
       },
     ],
@@ -358,7 +358,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "How long should a software engineer resume be?",
         answer:
-          "One page for early to mid-career, two for senior, staff, and principal engineers. Depth of impact matters more than length — recruiters would rather see five strong quantified bullets than fifteen vague ones.",
+          "One page for early to mid-career, two for senior, staff, and principal engineers. Depth of impact matters more than length - recruiters would rather see five strong quantified bullets than fifteen vague ones.",
       },
       {
         question: "Should I list every programming language I know?",
@@ -368,14 +368,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 6 — Finance resume writer
+  // 6 - Finance resume writer
   {
     slug: "finance-resume-writer-usa",
     title: "Finance Resume Writer: Resumes for Banking, FP&A, and Accounting Roles",
     excerpt:
       "How US finance employers read resumes, how to quantify financial impact credibly, and how a finance resume writer positions you for banking, FP&A, and CFO-track roles.",
     content:
-      "Finance is a numbers field, yet many finance resumes contain almost no numbers — just a list of duties. US employers in banking, FP&A, accounting, and corporate finance hire on quantified impact: dollars saved, revenue influenced, risk reduced, processes improved. A finance resume writer makes that impact obvious and credible.",
+      "Finance is a numbers field, yet many finance resumes contain almost no numbers - just a list of duties. US employers in banking, FP&A, accounting, and corporate finance hire on quantified impact: dollars saved, revenue influenced, risk reduced, processes improved. A finance resume writer makes that impact obvious and credible.",
     category: "US Industry Resumes",
     publishedAt: "2026-06-18",
     author: AUTHOR,
@@ -402,7 +402,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "How seniority changes the resume",
         paragraphs: [
-          "Analysts and associates lead with technical skill and accuracy. Managers and directors lead with ownership and business outcomes. Senior finance and CFO-track candidates lead with strategy, capital decisions, and enterprise impact — and earn a two-page format.",
+          "Analysts and associates lead with technical skill and accuracy. Managers and directors lead with ownership and business outcomes. Senior finance and CFO-track candidates lead with strategy, capital decisions, and enterprise impact - and earn a two-page format.",
         ],
       },
       {
@@ -431,19 +431,19 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "Where do certifications like CPA or CFA go?",
         answer:
-          "Make them visible — in the summary or a dedicated credentials line near the top — because finance recruiters filter for them in the ATS. Don't bury them at the bottom where a quick scan misses them.",
+          "Make them visible - in the summary or a dedicated credentials line near the top - because finance recruiters filter for them in the ATS. Don't bury them at the bottom where a quick scan misses them.",
       },
     ],
   },
 
-  // 7 — Healthcare resume writer
+  // 7 - Healthcare resume writer
   {
     slug: "healthcare-resume-writer-usa",
     title: "Healthcare Resume Writer: Resumes for Nurses, Physicians, and Clinical Roles",
     excerpt:
       "How US healthcare hiring differs from other fields, how to present licenses, certifications, and clinical outcomes, and when to use a healthcare resume writer.",
     content:
-      "Healthcare resumes follow their own rules. US hospitals, clinics, and health systems hire on licensure, certifications, clinical competencies, and patient outcomes — and they screen for them precisely. A healthcare resume writer makes sure your credentials are unmissable and your clinical impact is clear, whether you're a nurse, physician, or allied health professional.",
+      "Healthcare resumes follow their own rules. US hospitals, clinics, and health systems hire on licensure, certifications, clinical competencies, and patient outcomes - and they screen for them precisely. A healthcare resume writer makes sure your credentials are unmissable and your clinical impact is clear, whether you're a nurse, physician, or allied health professional.",
     category: "US Industry Resumes",
     publishedAt: "2026-06-16",
     author: AUTHOR,
@@ -457,7 +457,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Lead with licenses and certifications",
         paragraphs: [
-          "In healthcare, credentials are gatekeepers. Licenses, board certifications, BLS/ACLS/PALS, specialty certifications, and state details belong near the top where both the ATS and a human reviewer see them immediately — not buried at the bottom.",
+          "In healthcare, credentials are gatekeepers. Licenses, board certifications, BLS/ACLS/PALS, specialty certifications, and state details belong near the top where both the ATS and a human reviewer see them immediately - not buried at the bottom.",
           "Include the specifics employers filter on: license type and state, certification names and expiry, and the EHR systems you've used, such as Epic or Cerner.",
         ],
         bullets: [
@@ -470,14 +470,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Show clinical impact, not just duties",
         paragraphs: [
-          "Every nurse 'provides patient care' — that line does nothing. Stronger: 'Managed a 6-patient ICU assignment at a Level I trauma center; contributed to a 15% drop in unit fall rates through a new hourly-rounding protocol.' Outcomes and scope separate candidates.",
+          "Every nurse 'provides patient care' - that line does nothing. Stronger: 'Managed a 6-patient ICU assignment at a Level I trauma center; contributed to a 15% drop in unit fall rates through a new hourly-rounding protocol.' Outcomes and scope separate candidates.",
           "Physicians and advanced practice providers should reflect case mix, procedure volume, quality measures, and any teaching, research, or leadership roles.",
         ],
       },
       {
         heading: "Format for healthcare hiring",
         paragraphs: [
-          "Large health systems run resumes through ATS, so keep the layout clean and parse-safe. Nursing and clinical resumes can run longer than the one-page norm when credentials and clinical detail warrant it — accuracy and completeness matter more here than brevity.",
+          "Large health systems run resumes through ATS, so keep the layout clean and parse-safe. Nursing and clinical resumes can run longer than the one-page norm when credentials and clinical detail warrant it - accuracy and completeness matter more here than brevity.",
         ],
       },
     ],
@@ -505,14 +505,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 8 — Federal resume writer
+  // 8 - Federal resume writer
   {
     slug: "federal-resume-writer-usa",
     title: "Federal Resume Writer: How to Write a USAJOBS-Ready Federal Resume",
     excerpt:
       "Why federal resumes are different, how the USAJOBS and GS process works, and how a federal resume writer helps you meet the strict requirements that trip up most applicants.",
     content:
-      "A federal resume is unlike anything in the private sector. Applying to US government roles through USAJOBS means meeting strict, specific requirements — and a private-sector resume submitted there is almost always rejected for missing them. A federal resume writer helps you build a document that survives the federal screening process.",
+      "A federal resume is unlike anything in the private sector. Applying to US government roles through USAJOBS means meeting strict, specific requirements - and a private-sector resume submitted there is almost always rejected for missing them. A federal resume writer helps you build a document that survives the federal screening process.",
     category: "US Federal Resume",
     publishedAt: "2026-06-14",
     author: AUTHOR,
@@ -526,21 +526,21 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Why federal resumes are different",
         paragraphs: [
-          "Federal resumes are longer and far more detailed than private-sector ones — commonly three to five pages — because HR specialists and the system score you against specific criteria. Brevity is not a virtue here; completeness is.",
+          "Federal resumes are longer and far more detailed than private-sector ones - commonly three to five pages - because HR specialists and the system score you against specific criteria. Brevity is not a virtue here; completeness is.",
           "You must include details a corporate resume omits: hours worked per week, exact employment dates, supervisor information, salary, and series/grade for prior federal roles. Missing fields can make an application ineligible on a technicality.",
         ],
         bullets: [
           "Include hours per week, exact dates, and supervisor details",
           "Mirror the language of the announcement's duties and KSAs",
           "Address the specialized experience requirement directly",
-          "Expect three to five pages — depth is required, not penalized",
+          "Expect three to five pages - depth is required, not penalized",
         ],
       },
       {
         heading: "How the USAJOBS and GS process works",
         paragraphs: [
           "Each announcement lists duties, qualifications, and 'specialized experience.' HR specialists score your resume against those exact terms, so your experience has to be written in the announcement's language and clearly meet the stated requirements.",
-          "The GS pay scale ties to grade and step, and your eligibility depends on demonstrating the qualifying experience for the grade you're targeting. This is where most applicants fall short — not from weak experience, but from not documenting it the federal way.",
+          "The GS pay scale ties to grade and step, and your eligibility depends on demonstrating the qualifying experience for the grade you're targeting. This is where most applicants fall short - not from weak experience, but from not documenting it the federal way.",
         ],
       },
       {
@@ -569,19 +569,19 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "Can I use my regular resume for USAJOBS?",
         answer:
-          "Not effectively. Federal applications require specific fields — hours per week, exact dates, supervisor info, and experience written against the announcement's language — that a standard resume omits. A federal-format resume is almost always necessary.",
+          "Not effectively. Federal applications require specific fields - hours per week, exact dates, supervisor info, and experience written against the announcement's language - that a standard resume omits. A federal-format resume is almost always necessary.",
       },
     ],
   },
 
-  // 9 — American resume format / conventions
+  // 9 - American resume format / conventions
   {
     slug: "american-resume-format-guide",
     title: "American Resume Format: US Resume Conventions Explained",
     excerpt:
-      "The US resume conventions that differ from international CVs — length, personal details, photos, dates, and tone — and how to format an American resume correctly.",
+      "The US resume conventions that differ from international CVs - length, personal details, photos, dates, and tone - and how to format an American resume correctly.",
     content:
-      "If you're applying to US roles from another country, the rules change. An American resume isn't just a renamed CV — it follows conventions that, when ignored, quietly mark you as unfamiliar with the US market. Getting the format right is the cheapest, fastest way to look like a serious US candidate.",
+      "If you're applying to US roles from another country, the rules change. An American resume isn't just a renamed CV - it follows conventions that, when ignored, quietly mark you as unfamiliar with the US market. Getting the format right is the cheapest, fastest way to look like a serious US candidate.",
     category: "US Resume Writing",
     publishedAt: "2026-06-12",
     author: AUTHOR,
@@ -608,7 +608,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Length, structure, and tone",
         paragraphs: [
-          "One page is the norm for early and mid-career; two pages is acceptable for senior and executive roles. Standard sections — Summary, Experience, Skills, Education, Certifications — in reverse-chronological order parse best and read fastest.",
+          "One page is the norm for early and mid-career; two pages is acceptable for senior and executive roles. Standard sections - Summary, Experience, Skills, Education, Certifications - in reverse-chronological order parse best and read fastest.",
           "Tone is direct and achievement-led. US resumes favor concise, results-driven bullets that open with strong verbs and quantify impact, rather than long descriptive paragraphs.",
         ],
       },
@@ -643,14 +643,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
     ],
   },
 
-  // 10 — Resume vs CV USA
+  // 10 - Resume vs CV USA
   {
     slug: "resume-vs-cv-usa",
     title: "Resume vs CV in the USA: Which One American Employers Expect",
     excerpt:
       "Resume or CV for US jobs? The real difference in the American market, when each is expected, and how to avoid the mistake that flags you as unfamiliar with US hiring.",
     content:
-      "Outside the US, 'CV' and 'resume' are often used interchangeably. Inside the US, they're different documents for different purposes — and using the wrong one can quietly hurt your application. Here's the distinction American employers actually expect, and how to pick the right one.",
+      "Outside the US, 'CV' and 'resume' are often used interchangeably. Inside the US, they're different documents for different purposes - and using the wrong one can quietly hurt your application. Here's the distinction American employers actually expect, and how to pick the right one.",
     category: "US Resume Writing",
     publishedAt: "2026-06-10",
     author: AUTHOR,
@@ -664,12 +664,12 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "The real difference in the US",
         paragraphs: [
-          "In the US, a resume is a short, targeted, one-to-two-page marketing document tailored to a specific role. A CV (curriculum vitae) is a long, comprehensive academic record covering publications, research, teaching, and presentations — and it's expected only in academia, medicine, and science.",
+          "In the US, a resume is a short, targeted, one-to-two-page marketing document tailored to a specific role. A CV (curriculum vitae) is a long, comprehensive academic record covering publications, research, teaching, and presentations - and it's expected only in academia, medicine, and science.",
           "For nearly every corporate, tech, finance, healthcare-staff, and government-adjacent role, US employers want a resume. Sending a multi-page academic CV for a standard job is a common mistake among international applicants.",
         ],
         bullets: [
-          "Resume: short, targeted, role-specific — used for most US jobs",
-          "CV: long, comprehensive, academic — used in academia and research",
+          "Resume: short, targeted, role-specific - used for most US jobs",
+          "CV: long, comprehensive, academic - used in academia and research",
           "Federal roles use a separate, longer federal-resume format",
           "When in doubt for a non-academic role, use a resume",
         ],
@@ -678,13 +678,13 @@ export const usKeywordBlogPosts: BlogPost[] = [
         heading: "When you actually need a CV",
         paragraphs: [
           "Use a CV in the US for university faculty positions, research roles, postdoctoral and fellowship applications, and many physician and scientist roles where publications and grants matter. These documents prioritize completeness over brevity.",
-          "Everywhere else — including most private-sector jobs that ask for a 'CV' by habit — a well-targeted resume is what gets read and shortlisted.",
+          "Everywhere else - including most private-sector jobs that ask for a 'CV' by habit - a well-targeted resume is what gets read and shortlisted.",
         ],
       },
       {
         heading: "Federal is a third category",
         paragraphs: [
-          "Government roles via USAJOBS use neither a standard resume nor an academic CV — they require a detailed federal resume with specific fields and far more length. If you're applying to federal jobs, that format is its own discipline.",
+          "Government roles via USAJOBS use neither a standard resume nor an academic CV - they require a detailed federal resume with specific fields and far more length. If you're applying to federal jobs, that format is its own discipline.",
         ],
       },
     ],
@@ -702,10 +702,10 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "Should I send a resume or a CV for a US job?",
         answer:
-          "For almost all US jobs — corporate, tech, finance, healthcare staff, and beyond — send a resume. Use a CV only for academic, research, and certain medical or scientific roles, and use a federal resume for USAJOBS positions.",
+          "For almost all US jobs - corporate, tech, finance, healthcare staff, and beyond - send a resume. Use a CV only for academic, research, and certain medical or scientific roles, and use a federal resume for USAJOBS positions.",
       },
       {
-        question: "A US company asked for my 'CV' — what do they mean?",
+        question: "A US company asked for my 'CV' - what do they mean?",
         answer:
           "Outside academia, US employers often say 'CV' but expect a resume. Unless it's an academic, research, or scientific role, send a targeted one-to-two-page resume rather than a long academic document.",
       },

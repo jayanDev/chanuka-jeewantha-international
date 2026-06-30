@@ -42,7 +42,7 @@ export default function SettingsClient() {
     if (!cleaned) { setWaStatus("✗ Enter a valid number."); return; }
     // Store in localStorage as a simple admin-only override hint
     localStorage.setItem("admin_wa_override", cleaned);
-    setWaStatus(`✓ Saved: +${cleaned} (browser-local only — update your .env for permanent change)`);
+    setWaStatus(`✓ Saved: +${cleaned} (browser-local only - update your .env for permanent change)`);
   };
 
   // --- Contact Email ---
@@ -208,7 +208,7 @@ export default function SettingsClient() {
         {activeSection.announcement && (
           <SectionCard
             title="Site Announcement Banner"
-            desc="Show a temporary announcement at the top of the site (e.g. promotional events, holidays). Stored browser-local — update SeasonalOfferBanner component for site-wide display."
+            desc="Show a temporary announcement at the top of the site (e.g. promotional events, holidays). Stored browser-local - update SeasonalOfferBanner component for site-wide display."
           >
             <div className="space-y-2">
               <div className="flex items-center gap-2">
@@ -226,7 +226,7 @@ export default function SettingsClient() {
               <textarea
                 value={bannerText}
                 onChange={(e) => setBannerText(e.target.value)}
-                placeholder="e.g. 🎉 Special offer — 20% off all packages this weekend only!"
+                placeholder="e.g. 🎉 Special offer - 20% off all packages this weekend only!"
                 rows={2}
                 aria-label="Announcement banner text"
                 className="w-full rounded-[8px] border border-zinc-300 px-3 py-2 text-sm outline-none focus:border-brand-main resize-none"
@@ -249,7 +249,7 @@ export default function SettingsClient() {
         <div className="rounded-[14px] border border-zinc-200 bg-zinc-50 p-5">
           <h3 className="font-semibold text-foreground text-sm mb-1">WhatsApp Message Templates</h3>
           <p className="text-xs text-zinc-500 mb-4">
-            Pre-written messages for common situations. Use <code className="bg-zinc-200 px-1 py-0.5 rounded">{"{name}"}</code> as a placeholder — type the client name below to auto-fill before copying.
+            Pre-written messages for common situations. Use <code className="bg-zinc-200 px-1 py-0.5 rounded">{"{name}"}</code> as a placeholder - type the client name below to auto-fill before copying.
           </p>
 
           {/* Client name override */}
@@ -301,7 +301,7 @@ export default function SettingsClient() {
             <textarea
               value={newTemplate}
               onChange={(e) => setNewTemplate(e.target.value)}
-              placeholder='Add a new template… Use {name} for the client name'
+              placeholder='Add a new template... Use {name} for the client name'
               rows={2}
               aria-label="New WhatsApp message template"
               className="flex-1 rounded-[8px] border border-zinc-300 px-3 py-2 text-sm outline-none focus:border-brand-main resize-none"

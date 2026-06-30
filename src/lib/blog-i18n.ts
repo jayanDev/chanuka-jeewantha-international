@@ -1,7 +1,7 @@
 import { cvSeriesSi } from "@/content/blog-cv-series-si";
 
 /**
- * Set of all Sinhala blog slugs — used to mark Sinhala posts with `lang="si"` meta.
+ * Set of all Sinhala blog slugs - used to mark Sinhala posts with `lang="si"` meta.
  * Since Sinhala posts are standalone topics (not 1:1 translations), we detect the
  * primary language from the slug suffix "-sinhala".
  */

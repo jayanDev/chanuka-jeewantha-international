@@ -310,7 +310,7 @@ export default function CatalogueClient() {
 
   return (
     <main className="min-h-screen bg-zinc-50">
-      {/* Compact hero — keeps quiz above fold on mobile */}
+      {/* Compact hero - keeps quiz above fold on mobile */}
       <section className="w-full bg-foreground px-4 pt-8 pb-6 text-background sm:px-6 sm:pt-10 sm:pb-8">
         <div className="mx-auto max-w-5xl text-center">
           <p className="font-semibold uppercase tracking-[0.18em] text-brand-main text-xs sm:text-sm">Career Studio Catalogue</p>
@@ -318,7 +318,7 @@ export default function CatalogueClient() {
             Find the right package in <span className="text-brand-main">3 questions.</span>
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-white/75 sm:text-base">
-            Answer below — your exact package appears instantly.
+            Answer below - your exact package appears instantly.
           </p>
         </div>
       </section>
@@ -340,7 +340,7 @@ export default function CatalogueClient() {
                 href="/packages"
                 className="inline-flex items-center gap-1 text-sm font-semibold text-brand-main hover:text-brand-dark"
               >
-                Skip the quiz — browse all packages →
+                Skip the quiz - browse all packages →
               </Link>
             </div>
             <p className="text-sm font-bold uppercase tracking-[0.14em] text-brand-main">Question 1 of 3</p>
