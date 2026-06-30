@@ -79,7 +79,7 @@ const providerRows: DetailRow[] = [
         rel="noopener noreferrer"
         className="font-semibold text-brand-dark underline-offset-4 hover:text-brand-main hover:underline"
       >
-        +94 77 390 2230
+        Message on WhatsApp
       </a>
     ),
   },

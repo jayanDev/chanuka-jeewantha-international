@@ -25,7 +25,7 @@ type LanguageLevel = "Native" | "Fluent" | "Intermediate" | "Basic" | "Not Appli
 const personalFields: Array<{ key: string; label: string; required?: boolean; placeholder?: string }> = [
   { key: "fullName", label: "Full Name", required: true },
   { key: "email", label: "Email Address", required: true },
-  { key: "whatsapp", label: "WhatsApp Number", required: true, placeholder: "+94 77 123 4567" },
+  { key: "whatsapp", label: "WhatsApp Number (with country code)", required: true, placeholder: "+1 555 123 4567" },
   { key: "location", label: "Current Location (City, Country)", required: true },
   { key: "linkedinUrl", label: "LinkedIn Profile URL" },
 ];
@@ -786,7 +786,7 @@ export default function CatalogueClient() {
                           className="mt-2 w-full rounded-[10px] border border-zinc-300 px-3 py-3 text-sm"
                         />
                       </label>
-                      <p className="mt-2 text-xs text-zinc-500">Accepted formats: JPG, PNG, or PDF. WhatsApp support: +94773902230</p>
+                      <p className="mt-2 text-xs text-zinc-500">Accepted formats: JPG, PNG, or PDF. Support available via WhatsApp.</p>
                     </div>
                   </section>
                 )}

@@ -31,7 +31,9 @@ const organizationLd = {
   image: `${siteUrl}/images/hero-chanuka.jpg`,
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
-    "Premium resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha.",
+    "Premium remote resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha. Serving US professionals nationwide.",
+  serviceType: "Resume Writing Service",
+  priceRange: "$179 - $1,499",
   areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
   contactPoint: {
     "@type": "ContactPoint",
@@ -39,6 +41,11 @@ const organizationLd = {
     areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
     availableLanguage: ["English"],
     url: `${siteUrl}/contact`,
+  },
+  availableChannel: {
+    "@type": "ServiceChannel",
+    serviceUrl: `${siteUrl}/contact`,
+    availableLanguage: ["English"],
   },
   sameAs: [
     "https://www.linkedin.com/in/chanuka-jeewantha/",

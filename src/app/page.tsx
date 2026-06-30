@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   ...buildPageMetadata({
     title: HOME_TITLE,
     description:
-      "Premium resume writing, ATS-optimized CVs, LinkedIn optimization, cover letters, and executive career branding for senior professionals pursuing competitive global roles.",
+      "Premium ATS resume writing for US professionals — executive CVs, LinkedIn optimization, and cover letters. Personally written, with a 90-day interview guarantee.",
     path: "/",
   }),
   title: { absolute: HOME_TITLE },

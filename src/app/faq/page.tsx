@@ -8,9 +8,9 @@ import FAQSection from "@/components/FAQSection";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "FAQ | Resume, CV & LinkedIn Services",
+  title: "Resume Writing FAQ | Pricing, Delivery & 90-Day Guarantee",
   description:
-    "Answers about premium resume writing, CV formats, LinkedIn optimization, payments, delivery timelines, and the career-branding process.",
+    "Answers about premium resume writing for US professionals — pricing, delivery timelines, payment methods, the 90-day interview guarantee, and how the process works.",
   path: "/faq",
 });
 

@@ -119,14 +119,7 @@ export default function Footer() {
               &copy; {currentYear} Chanuka Jeewantha. Premium Career Branding Services.
             </p>
             <p className="text-white/55 text-xs">
-              In Sri Lanka?{" "}
-              <a
-                href="https://www.chanukajeewantha.lk/"
-                className="font-semibold text-brand-main hover:underline"
-              >
-                Visit chanukajeewantha.lk
-              </a>{" "}
-              for local services.
+              Fully remote service for professionals across the United States and worldwide.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4">
