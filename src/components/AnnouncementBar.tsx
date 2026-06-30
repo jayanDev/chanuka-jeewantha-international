@@ -17,7 +17,7 @@ export default function AnnouncementBar() {
         <div className="flex items-center gap-3">
           <span className="announcement-text text-sm font-medium text-[#0A2540] sm:text-base">
             <strong>Signature Series packages now available.</strong>
-            <span className="hidden sm:inline"> Premium USD pricing for executive resumes, CVs, LinkedIn, and full career-branding suites.</span>
+            <span className="hidden sm:inline"> Premium pricing for executive resumes, CVs, LinkedIn, and full career-branding suites.</span>
             <Link href="/pricing" className="announcement-link ml-2 font-semibold underline hover:no-underline">
               View Packages
             </Link>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useRef, useState } from "react";
 import SearchModal from "@/components/SearchModal";
+import CurrencySwitcher from "@/components/CurrencySwitcher";
 import { CALENDLY_URL } from "@/lib/booking-config";
 
 type NavUser = {
@@ -251,6 +252,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
           </div>
 
           <div className="ml-auto flex items-center gap-4">
+            <CurrencySwitcher tone="dark" className="hidden lg:inline-flex" />
             <button
               type="button"
               onClick={() => setIsSearchOpen(true)}
@@ -412,6 +414,10 @@ export default function Header({ initialUser = null }: HeaderProps) {
         }`}
       >
         <nav className="flex flex-col items-center gap-6 px-4">
+          <div className="flex items-center gap-2 text-sm text-zinc-500">
+            <span>Currency:</span>
+            <CurrencySwitcher tone="dark" />
+          </div>
           {primaryNavLinks.map((link, index) => {
             if (link.external) {
               return (

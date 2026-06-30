@@ -10,6 +10,7 @@ import HeartbeatAnalytics from "@/components/AnalyticsHeartbeat";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SeasonalOfferBanner from "@/components/SeasonalOfferBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
+import CurrencyProvider from "@/components/CurrencyProvider";
 import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
 
@@ -218,17 +219,19 @@ export default async function RootLayout({
             <HeartbeatAnalytics />
           </Suspense>
         ) : null}
-        <AnnouncementBar />
-        <div id="site-nav">
-          <Header initialUser={currentUser} />
-          <SeasonalOfferBanner />
-          <Breadcrumbs />
-        </div>
-        <main id="main-content" className="flex-grow flex flex-col">
-          {children}
-        </main>
-        <Footer />
-        <BackToTop />
+        <CurrencyProvider>
+          <AnnouncementBar />
+          <div id="site-nav">
+            <Header initialUser={currentUser} />
+            <SeasonalOfferBanner />
+            <Breadcrumbs />
+          </div>
+          <main id="main-content" className="flex-grow flex flex-col">
+            {children}
+          </main>
+          <Footer />
+          <BackToTop />
+        </CurrencyProvider>
       </body>
     </html>
   );

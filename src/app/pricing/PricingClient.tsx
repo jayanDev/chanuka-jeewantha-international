@@ -1,30 +1,44 @@
 "use client";
 
 import Link from "next/link";
-import { formatUsd, packageCategories } from "@/lib/packages-catalog";
+import { packageCategories } from "@/lib/packages-catalog";
 import PageHero from "@/components/PageHero";
+import Price from "@/components/Price";
 
 // Sinhala/LKR ebooks are hidden on the international .com site (they move to the .lk site).
 const SHOW_LOCAL_EBOOKS = false;
 
-const bundles = [
+type PricingBundle = {
+  name: string;
+  priceUsd: number;
+  saveUsd: number;
+  label?: string;
+  audience?: string;
+  highlighted?: boolean;
+  premium?: boolean;
+  includes: string[];
+  cta: string;
+};
+
+const bundles: PricingBundle[] = [
   {
     name: "Starter Pack",
-    price: "$179",
+    priceUsd: 179,
+    saveUsd: 98,
     label: "For graduates and early-career candidates",
     includes: [
       "ATS Resume / CV — graduate level",
       "Cover Letter",
       "LinkedIn Optimization",
       "7-day delivery",
-      "Save $98 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Starter Pack",
   },
   {
     name: "Career Pack",
-    price: "$349",
+    priceUsd: 349,
+    saveUsd: 128,
     label: "Most Popular",
     audience: "Mid-career professionals",
     highlighted: true,
@@ -34,14 +48,14 @@ const bundles = [
       "Cover Letter",
       "30-day support",
       "1 round of revisions",
-      "Save $128 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Career Pack",
   },
   {
     name: "Career Move Pack",
-    price: "$499",
+    priceUsd: 499,
+    saveUsd: 176,
     audience: "Professionals making a cross-border move",
     includes: [
       "ATS Resume tailored to your target market",
@@ -49,14 +63,14 @@ const bundles = [
       "LinkedIn Optimization",
       "Cover Letter — 2 versions for different roles",
       "60-day support",
-      "Save $176 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Career Move Pack",
   },
   {
     name: "Executive Brand Suite",
-    price: "$899",
+    priceUsd: 899,
+    saveUsd: 327,
     audience: "Senior professionals and executives",
     includes: [
       "Executive ATS Resume / CV",
@@ -65,14 +79,14 @@ const bundles = [
       "Modern CV format for senior hiring panels",
       "1-Hour Strategy Consultation",
       "90-day premium support",
-      "Save $327 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Executive Brand Suite",
   },
   {
     name: "C-Suite Premium",
-    price: "$1,499",
+    priceUsd: 1499,
+    saveUsd: 647,
     audience: "C-Suite, directors, and founders",
     premium: true,
     includes: [
@@ -83,7 +97,6 @@ const bundles = [
       "2-Hour Strategy Sessions",
       "6-month support",
       "Quarterly LinkedIn refresh",
-      "Save $647 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose C-Suite Premium",
@@ -157,7 +170,7 @@ export default function PricingClient() {
                   </p>
                 </div>
                 <p className={`mt-6 font-heading text-[34px] font-bold ${bundle.premium ? "text-white" : "text-foreground"}`}>
-                  {bundle.price}
+                  <Price usd={bundle.priceUsd} />
                 </p>
                 <ul className={`mt-6 flex-grow space-y-3 text-sm ${bundle.premium ? "text-white/80" : "text-zinc-700"}`}>
                   {bundle.includes.map((item) => (
@@ -166,6 +179,10 @@ export default function PricingClient() {
                       <span>{item}</span>
                     </li>
                   ))}
+                  <li className="flex gap-2">
+                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-main" />
+                    <span>Save <Price usd={bundle.saveUsd} /> vs separate services</span>
+                  </li>
                 </ul>
                 <Link
                   href={`/contact?package=${encodeURIComponent(bundle.name)}`}
@@ -194,7 +211,7 @@ export default function PricingClient() {
                 Compare Premium Services
               </h2>
               <p className="mt-3 max-w-2xl text-zinc-600">
-                All pricing is shown in USD. Select a single service or request a complete bundle after your profile review.
+                Prices are shown in your local currency (USD is the base). Select a single service or request a complete bundle after your profile review.
               </p>
             </div>
             <Link
@@ -220,7 +237,9 @@ export default function PricingClient() {
                   {category.packages.map((pkg) => (
                     <div key={pkg.slug} className="grid grid-cols-[minmax(0,1fr)_auto] gap-4 border-b border-zinc-100 px-4 py-3 last:border-b-0">
                       <span className="text-sm font-semibold text-zinc-800">{pkg.audience}</span>
-                      <span className="text-sm font-bold text-foreground">{pkg.priceNote ?? formatUsd(pkg.priceLkr)}</span>
+                      <span className="text-sm font-bold text-foreground">
+                        <Price usd={pkg.priceLkr} suffix={pkg.priceNote ? "+" : undefined} />
+                      </span>
                     </div>
                   ))}
                 </div>

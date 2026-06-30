@@ -73,7 +73,7 @@ const nextConfig: NextConfig = {
 					"style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://assets.calendly.com",
 					"font-src 'self' https://fonts.gstatic.com",
 					"img-src 'self' data: blob: https:",
-					"connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://firestore.googleapis.com https://storage.googleapis.com https://calendly.com https://assets.calendly.com",
+					"connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://firestore.googleapis.com https://storage.googleapis.com https://calendly.com https://assets.calendly.com https://ipwho.is",
 					"frame-src 'self' https://www.youtube.com https://player.vimeo.com https://calendly.com",
 					"frame-ancestors 'none'",
 					"base-uri 'self'",

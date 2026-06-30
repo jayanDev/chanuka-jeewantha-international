@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useState } from "react";
 import {
-  getPackageDisplayPrice,
   packageCategories,
   serviceOptionChoices,
 } from "@/lib/packages-catalog";
 import PackagesFilterBar from "./PackagesFilterBar";
+import Price from "@/components/Price";
 
 // Sinhala/LKR ebooks are hidden on the international .com site (they move to the .lk site).
 const SHOW_LOCAL_EBOOKS = false;
@@ -24,7 +24,7 @@ export default function PackagesPageClient() {
             Browse every Signature Series package
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
-            USD pricing, premium inclusions, and the full career-branding service line — visible upfront.
+            Transparent pricing in your local currency, premium inclusions, and the full career-branding service line — visible upfront.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link href="/contact" className="btn btn-secondary !border-white/40 !text-white hover:!bg-white/10">
@@ -87,7 +87,7 @@ export default function PackagesPageClient() {
                         )}
 
                         <span className="mt-4 font-heading text-[24px] font-bold text-primary">
-                          {getPackageDisplayPrice(pkg)}
+                          <Price usd={pkg.priceLkr} suffix={pkg.priceNote ? "+" : undefined} />
                         </span>
                         <p className="mt-1 text-xs uppercase tracking-wider text-text-secondary">
                           {pkg.delivery}

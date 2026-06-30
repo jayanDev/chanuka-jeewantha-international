@@ -5,6 +5,7 @@ import { getBaseUrl } from "@/lib/site-url";
 import { buildPageMetadata } from "@/lib/seo";
 import { featuredReviews, GOOGLE_REVIEWS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/featured-reviews";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
+import Price from "@/components/Price";
 import { CALENDLY_URL } from "@/lib/booking-config";
 
 const HOME_TITLE = "#1 Premium ATS Resume Writing Service in United States";
@@ -57,7 +58,8 @@ const services = [
 
 type Bundle = {
   name: string;
-  price: string;
+  priceUsd: number;
+  saveUsd: number;
   audience: string;
   delivery: string;
   includes: string[];
@@ -69,21 +71,22 @@ type Bundle = {
 const bundles: Bundle[] = [
   {
     name: "Starter Pack",
-    price: "$179",
+    priceUsd: 179,
+    saveUsd: 98,
     audience: "For graduates & early-career candidates",
     delivery: "7-day delivery",
     includes: [
       "ATS Resume / CV — graduate level",
       "Cover Letter",
       "LinkedIn Optimization",
-      "Save $98 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Starter Pack",
   },
   {
     name: "Career Pack",
-    price: "$349",
+    priceUsd: 349,
+    saveUsd: 128,
     audience: "For mid-career professionals",
     delivery: "30-day support included",
     popular: true,
@@ -92,14 +95,14 @@ const bundles: Bundle[] = [
       "LinkedIn Optimization",
       "Cover Letter",
       "1 round of revisions",
-      "Save $128 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Career Pack",
   },
   {
     name: "Career Move Pack",
-    price: "$499",
+    priceUsd: 499,
+    saveUsd: 176,
     audience: "For cross-border / market-change applicants",
     delivery: "60-day support included",
     includes: [
@@ -107,14 +110,14 @@ const bundles: Bundle[] = [
       "Modern CV format for cross-border roles",
       "LinkedIn Optimization",
       "Cover Letter — 2 versions",
-      "Save $176 vs separate services",
       "90-day interview guarantee — 100% money-back",
     ],
     cta: "Choose Career Move Pack",
   },
   {
     name: "Executive Brand Suite",
-    price: "$899",
+    priceUsd: 899,
+    saveUsd: 327,
     audience: "For senior professionals & executives",
     delivery: "90-day premium support",
     includes: [
@@ -129,7 +132,8 @@ const bundles: Bundle[] = [
   },
   {
     name: "C-Suite Premium",
-    price: "$1,499",
+    priceUsd: 1499,
+    saveUsd: 647,
     audience: "For C-Suite, directors & founders",
     delivery: "6-month support",
     premium: true,
@@ -497,10 +501,11 @@ export default async function Home() {
             <h2 className="mt-3 font-heading text-[36px] font-bold leading-tight text-white md:text-[52px] tracking-tight">
               Choose a complete career-branding package.
             </h2>
+            <p className="mt-3 text-sm text-white/55">Prices shown in your local currency — switch anytime in the menu.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-stretch">
             {bundles.map((bundle) => {
-              const { name, price, audience, delivery, includes, cta, popular, premium } = bundle;
+              const { name, priceUsd, saveUsd, audience, delivery, includes, cta, popular, premium } = bundle;
               return (
                 <article
                   key={name}
@@ -536,9 +541,8 @@ export default async function Home() {
                   </p>
 
                   {/* Price */}
-                  <p className={`mt-5 font-bold leading-none ${popular ? "text-[#0A2540]" : "text-white"}`}>
-                    <span className="text-[22px] font-normal opacity-60">{price.charAt(0)}</span>
-                    <span className="text-[34px]">{price.slice(1)}</span>
+                  <p className={`mt-5 font-heading text-[34px] font-bold leading-none ${popular ? "text-[#0A2540]" : "text-white"}`}>
+                    <Price usd={priceUsd} />
                   </p>
                   <p className={`mt-1.5 text-[10px] uppercase tracking-wider ${popular ? "text-zinc-500" : "text-white/50"}`}>
                     {delivery}
@@ -554,6 +558,12 @@ export default async function Home() {
                         <span className="leading-snug">{item}</span>
                       </li>
                     ))}
+                    <li className="flex items-start gap-2">
+                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9A961]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                      <span className="leading-snug">Save <Price usd={saveUsd} /> vs separate services</span>
+                    </li>
                   </ul>
 
                   {/* CTA button — same as packages page */}
