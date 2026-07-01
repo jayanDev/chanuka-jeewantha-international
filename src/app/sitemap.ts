@@ -6,6 +6,7 @@ import { packageProducts } from "@/lib/packages-catalog";
 import { digitalResources } from "@/lib/resources";
 import { caseStudies } from "@/lib/case-studies";
 import { getBlogCategoryPath, getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
+import { getBlogPostLanguage } from "@/lib/blog-i18n";
 import { careerTools } from "@/lib/tools";
 import { industryLandingPages } from "@/lib/industry-pages";
 import { industryPages as resumeWriterIndustries } from "@/lib/industry-resume-pages";
@@ -121,12 +122,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   }
 
-  const blogEntries = posts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.updatedAt ?? post.publishedAt ?? siteLastUpdated,
-    changeFrequency: "monthly" as const,
-    priority: 0.65,
-  }));
+  const blogEntries = posts
+    // Sinhala posts are noindexed on the US .com, so keep them out of the sitemap.
+    .filter((post) => getBlogPostLanguage(post.slug) !== "si")
+    .map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.updatedAt ?? post.publishedAt ?? siteLastUpdated,
+      changeFrequency: "monthly" as const,
+      priority: 0.65,
+    }));
 
   const blogIndexEntries = [{
     url: `${baseUrl}/blog`,

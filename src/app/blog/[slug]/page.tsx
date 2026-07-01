@@ -80,6 +80,16 @@ export async function generateMetadata({
     });
   }
 
+  // Sinhala posts are noindexed on the US-focused .com so ranking signals
+  // stay concentrated on English/US content.
+  if (getBlogPostLanguage(slug) === "si") {
+    return buildNoIndexMetadata({
+      title: `${post.title} | Chanuka Jeewantha Blog`,
+      description: post.excerpt,
+      path: `/blog/${slug}`,
+    });
+  }
+
   const fallbackPost = getPostBySlug(slug);
   if (fallbackPost && !isIndexableFallbackBlogPost(fallbackPost)) {
     return buildNoIndexMetadata({
