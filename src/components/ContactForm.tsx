@@ -2,6 +2,11 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
+// Web3Forms public access key. This is designed to be exposed client-side
+// (spam is handled by the honeypot + Web3Forms filtering). Emails the enquiry
+// to chanukajeewantha00@gmail.com.
+const WEB3FORMS_ACCESS_KEY = "765378bb-9111-4bd6-88a9-0850d94e8ff8";
+
 const careerLevels = [
   "Student",
   "Fresh Graduate",
@@ -163,21 +168,65 @@ export default function ContactForm() {
     setSubmitStatus("idle");
     setErrorText("");
 
+    // Honeypot: if the hidden field is filled, it's a bot. Show success, send nothing.
+    if (formData.website.trim()) {
+      setSubmitStatus("success");
+      setFormData(initialFormState);
+      setCurrentCv(null);
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
+      const phone = formData.whatsappNumber.trim()
+        ? `${formData.countryCode} ${formData.whatsappNumber}`.trim()
+        : "Not provided";
+
+      const lines = [
+        `Name: ${formData.name}`,
+        `Email: ${formData.email}`,
+        `WhatsApp: ${phone}`,
+        `Current Country: ${formData.currentCountry || "-"}`,
+        `Target Market: ${formData.targetCountry || "-"}`,
+        `Career Level: ${formData.careerLevel}`,
+        `Target Role: ${formData.targetRole || "-"}`,
+        `Years of Experience: ${formData.yearsExperience || "-"}`,
+        `Selected Service / Package: ${formData.selectedService}`,
+        `LinkedIn: ${formData.linkedinUrl || "-"}`,
+        "",
+        "Message / Career Goal:",
+        formData.message || "(none provided)",
+      ];
+
+      // Attach the CV if it's within Web3Forms' 5MB limit; otherwise note it.
+      const MAX_ATTACHMENT = 5 * 1024 * 1024;
+      const attachCv = currentCv && currentCv.size <= MAX_ATTACHMENT ? currentCv : null;
+      if (currentCv && !attachCv) {
+        lines.push("", "(Note: CV file exceeded 5MB and was not attached - please request it by email.)");
+      }
+
       const payload = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (key === "countryCode" || key === "whatsappNumber") return;
-        payload.append(key, value);
+      payload.append("access_key", WEB3FORMS_ACCESS_KEY);
+      payload.append("subject", `New enquiry: ${formData.selectedService || "Career branding"} - ${formData.name}`);
+      payload.append("from_name", "Chanuka Jeewantha Website");
+      payload.append("name", formData.name);
+      payload.append("email", formData.email);
+      payload.append("replyto", formData.email);
+      payload.append("botcheck", "");
+      payload.append("message", lines.join("\n"));
+      if (attachCv) payload.append("attachment", attachCv);
+
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
       });
-      const phone = formData.whatsappNumber.trim() ? `${formData.countryCode} ${formData.whatsappNumber}`.trim() : "";
-      payload.append("whatsapp", phone);
-      if (currentCv) payload.append("currentCv", currentCv);
+      const data = await response.json().catch(() => ({}));
 
-      const response = await fetch("/api/contact", { method: "POST", body: payload });
-
-      if (!response.ok) {
-        const data = await response.json();
-        throw new Error(data?.error ?? "Failed to submit enquiry.");
+      if (!response.ok || !data?.success) {
+        throw new Error(
+          data?.message ||
+            "We couldn't send your enquiry. Please email chanukajeewantha00@gmail.com directly."
+        );
       }
 
       setSubmitStatus("success");
@@ -187,7 +236,11 @@ export default function ContactForm() {
       setTouched({});
     } catch (error: unknown) {
       setSubmitStatus("error");
-      setErrorText(error instanceof Error ? error.message : "Something went wrong.");
+      setErrorText(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please email chanukajeewantha00@gmail.com directly."
+      );
     } finally {
       setIsSubmitting(false);
     }
