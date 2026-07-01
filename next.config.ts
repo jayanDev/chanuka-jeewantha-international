@@ -9,6 +9,17 @@ const nextConfig: NextConfig = {
 	async redirects() {
 		return [
 			{
+				// Ebooks were removed from the .com; send old crawled URLs to resources.
+				source: "/ebooks",
+				destination: "/resources",
+				permanent: true,
+			},
+			{
+				source: "/ebooks/:path*",
+				destination: "/resources",
+				permanent: true,
+			},
+			{
 				source: "/email-templates",
 				destination: "/resources",
 				permanent: true,

@@ -18,8 +18,9 @@ export default function robots(): MetadataRoute.Robots {
           "/checkout/",
           "/orders/",
           "/notifications/",
-          "/ebooks/",
-          "/ebooks",
+          // /ebooks is intentionally NOT disallowed: it 301-redirects to
+          // /resources, and Googlebot must be able to crawl it to process the
+          // redirect and drop the old ebook URLs from the index.
           "/catalogue/",
           "/catalogue",
           "/tutorials/",
