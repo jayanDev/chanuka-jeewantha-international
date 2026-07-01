@@ -13,7 +13,7 @@ import { cityPages } from "@/lib/city-resume-pages";
 import { careerStagePages } from "@/lib/career-stage-pages";
 
 const baseUrl = getBaseUrl();
-const siteLastUpdated = new Date("2026-05-21T00:00:00.000Z");
+const siteLastUpdated = new Date("2026-07-02T00:00:00.000Z");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
