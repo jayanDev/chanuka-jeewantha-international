@@ -4,6 +4,7 @@ import { enrichBlogPostContent } from "./blog-content-enrichment";
 import { cvSeriesEn } from "./blog-cv-series-en";
 import { usCareerBlogPosts } from "./blog-us-career-library";
 import { usKeywordBlogPosts } from "./blog-us-keyword-series";
+import { usKeywordBlogPosts2 } from "./blog-us-keyword-series-2";
 import { authorityPosts } from "./blog-authority";
 
 export type BlogLink = {
@@ -1282,7 +1283,7 @@ const editorialPosts: BlogPost[] = [
   },
 ];
 
-export const blogPosts: BlogPost[] = [...usKeywordBlogPosts, ...authorityPosts, ...usCareerBlogPosts, ...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn].map(enrichBlogPostContent).sort(
+export const blogPosts: BlogPost[] = [...usKeywordBlogPosts, ...usKeywordBlogPosts2, ...authorityPosts, ...usCareerBlogPosts, ...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn].map(enrichBlogPostContent).sort(
   (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
 );
 

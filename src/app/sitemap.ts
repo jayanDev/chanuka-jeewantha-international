@@ -77,6 +77,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/is-a-resume-writer-worth-it",
     "/resume-writer-vs-chatgpt",
     "/professional-resume-writer-vs-template",
+    // Keyword-cluster landing pages
+    "/resume-examples",
+    "/resume-and-cover-letter",
+    "/cv-writing-service",
+    "/build-your-resume",
   ];
 
   const staticEntries = staticRoutes.map((route) => ({
