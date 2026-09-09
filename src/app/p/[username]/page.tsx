@@ -1,17 +1,18 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getPortfolioByUsername } from "@/lib/portfolios";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateMetadata(props: { params: Promise<{ username: string }> }) {
   const params = await props.params;
   const portfolio = getPortfolioByUsername(params.username);
-  if (!portfolio) return null;
+  if (!portfolio) notFound();
 
-  return {
+  return buildPageMetadata({
     title: `${portfolio.fullName} | ${portfolio.tagline}`,
     description: portfolio.aboutSummary.substring(0, 160),
-    robots: { index: true, follow: true },
-  };
+    path: `/p/${portfolio.username}`,
+  });
 }
 
 export default async function PortfolioPage(props: { params: Promise<{ username: string }> }) {

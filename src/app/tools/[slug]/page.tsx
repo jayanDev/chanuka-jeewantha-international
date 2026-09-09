@@ -10,6 +10,8 @@ type ToolPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return careerTools.map((tool) => ({ slug: tool.slug }));
 }
@@ -19,11 +21,7 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const tool = getCareerToolBySlug(slug);
 
   if (!tool) {
-    return buildPageMetadata({
-      title: "Tool Not Found",
-      description: "The requested tool could not be found.",
-      path: `/tools/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

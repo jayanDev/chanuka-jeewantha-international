@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { getTutorialBySlug } from "@/lib/tutorials";
+import { getTutorialBySlug, tutorialCategories } from "@/lib/tutorials";
 
 interface TutorialPageProps {
   params: Promise<{ slug: string }>;
@@ -11,13 +11,14 @@ export async function generateMetadata({ params }: TutorialPageProps) {
   const { slug } = await params;
   const match = getTutorialBySlug(slug);
 
-  if (!match) return { title: "Tutorial Not Found" };
+  if (!match) notFound();
 
   const content = match.language === "en" ? match.tutorial.en : match.tutorial.si;
 
   return {
     title: content.seoTitle,
     description: content.metaDescription,
+    robots: { index: match.language === "en", follow: true },
     alternates: {
       canonical: `/tutorials/${content.slug}`,
     }
@@ -55,7 +56,7 @@ export default async function TutorialPage({ params }: TutorialPageProps) {
         <div className="container mx-auto px-4 h-full flex flex-col justify-end pb-16 relative z-10">
           <div className="max-w-4xl mx-auto w-full">
             <Link 
-              href={`/tutorials/category/${tutorial.categoryId}`}
+              href={`/tutorials/category/${tutorialCategories.find((category) => category.id === tutorial.categoryId)?.slug}`}
               className="text-blue-300 hover:text-blue-100 mb-6 inline-block font-semibold uppercase tracking-wider text-sm"
             >
               ← Back to Category

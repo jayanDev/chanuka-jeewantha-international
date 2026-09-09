@@ -11,5 +11,11 @@ export async function getServerUser(): Promise<AuthUser | null> {
   const cookieStore = await cookies();
   const token = cookieStore.get(getSessionCookieName())?.value;
   if (!token) return null;
-  return getUserBySessionToken(token);
+  try {
+    return await getUserBySessionToken(token);
+  } catch {
+    // Public rendering survives an auth outage; protected pages still see no authenticated user.
+    console.error("[auth] Server session lookup unavailable");
+    return null;
+  }
 }

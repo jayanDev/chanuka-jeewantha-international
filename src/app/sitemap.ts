@@ -1,11 +1,14 @@
 import type { MetadataRoute } from "next";
-import { prisma } from "@/lib/prisma";
+import { getCachedBlogListing } from "@/lib/blog-listing";
+import { BLOG_PAGE_SIZE } from "@/lib/blog-pagination";
+import { checklists } from "@/lib/checklists";
+import { tutorials, tutorialCategories } from "@/lib/tutorials";
+import { landingPages } from "@/lib/landing-pages";
 import { getBaseUrl } from "@/lib/site-url";
-import { blogPosts } from "@/content/blog-posts";
 import { packageProducts } from "@/lib/packages-catalog";
 import { digitalResources } from "@/lib/resources";
 import { caseStudies } from "@/lib/case-studies";
-import { getBlogCategoryPath, getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
+import { getBlogCategoryPath } from "@/lib/blog-discovery";
 import { getBlogPostLanguage } from "@/lib/blog-i18n";
 import { careerTools } from "@/lib/tools";
 import { industryLandingPages } from "@/lib/industry-pages";
@@ -16,6 +19,7 @@ import { marketSitemapEntries } from "@/lib/market-seo";
 
 const baseUrl = getBaseUrl();
 const siteLastUpdated = new Date("2026-07-02T00:00:00.000Z");
+export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
@@ -37,6 +41,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/services/industries",
     "/businesses",
     "/resources",
+    "/resources/checklists",
+    "/tutorials",
+    "/refund-policy",
+    "/bundles",
     "/tools",
     "/booking",
     "/reviews",
@@ -48,10 +56,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/offers/bundles",
     "/offers/bulk-discount-packages",
     "/offers/bundle-discount-packages",
-    "/offers/bulk-cv-5-pack",
-    "/offers/bulk-cv-10-pack",
-    "/offers/career-brand-trinity-bundle",
-    "/offers/application-duo-bundle",
     "/pricing",
     "/fiverr-orders",
     "/affiliate",
@@ -63,7 +67,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy-policy",
     "/terms-and-conditions",
     "/resume",
-    "/services/packages",
     "/cv-writing/usa",
     "/cv-writing/uk",
     "/cv-writing/australia",
@@ -96,33 +99,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === "" ? 1 : 0.7,
   }));
 
-  const fallbackPosts: Array<{ slug: string; publishedAt: Date | null; updatedAt: Date; category: string }> = getIndexableFallbackBlogPosts(blogPosts).map((post) => {
-    const date = post.publishedAt ? new Date(post.publishedAt) : new Date();
-    return {
-      slug: post.slug,
-      publishedAt: date,
-      updatedAt: date,
-      category: post.category,
-    };
-  });
-
-  let posts: Array<{ slug: string; publishedAt: Date | null; updatedAt: Date; category: string }> = fallbackPosts;
-  if (process.env.DATABASE_URL) {
-    try {
-      const dbPosts = await prisma.post.findMany({
-        where: { isPublished: true },
-        select: { slug: true, publishedAt: true, updatedAt: true, category: true },
-      });
-
-      const dbSlugs = new Set(dbPosts.map((item: { slug: string }) => item.slug));
-      posts = [
-        ...dbPosts,
-        ...fallbackPosts.filter((item) => !dbSlugs.has(item.slug)),
-      ];
-    } catch {
-      posts = fallbackPosts;
-    }
-  }
+  const posts = await getCachedBlogListing();
 
   const blogEntries = posts
     // Sinhala posts are noindexed on the US .com, so keep them out of the sitemap.
@@ -207,6 +184,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const entries = [
+    ...landingPages.filter((item) => !/(sri-lanka|sinhala)/.test(item.slug))
+      .map((item) => ({ url: `${baseUrl}/${item.slug}` })),
+    ...tutorials.map((item) => ({ url: `${baseUrl}/tutorials/${item.en.slug}` })),
+    ...tutorialCategories.filter((category) => tutorials.some((item) => item.categoryId === category.id))
+      .map((category) => ({ url: `${baseUrl}/tutorials/category/${category.slug}` })),
+    ...checklists.map((item) => ({ url: `${baseUrl}/resources/checklists/${item.slug}` })),
+    ...Array.from({ length: Math.max(0, Math.ceil(posts.length / BLOG_PAGE_SIZE) - 1) }, (_, index) => ({
+      url: `${baseUrl}/blog?page=${index + 2}`,
+    })),
     ...marketSitemapEntries(),
     ...staticEntries,
     ...blogIndexEntries,

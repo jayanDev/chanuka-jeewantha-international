@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
 	},
 	async redirects() {
 		return [
+			{ source: "/services/packages", destination: "/pricing", permanent: true },
 			{
 				// Ebooks were removed from the .com; send old crawled URLs to resources.
 				source: "/ebooks",

@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function GlobalError({
   error,
-  reset,
+  unstable_retry,
 }: {
   error: Error & { digest?: string };
-  reset: () => void;
+  unstable_retry: () => void;
 }) {
   useEffect(() => {
     // Log to console in development; in production wire to your error reporter
@@ -22,13 +22,12 @@ export default function GlobalError({
         Something went wrong
       </h1>
       <p className="text-text-body text-[16px] sm:text-[18px] max-w-xl mb-8">
-        An unexpected error occurred. It&apos;s been noted and we&apos;re looking into it. You can
-        try again or head back to the homepage.
+        An unexpected error occurred. Please try again or return to the homepage.
       </p>
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <button
           type="button"
-          onClick={reset}
+          onClick={unstable_retry}
           className="px-[25px] py-[15px] bg-brand-main hover:bg-brand-dark rounded-[10px] text-white font-medium transition-colors"
         >
           Try Again

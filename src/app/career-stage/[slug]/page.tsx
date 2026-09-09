@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 import { buildServiceSchema } from "@/lib/service-schema";
 import { careerStagePages, getCareerStagePage } from "@/lib/career-stage-pages";
@@ -12,6 +12,8 @@ import { parseUsd } from "@/lib/currency";
 
 type PageProps = { params: Promise<{ slug: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return careerStagePages.map((p) => ({ slug: p.slug }));
 }
@@ -20,11 +22,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const page = getCareerStagePage(slug);
   if (!page) {
-    return buildNoIndexMetadata({
-      title: "Page not found",
-      description: "The requested page is not available.",
-      path: `/career-stage/${slug}`,
-    });
+    notFound();
   }
   return {
     ...buildPageMetadata({

@@ -3,11 +3,12 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { FormEvent, useState } from "react";
+import { safeReturnTo } from "@/lib/return-to";
 
 export default function SignInPage() {
   const router = useRouter();
   const params = useSearchParams();
-  const returnTo = params.get("returnTo") ?? "/";
+  const returnTo = safeReturnTo(params.get("returnTo"));
   const oauthError = params.get("oauthError") ?? "";
 
   const [email, setEmail] = useState("");

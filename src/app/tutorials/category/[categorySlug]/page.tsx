@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { tutorialCategories, tutorials } from "@/lib/tutorials";
+import { buildPageMetadata } from "@/lib/seo";
 
 interface CategoryPageProps {
   params: Promise<{ categorySlug: string }>;
@@ -10,12 +11,13 @@ interface CategoryPageProps {
 export async function generateMetadata({ params }: CategoryPageProps) {
   const { categorySlug } = await params;
   const category = tutorialCategories.find((c) => c.slug === categorySlug);
-  if (!category) return { title: "Category Not Found" };
+  if (!category || !tutorials.some((item) => item.categoryId === category.id)) notFound();
 
-  return {
+  return buildPageMetadata({
     title: `${category.title} | Expert Tutorials`,
     description: category.description,
-  };
+    path: `/tutorials/category/${category.slug}`,
+  });
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

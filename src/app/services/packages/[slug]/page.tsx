@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ServicesPackageFilter from "@/app/services/ServicesPackageFilter";
 import { packageCategories, type ServiceKey } from "@/lib/packages-catalog";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
 const slugToCategoryTitle: Record<string, string> = {
   "ats-cv": "ATS Resume / CV Writing",
@@ -13,6 +13,8 @@ const slugToCategoryTitle: Record<string, string> = {
   "graphical-cv": "Graphical CV / Premium Design",
   consultation: "Career Consultation",
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return Object.keys(slugToCategoryTitle).map((slug) => ({ slug }));
@@ -27,11 +29,7 @@ export async function generateMetadata({
   const categoryTitle = slugToCategoryTitle[slug];
 
   if (!categoryTitle) {
-    return buildNoIndexMetadata({
-      title: "Service Packages Not Found",
-      description: "The requested package category is unavailable.",
-      path: `/services/packages/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

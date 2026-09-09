@@ -2,12 +2,14 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { formatUsd, getPackageDisplayPrice, packageProducts } from "@/lib/packages-catalog";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildProductSchema } from "@/lib/structured-data";
 
 type PackagePageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return packageProducts.map((pkg) => ({ slug: pkg.slug }));
@@ -18,11 +20,7 @@ export async function generateMetadata({ params }: PackagePageProps): Promise<Me
   const pkg = packageProducts.find((item) => item.slug === slug);
 
   if (!pkg) {
-    return buildNoIndexMetadata({
-      title: "Package Not Found",
-      description: "The requested package is unavailable.",
-      path: `/packages/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

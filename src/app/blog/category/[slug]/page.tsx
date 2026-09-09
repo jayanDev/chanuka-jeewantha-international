@@ -29,15 +29,11 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: BlogCategoryPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const category = getCategoryLabelFromSlug(fallbackCategories, slug);
+  const posts = await getCachedBlogListing();
+  const category = getCategoryLabelFromSlug(Array.from(new Set(posts.map((post) => post.category))), slug);
 
   if (!category) {
-    return buildPageMetadata({
-      title: "Blog Category Not Found",
-      description: "The requested blog category is not available.",
-      path: `/blog/category/${slug}`,
-      noIndex: true,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

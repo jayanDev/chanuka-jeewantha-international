@@ -7,7 +7,7 @@ import ResourceDownloadGate from "./_components/ResourceDownloadGate";
 import { getResourceBySlug, digitalResources, getResourceDownloadBySlug } from "@/lib/resources";
 import { getServerUser } from "@/lib/auth-server";
 import { formatLkr } from "@/lib/packages-catalog";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
 
@@ -29,6 +29,8 @@ function getWhatsappOrderLink(title: string, price: number) {
   return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(lines.join("\n"))}`;
 }
 
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return digitalResources.map((resource) => ({ slug: resource.slug }));
 }
@@ -38,11 +40,7 @@ export async function generateMetadata({ params }: ResourcePageProps): Promise<M
   const resource = getResourceBySlug(slug);
 
   if (!resource) {
-    return buildNoIndexMetadata({
-      title: "Resource Not Found",
-      description: "The requested resource is unavailable.",
-      path: `/resources/${slug}`,
-    });
+    notFound();
   }
 
   const base = buildPageMetadata({

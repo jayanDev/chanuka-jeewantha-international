@@ -3,13 +3,15 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { caseStudies, getCaseStudyBySlug } from "@/lib/case-studies";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
 
 type CaseStudyPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
@@ -20,11 +22,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   const study = getCaseStudyBySlug(slug);
 
   if (!study) {
-    return buildNoIndexMetadata({
-      title: "Case Study Not Found",
-      description: "The requested case study is unavailable.",
-      path: `/case-studies/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

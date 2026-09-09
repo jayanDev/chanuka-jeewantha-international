@@ -3,7 +3,9 @@ import Image from "next/image";
 import React from "react";
 import type { Metadata } from "next";
 import { getPostBySlug } from "@/content/blog-posts";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
+import { notFound, permanentRedirect } from "next/navigation";
+import { BLOG_PAGE_SIZE, parseBlogPage } from "@/lib/blog-pagination";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getCachedBlogListing } from "@/lib/blog-listing";
 import { getBlogCategoryPath } from "@/lib/blog-discovery";
@@ -18,8 +20,9 @@ export async function generateMetadata({
   searchParams: Promise<{ page?: string; category?: string }>;
 }): Promise<Metadata> {
   const resolvedSearchParams = await searchParams;
-  const requestedPage = Number.parseInt(String(resolvedSearchParams.page ?? "1"), 10);
-  const page = Number.isFinite(requestedPage) && requestedPage > 1 ? requestedPage : 1;
+  const page = parseBlogPage(resolvedSearchParams.page);
+  const posts = await getCachedBlogListing();
+  if (!page || page > Math.max(1, Math.ceil(posts.length / BLOG_PAGE_SIZE))) notFound();
   const activeCategory = resolvedSearchParams.category;
 
   const baseTitle = activeCategory ? `${activeCategory} Articles` : "Career Blog";
@@ -31,28 +34,8 @@ export async function generateMetadata({
       : "Career-focused articles on ATS-friendly CV writing, LinkedIn optimization, coaching, and roadmap strategy.";
 
   if (activeCategory) {
-    return buildNoIndexMetadata({
-      title,
-      description,
-      path: page > 1 ? `/blog?category=${encodeURIComponent(activeCategory)}&page=${page}` : `/blog?category=${encodeURIComponent(activeCategory)}`,
-      keywords: [
-        "career blog",
-        activeCategory.toLowerCase(),
-      ],
-    });
-  }
-
-  if (page > 1) {
-    return buildNoIndexMetadata({
-      title,
-      description,
-      path: `/blog?page=${page}`,
-      keywords: [
-        "career blog",
-        "ATS CV tips",
-        "LinkedIn optimization guide",
-      ],
-    });
+    if (!posts.some((post) => post.category === activeCategory)) notFound();
+    permanentRedirect(getBlogCategoryPath(activeCategory));
   }
 
   return buildPageMetadata({
@@ -76,9 +59,8 @@ export default async function BlogPage({
   searchParams: Promise<{ page?: string; category?: string }>;
 }) {
   const resolvedSearchParams = await searchParams;
-  const requestedPage = Number.parseInt(String(resolvedSearchParams.page ?? "1"), 10);
-  const safePage = Number.isFinite(requestedPage) && requestedPage > 0 ? requestedPage : 1;
-  const postsPerPage = 12;
+  const safePage = parseBlogPage(resolvedSearchParams.page);
+  const postsPerPage = BLOG_PAGE_SIZE;
   const activeCategory = resolvedSearchParams.category;
 
   const breadcrumbLd = buildBreadcrumbList([
@@ -94,7 +76,12 @@ export default async function BlogPage({
     : allPosts;
 
   const totalPages = Math.max(1, Math.ceil(posts.length / postsPerPage));
-  const currentPage = Math.min(safePage, totalPages);
+  if (!safePage || safePage > totalPages) notFound();
+  if (activeCategory) {
+    if (!categories.includes(activeCategory)) notFound();
+    permanentRedirect(getBlogCategoryPath(activeCategory));
+  }
+  const currentPage = safePage;
   const startIndex = (currentPage - 1) * postsPerPage;
   const visiblePosts = posts.slice(startIndex, startIndex + postsPerPage);
   

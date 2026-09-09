@@ -3,13 +3,15 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getCaseStudyBySlug } from "@/lib/case-studies";
 import { getIndustryLandingPageBySlug, industryLandingPages } from "@/lib/industry-pages";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 import { getBaseUrl } from "@/lib/site-url";
 
 type IndustryPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return industryLandingPages.map((item) => ({ slug: item.slug }));
@@ -20,11 +22,7 @@ export async function generateMetadata({ params }: IndustryPageProps): Promise<M
   const page = getIndustryLandingPageBySlug(slug);
 
   if (!page) {
-    return buildNoIndexMetadata({
-      title: "Industry Page Not Found",
-      description: "The requested industry career page is unavailable.",
-      path: `/services/industries/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

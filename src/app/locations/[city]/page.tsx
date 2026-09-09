@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 import { buildServiceSchema } from "@/lib/service-schema";
 import { cityPages, getCityPage, type CityPage } from "@/lib/city-resume-pages";
@@ -11,6 +11,8 @@ import PageCTA from "@/components/PageCTA";
 
 type PageProps = { params: Promise<{ city: string }> };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return cityPages.map((c) => ({ city: c.slug }));
 }
@@ -19,11 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { city } = await params;
   const page = getCityPage(city);
   if (!page) {
-    return buildNoIndexMetadata({
-      title: "Page not found",
-      description: "The requested page is not available.",
-      path: `/locations/${city}`,
-    });
+    notFound();
   }
   return {
     ...buildPageMetadata({

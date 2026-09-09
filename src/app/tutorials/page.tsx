@@ -1,11 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { tutorialCategories } from "@/lib/tutorials";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
-  title: "Career & CV Writing Tutorials - Expert Guides in Sri Lanka",
-  description: "Learn how to write ATS-friendly CVs, cover letters, and LinkedIn profiles for local and foreign jobs in our comprehensive tutorial library.",
-};
+export const metadata = buildPageMetadata({
+  title: "Resume, CV & LinkedIn Tutorials | Global Career Guides",
+  description: "Practical guides to ATS resume writing, cover letters, LinkedIn profiles and international job applications.",
+  path: "/tutorials",
+});
 
 export default function TutorialsPage() {
   return (

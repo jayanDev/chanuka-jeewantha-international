@@ -1,4 +1,5 @@
 import { randomBytes } from "node:crypto";
+import { safeReturnTo as sanitizeReturnTo } from "@/lib/return-to";
 import { NextResponse } from "next/server";
 import {
   createAuthUser,
@@ -14,13 +15,6 @@ const TOKEN_URL = "https://oauth2.googleapis.com/token";
 const USERINFO_URL = "https://openidconnect.googleapis.com/v1/userinfo";
 const OAUTH_STATE_COOKIE = "google_oauth_state";
 const OAUTH_RETURN_TO_COOKIE = "google_oauth_return_to";
-
-function sanitizeReturnTo(value: string | null): string {
-  if (!value) return "/";
-  if (!value.startsWith("/")) return "/";
-  if (value.startsWith("//")) return "/";
-  return value;
-}
 
 function buildGoogleRedirectUri(requestUrl: URL): string {
   const configuredRedirectUri = process.env.GOOGLE_REDIRECT_URI?.trim();

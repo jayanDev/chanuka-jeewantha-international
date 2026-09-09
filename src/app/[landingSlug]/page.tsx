@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { buildBreadcrumbList } from "@/lib/structured-data";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { formatLkr, packageProducts } from "@/lib/packages-catalog";
 import { getLandingPageBySlug, landingPages } from "@/lib/landing-pages";
 import { getMarket, markets } from "@/lib/markets";
@@ -26,11 +26,7 @@ export async function generateMetadata({ params }: LandingPageProps): Promise<Me
   const page = getLandingPageBySlug(landingSlug);
 
   if (!page) {
-    return buildNoIndexMetadata({
-      title: "Landing Page Not Found",
-      description: "The requested service landing page is unavailable.",
-      path: `/${landingSlug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

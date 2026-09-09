@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import React from "react";
 import type { Metadata } from "next";
-import { notFound, permanentRedirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import BlogCommentForm from "@/components/BlogCommentForm";
 import ServiceSidebarAds from "@/components/ServiceSidebarAds";
@@ -15,12 +15,7 @@ import { packageProducts } from "@/lib/packages-catalog";
 import { isIndexableFallbackBlogPost } from "@/lib/blog-discovery";
 import { getBlogPostLanguage, getSinhalaHreflangAlternates } from "@/lib/blog-i18n";
 import { getBlogCoverImage, isGeneratedBlogCoverImage } from "@/lib/blog-images";
-
-const retiredBlogRedirects: Record<string, string> = {
-  "package-guide-starter-cv-package": "/blog/package-guide-student-cv-package",
-  "package-guide-starter-cover-letter": "/blog/package-guide-student-cover-letter",
-  "package-guide-starter-linkedin-package": "/blog/package-guide-student-linkedin-package",
-};
+import { getPublicBlogPost } from "@/lib/blog-post";
 
 export async function generateMetadata({
   params,
@@ -28,56 +23,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  if (retiredBlogRedirects[slug]) {
-    return buildNoIndexMetadata({
-      title: "Article Moved | Chanuka Jeewantha Blog",
-      description: "This article has moved to the current Student package guide.",
-      path: `/blog/${slug}`,
-    });
-  }
 
   const baseUrl = getBaseUrl();
-  let post: {
-    title: string;
-    excerpt: string;
-    publishedAt?: string | Date | null;
-    updatedAt?: string | Date | null;
-    category?: string | null;
-    coverImage?: string | null;
-    keywords?: string[];
-  } | null = null;
-  if (process.env.DATABASE_URL) {
-    try {
-      post = await prisma.post.findUnique({
-        where: { slug },
-        select: { title: true, excerpt: true, publishedAt: true, updatedAt: true, category: true, coverImage: true },
-      });
-    } catch {
-      post = null;
-    }
-  }
+  const post = await getPublicBlogPost(slug);
 
   if (!post) {
-    const fallback = getPostBySlug(slug);
-    post = fallback
-      ? {
-          title: fallback.title,
-          excerpt: fallback.excerpt,
-          publishedAt: fallback.publishedAt ?? null,
-          updatedAt: fallback.publishedAt ?? null,
-          category: fallback.category,
-          coverImage: fallback.coverImage,
-          keywords: fallback.keywords,
-        }
-      : null;
-  }
-
-  if (!post) {
-    return buildNoIndexMetadata({
-      title: "Post Not Found | Chanuka Jeewantha Blog",
-      description: "This blog post is not available.",
-      path: `/blog/${slug}`,
-    });
+    notFound();
   }
 
   // Sinhala posts are noindexed on the US-focused .com so ranking signals
@@ -90,21 +41,12 @@ export async function generateMetadata({
     });
   }
 
-  const fallbackPost = getPostBySlug(slug);
-  if (fallbackPost && !isIndexableFallbackBlogPost(fallbackPost)) {
-    return buildNoIndexMetadata({
-      title: `${fallbackPost.title} | Chanuka Jeewantha Blog`,
-      description: fallbackPost.excerpt,
-      path: `/blog/${slug}`,
-    });
-  }
-
   const base = buildPageMetadata({
     title: `${post.title} | Chanuka Jeewantha Blog`,
     description: post.excerpt,
     path: `/blog/${slug}`,
     type: "article",
-    keywords: post.keywords,
+    keywords: getPostBySlug(slug)?.keywords,
     alternateLanguages: getSinhalaHreflangAlternates(slug) ?? undefined,
   });
 
@@ -142,66 +84,9 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const resolvedParams = await params;
-  const retiredRedirect = retiredBlogRedirects[resolvedParams.slug];
-  if (retiredRedirect) {
-    permanentRedirect(retiredRedirect);
-  }
 
   const fallbackPost = getPostBySlug(resolvedParams.slug);
-  let post:
-    | {
-        id: string;
-        slug: string;
-        title: string;
-        excerpt: string;
-        content: string;
-        category: string;
-        publishedAt: Date | null;
-        updatedAt: Date | null;
-        coverImage: string | null;
-      }
-    | null = null;
-
-  if (process.env.DATABASE_URL) {
-    try {
-      post = await prisma.post.findUnique({
-        where: { slug: resolvedParams.slug },
-        select: {
-          id: true,
-          slug: true,
-          title: true,
-          excerpt: true,
-          content: true,
-          category: true,
-          publishedAt: true,
-          updatedAt: true,
-          coverImage: true,
-        },
-      });
-    } catch {
-      post = null;
-    }
-  }
-
-  if (!post) {
-    if (fallbackPost) {
-      if (!isIndexableFallbackBlogPost(fallbackPost)) {
-        notFound();
-      }
-
-      post = {
-        id: fallbackPost.slug,
-        slug: fallbackPost.slug,
-        title: fallbackPost.title,
-        excerpt: fallbackPost.excerpt,
-        content: fallbackPost.content,
-        category: fallbackPost.category,
-        publishedAt: fallbackPost.publishedAt ? new Date(fallbackPost.publishedAt) : null,
-        updatedAt: fallbackPost.publishedAt ? new Date(fallbackPost.publishedAt) : null,
-        coverImage: fallbackPost.coverImage ?? null,
-      };
-    }
-  }
+  const post = await getPublicBlogPost(resolvedParams.slug);
 
   if (!post) {
     notFound();

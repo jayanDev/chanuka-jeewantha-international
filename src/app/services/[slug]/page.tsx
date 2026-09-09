@@ -7,7 +7,7 @@ import FAQSection from "@/components/FAQSection";
 import SubscribeForm from "@/components/SubscribeForm";
 import { cvWritingFaqs, linkedinFaqs } from "@/lib/aeo-faqs";
 import { formatLkr, packageProducts } from "@/lib/packages-catalog";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 
 const serviceMetadataMap: Record<string, { label: string; title: string; description: string; keywords: string[] }> = {
   "cv-writing": {
@@ -66,6 +66,8 @@ const serviceMetadataMap: Record<string, { label: string; title: string; descrip
   },
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return Object.keys(serviceMetadataMap).map((slug) => ({ slug }));
 }
@@ -75,11 +77,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const entry = serviceMetadataMap[slug];
 
   if (!entry) {
-    return buildNoIndexMetadata({
-      title: "Service Not Found",
-      description: "The requested service page is unavailable.",
-      path: `/services/${slug}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

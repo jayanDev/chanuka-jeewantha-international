@@ -2,10 +2,14 @@ import { NextResponse } from "next/server";
 import { getRequestUser } from "@/lib/auth-server";
 
 export async function GET(request: Request) {
-  const user = await getRequestUser(request);
-  if (!user) {
-    return NextResponse.json({ user: null });
+  try {
+    const user = await getRequestUser(request);
+    return NextResponse.json({ user }, { headers: { "Cache-Control": "no-store" } });
+  } catch {
+    console.error("[auth] Session lookup unavailable");
+    return NextResponse.json({ error: "Authentication is temporarily unavailable" }, {
+      status: 503,
+      headers: { "Cache-Control": "no-store", "Retry-After": "60" },
+    });
   }
-
-  return NextResponse.json({ user });
 }

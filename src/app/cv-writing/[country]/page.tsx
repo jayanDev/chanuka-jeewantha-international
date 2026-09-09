@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import FAQSection from "@/components/FAQSection";
 import SubscribeForm from "@/components/SubscribeForm";
 import { geoPages, geoPageSlugs, geoHreflangAlternates } from "@/lib/geo-pages";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildAggregateRatingSchema, buildBreadcrumbList } from "@/lib/structured-data";
 import { GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/featured-reviews";
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
   return geoPageSlugs.map((country) => ({ country }));
@@ -17,11 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ country: 
   const entry = geoPages[country];
 
   if (!entry) {
-    return buildNoIndexMetadata({
-      title: "Page Not Found",
-      description: "The requested page is unavailable.",
-      path: `/cv-writing/${country}`,
-    });
+    notFound();
   }
 
   return buildPageMetadata({

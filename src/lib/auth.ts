@@ -94,6 +94,7 @@ export async function destroySession(token: string): Promise<void> {
 }
 
 export async function getUserBySessionToken(token: string): Promise<AuthUser | null> {
+  if (!/^[a-f0-9]{64}$/.test(token)) return null;
   const db = getFirebaseDb();
   const sessionRef = db.collection(SESSIONS_COLLECTION).doc(token);
   const sessionSnap = await sessionRef.get();

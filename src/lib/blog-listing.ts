@@ -2,6 +2,8 @@ import { unstable_cache } from "next/cache";
 import { blogPosts, getPostBySlug } from "@/content/blog-posts";
 import { prisma } from "@/lib/prisma";
 import { getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
+import { getBlogPostLanguage } from "@/lib/blog-i18n";
+import { retiredBlogSlugs } from "@/lib/retired-blog-posts";
 
 export type BlogListingPost = {
   slug: string;
@@ -9,6 +11,7 @@ export type BlogListingPost = {
   excerpt: string;
   category: string;
   publishedAt: Date | null;
+  updatedAt?: Date | null;
   coverImage?: string | null;
   packageSlug?: string;
   keywords?: string[];
@@ -22,7 +25,11 @@ function sortPostsByDate<T extends { publishedAt: Date | null }>(items: T[]): T[
   });
 }
 
-const fallbackPosts: BlogListingPost[] = getIndexableFallbackBlogPosts(blogPosts).map((post) => ({
+function isPublicListingPost(post: { slug: string }): boolean {
+  return getBlogPostLanguage(post.slug) !== "si" && !retiredBlogSlugs.has(post.slug);
+}
+
+const fallbackPosts: BlogListingPost[] = getIndexableFallbackBlogPosts(blogPosts).filter(isPublicListingPost).map((post) => ({
   slug: post.slug,
   title: post.title,
   excerpt: post.excerpt,
@@ -33,7 +40,7 @@ const fallbackPosts: BlogListingPost[] = getIndexableFallbackBlogPosts(blogPosts
   keywords: post.keywords,
 }));
 
-async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
+export async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
   const fallbackSorted = sortPostsByDate(fallbackPosts);
 
   if (!process.env.DATABASE_URL) {
@@ -42,7 +49,6 @@ async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
 
   try {
     const dbPostsRaw = await prisma.post.findMany({
-      where: { isPublished: true },
       orderBy: { publishedAt: "desc" },
       select: {
         slug: true,
@@ -51,11 +57,13 @@ async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
         category: true,
         publishedAt: true,
         coverImage: true,
+        updatedAt: true,
+        isPublished: true,
+        content: true,
       },
-      take: 300,
     });
 
-    const dbPosts: BlogListingPost[] = dbPostsRaw.map((item: { slug: string; title: string; excerpt: string; category: string; publishedAt: Date | null; coverImage: string | null }) => {
+    const dbPosts: BlogListingPost[] = dbPostsRaw.filter((item) => item.isPublished && item.content.trim() && isPublicListingPost(item)).map((item) => {
       const contentPost = getPostBySlug(item.slug);
 
       return {
@@ -66,7 +74,7 @@ async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
       };
     });
 
-    const dbSlugs = new Set(dbPosts.map((item) => item.slug));
+    const dbSlugs = new Set(dbPostsRaw.map((item) => item.slug));
     const merged = [...dbPosts, ...fallbackPosts.filter((item) => !dbSlugs.has(item.slug))];
 
     return sortPostsByDate(merged);
@@ -75,7 +83,7 @@ async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
   }
 }
 
-export const getCachedBlogListing = unstable_cache(loadMergedBlogListing, ["blog-listing:merged"], {
+export const getCachedBlogListing = unstable_cache(loadMergedBlogListing, ["blog-listing:published-global-v2"], {
   revalidate: 3600,
   tags: ["blog-listing"],
 });

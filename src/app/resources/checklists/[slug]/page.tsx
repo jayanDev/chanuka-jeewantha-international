@@ -3,12 +3,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { checklists, getChecklistBySlug } from "@/lib/checklists";
-import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList } from "@/lib/structured-data";
 
 type ChecklistPageProps = {
   params: Promise<{ slug: string }>;
 };
+
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return checklists.map((c) => ({ slug: c.slug }));
@@ -18,11 +20,7 @@ export async function generateMetadata({ params }: ChecklistPageProps): Promise<
   const { slug } = await params;
   const checklist = getChecklistBySlug(slug);
   if (!checklist) {
-    return buildNoIndexMetadata({
-      title: "Checklist Not Found",
-      description: "The requested checklist is unavailable.",
-      path: `/resources/checklists/${slug}`,
-    });
+    notFound();
   }
   return buildPageMetadata({
     title: `${checklist.title} | Free Checklist`,
