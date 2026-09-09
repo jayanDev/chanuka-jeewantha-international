@@ -162,7 +162,7 @@ export const serviceOptionChoices: Array<{
   },
 ];
 
-const signaturePrices: Partial<Record<ServiceKey, Array<number | null | { thirtyMin?: number; oneHour: number; label?: string }>>> = {
+export const signaturePrices: Partial<Record<ServiceKey, Array<number | null | { thirtyMin?: number; oneHour: number; label?: string }>>> = {
   "ats-cv": [89, 129, 189, 279, 449, 749],
   linkedin: [89, 129, 189, 279, 449, 749],
   "cover-letter": [59, 79, 119, 159, 249, 349],

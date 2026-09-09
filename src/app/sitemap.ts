@@ -12,6 +12,7 @@ import { industryLandingPages } from "@/lib/industry-pages";
 import { industryPages as resumeWriterIndustries } from "@/lib/industry-resume-pages";
 import { cityPages } from "@/lib/city-resume-pages";
 import { careerStagePages } from "@/lib/career-stage-pages";
+import { marketSitemapEntries } from "@/lib/market-seo";
 
 const baseUrl = getBaseUrl();
 const siteLastUpdated = new Date("2026-07-02T00:00:00.000Z");
@@ -19,6 +20,7 @@ const siteLastUpdated = new Date("2026-07-02T00:00:00.000Z");
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
+    "/international",
     "/about",
     "/services",
     "/services/cv-writing",
@@ -205,6 +207,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const entries = [
+    ...marketSitemapEntries(),
     ...staticEntries,
     ...blogIndexEntries,
     ...categoryEntries,

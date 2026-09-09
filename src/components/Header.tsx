@@ -27,6 +27,7 @@ type HeaderProps = {
 const primaryNavLinks: PrimaryNavLink[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
+  { href: "/international", label: "Countries" },
   { href: "/pricing", label: "Packages" },
   { href: "/blog", label: "Blog" },
   { href: "/about", label: "About" },
@@ -216,7 +217,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
         </div>
 
         {/* Navigation Container Desktop */}
-        <nav className="hidden md:flex flex-1 items-center">
+        <nav className="hidden xl:flex flex-1 items-center">
           <div className="flex flex-1 justify-center">
             <div className="flex items-center gap-6">
             {primaryNavLinks.map((link) => {
@@ -378,7 +379,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
         </nav>
 
         {/* Mobile menu toggle */}
-        <div className="flex md:hidden">
+        <div className="flex xl:hidden">
           <button 
             className="flex h-11 w-11 items-center justify-center rounded bg-brand-main text-foreground focus-visible:outline-none"
             onClick={() => {
@@ -391,6 +392,7 @@ export default function Header({ initialUser = null }: HeaderProps) {
               });
             }}
             aria-label="Toggle mobile menu"
+            aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
           >
             {isMobileMenuOpen ? (
@@ -409,8 +411,8 @@ export default function Header({ initialUser = null }: HeaderProps) {
       {/* Mobile Navigation Dropdown */}
       <div
         id="mobile-navigation"
-        className={`absolute top-full left-0 w-full bg-background shadow-xl transition-all duration-300 ease-in-out z-40 origin-top overflow-hidden md:hidden ${
- isMobileMenuOpen ? "opacity-100 scale-y-100 max-h-screen py-6 border-t border-zinc-100" : "opacity-0 scale-y-0 max-h-0 py-0"
+        className={`absolute top-full left-0 w-full bg-background shadow-xl transition-all duration-300 ease-in-out z-40 origin-top overflow-x-hidden overflow-y-auto xl:hidden ${
+ isMobileMenuOpen ? "opacity-100 scale-y-100 max-h-[calc(100dvh-160px)] py-6 border-t border-zinc-100" : "opacity-0 scale-y-0 max-h-0 py-0"
         }`}
       >
         <nav className="flex flex-col items-center gap-6 px-4">

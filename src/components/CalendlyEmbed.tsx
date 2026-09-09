@@ -44,8 +44,8 @@ export default function CalendlyEmbed({
     if (!el) return;
 
     if (typeof IntersectionObserver === "undefined") {
-      setShouldLoad(true);
-      return;
+      const timer = window.setTimeout(() => setShouldLoad(true), 0);
+      return () => window.clearTimeout(timer);
     }
 
     const observer = new IntersectionObserver(
@@ -105,7 +105,7 @@ export default function CalendlyEmbed({
         <div
           ref={containerRef}
           className="flex items-center justify-center overflow-hidden rounded-[20px] border border-zinc-200 shadow-sm bg-zinc-50"
-          style={{ minWidth: "320px", height: "760px" }}
+          style={{ minWidth: 0, width: "100%", height: "760px" }}
         >
           {!shouldLoad ? (
             <span className="text-sm text-zinc-400">Loading scheduling calendar...</span>

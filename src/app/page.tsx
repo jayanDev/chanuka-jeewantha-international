@@ -7,6 +7,7 @@ import { featuredReviews, GOOGLE_REVIEWS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import Price from "@/components/Price";
 import { CALENDLY_URL } from "@/lib/booking-config";
+import { marketAlternates } from "@/lib/markets";
 
 const HOME_TITLE = "#1 Premium ATS Resume Writing Service in United States";
 
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
     description:
       "Premium ATS resume writing for US professionals - executive CVs, LinkedIn optimization, and cover letters. Personally written, with a 90-day interview guarantee.",
     path: "/",
+    alternateLanguages: marketAlternates(),
   }),
   title: { absolute: HOME_TITLE },
 };

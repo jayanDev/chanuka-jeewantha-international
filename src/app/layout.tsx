@@ -10,7 +10,8 @@ import HeartbeatAnalytics from "@/components/AnalyticsHeartbeat";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import SeasonalOfferBanner from "@/components/SeasonalOfferBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
-import CurrencyProvider from "@/components/CurrencyProvider";
+import CountrySiteChrome from "@/components/markets/CountrySiteChrome";
+import { markets } from "@/lib/markets";
 import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
 
@@ -32,14 +33,14 @@ const organizationLd = {
   image: `${siteUrl}/images/hero-chanuka.jpg`,
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
-    "Premium remote resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha. Serving US professionals nationwide.",
+    "Premium remote resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha for professionals targeting international opportunities.",
   serviceType: "Resume Writing Service",
   priceRange: "$179 - $1,499",
-  areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
+  areaServed: markets.map((market) => market.name),
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
-    areaServed: ["United States", "United Kingdom", "Australia", "Canada", "New Zealand"],
+    areaServed: markets.map((market) => market.name),
     availableLanguage: ["English"],
     url: `${siteUrl}/contact`,
   },
@@ -115,14 +116,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/",
-      "en-GB": "/",
-      "en-AU": "/",
-      "en-CA": "/",
-      "en-NZ": "/",
-      "x-default": "/",
-    },
     types: {
       "application/rss+xml": "/feed.xml",
     },
@@ -219,19 +212,12 @@ export default async function RootLayout({
             <HeartbeatAnalytics />
           </Suspense>
         ) : null}
-        <CurrencyProvider>
-          <AnnouncementBar />
-          <div id="site-nav">
-            <Header initialUser={currentUser} />
-            <SeasonalOfferBanner />
-            <Breadcrumbs />
-          </div>
-          <main id="main-content" className="flex-grow flex flex-col">
-            {children}
-          </main>
-          <Footer />
-          <BackToTop />
-        </CurrencyProvider>
+        <CountrySiteChrome
+          globalHeader={<><AnnouncementBar /><div id="site-nav"><Header initialUser={currentUser} /><SeasonalOfferBanner /><Breadcrumbs /></div></>}
+          globalFooter={<><Footer /><BackToTop /></>}
+        >
+          {children}
+        </CountrySiteChrome>
       </body>
     </html>
   );

@@ -5,6 +5,9 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 import { buildNoIndexMetadata, buildPageMetadata } from "@/lib/seo";
 import { formatLkr, packageProducts } from "@/lib/packages-catalog";
 import { getLandingPageBySlug, landingPages } from "@/lib/landing-pages";
+import { getMarket, markets } from "@/lib/markets";
+import { buildMarketMetadata } from "@/lib/market-seo";
+import { CountryHome } from "@/components/markets/CountryPages";
 
 type LandingPageProps = {
   params: Promise<{ landingSlug: string }>;
@@ -13,11 +16,13 @@ type LandingPageProps = {
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return landingPages.map((item) => ({ landingSlug: item.slug }));
+  return [...landingPages, ...markets].map((item) => ({ landingSlug: item.slug }));
 }
 
 export async function generateMetadata({ params }: LandingPageProps): Promise<Metadata> {
   const { landingSlug } = await params;
+  const market = getMarket(landingSlug);
+  if (market) return buildMarketMetadata(market);
   const page = getLandingPageBySlug(landingSlug);
 
   if (!page) {
@@ -38,6 +43,8 @@ export async function generateMetadata({ params }: LandingPageProps): Promise<Me
 
 export default async function LandingPage({ params }: LandingPageProps) {
   const { landingSlug } = await params;
+  const market = getMarket(landingSlug);
+  if (market) return <CountryHome market={market} />;
   const page = getLandingPageBySlug(landingSlug);
 
   if (!page) {

@@ -50,6 +50,14 @@ const countryCodes = [
   { code: "+47", label: "+47 (Norway)" },
   { code: "+46", label: "+46 (Sweden)" },
   { code: "+974", label: "+974 (Qatar)" },
+  { code: "+960", label: "+960 (Maldives)" },
+  { code: "+7", label: "+7 (Russia)" },
+  { code: "+968", label: "+968 (Oman)" },
+  { code: "+965", label: "+965 (Kuwait)" },
+  { code: "+358", label: "+358 (Finland)" },
+  { code: "+880", label: "+880 (Bangladesh)" },
+  { code: "+84", label: "+84 (Vietnam)" },
+  { code: "+39", label: "+39 (Italy)" },
   { code: "+852", label: "+852 (Hong Kong)" },
 ];
 
@@ -114,8 +122,25 @@ function validateField(key: keyof FormState, value: string): string {
   }
 }
 
-export default function ContactForm() {
-  const [formData, setFormData] = useState<FormState>(initialFormState);
+type ContactFormProps = {
+  defaultTargetCountry?: string;
+  defaultDialCode?: string;
+  defaultService?: string;
+  defaultCareerLevel?: string;
+  serviceChoices?: string[];
+  marketContext?: { name: string; currency: string; path: string };
+};
+
+export default function ContactForm({ defaultTargetCountry, defaultDialCode, defaultService, defaultCareerLevel, serviceChoices, marketContext }: ContactFormProps = {}) {
+  const choices = serviceChoices ?? serviceOptions;
+  const defaults: FormState = {
+    ...initialFormState,
+    targetCountry: defaultTargetCountry ?? initialFormState.targetCountry,
+    countryCode: defaultDialCode ?? initialFormState.countryCode,
+    selectedService: defaultService && choices.includes(defaultService) ? defaultService : initialFormState.selectedService,
+    careerLevel: defaultCareerLevel && careerLevels.includes(defaultCareerLevel) ? defaultCareerLevel : initialFormState.careerLevel,
+  };
+  const [formData, setFormData] = useState<FormState>(defaults);
   const [currentCv, setCurrentCv] = useState<File | null>(null);
   const [errors, setErrors] = useState<FieldErrors>({});
   const [touched, setTouched] = useState<Partial<Record<string, boolean>>>({});
@@ -123,6 +148,7 @@ export default function ContactForm() {
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorText, setErrorText] = useState("");
   const successRef = useRef<HTMLDivElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Auto-dismiss the success notice and scroll it into view.
   useEffect(() => {
@@ -171,8 +197,9 @@ export default function ContactForm() {
     // Honeypot: if the hidden field is filled, it's a bot. Show success, send nothing.
     if (formData.website.trim()) {
       setSubmitStatus("success");
-      setFormData(initialFormState);
+      setFormData(defaults);
       setCurrentCv(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
       setIsSubmitting(false);
       return;
     }
@@ -183,6 +210,7 @@ export default function ContactForm() {
         : "Not provided";
 
       const lines = [
+        ...(marketContext ? [`Country Website: ${marketContext.name}`, `Enquiry Page: ${marketContext.path}`, `Pricing Currency: ${marketContext.currency} (final invoice confirmed after review)`] : []),
         `Name: ${formData.name}`,
         `Email: ${formData.email}`,
         `WhatsApp: ${phone}`,
@@ -207,7 +235,7 @@ export default function ContactForm() {
 
       const payload = new FormData();
       payload.append("access_key", WEB3FORMS_ACCESS_KEY);
-      payload.append("subject", `New enquiry: ${formData.selectedService || "Career branding"} - ${formData.name}`);
+      payload.append("subject", `New enquiry${marketContext ? ` (${marketContext.name})` : ""}: ${formData.selectedService || "Career branding"} - ${formData.name}`);
       payload.append("from_name", "Chanuka Jeewantha Website");
       payload.append("name", formData.name);
       payload.append("email", formData.email);
@@ -230,8 +258,9 @@ export default function ContactForm() {
       }
 
       setSubmitStatus("success");
-      setFormData(initialFormState);
+      setFormData(defaults);
       setCurrentCv(null);
+      if (fileInputRef.current) fileInputRef.current.value = "";
       setErrors({});
       setTouched({});
     } catch (error: unknown) {
@@ -253,15 +282,15 @@ export default function ContactForm() {
           <div>
             <span className="mb-4 block font-semibold uppercase tracking-wider text-brand-main">Enquiry</span>
             <h2 className="font-heading text-[36px] font-bold leading-[1.15] text-foreground md:text-[52px]">
-              Submit your career-branding enquiry.
+              {marketContext ? `Your next step in ${marketContext.name}.` : "Submit your career-branding enquiry."}
             </h2>
             <p className="mt-6 max-w-xl text-[18px] leading-relaxed text-text-body">
               Just your name and email to start - share as much or as little detail as you like. Your enquiry is reviewed personally before the most suitable package is confirmed.
             </p>
-            <div className="mt-8 rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm">
+            <div className={marketContext ? "mt-8 border-t border-zinc-200 pt-6" : "mt-8 rounded-[18px] border border-zinc-200 bg-white p-6 shadow-sm"}>
               <h3 className="font-heading text-[22px] font-bold text-foreground">Premium, personally written by Chanuka</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-600">
-                This is not a budget catalogue flow. The service is built for senior professionals, executives, C-suite hires, founders, and candidates competing for serious roles in competitive job markets and remote-first companies.
+                {marketContext ? `English career documents and personal guidance for ${marketContext.name} opportunities. Your target role, experience and goals shape the recommendation. Scope and payment details are confirmed before work begins.` : "This is not a budget catalogue flow. The service is built for senior professionals, executives, C-suite hires, founders, and candidates competing for serious roles in competitive job markets and remote-first companies."}
               </p>
             </div>
           </div>
@@ -355,13 +384,14 @@ export default function ContactForm() {
 
               <Field label="Selected Service or Package">
                 <select value={formData.selectedService} onChange={(e) => updateField("selectedService", e.target.value)} className="form-input">
-                  {serviceOptions.map((service) => <option key={service} value={service}>{service}</option>)}
+                  {choices.map((service) => <option key={service} value={service}>{service}</option>)}
                 </select>
               </Field>
 
               <Field label="Upload Current CV / Resume (optional)">
                 <input
                   type="file"
+                  ref={fileInputRef}
                   accept=".pdf,.doc,.docx"
                   onChange={(event) => setCurrentCv(event.target.files?.[0] ?? null)}
                   className="form-input"
@@ -387,7 +417,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 className="btn btn-primary mt-2 min-h-12 w-full font-bold text-base px-6 py-4 rounded-[12px] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Submitting Enquiry..." : "Submit Enquiry"}
+                {isSubmitting ? "Submitting Enquiry..." : marketContext ? "Submit International Enquiry" : "Submit Enquiry"}
               </button>
             </form>
           </div>

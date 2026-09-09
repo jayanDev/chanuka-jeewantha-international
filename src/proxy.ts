@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { isMarketPath } from "@/lib/markets";
 
 const SESSION_COOKIE = "session_token";
 
@@ -17,6 +18,13 @@ function isProtectedPath(pathname: string): boolean {
 
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
+  // Reject unknown country URLs before streaming can turn notFound() into a 200 response.
+  if (pathname.startsWith("/en-") && !isMarketPath(pathname)) {
+    return NextResponse.rewrite(new URL("/404", request.url), {
+      status: 404,
+      headers: { "X-Robots-Tag": "noindex" },
+    });
+  }
   const sessionToken = request.cookies.get(SESSION_COOKIE)?.value;
 
   if (isProtectedPath(pathname) && !sessionToken) {
@@ -36,6 +44,7 @@ export function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
+    "/en-(.*)",
     "/cart/:path*",
     "/checkout/:path*",
     "/orders/:path*",

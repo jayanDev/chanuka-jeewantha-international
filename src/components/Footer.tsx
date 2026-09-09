@@ -45,6 +45,7 @@ export default function Footer() {
             <h3 className="text-white text-[20px] font-semibold font-heading mb-2">Menu</h3>
             <ul className="flex flex-col gap-3">
               <li><Link href="/about" className="hover:text-brand-main transition-colors text-text-light/80">About us</Link></li>
+              <li><Link href="/international" className="hover:text-brand-main transition-colors text-text-light/80">Country Websites</Link></li>
               <li><Link href="/services" className="hover:text-brand-main transition-colors text-text-light/80">Services</Link></li>
               <li><Link href="/pricing" className="hover:text-brand-main transition-colors text-text-light/80">Premium Packages</Link></li>
               <li><Link href="/#process" className="hover:text-brand-main transition-colors text-text-light/80">Process</Link></li>
