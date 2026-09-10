@@ -2,6 +2,10 @@ import { marketEditorial } from "@/content/market-editorial";
 import { articleTopics, type ArticleTopic, type Market } from "@/lib/markets";
 
 export const marketContentDate = "2026-09-09";
+export function getMarketContentDate(market: Market): string {
+  return marketEditorial[market.slug].publishedAt ?? marketContentDate;
+}
+
 export type MarketArticle = {
   slug: ArticleTopic;
   title: string;

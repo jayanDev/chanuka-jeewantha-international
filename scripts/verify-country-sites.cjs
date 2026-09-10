@@ -19,7 +19,7 @@ async function main() {
     while (position < routes.length) {
       const route = routes[position++];
       try {
-        const response = await fetch(`${base}${route.pathname}`);
+        const response = await fetch(`${base}${route.pathname}`, { redirect: "manual", signal: AbortSignal.timeout(45000) });
         assert.equal(response.status, 200, route.pathname);
         const html = await response.text();
         const dom = new JSDOM(html);
@@ -32,6 +32,7 @@ async function main() {
           assert.equal(document.querySelector("[data-market]")?.getAttribute("data-market"), route.market.slug);
           assert.equal(document.querySelector("[data-market]")?.getAttribute("data-currency"), route.market.currency);
           assert.equal(document.querySelector('link[hreflang="en-GB"]')?.href.endsWith(`/en-uk${route.section ? `/${route.section}` : ""}`), true);
+          assert.equal(document.querySelectorAll('link[rel="alternate"][hreflang]:not([hreflang="x-default"])').length, markets.length);
           const schemas = [...document.querySelectorAll('script[type="application/ld+json"]')].map((element) => JSON.parse(element.textContent));
           assert.ok(schemas.some((schema) => schema["@graph"]?.some((entry) => entry["@type"] === "WebPage")));
           for (const anchor of document.querySelectorAll('nav[aria-label$="navigation"] a')) assert.ok(anchor.getAttribute("href").startsWith(`/${route.market.slug}`));
@@ -74,7 +75,7 @@ async function main() {
       const page = await context.newPage();
       const errors = [];
       page.on("pageerror", (error) => errors.push(error.message));
-      for (const pathname of ["/en-uk", "/en-uk/catalogue", "/en-uk/services", "/en-uk/about", "/en-uk/blog", "/en-uk/blog/cv-guide", "/en-uk/contact?package=International%20Career%20Pack", "/en-vn/catalogue", "/en-kw/catalogue", "/international", "/"]) {
+      for (const pathname of ["/en-uk", "/en-uk/catalogue", "/en-uk/services", "/en-uk/about", "/en-uk/blog", "/en-uk/blog/cv-guide", "/en-uk/contact?package=International%20Career%20Pack", "/en-vn/catalogue", "/en-kw/catalogue", "/en-bh/catalogue", "/en-jp/catalogue", "/en-kr/services", "/en-br/blog/cv-guide", "/international", "/"]) {
         await page.goto(`${base}${pathname}`, { waitUntil: "domcontentloaded", timeout: 60000 });
         await page.getByRole("heading", { level: 1 }).waitFor();
         await page.evaluate(() => document.fonts.ready);
@@ -93,6 +94,15 @@ async function main() {
         }
         ui.push({ viewport: viewport.width, path: pathname, overflow, screenshot: filename });
       }
+      await page.goto(`${base}/international`, { waitUntil: "domcontentloaded" });
+      await page.getByLabel("Country or currency").fill("Czech Republic");
+      await page.getByRole("navigation", { name: "Choose a country website" }).getByRole("link", { name: /Czechia/ }).click();
+      await page.waitForURL("**/en-cz");
+      await page.getByLabel("Choose country website").selectOption("en-bh");
+      await page.waitForURL("**/en-bh");
+      await page.getByRole("link", { name: "View BHD Packages", exact: true }).click();
+      await page.waitForURL("**/en-bh/catalogue");
+      assert.ok((await page.locator("table").first().innerText()).includes("71.064"));
       await page.goto(`${base}/en-uk/catalogue`, { waitUntil: "domcontentloaded" });
       await page.getByLabel("Choose country website").selectOption("en-au");
       await page.waitForURL("**/en-au/catalogue");
@@ -130,6 +140,33 @@ async function main() {
       assert.equal(await page.getByLabel("Target Market").inputValue(), "United Kingdom");
       assert.equal(await page.getByLabel("Upload Current CV / Resume (optional)").inputValue(), "");
       assert.deepEqual(errors, [], `Browser runtime errors at ${viewport.width}px`);
+      await context.close();
+    }
+    for (const viewport of [{ width: 1440, height: 1000 }, { width: 390, height: 844 }]) {
+      const context = await browser.newContext({ viewport });
+      await context.route(/google-analytics\.com|googletagmanager\.com|ipwho\.is/, (route) => route.fulfill({ status: 204, body: "" }));
+      const page = await context.newPage();
+      const errors = [];
+      page.on("pageerror", (error) => errors.push(error.message));
+      for (const market of markets.slice(20)) {
+        const pathname = `/${market.slug}`;
+        await page.goto(`${base}${pathname}`, { waitUntil: "domcontentloaded", timeout: 60000 });
+        const heading = page.getByRole("heading", { level: 1 });
+        await heading.waitFor();
+        await page.evaluate(() => document.fonts.ready);
+        const portrait = page.getByRole("img", { name: "Chanuka Jeewantha, founder and career document writer", exact: true });
+        await portrait.scrollIntoViewIfNeeded();
+        await portrait.evaluate((image) => image.decode());
+        const dimensions = await portrait.evaluate((image) => ({ width: image.naturalWidth, height: image.naturalHeight }));
+        assert.ok(dimensions.width > 0 && dimensions.height > 0, `${pathname}: portrait loaded`);
+        await page.evaluate(() => window.scrollTo(0, 0));
+        const size = await page.evaluate(() => ({ scroll: document.documentElement.scrollWidth, client: document.documentElement.clientWidth }));
+        assert.ok(size.scroll <= size.client + 1, `${pathname}: ${viewport.width}px overflow`);
+        const filename = `${viewport.width}-${market.slug}-hero.png`;
+        await page.screenshot({ path: path.join(output, filename) });
+        ui.push({ viewport: viewport.width, path: pathname, overflow: false, screenshot: filename, portrait: dimensions });
+      }
+      assert.deepEqual(errors, [], `New country runtime errors at ${viewport.width}px`);
       await context.close();
     }
   } finally { await browser.close(); }

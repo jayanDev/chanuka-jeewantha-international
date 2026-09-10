@@ -1,15 +1,17 @@
 import { describe, expect, it } from "vitest";
 import { marketEditorial } from "@/content/market-editorial";
-import { getMarketArticles } from "@/lib/market-articles";
+import { additionalMarketEditorial } from "@/content/additional-market-editorial";
+import { getMarketArticles, getMarketContentDate } from "@/lib/market-articles";
 import { articleTopics, getMarket, marketAlternates, marketFromPath, marketPath, markets, marketSections, switchMarketPath } from "@/lib/markets";
 import { marketAmount, marketBundles, marketEnquiryLink, marketPrice, marketServices } from "@/lib/market-pricing";
-import { buildMarketMetadata, marketSitemapEntries } from "@/lib/market-seo";
+import { buildMarketMetadata, marketPageSchema, marketSitemapEntries } from "@/lib/market-seo";
 
 describe("country website integrity", () => {
-  it("defines exactly the requested 20 markets with unique valid regional codes", () => {
-    expect(markets).toHaveLength(20);
-    expect(new Set(markets.map((market) => market.slug)).size).toBe(20);
-    expect(new Set(markets.map((market) => market.locale)).size).toBe(20);
+  it("defines 50 markets with unique valid regional codes", () => {
+    expect(markets).toHaveLength(50);
+    expect(new Set(markets.map((market) => market.slug)).size).toBe(50);
+    expect(new Set(markets.map((market) => market.locale)).size).toBe(50);
+    expect(Object.keys(additionalMarketEditorial)).toHaveLength(30);
     expect(getMarket("en-uk")?.locale).toBe("en-GB");
     expect(getMarket("en-gb")).toBeUndefined();
     expect(marketFromPath("/en-uk-invalid/blog")).toBeUndefined();
@@ -46,12 +48,12 @@ describe("country website integrity", () => {
     expect(new Set(marketSections.map((section) => buildMarketMetadata(market, section).description)).size).toBe(marketSections.length);
   });
 
-  it("keeps country content distinct and all 180 URLs discoverable", () => {
-    expect(new Set(Object.values(marketEditorial).map((item) => item.intro)).size).toBe(20);
-    expect(new Set(markets.flatMap(getMarketArticles).map((article) => article.title)).size).toBe(60);
+  it("keeps country content distinct and all 450 URLs discoverable", () => {
+    expect(new Set(Object.values(marketEditorial).map((item) => item.intro)).size).toBe(50);
+    expect(new Set(markets.flatMap(getMarketArticles).map((article) => article.title)).size).toBe(150);
     const entries = marketSitemapEntries();
-    expect(entries).toHaveLength(180);
-    expect(new Set(entries.map((entry) => entry.url)).size).toBe(180);
+    expect(entries).toHaveLength(450);
+    expect(new Set(entries.map((entry) => entry.url)).size).toBe(450);
     const urls = new Set(entries.map((entry) => entry.url));
     for (const entry of entries) for (const [locale, url] of Object.entries(entry.alternates?.languages ?? {})) {
       if (locale !== "x-default") expect(typeof url === "string" && urls.has(url)).toBe(true);
@@ -76,6 +78,27 @@ describe("country website integrity", () => {
     expect(marketPrice(189, getMarket("en-us")!)).toContain("189");
     expect(marketPrice(189, getMarket("en-om")!)).toMatch(/72\.670/);
     expect(marketPrice(189, getMarket("en-kw")!)).toMatch(/58\.319/);
+    expect(marketPrice(189, getMarket("en-bh")!)).toMatch(/71\.064/);
+    expect(marketAmount(189, getMarket("en-jp")!)).toBe(29100);
+    expect(marketAmount(189, getMarket("en-kr")!)).toBe(253000);
     expect(() => marketAmount(NaN, market)).toThrow();
+  });
+
+  it("uses substantive distinct expansion content and preserves original publication dates", () => {
+    const records = Object.values(additionalMarketEditorial);
+    for (const field of ["focus", "example", "question"] as const) expect(new Set(records.map((item) => item[field])).size).toBe(30);
+    expect(new Set(records.flatMap((item) => [...item.cv, ...item.linkedin, ...item.strategy])).size).toBe(210);
+    for (const [slug, item] of Object.entries(additionalMarketEditorial)) {
+      const market = getMarket(slug)!;
+      expect(market).toBeDefined();
+      expect(item.cv.join(" ").split(/\s+/).length).toBeGreaterThan(95);
+      expect(item.keywords.length).toBeGreaterThanOrEqual(5);
+      expect(item.intro).toContain(market.label);
+      expect(getMarketContentDate(market)).toBe("2026-09-10");
+      const schema = marketPageSchema(market, "blog", getMarketArticles(market)[0]);
+      expect(schema["@graph"].find((node) => node["@type"] === "BlogPosting")).toMatchObject({ datePublished: "2026-09-10T00:00:00+00:00" });
+      expect(marketSitemapEntries().find((entry) => entry.url.endsWith(`/${slug}`))?.lastModified).toEqual(new Date("2026-09-10T00:00:00Z"));
+    }
+    expect(getMarketContentDate(getMarket("en-uk")!)).toBe("2026-09-09");
   });
 });

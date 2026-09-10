@@ -1,6 +1,6 @@
 import type { Metadata, MetadataRoute } from "next";
 import { marketEditorial } from "@/content/market-editorial";
-import { getMarketArticles, marketContentDate, type MarketArticle } from "@/lib/market-articles";
+import { getMarketArticles, getMarketContentDate, type MarketArticle } from "@/lib/market-articles";
 import { marketAlternates, marketPath, markets, marketSections, type Market, type MarketSection } from "@/lib/markets";
 import { buildPageMetadata } from "@/lib/seo";
 import { getBaseUrl } from "@/lib/site-url";
@@ -69,7 +69,7 @@ export function marketPageSchema(market: Market, section: MarketSection = "", ar
       ...(article ? [{
         "@type": "BlogPosting", "@id": `${url}#article`, headline: article.title,
         description: article.description, mainEntityOfPage: url, inLanguage: market.locale,
-        datePublished: `${marketContentDate}T00:00:00+00:00`, dateModified: `${marketContentDate}T00:00:00+00:00`,
+        datePublished: `${getMarketContentDate(market)}T00:00:00+00:00`, dateModified: `${getMarketContentDate(market)}T00:00:00+00:00`,
         author: { "@type": "Person", name: "Chanuka Jeewantha", url: `${base}${marketPath(market, "about")}` },
         publisher: { "@id": `${base}#organization` },
         image: `${base}/images/hero-chanuka.jpg`,
@@ -89,7 +89,7 @@ export function marketSitemapEntries(): MetadataRoute.Sitemap {
   const base = getBaseUrl();
   return markets.flatMap((market) => [...marketSections, ...getMarketArticles(market).map((article) => `blog/${article.slug}`)].map((section) => ({
     url: `${base}${marketPath(market, section)}`,
-    lastModified: new Date(`${marketContentDate}T00:00:00Z`),
+    lastModified: new Date(`${getMarketContentDate(market)}T00:00:00Z`),
     changeFrequency: "monthly" as const, priority: section === "" ? 0.8 : 0.65,
     alternates: { languages: Object.fromEntries(Object.entries(marketAlternates(section)).map(([language, path]) => [language, `${base}${path}`])) },
   })));

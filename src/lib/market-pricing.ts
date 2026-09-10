@@ -9,10 +9,11 @@ export function marketAmount(usd: number, market: Market): number {
 }
 
 export function marketPrice(usd: number, market: Market): string {
+  const fractionDigits = marketRates[market.currency]?.roundTo === 0.001 ? 3 : 0;
   return new Intl.NumberFormat(market.locale, {
     style: "currency", currency: market.currency, currencyDisplay: "code",
-    minimumFractionDigits: market.currency === "OMR" || market.currency === "KWD" ? 3 : 0,
-    maximumFractionDigits: market.currency === "OMR" || market.currency === "KWD" ? 3 : 0,
+    minimumFractionDigits: fractionDigits,
+    maximumFractionDigits: fractionDigits,
   }).format(marketAmount(usd, market));
 }
 

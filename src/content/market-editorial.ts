@@ -1,4 +1,7 @@
+import { additionalMarketEditorial } from "@/content/additional-market-editorial";
+
 export type MarketEditorial = {
+  publishedAt?: string;
   intro: string;
   cities: string[];
   sectors: string[];
@@ -15,6 +18,7 @@ export type MarketEditorial = {
 };
 
 export const marketEditorial: Record<string, MarketEditorial> = {
+  ...additionalMarketEditorial,
   "en-uk": {
     intro: "Your next UK opportunity needs a clear account of what you can contribute. From graduate applications to board-level moves, build a British-English CV, a focused LinkedIn profile and a career story that connects your experience to the role.",
     cities: ["London", "Manchester", "Birmingham", "Edinburgh"],

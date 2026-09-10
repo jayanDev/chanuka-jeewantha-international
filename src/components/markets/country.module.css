@@ -137,6 +137,16 @@
 .localLink { font-size: 12px; margin-top: 24px; color: #aabdb1; }
 .localLink a { text-decoration: underline; }
 .directory { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.directoryToolbar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 28px; }
+.directoryToolbar > p { margin: 0 0 12px; color: #5c7463; }
+.directorySearch { display: grid; gap: 8px; width: 100%; max-width: 420px; font-size: 14px; font-weight: 600; }
+.directorySearchField { display: flex; align-items: center; gap: 10px; min-width: 0; height: 48px; padding: 0 8px 0 12px; border: 1px solid #81988a; border-radius: 4px; background: white; }
+.directorySearchField:focus-within { outline: 2px solid #26715a; outline-offset: 2px; }
+.directorySearchField input { width: 100%; min-width: 0; border: 0; background: transparent; color: #173c32; font: inherit; outline: none; }
+.directorySearchField input::-webkit-search-cancel-button { display: none; }
+.directorySearchField button { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; border: 0; border-radius: 4px; background: transparent; color: #173c32; cursor: pointer; }
+.directorySearchField button:hover { background: #e6f0e9; }
+.directorySearchField button:disabled { visibility: hidden; }
 .directory a { border: 1px solid #cfddd4; border-radius: 4px; padding: 24px; text-decoration: none; color: #173c32; background: white; }
 .directory a:hover { border-color: #26715a; background: #f2f8f4; }
 .directory strong { display: block; font-size: 19px; margin-bottom: 10px; }
