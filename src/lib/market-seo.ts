@@ -4,6 +4,7 @@ import { getMarketArticles, getMarketContentDate, type MarketArticle } from "@/l
 import { marketAlternates, marketPath, markets, marketSections, type Market, type MarketSection } from "@/lib/markets";
 import { buildPageMetadata } from "@/lib/seo";
 import { getBaseUrl } from "@/lib/site-url";
+import { getWriterEntries, writersGuideDescription } from "@/lib/cv-writers";
 
 export function marketPageTitle(market: Market, section: MarketSection): string {
   const document = market.document === "CV" ? "CV" : "Resume";
@@ -69,10 +70,18 @@ export function marketPageSchema(market: Market, section: MarketSection = "", ar
       ...(article ? [{
         "@type": "BlogPosting", "@id": `${url}#article`, headline: article.title,
         description: article.description, mainEntityOfPage: url, inLanguage: market.locale,
-        datePublished: `${getMarketContentDate(market)}T00:00:00+00:00`, dateModified: `${getMarketContentDate(market)}T00:00:00+00:00`,
+        datePublished: `${article.publishedAt ?? getMarketContentDate(market)}T00:00:00+00:00`, dateModified: `${article.publishedAt ?? getMarketContentDate(market)}T00:00:00+00:00`,
         author: { "@type": "Person", name: "Chanuka Jeewantha", url: `${base}${marketPath(market, "about")}` },
         publisher: { "@id": `${base}#organization` },
         image: `${base}/images/hero-chanuka.jpg`,
+      }] : []),
+      ...(article?.slug === "top-10-cv-writers" ? [{
+        "@type": "ItemList", "@id": `${url}#shortlist`, name: article.title,
+        description: writersGuideDescription, numberOfItems: 10,
+        itemListElement: getWriterEntries(market).map((entry, index) => ({
+          "@type": "ListItem", position: index + 1,
+          item: { "@type": entry.kind === "Individual writer" ? "Person" : "Organization", name: entry.name, url: entry.featured ? `${base}${entry.website}` : entry.website, image: `${base}${entry.image.src}`, description: entry.experience },
+        })),
       }] : []),
       ...(!article && ["", "services", "catalogue"].includes(section) ? [{
         "@type": "Service", "@id": `${base}${marketPath(market)}#service`,
@@ -89,7 +98,7 @@ export function marketSitemapEntries(): MetadataRoute.Sitemap {
   const base = getBaseUrl();
   return markets.flatMap((market) => [...marketSections, ...getMarketArticles(market).map((article) => `blog/${article.slug}`)].map((section) => ({
     url: `${base}${marketPath(market, section)}`,
-    lastModified: new Date(`${getMarketContentDate(market)}T00:00:00Z`),
+    lastModified: new Date(`${["", "blog", "catalogue", "services", "contact", "blog/top-10-cv-writers"].includes(section) ? "2026-09-10" : getMarketContentDate(market)}T00:00:00Z`),
     changeFrequency: "monthly" as const, priority: section === "" ? 0.8 : 0.65,
     alternates: { languages: Object.fromEntries(Object.entries(marketAlternates(section)).map(([language, path]) => [language, `${base}${path}`])) },
   })));

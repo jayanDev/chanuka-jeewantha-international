@@ -3,6 +3,7 @@ import { markets, getMarket, articleTopics } from "@/lib/markets";
 import { getMarketArticles } from "@/lib/market-articles";
 import { buildMarketMetadata } from "@/lib/market-seo";
 import { CountryArticle } from "@/components/markets/CountryPages";
+import CountryWritersArticle from "@/components/markets/CountryWritersArticle";
 
 type Props = { params: Promise<{ landingSlug: string; articleSlug: string }> };
 export const dynamicParams = false;
@@ -27,5 +28,6 @@ export async function generateMetadata({ params }: Props) {
 
 export default async function ArticlePage({ params }: Props) {
   const { market, article } = await resolveArticle(params);
+  if (article.slug === "top-10-cv-writers") return <CountryWritersArticle market={market} article={article} />;
   return <CountryArticle market={market} article={article} />;
 }

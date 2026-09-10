@@ -61,11 +61,31 @@ export const markets: Market[] = [
   { slug: "en-br", name: "Brazil", label: "Brazil", region: "BR", locale: "en-BR", currency: "BRL", dialCode: "+55", document: "resume", optimisation: "optimization" },
   { slug: "en-mx", name: "Mexico", label: "Mexico", region: "MX", locale: "en-MX", currency: "MXN", dialCode: "+52", document: "resume", optimisation: "optimization" },
   { slug: "en-cl", name: "Chile", label: "Chile", region: "CL", locale: "en-CL", currency: "CLP", dialCode: "+56", document: "CV", optimisation: "optimization" },
+  { slug: "en-ro", name: "Romania", label: "Romania", region: "RO", locale: "en-RO", currency: "RON", dialCode: "+40", document: "CV", optimisation: "optimisation" },
+  { slug: "en-hu", name: "Hungary", label: "Hungary", region: "HU", locale: "en-HU", currency: "HUF", dialCode: "+36", document: "CV", optimisation: "optimisation" },
+  { slug: "en-gr", name: "Greece", label: "Greece", region: "GR", locale: "en-GR", currency: "EUR", dialCode: "+30", document: "CV", optimisation: "optimisation" },
+  { slug: "en-hr", name: "Croatia", label: "Croatia", region: "HR", locale: "en-HR", currency: "EUR", dialCode: "+385", document: "CV", optimisation: "optimisation" },
+  { slug: "en-sk", name: "Slovakia", label: "Slovakia", region: "SK", locale: "en-SK", currency: "EUR", dialCode: "+421", document: "CV", optimisation: "optimisation" },
+  { slug: "en-bg", name: "Bulgaria", label: "Bulgaria", region: "BG", locale: "en-BG", currency: "EUR", dialCode: "+359", document: "CV", optimisation: "optimisation" },
+  { slug: "en-ee", name: "Estonia", label: "Estonia", region: "EE", locale: "en-EE", currency: "EUR", dialCode: "+372", document: "CV", optimisation: "optimisation" },
+  { slug: "en-pe", name: "Peru", label: "Peru", region: "PE", locale: "en-PE", currency: "PEN", dialCode: "+51", document: "resume", optimisation: "optimization" },
+  { slug: "en-lt", name: "Lithuania", label: "Lithuania", region: "LT", locale: "en-LT", currency: "EUR", dialCode: "+370", document: "CV", optimisation: "optimisation" },
+  { slug: "en-cy", name: "Cyprus", label: "Cyprus", region: "CY", locale: "en-CY", currency: "EUR", dialCode: "+357", document: "CV", optimisation: "optimisation" },
+  { slug: "en-jo", name: "Jordan", label: "Jordan", region: "JO", locale: "en-JO", currency: "JOD", dialCode: "+962", document: "CV", optimisation: "optimization" },
+  { slug: "en-tr", name: "Turkey", label: "Turkey", region: "TR", locale: "en-TR", currency: "TRY", dialCode: "+90", document: "CV", optimisation: "optimization" },
+  { slug: "en-il", name: "Israel", label: "Israel", region: "IL", locale: "en-IL", currency: "ILS", dialCode: "+972", document: "resume", optimisation: "optimization" },
+  { slug: "en-tw", name: "Taiwan", label: "Taiwan", region: "TW", locale: "en-TW", currency: "TWD", dialCode: "+886", document: "resume", optimisation: "optimization" },
+  { slug: "en-cn", name: "China", label: "China", region: "CN", locale: "en-CN", currency: "CNY", dialCode: "+86", document: "resume", optimisation: "optimization" },
+  { slug: "en-mu", name: "Mauritius", label: "Mauritius", region: "MU", locale: "en-MU", currency: "MUR", dialCode: "+230", document: "CV", optimisation: "optimisation" },
+  { slug: "en-eg", name: "Egypt", label: "Egypt", region: "EG", locale: "en-EG", currency: "EGP", dialCode: "+20", document: "CV", optimisation: "optimization" },
+  { slug: "en-ma", name: "Morocco", label: "Morocco", region: "MA", locale: "en-MA", currency: "MAD", dialCode: "+212", document: "CV", optimisation: "optimisation" },
+  { slug: "en-ar", name: "Argentina", label: "Argentina", region: "AR", locale: "en-AR", currency: "ARS", dialCode: "+54", document: "resume", optimisation: "optimization" },
+  { slug: "en-co", name: "Colombia", label: "Colombia", region: "CO", locale: "en-CO", currency: "COP", dialCode: "+57", document: "resume", optimisation: "optimization" },
 ];
 
 export const marketSections = ["", "about", "contact", "blog", "catalogue", "services"] as const;
 export type MarketSection = (typeof marketSections)[number];
-export const articleTopics = ["cv-guide", "linkedin-profile", "career-strategy"] as const;
+export const articleTopics = ["cv-guide", "linkedin-profile", "career-strategy", "top-10-cv-writers"] as const;
 export type ArticleTopic = (typeof articleTopics)[number];
 
 export function getMarket(slug: string): Market | undefined {

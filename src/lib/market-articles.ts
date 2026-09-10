@@ -8,6 +8,7 @@ export function getMarketContentDate(market: Market): string {
 
 export type MarketArticle = {
   slug: ArticleTopic;
+  publishedAt?: string;
   title: string;
   description: string;
   category: string;
@@ -59,6 +60,17 @@ export function getMarketArticles(market: Market): MarketArticle[] {
         { heading: "Build an evidence bank", paragraphs: [editorial.example, "For each example, note the situation, your decisions, the people involved and the outcome. Keep a version that protects confidential details. These notes can support your CV, LinkedIn profile, cover letters and interview preparation without making the documents identical."] },
         { heading: "A practical four-part review", items: ["Target: are the vacancies aligned with your skills and level?", "Evidence: can you demonstrate the recurring requirements?", "Application: are documents and responses specific and accurate?", "Feedback: what are recruiter conversations and interviews telling you?"] },
         { heading: "Prepare for a strategy consultation", paragraphs: ["Bring your current document, a few target vacancies and the questions you are trying to resolve. Include the constraints that matter to you, such as location, working arrangement, time frame and responsibilities. This lets the discussion focus on decisions rather than a general introduction to your career.", "A consultation provides direction and priorities. You remain responsible for applications and factual accuracy. Hiring, registration and immigration outcomes are outside the scope of career writing and are not guaranteed."] },
+      ],
+    },
+    {
+      slug: "top-10-cv-writers",
+      publishedAt: "2026-09-10",
+      title: `Top 10 CV Writers for ${market.label}: Writers & Companies`,
+      description: `${market.label} CV writing guide by Chanuka Jeewantha. Discover our premium founder-led service and compare specialist writers and companies.`,
+      category: "CV writing guide",
+      answer: `Our ${market.label} career branding service combines personally crafted writing, a clear professional direction and consistent positioning across your CV, LinkedIn profile and cover letter. Work directly with Chanuka from profile review through refinement.`,
+      sections: [
+        { heading: `Choosing a writer for ${market.label}`, paragraphs: [editorial.focus, `${editorial.question} ${editorial.answer}`] },
       ],
     },
   ];

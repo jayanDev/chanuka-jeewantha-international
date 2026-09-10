@@ -1,0 +1,955 @@
+{
+  "checkedAt": "2026-09-10",
+  "globalPool": [
+    "find-my-profession",
+    "city-cv",
+    "cv-centre",
+    "purplecv",
+    "avon",
+    "get-set",
+    "career-steering",
+    "icareer",
+    "topcv"
+  ],
+  "providers": {
+    "find-my-profession": {
+      "name": "Find My Profession",
+      "website": "https://www.findmyprofession.com/about-us/",
+      "sourceUrl": "https://www.findmyprofession.com/about-us/",
+      "experience": "Founded in 2015; resume writing and career services for professionals, including international clients.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "city-cv": {
+      "name": "City CV",
+      "website": "https://citycv.com/",
+      "sourceUrl": "https://citycv.com/",
+      "experience": "Established in 2008; CV writing, career coaching and professional branding for individuals and organisations.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "cv-centre": {
+      "name": "The CV Centre",
+      "website": "https://www.cvcentre.co.uk/about/",
+      "sourceUrl": "https://www.cvcentre.co.uk/about/",
+      "experience": "Established in 1998; the James Innes Group offers CV writing, LinkedIn profiles and career support.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "purplecv": {
+      "name": "PurpleCV",
+      "website": "https://purplecv.co.uk/",
+      "sourceUrl": "https://purplecv.co.uk/",
+      "experience": "UK-based writing team offering tailored CVs, cover letters and LinkedIn profiles, including online support for overseas clients.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "avon": {
+      "name": "Avon Resumes",
+      "website": "https://www.avonresumes.com/",
+      "sourceUrl": "https://www.avonresumes.com/",
+      "experience": "Resume, CV and LinkedIn writing with published services for a range of international application markets.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "get-set": {
+      "name": "Get Set Resumes",
+      "website": "https://www.getsetresumes.com/",
+      "sourceUrl": "https://www.getsetresumes.com/",
+      "experience": "Founded in 2010; resume writing and professional profile services for India and international English-language applications.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "career-steering": {
+      "name": "Rosa Elizabeth Vargas / Career Steering",
+      "website": "https://careersteering.com/globalexecutiveresumewritingservice/",
+      "sourceUrl": "https://careersteering.com/globalexecutiveresumewritingservice/",
+      "experience": "Executive resume and career branding practice serving global leadership candidates; Career Steering dates its work to 2003.",
+      "kind": "Writer-led practice",
+      "scope": "International online option"
+    },
+    "icareer": {
+      "name": "Arno Markus / iCareerSolutions",
+      "website": "https://icareersolutions.com/",
+      "sourceUrl": "https://icareersolutions.com/",
+      "experience": "Writer-led resume and LinkedIn services with a focus on executive positioning and professional career documents.",
+      "kind": "Writer-led practice",
+      "scope": "International online option"
+    },
+    "topcv": {
+      "name": "TopCV",
+      "website": "https://topcv.com/about",
+      "sourceUrl": "https://topcv.com/about",
+      "experience": "Professional CV, cover letter and LinkedIn writing delivered through an online writer-matching service.",
+      "kind": "Company",
+      "scope": "International online option"
+    },
+    "cvpeople-uk": {
+      "name": "CV People UK",
+      "website": "https://www.cvpeople.co.uk/",
+      "sourceUrl": "https://www.cvpeople.co.uk/",
+      "experience": "CV writing and LinkedIn services for UK applications, with professional and executive options.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "uk"
+    },
+    "exceptional": {
+      "name": "Exceptional Resume Writers",
+      "website": "https://exceptionalresumewriters.com.au/pricing/",
+      "sourceUrl": "https://exceptionalresumewriters.com.au/pricing/",
+      "experience": "Australian resume writing with career-level services and application-document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "au"
+    },
+    "cvpeople-au": {
+      "name": "CV People Australia",
+      "website": "https://www.cvpeople.com.au/",
+      "sourceUrl": "https://www.cvpeople.com.au/",
+      "experience": "Australian resume and professional profile services, including career-level writing packages.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "au"
+    },
+    "resumespice": {
+      "name": "ResumeSpice",
+      "website": "https://resumespice.com/",
+      "sourceUrl": "https://resumespice.com/",
+      "experience": "Recruiter-founded US resume writing, LinkedIn profiles, cover letters and career coaching.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "us"
+    },
+    "resumezest": {
+      "name": "ResumeZest",
+      "website": "https://www.resumezest.com/",
+      "sourceUrl": "https://www.resumezest.com/",
+      "experience": "US-based professional resume writers offering individual writing support and LinkedIn services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "us"
+    },
+    "career-impressions": {
+      "name": "Adrienne Tom / Career Impressions",
+      "website": "https://careerimpressions.ca/about/",
+      "sourceUrl": "https://careerimpressions.ca/about/",
+      "experience": "Executive resume and career-branding work for senior leaders in Canada and the United States.",
+      "kind": "Writer-led practice",
+      "scope": "Country-focused service",
+      "country": "ca"
+    },
+    "amk": {
+      "name": "AMK CVs",
+      "website": "https://amkcvsltd.co.nz/",
+      "sourceUrl": "https://amkcvsltd.co.nz/",
+      "experience": "New Zealand CV writing and application support for professionals at different career stages.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "nz"
+    },
+    "smartwrite": {
+      "name": "SmartWrite",
+      "website": "https://smartwrite.co.nz/",
+      "sourceUrl": "https://smartwrite.co.nz/",
+      "experience": "New Zealand CV and cover letter writing with individual career-document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "nz"
+    },
+    "labeeb": {
+      "name": "Labeeb",
+      "website": "https://labeeb.ae/linkedin-profile-optimization/",
+      "sourceUrl": "https://labeeb.ae/linkedin-profile-optimization/",
+      "experience": "UAE career-document provider offering CV writing and LinkedIn profile optimisation.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ae"
+    },
+    "careerzooom": {
+      "name": "Careerzooom",
+      "website": "https://careerzooom.ae/",
+      "sourceUrl": "https://careerzooom.ae/",
+      "experience": "UAE-focused CV writing and professional career-branding services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ae"
+    },
+    "barezz": {
+      "name": "Barezz",
+      "website": "https://barezz.com/en/services/cv-writing",
+      "sourceUrl": "https://barezz.com/en/services/cv-writing",
+      "experience": "Saudi-focused CV writing with English and Arabic document services described on its website.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "sa"
+    },
+    "resumewriter-sg": {
+      "name": "ResumeWriter Singapore",
+      "website": "https://www.resumewriter.sg/",
+      "sourceUrl": "https://www.resumewriter.sg/",
+      "experience": "Singapore resume writing and LinkedIn services with career-level application support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "sg"
+    },
+    "adresia": {
+      "name": "Adresia",
+      "website": "https://adresia.com/",
+      "sourceUrl": "https://adresia.com/",
+      "experience": "Malaysia-focused professional resume and LinkedIn profile writing services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "my"
+    },
+    "nikolai": {
+      "name": "Nikolai Pulin",
+      "website": "https://nikolaipulin.com/en",
+      "sourceUrl": "https://nikolaipulin.com/en",
+      "experience": "Individual career consultant offering CV and professional positioning support for career moves.",
+      "kind": "Individual writer",
+      "scope": "Country-focused service",
+      "country": "ru"
+    },
+    "cvbee": {
+      "name": "CVbee",
+      "website": "https://cvbee.me/",
+      "sourceUrl": "https://cvbee.me/",
+      "experience": "Qatar-focused CV writing, profile development and job-application document services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "qa"
+    },
+    "cvgulf": {
+      "name": "CV Gulf",
+      "website": "https://www.cvgulf.com/oman",
+      "sourceUrl": "https://www.cvgulf.com/oman",
+      "experience": "CV writing and LinkedIn services with published Oman and wider Gulf application support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "om"
+    },
+    "brandmyprofile": {
+      "name": "Brand My Profile",
+      "website": "https://www.brandmyprofile.com/",
+      "sourceUrl": "https://www.brandmyprofile.com/",
+      "experience": "Kuwait-focused CV writing and LinkedIn professional profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "kw"
+    },
+    "mycv": {
+      "name": "MyCV",
+      "website": "https://mycv.ie/",
+      "sourceUrl": "https://mycv.ie/",
+      "experience": "Irish CV writing and application support for professional career moves.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ie"
+    },
+    "uratehdas": {
+      "name": "Uratehdas",
+      "website": "https://uratehdas.fi/palvelut/cv-palvelu",
+      "sourceUrl": "https://uratehdas.fi/palvelut/cv-palvelu",
+      "experience": "Finnish career service offering CV creation or refinement and LinkedIn profile support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "fi"
+    },
+    "cvwriterbd": {
+      "name": "CV Writer BD",
+      "website": "https://cvwriterbd.com/",
+      "sourceUrl": "https://cvwriterbd.com/",
+      "experience": "Bangladesh-focused CV writing and career document services for job seekers.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "bd"
+    },
+    "ticketcv": {
+      "name": "Ticket CV",
+      "website": "https://ticketcv.com/",
+      "sourceUrl": "https://ticketcv.com/",
+      "experience": "HR-led Vietnam CV rewriting, cover letters and document design services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "vn"
+    },
+    "fransys": {
+      "name": "Fransys Consulting",
+      "website": "https://www.fransysconsulting.com/en/candidates/",
+      "sourceUrl": "https://www.fransysconsulting.com/en/candidates/",
+      "experience": "Italy-focused candidate services including career documents and professional positioning.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "it"
+    },
+    "cvsansfaute": {
+      "name": "CV Sans Faute",
+      "website": "https://www.cvsansfaute.fr/en/",
+      "sourceUrl": "https://www.cvsansfaute.fr/en/",
+      "experience": "France-focused CV writing and professional application-document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "fr"
+    },
+    "proresume": {
+      "name": "ProResume",
+      "website": "https://proresume.nl/en/",
+      "sourceUrl": "https://proresume.nl/en/",
+      "experience": "Netherlands-focused CV writing and LinkedIn profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "nl"
+    },
+    "labocv": {
+      "name": "Labo CV",
+      "website": "https://www.labo-cv.ch/",
+      "sourceUrl": "https://www.labo-cv.ch/",
+      "experience": "Swiss CV and application-document support for candidates preparing their professional profile.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ch"
+    },
+    "procv-se": {
+      "name": "ProCV",
+      "website": "https://procv.se/executive/",
+      "sourceUrl": "https://procv.se/executive/",
+      "experience": "Sweden-focused executive CV writing and professional profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "se"
+    },
+    "nordicshift": {
+      "name": "Nordic Shift",
+      "website": "https://www.nordicshift.no/",
+      "sourceUrl": "https://www.nordicshift.no/",
+      "experience": "Norway-focused CV, LinkedIn and career support for professional applications.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "no"
+    },
+    "careerdenmark": {
+      "name": "Career Denmark",
+      "website": "https://dk.linkedin.com/company/careerdenmark",
+      "sourceUrl": "https://dk.linkedin.com/company/careerdenmark",
+      "experience": "Denmark-focused career support with CV and job-search assistance described in its public company profile.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "dk"
+    },
+    "procv-be": {
+      "name": "ProCV Belgium",
+      "website": "https://procv.be/my-services/",
+      "sourceUrl": "https://procv.be/my-services/",
+      "experience": "Belgium-focused CV, LinkedIn and application-document services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "be"
+    },
+    "cvdoctor-at": {
+      "name": "CV Doctor Austria",
+      "website": "https://cvdoctor.at/",
+      "sourceUrl": "https://cvdoctor.at/",
+      "experience": "Austria-focused CV and application support for job seekers.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "at"
+    },
+    "procv-es": {
+      "name": "Pro-CV Spain",
+      "website": "https://pro-cv.es/en/",
+      "sourceUrl": "https://pro-cv.es/en/",
+      "experience": "Spain-focused professional CV and career-document writing services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "es"
+    },
+    "cvportugal": {
+      "name": "CV Portugal",
+      "website": "https://cvportugal.pt/servicos/",
+      "sourceUrl": "https://cvportugal.pt/servicos/",
+      "experience": "Portugal-focused CV, cover letter and LinkedIn profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "pt"
+    },
+    "procv-pl": {
+      "name": "ProCV Services Poland",
+      "website": "https://procvservices.pl/",
+      "sourceUrl": "https://procvservices.pl/",
+      "experience": "Poland-focused CV writing and LinkedIn professional profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "pl"
+    },
+    "cvdoctor-cz": {
+      "name": "CV Doctor Czechia",
+      "website": "https://cvdoctor.cz/",
+      "sourceUrl": "https://cvdoctor.cz/my-services/",
+      "experience": "English CV, cover letter and LinkedIn writing with published support for Czechia, Slovakia and wider European applications.",
+      "kind": "Company",
+      "scope": "European market service / English",
+      "country": "cz"
+    },
+    "leila": {
+      "name": "Leila Abid",
+      "website": "https://www.leilaabid.com/en/services.html",
+      "sourceUrl": "https://www.leilaabid.com/en/services.html",
+      "experience": "Luxembourg career consulting with CV and professional profile support.",
+      "kind": "Individual writer",
+      "scope": "Country-focused service",
+      "country": "lu"
+    },
+    "labeeb-bh": {
+      "name": "Labeeb Bahrain service",
+      "website": "https://labeeb.ae/bahrain/professional-cv-writing/",
+      "sourceUrl": "https://labeeb.ae/bahrain/professional-cv-writing/",
+      "experience": "Gulf career-document provider with a published Bahrain CV-writing service.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "bh"
+    },
+    "globalaccess": {
+      "name": "Global Access Japan",
+      "website": "https://globalaccessjapan.com/relocate-japan/",
+      "sourceUrl": "https://globalaccessjapan.com/relocate-japan/",
+      "experience": "Japan-focused career and relocation support with English resume assistance among its services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "jp"
+    },
+    "mhcareer": {
+      "name": "MH Career",
+      "website": "https://www.mh-career.com/workwithme",
+      "sourceUrl": "https://www.mh-career.com/workwithme",
+      "experience": "South Korea-focused career coaching and application-document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "kr"
+    },
+    "outsourceph": {
+      "name": "Outsource Philippines",
+      "website": "https://outsource-philippines.com/professional-writing-outsourcing/resume-writing-services/",
+      "sourceUrl": "https://outsource-philippines.com/professional-writing-outsourcing/resume-writing-services/",
+      "experience": "Philippines-based writing company offering professional resume-writing services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ph"
+    },
+    "upgraze": {
+      "name": "Upgraze",
+      "website": "https://upgraze.id/",
+      "sourceUrl": "https://upgraze.id/",
+      "experience": "Indonesia-focused CV writing and professional application support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "id"
+    },
+    "profilemaster": {
+      "name": "Profile Master",
+      "website": "https://www.profile-master.com/en-resume-writing",
+      "sourceUrl": "https://www.profile-master.com/en-resume-writing",
+      "experience": "Thailand-focused English resume writing and professional profile support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "th"
+    },
+    "professionalcv-pk": {
+      "name": "Professional CV Pakistan",
+      "website": "https://www.professionalcv.pk/linkedin-profile-writing-service/",
+      "sourceUrl": "https://www.professionalcv.pk/linkedin-profile-writing-service/",
+      "experience": "Pakistan-focused CV and LinkedIn writing for professional applications.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "pk"
+    },
+    "digital-nepal": {
+      "name": "Digital Solution Nepal",
+      "website": "https://digitalsolutionnepal.com/services/professional-cv-cover-letter/",
+      "sourceUrl": "https://digitalsolutionnepal.com/services/professional-cv-cover-letter/",
+      "experience": "Nepal CV and cover letter preparation, including remote support for applicants abroad.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "np"
+    },
+    "brendanhope": {
+      "name": "Brendan Hope",
+      "website": "https://brendanhope.co.za/cv-services/linkedin-profile-writing/",
+      "sourceUrl": "https://brendanhope.co.za/cv-services/linkedin-profile-writing/",
+      "experience": "South Africa-focused CV and LinkedIn writing through a writer-led career-document service.",
+      "kind": "Writer-led practice",
+      "scope": "Country-focused service",
+      "country": "za"
+    },
+    "myjobmag": {
+      "name": "MyJobMag",
+      "website": "https://www.myjobmag.com/cv-rewrite",
+      "sourceUrl": "https://www.myjobmag.com/cv-rewrite",
+      "experience": "Nigeria job platform offering a human CV rewrite service alongside recruitment resources.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ng"
+    },
+    "careerpoint": {
+      "name": "Career Point Kenya",
+      "website": "https://www.careerpointkenya.co.ke/cv-writing-services-kenya/",
+      "sourceUrl": "https://www.careerpointkenya.co.ke/cv-writing-services-kenya/",
+      "experience": "Kenya-focused professional CV writing and career support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ke"
+    },
+    "corporategh": {
+      "name": "Corporate Ghana",
+      "website": "https://corporategh.com/professional-cv-writing/",
+      "sourceUrl": "https://corporategh.com/professional-cv-writing/",
+      "experience": "Ghana-focused professional CV writing and career-document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "gh"
+    },
+    "oes": {
+      "name": "Online English Services",
+      "website": "https://www.onlineenglishservices.com.br/outros-servicos",
+      "sourceUrl": "https://www.onlineenglishservices.com.br/outros-servicos",
+      "experience": "Brazil-based English service provider listing CV and LinkedIn document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "br"
+    },
+    "matchcv": {
+      "name": "Match CV",
+      "website": "https://www.match-cv.mx/",
+      "sourceUrl": "https://www.match-cv.mx/",
+      "experience": "Mexico-focused CV and LinkedIn professional positioning services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "mx"
+    },
+    "tehagoelcv": {
+      "name": "Te Hago el CV",
+      "website": "https://tehagoelcv.com/",
+      "sourceUrl": "https://tehagoelcv.com/",
+      "experience": "Chile-focused CV writing and job-application document support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "cl"
+    },
+    "careerpartner": {
+      "name": "Career Partner Romania",
+      "website": "https://ro.linkedin.com/company/careerpartner-romania",
+      "sourceUrl": "https://ro.linkedin.com/company/careerpartner-romania",
+      "experience": "Romania career consultancy listing CV writing, LinkedIn and interview support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ro"
+    },
+    "rook": {
+      "name": "Agnes Talbot / Rook CV",
+      "website": "https://www.rook-cv.com/hu",
+      "sourceUrl": "https://www.rook-cv.com/hu",
+      "experience": "Writer-led English and Hungarian CV and cover letter support informed by an HR background.",
+      "kind": "Writer-led practice",
+      "scope": "Country-focused service",
+      "country": "hu"
+    },
+    "workscience": {
+      "name": "Work Science / CVexperts",
+      "website": "https://workscience.gr/en/services/writing/",
+      "sourceUrl": "https://workscience.gr/en/services/writing/",
+      "experience": "Greece career consultancy offering CV, LinkedIn and professional content writing.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "gr"
+    },
+    "zivotopis": {
+      "name": "Zivotopis.com.hr",
+      "website": "https://zivotopis.com.hr/",
+      "sourceUrl": "https://zivotopis.com.hr/",
+      "experience": "Croatia-focused CV writing and LinkedIn profile support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "hr"
+    },
+    "connexa": {
+      "name": "Katlin Pall / Connexa",
+      "website": "https://connexa.ee/en/home/",
+      "sourceUrl": "https://connexa.ee/en/home/",
+      "experience": "Estonia career coaching with CV improvement and LinkedIn support, drawing on recruitment work.",
+      "kind": "Writer-led practice",
+      "scope": "Country-focused service",
+      "country": "ee"
+    },
+    "cvmaker-pe": {
+      "name": "CVMaker Peru writing service",
+      "website": "https://www.cvmaker.pe/servicio-de-creacion-de-cvs",
+      "sourceUrl": "https://www.cvmaker.pe/servicio-de-creacion-de-cvs",
+      "experience": "Writer-assisted CV, cover letter and LinkedIn service, distinct from the platform's self-service CV builder.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "pe"
+    },
+    "profesionalus": {
+      "name": "Profesionalus CV",
+      "website": "https://profesionaluscv.lt/paslaugos",
+      "sourceUrl": "https://profesionaluscv.lt/paslaugos",
+      "experience": "Lithuania CV, cover letter and LinkedIn writing services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "lt"
+    },
+    "emeraldzebra": {
+      "name": "Emerald Zebra",
+      "website": "https://emeraldzebra.cy/improve-your-professional-image-with-emerald-zebras-cv-writing-and-linkedin-profile-services/",
+      "sourceUrl": "https://emeraldzebra.cy/improve-your-professional-image-with-emerald-zebras-cv-writing-and-linkedin-profile-services/",
+      "experience": "Cyprus recruitment company offering CV writing and LinkedIn profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "cy"
+    },
+    "cvmakersjo": {
+      "name": "CV Makers Jordan",
+      "website": "https://jo.linkedin.com/company/cvmakersjo",
+      "sourceUrl": "https://jo.linkedin.com/company/cvmakersjo",
+      "experience": "Jordan career-document company listing CV writing, design and LinkedIn profile services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "jo"
+    },
+    "english4il": {
+      "name": "English For Israel",
+      "website": "https://www.linkedin.com/company/english4il",
+      "sourceUrl": "https://www.linkedin.com/company/english4il",
+      "experience": "Business-English service listing CV writing and LinkedIn profile support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "il"
+    },
+    "careerplus": {
+      "name": "Career Plus Taiwan",
+      "website": "https://www.careerplus.com.tw/",
+      "sourceUrl": "https://www.careerplus.com.tw/",
+      "experience": "Taiwan resume consultation and professional career-development support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "tw"
+    },
+    "highmark": {
+      "name": "HighMark Career",
+      "website": "https://www.highmarkcareer.cn/en/about.html",
+      "sourceUrl": "https://www.highmarkcareer.cn/en/about.html",
+      "experience": "Chinese and English resume refinement with career and interview support for early-career applications.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "cn"
+    },
+    "islandpro": {
+      "name": "Island Pro Consulting",
+      "website": "https://islandproconsulting.mu/services/cv-cover-letter",
+      "sourceUrl": "https://islandproconsulting.mu/services/cv-cover-letter",
+      "experience": "Mauritius CV and cover letter writing for professional and international applications.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "mu"
+    },
+    "jobsnatchers": {
+      "name": "Job Snatchers",
+      "website": "https://www.jobsnatchers.com/",
+      "sourceUrl": "https://www.jobsnatchers.com/",
+      "experience": "Cairo-based online resume-writing service for professional applications.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "eg"
+    },
+    "cvconsultant": {
+      "name": "CV Consultant Morocco",
+      "website": "https://www.linkedin.com/company/cv-consultant/",
+      "sourceUrl": "https://www.linkedin.com/company/cv-consultant/",
+      "experience": "Morocco career-document provider listing CV, LinkedIn and HR-informed application support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ma"
+    },
+    "rivara": {
+      "name": "Rivara Consultora",
+      "website": "https://carrera.rivaraconsultora.com.ar/",
+      "sourceUrl": "https://carrera.rivaraconsultora.com.ar/",
+      "experience": "Argentina CV, LinkedIn and career-strategy services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "ar"
+    },
+    "mihojadevida": {
+      "name": "Mi Hoja de Vida Colombia",
+      "website": "https://co.linkedin.com/company/mihojadevida",
+      "sourceUrl": "https://co.linkedin.com/company/mihojadevida",
+      "experience": "Colombia HR-led CV, LinkedIn, cover letter and interview services.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "co"
+    },
+    "resumeguru": {
+      "name": "ResumeGuru",
+      "website": "https://www.resumeguru.in/countries/malta",
+      "sourceUrl": "https://www.resumeguru.in/countries/malta",
+      "experience": "Online resume provider with a published Malta CV-writing service for international applicants.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "mt"
+    },
+    "nameri": {
+      "name": "Maria Ilieva / Nameri Rabota",
+      "website": "https://namerirabota.com/uslugi/izgotvyane-na-linkedin",
+      "sourceUrl": "https://namerirabota.com/uslugi/izgotvyane-na-linkedin",
+      "experience": "Bulgaria career consultant offering CV, cover letter and LinkedIn writing in Bulgarian and English.",
+      "kind": "Writer-led practice",
+      "scope": "Country-focused service",
+      "country": "bg"
+    },
+    "recovercv": {
+      "name": "RecoverCV",
+      "website": "https://www.linkedin.com/company/recovercv",
+      "sourceUrl": "https://www.linkedin.com/company/recovercv",
+      "experience": "Turkey career consultancy listing CV, cover letter, LinkedIn and interview support.",
+      "kind": "Company",
+      "scope": "Country-focused service",
+      "country": "tr"
+    },
+    "mzansi": {
+      "name": "Mzansi Writers",
+      "website": "https://mzansiwriters.co.za/cv-writing-services-in-maldives/",
+      "sourceUrl": "https://mzansiwriters.co.za/cv-writing-services-in-maldives/",
+      "experience": "Online writing company with a published CV-writing service for Maldives applications.",
+      "kind": "Company",
+      "scope": "International provider / Maldives service"
+    },
+    "resume-de": {
+      "name": "Resume Writing Service Germany",
+      "website": "https://resumewritingservice.de/",
+      "sourceUrl": "https://resumewritingservice.de/",
+      "experience": "English CV, cover letter and LinkedIn writing for professionals, managers and executives targeting Germany.",
+      "kind": "Writer-led practice",
+      "scope": "Germany-focused service / English"
+    }
+  },
+  "countryProviders": {
+    "en-uk": [
+      "cvpeople-uk",
+      "city-cv",
+      "cv-centre",
+      "purplecv"
+    ],
+    "en-au": [
+      "exceptional",
+      "cvpeople-au"
+    ],
+    "en-us": [
+      "resumespice",
+      "resumezest",
+      "career-impressions"
+    ],
+    "en-ca": [
+      "career-impressions"
+    ],
+    "en-nz": [
+      "amk",
+      "smartwrite"
+    ],
+    "en-ae": [
+      "labeeb",
+      "careerzooom"
+    ],
+    "en-sa": [
+      "barezz"
+    ],
+    "en-mv": [
+      "mzansi"
+    ],
+    "en-sg": [
+      "resumewriter-sg"
+    ],
+    "en-my": [
+      "adresia"
+    ],
+    "en-ru": [
+      "nikolai"
+    ],
+    "en-qa": [
+      "cvbee"
+    ],
+    "en-om": [
+      "cvgulf"
+    ],
+    "en-kw": [
+      "brandmyprofile"
+    ],
+    "en-ie": [
+      "mycv"
+    ],
+    "en-fi": [
+      "uratehdas"
+    ],
+    "en-in": [
+      "avon",
+      "get-set"
+    ],
+    "en-bd": [
+      "cvwriterbd"
+    ],
+    "en-vn": [
+      "ticketcv"
+    ],
+    "en-it": [
+      "fransys"
+    ],
+    "en-de": [
+      "resume-de"
+    ],
+    "en-fr": [
+      "cvsansfaute"
+    ],
+    "en-nl": [
+      "proresume"
+    ],
+    "en-ch": [
+      "labocv"
+    ],
+    "en-se": [
+      "procv-se"
+    ],
+    "en-no": [
+      "nordicshift"
+    ],
+    "en-dk": [
+      "careerdenmark"
+    ],
+    "en-be": [
+      "procv-be"
+    ],
+    "en-at": [
+      "cvdoctor-at"
+    ],
+    "en-es": [
+      "procv-es"
+    ],
+    "en-pt": [
+      "cvportugal"
+    ],
+    "en-pl": [
+      "procv-pl"
+    ],
+    "en-cz": [
+      "cvdoctor-cz"
+    ],
+    "en-lu": [
+      "leila"
+    ],
+    "en-mt": [
+      "resumeguru"
+    ],
+    "en-bh": [
+      "labeeb-bh"
+    ],
+    "en-jp": [
+      "globalaccess"
+    ],
+    "en-kr": [
+      "mhcareer"
+    ],
+    "en-ph": [
+      "outsourceph"
+    ],
+    "en-id": [
+      "upgraze"
+    ],
+    "en-th": [
+      "profilemaster"
+    ],
+    "en-pk": [
+      "professionalcv-pk"
+    ],
+    "en-np": [
+      "digital-nepal"
+    ],
+    "en-za": [
+      "brendanhope"
+    ],
+    "en-ng": [
+      "myjobmag"
+    ],
+    "en-ke": [
+      "careerpoint"
+    ],
+    "en-gh": [
+      "corporategh"
+    ],
+    "en-br": [
+      "oes"
+    ],
+    "en-mx": [
+      "matchcv"
+    ],
+    "en-cl": [
+      "tehagoelcv"
+    ],
+    "en-ro": [
+      "careerpartner"
+    ],
+    "en-hu": [
+      "rook"
+    ],
+    "en-gr": [
+      "workscience"
+    ],
+    "en-hr": [
+      "zivotopis"
+    ],
+    "en-sk": [
+      "cvdoctor-cz"
+    ],
+    "en-bg": [
+      "nameri"
+    ],
+    "en-ee": [
+      "connexa"
+    ],
+    "en-pe": [
+      "cvmaker-pe"
+    ],
+    "en-lt": [
+      "profesionalus"
+    ],
+    "en-cy": [
+      "emeraldzebra"
+    ],
+    "en-jo": [
+      "cvmakersjo"
+    ],
+    "en-tr": [
+      "recovercv"
+    ],
+    "en-il": [
+      "english4il"
+    ],
+    "en-tw": [
+      "careerplus"
+    ],
+    "en-cn": [
+      "highmark"
+    ],
+    "en-mu": [
+      "islandpro"
+    ],
+    "en-eg": [
+      "jobsnatchers"
+    ],
+    "en-ma": [
+      "cvconsultant"
+    ],
+    "en-ar": [
+      "rivara"
+    ],
+    "en-co": [
+      "mihojadevida"
+    ]
+  }
+}

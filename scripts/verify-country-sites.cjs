@@ -48,6 +48,15 @@ async function main() {
             for (const cell of document.querySelectorAll("table td")) assert.ok(cell.textContent.includes(route.market.currency));
             assert.equal(document.querySelectorAll("table tbody tr").length, 36);
           }
+          if (route.section === "blog/top-10-cv-writers") {
+            const writers = [...document.querySelectorAll("[data-writer]")];
+            assert.equal(writers.length, 10);
+            assert.equal(writers[0].getAttribute("data-writer"), "chanuka-jeewantha");
+            assert.equal([...writers[0].querySelectorAll("a")].find((a) => a.textContent.includes("Visit Website")).getAttribute("href"), `/${route.market.slug}`);
+            assert.ok(writers[0].textContent.includes("Our featured service"));
+            assert.ok(!document.body.textContent.includes("How to read this list"));
+            assert.ok(schemas.some((schema) => schema["@graph"]?.some((entry) => entry["@type"] === "ItemList" && entry.numberOfItems === 10)));
+          }
           report.push({ path: route.pathname, status: response.status, title: document.title, canonical });
         } finally { dom.window.close(); }
         if (report.length % 30 === 0) console.log(`Checked ${report.length} country pages`);

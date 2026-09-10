@@ -94,7 +94,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: siteLastUpdated,
+    lastModified: route === "/international" ? new Date("2026-09-10T00:00:00Z") : siteLastUpdated,
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));

@@ -5,11 +5,11 @@ import CountryDirectory from "./CountryDirectory";
 afterEach(cleanup);
 
 describe("country directory", () => {
-  it("renders all 50 crawlable country links before filtering", () => {
+  it("renders all 70 crawlable country links before filtering", () => {
     render(<CountryDirectory />);
     const navigation = screen.getByRole("navigation", { name: "Choose a country website" });
-    expect(within(navigation).getAllByRole("link")).toHaveLength(50);
-    expect(screen.getByRole("status").textContent).toBe("50 markets");
+    expect(within(navigation).getAllByRole("link")).toHaveLength(70);
+    expect(screen.getByRole("status").textContent).toBe("70 markets");
   });
 
   it("filters by currency and country aliases, clears and handles no matches", () => {
@@ -24,6 +24,6 @@ describe("country directory", () => {
     expect(screen.getByText("No matching countries.")).toBeDefined();
     expect(screen.queryAllByRole("link")).toHaveLength(0);
     fireEvent.click(screen.getByRole("button", { name: "Clear country search" }));
-    expect(screen.getAllByRole("link")).toHaveLength(50);
+    expect(screen.getAllByRole("link")).toHaveLength(70);
   });
 });
