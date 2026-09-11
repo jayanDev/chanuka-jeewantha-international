@@ -64,7 +64,7 @@ export const paymentInstructions = {
   accountNumber: "Shared after enquiry approval",
   branch: "Remote-only service",
   methodNote:
-    "Wise, PayPal, Payoneer, Stripe, and bank transfer are all supported. Specific payment details are confirmed after your profile review.",
+    "Available payment methods, settlement currency and payment details are confirmed in your written quote after profile review. Please do not send payment before confirmation.",
 };
 
 export const serviceOptions: Array<{

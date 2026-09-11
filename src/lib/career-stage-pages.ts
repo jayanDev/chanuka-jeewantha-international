@@ -23,7 +23,7 @@ export const careerStagePages: CareerStagePage[] = [
     slug: "entry-level",
     metaTitle: "Entry-Level Resume Writer - Recent Grads & First Jobs",
     metaDescription:
-      "Entry-level resume writing for recent graduates and first US jobs. ATS-clean, internship-aware, founder-led. 90-day interview guarantee.",
+      "Entry-level resume writing for recent graduates and first US jobs. ATS-clean, internship-aware, founder-led. agreed revision support.",
     h1: "Entry-Level Resume Writer",
     intro:
       "Early-career resumes get rejected for two reasons: no proof, or no positioning. We solve both - surfacing what you actually did and naming what you're competing for.",
@@ -48,7 +48,7 @@ export const careerStagePages: CareerStagePage[] = [
       "Skills, certifications, and academic distinctions placed correctly for entry-level US screens",
       "LinkedIn profile rewrite that helps recruiter outreach",
       "Cover letter framework for your target lane",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Starter Pack",
@@ -74,8 +74,8 @@ export const careerStagePages: CareerStagePage[] = [
         a: "The Starter Pack is right for most graduates. If you're targeting MBB consulting, top-tier banking, or a hyper-competitive APM program, the Career Pack ($349) is worth the upgrade for the 30-day support window and extra revision round.",
       },
       {
-        q: "Does the 90-day guarantee apply to entry-level resumes?",
-        a: "Yes. Every package, every career stage. Full terms on the refund policy page.",
+        q: "Is revision support available for early-career applicants?",
+        a: "Yes. Revision scope is confirmed with your chosen service before work begins. Hiring outcomes are not guaranteed.",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const careerStagePages: CareerStagePage[] = [
     slug: "mid-career",
     metaTitle: "Mid-Career Resume Writer - 3 to 10 Years Experience",
     metaDescription:
-      "Mid-career resume writing for US professionals with 3-10 years of experience. Achievement-led, ATS-clean. 90-day interview guarantee.",
+      "Mid-career resume writing for US professionals with 3-10 years of experience. Achievement-led, ATS-clean. agreed revision support.",
     h1: "Mid-Career Resume Writer",
     intro:
       "Mid-career is the slot where most resumes get stuck - too senior for entry-level patterns, not senior enough to read as a leader. We rewrite for the role you're actually competing for, not the one you're leaving.",
@@ -109,7 +109,7 @@ export const careerStagePages: CareerStagePage[] = [
       "LinkedIn rewrite optimized for recruiter search",
       "Cover letter template adaptable per company",
       "Optional positioning for career changes (industry / function / geography)",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -144,7 +144,7 @@ export const careerStagePages: CareerStagePage[] = [
     slug: "executive",
     metaTitle: "Executive-Level Resume Writer - VP, SVP, Director",
     metaDescription:
-      "Senior leadership resume writing for VP, SVP, Director, and GM candidates in the US. Founder-led, 90-day interview guarantee.",
+      "Senior leadership resume writing for VP, SVP, Director, and GM candidates in the US. Founder-led, agreed revision support.",
     h1: "Executive-Level Resume Writer",
     intro:
       "At Director, VP, and SVP level the resume sells operator capability - scope of P&L, headcount, business unit. Most senior candidates still write like a manager. We fix that.",
@@ -170,7 +170,7 @@ export const careerStagePages: CareerStagePage[] = [
       "Executive LinkedIn rewrite (About, headline, experience, skills)",
       "Executive cover letter template you can adapt per role",
       "1-hour strategy consultation on the Executive Brand Suite",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Executive Brand Suite",
@@ -205,7 +205,7 @@ export const careerStagePages: CareerStagePage[] = [
     slug: "career-changer",
     metaTitle: "Career Changer Resume Writer - Industry & Function Pivots",
     metaDescription:
-      "Resume writing for US career changers - industry pivots, function changes, post-MBA shifts. Reframing-first approach. 90-day interview guarantee.",
+      "Resume writing for US career changers - industry pivots, function changes, post-MBA shifts. Reframing-first approach. agreed revision support.",
     h1: "Career Changer Resume Writer",
     intro:
       "Career-change resumes fail because they read like a history book - the past is loud, the future is invisible. We rewrite around where you're going, then back-fill the past with the patterns that prove you can get there.",
@@ -231,7 +231,7 @@ export const careerStagePages: CareerStagePage[] = [
       "Vocabulary translated to the destination industry / function",
       "LinkedIn rewrite that supports inbound recruiter outreach in the new field",
       "Cover letter template that addresses the change directly and confidently",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Move Pack",

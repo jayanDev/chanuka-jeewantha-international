@@ -1377,7 +1377,7 @@ export const tutorials: Tutorial[] = [
       "Is the text highly readable without complex formatting?",
       "Did I save it as a PDF or DOCX file?"
     ],
-    "cta": "Want to know if your CV passes the ATS check? Use our professional ATS formatting service to guarantee results!"
+    "cta": "Request a professional CV review for practical guidance on formatting, relevant evidence and recruiter readability."
   },
   "si": {
     "slug": "ats-friendly-resume-writing-si",

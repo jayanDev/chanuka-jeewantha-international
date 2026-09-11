@@ -45,13 +45,7 @@ export function marketServices(market: Market) {
   }));
 }
 
-export const marketBundles = [
-  { id: "starter", name: "International Starter Pack", usd: 179, audience: "Students & fresh graduates", features: ["Graduate ATS CV / resume", "Cover letter", "LinkedIn optimisation", "7-day delivery"] },
-  { id: "career", name: "International Career Pack", usd: 349, audience: "Working professionals", features: ["Professional ATS CV / resume", "LinkedIn optimisation", "Cover letter", "30-day support", "1 round of revisions"], popular: true },
-  { id: "migration", name: "Global Migration Pack", usd: 499, audience: "Professionals making a cross-border move", features: ["Country-specific ATS CV", "International format CV", "LinkedIn optimisation", "2 role-specific cover letters", "60-day support"] },
-  { id: "executive", name: "Executive Brand Suite", usd: 899, audience: "Senior professionals & executives", features: ["Executive ATS CV / resume", "Executive LinkedIn optimisation", "Executive cover letter", "International format CV", "1-hour strategy consultation", "90-day premium support"] },
-  { id: "c-suite", name: "C-Suite Premium", usd: 1499, audience: "Directors, founders & C-suite leaders", features: ["C-suite CV / resume", "Executive LinkedIn with content strategy", "Cover letter & international format CV", "2 hours of strategy sessions", "6-month support", "Quarterly LinkedIn refresh"], premium: true },
-];
+export { internationalBundles as marketBundles } from "@/lib/international-bundles";
 
 export function marketEnquiryLink(market: Market, selection: string, level?: string): string {
   const query = new URLSearchParams({ package: selection });

@@ -53,7 +53,7 @@ const whatYouGet = [
   "Consistent positioning, titles, and tone across both documents",
   "US resume and letter conventions (format, length, no personal details)",
   "A version you can adapt for similar roles without starting over",
-  "90-day interview guarantee - 100% money-back",
+  "Revision support within the agreed scope",
 ];
 
 const FAQS = [
@@ -105,7 +105,7 @@ export default function ResumeAndCoverLetterPage() {
             Included in every bundle from <Price usd={179} />
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-white/80">
-            90-day interview guarantee
+            agreed revision support
           </span>
         </div>
       </PageHero>
@@ -180,7 +180,7 @@ export default function ResumeAndCoverLetterPage() {
           { title: "Resume writing service", href: "/", blurb: "The full US resume service and how it works." },
           { title: "Resume examples", href: "/resume-examples", blurb: "What strong resumes look like by level." },
           { title: "CV writing service", href: "/cv-writing-service", blurb: "The CV-branded version of the service." },
-          { title: "LinkedIn optimization", href: "/services/packages/linkedin-optimization", blurb: "Round out resume + cover letter with LinkedIn." },
+          { title: "LinkedIn optimization", href: "/services/packages/linkedin", blurb: "Round out resume + cover letter with LinkedIn." },
           { title: "Packages & pricing", href: "/pricing", blurb: "Bundles that include both documents." },
           { title: "Request a profile review", href: "/contact", blurb: "Get a personal recommendation first." },
         ]}
@@ -188,7 +188,7 @@ export default function ResumeAndCoverLetterPage() {
 
       <PageCTA
         heading="Get a resume and cover letter that pull in the same direction."
-        subheading="Submit your current documents and target role for a personal review. Backed by a 90-day interview guarantee."
+        subheading="Submit your current documents and target role for a personal review. Backed by a agreed revision support."
       />
     </>
   );

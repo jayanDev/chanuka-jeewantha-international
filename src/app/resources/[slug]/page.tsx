@@ -83,7 +83,7 @@ export default async function ResourceSinglePage({ params }: ResourcePageProps) 
   const priceLkr = resource.priceLkr ?? 0;
   const isFreeResource = resource.category === "free";
   const resourceDownload = getResourceDownloadBySlug(resource.slug);
-  const user = await getServerUser();
+  const user = resourceDownload ? await getServerUser() : null;
   const returnTo = `/resources/${resource.slug}`;
   const signupHref = `/auth/signup?returnTo=${encodeURIComponent(returnTo)}`;
   const signinHref = `/auth/signin?returnTo=${encodeURIComponent(returnTo)}`;
@@ -134,7 +134,7 @@ export default async function ResourceSinglePage({ params }: ResourcePageProps) 
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(resource.resourceType === "Guide" ? { "@context": "https://schema.org", "@type": "Article", headline: resource.title, description: resource.description, url: resourceUrl, image: imageUrl, author: { "@id": `${baseUrl}/#person`, "@type": "Person", name: "Chanuka Jeewantha" }, datePublished: "2026-09-11" } : productLd) }}
       />
 
       <section className="w-full bg-foreground text-background pt-[120px] md:pt-[180px] pb-[72px] md:pb-[90px]">

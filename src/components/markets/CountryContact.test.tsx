@@ -34,7 +34,7 @@ describe("country enquiry workflow", () => {
   it("keeps the existing global form defaults", () => {
     render(<ContactForm />);
     expect(screen.getByLabelText("Target Market")).toHaveValue("");
-    expect(screen.getByLabelText("Selected Service or Package")).toHaveValue("Career Pack");
-    expect(screen.getByRole("button", { name: "Submit Enquiry" })).toBeInTheDocument();
+    expect(screen.getByLabelText("Selected Service or Package")).toHaveValue("International Career Pack");
+    expect(screen.getByRole("button", { name: "Submit International Enquiry" })).toBeInTheDocument();
   });
 });

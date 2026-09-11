@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import { internationalBundles } from "@/lib/international-bundles";
+import { trackCareerEvent } from "@/lib/analytics";
 
 // Web3Forms public access key. This is designed to be exposed client-side
 // (spam is handled by the honeypot + Web3Forms filtering). Emails the enquiry
@@ -20,15 +22,22 @@ const serviceOptions = [
   "ATS Resume / CV Writing",
   "LinkedIn Optimization",
   "Cover Letter Writing",
-  "Modern CV Format (cross-border applications)",
+  "Foreign Job CV / International Format",
   "Graphical CV / Premium Design",
   "Career Consultation",
-  "Starter Pack",
-  "Career Pack",
-  "Career Move Pack",
-  "Executive Brand Suite",
-  "C-Suite Premium",
+  ...internationalBundles.map(bundle => bundle.name),
 ];
+
+const serviceAliases: Record<string, string> = {
+  "ATS CV Writing": "ATS Resume / CV Writing",
+  "ATS Resume & CV Writing": "ATS Resume / CV Writing",
+  "LinkedIn Profile Optimization": "LinkedIn Optimization",
+  "Executive Resume & Modern CV Format": "Foreign Job CV / International Format",
+  "Graphical CV / Premium Design CV": "Graphical CV / Premium Design",
+  "Starter Pack": "International Starter Pack",
+  "Career Pack": "International Career Pack",
+  "Career Move Pack": "Global Migration Pack",
+};
 
 // Target markets first, then other common codes.
 const countryCodes = [
@@ -87,7 +96,7 @@ const initialFormState: FormState = {
   careerLevel: "Professional",
   targetRole: "",
   yearsExperience: "",
-  selectedService: "Career Pack",
+  selectedService: "International Career Pack",
   linkedinUrl: "",
   message: "",
   website: "",
@@ -133,11 +142,12 @@ type ContactFormProps = {
 
 export default function ContactForm({ defaultTargetCountry, defaultDialCode, defaultService, defaultCareerLevel, serviceChoices, marketContext }: ContactFormProps = {}) {
   const choices = serviceChoices ?? serviceOptions;
+  const selection = defaultService && Object.hasOwn(serviceAliases, defaultService) ? serviceAliases[defaultService] : defaultService;
   const defaults: FormState = {
     ...initialFormState,
     targetCountry: defaultTargetCountry ?? initialFormState.targetCountry,
     countryCode: defaultDialCode ?? initialFormState.countryCode,
-    selectedService: defaultService && choices.includes(defaultService) ? defaultService : initialFormState.selectedService,
+    selectedService: selection && choices.includes(selection) ? selection : (choices.includes(initialFormState.selectedService) ? initialFormState.selectedService : choices[0]),
     careerLevel: defaultCareerLevel && careerLevels.includes(defaultCareerLevel) ? defaultCareerLevel : initialFormState.careerLevel,
   };
   const [formData, setFormData] = useState<FormState>(defaults);
@@ -147,6 +157,8 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorText, setErrorText] = useState("");
+  const started = useRef(false);
+  const inFlight = useRef(false);
   const successRef = useRef<HTMLDivElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
@@ -154,11 +166,11 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
   useEffect(() => {
     if (submitStatus !== "success") return;
     successRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
-    const timer = setTimeout(() => setSubmitStatus("idle"), 6000);
-    return () => clearTimeout(timer);
+
   }, [submitStatus]);
 
   const updateField = (key: keyof FormState, value: string) => {
+    if (key !== "website" && !started.current) { started.current = true; trackCareerEvent("form_start"); }
     setFormData((prev) => ({ ...prev, [key]: value }));
     if (touched[key]) {
       setErrors((prev) => ({ ...prev, [key]: validateField(key, value) }));
@@ -188,7 +200,13 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validateAll()) return;
+    if (inFlight.current) return;
+    if (!validateAll()) { trackCareerEvent("form_error"); return; }
+    if (currentCv && (currentCv.size > 5 * 1024 * 1024 || !/\.(pdf|docx?)$/i.test(currentCv.name))) {
+      setSubmitStatus("error");
+      setErrorText("Choose a PDF, DOC or DOCX file no larger than 5 MB, or remove the attachment.");
+      return;
+    }
 
     setIsSubmitting(true);
     setSubmitStatus("idle");
@@ -204,6 +222,7 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
       return;
     }
 
+    inFlight.current = true;
     try {
       const phone = formData.whatsappNumber.trim()
         ? `${formData.countryCode} ${formData.whatsappNumber}`.trim()
@@ -247,6 +266,7 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: payload,
+        signal: AbortSignal.timeout(30000),
       });
       const data = await response.json().catch(() => ({}));
 
@@ -261,9 +281,12 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
       setFormData(defaults);
       setCurrentCv(null);
       if (fileInputRef.current) fileInputRef.current.value = "";
+      trackCareerEvent("generate_lead");
+      started.current = false;
       setErrors({});
       setTouched({});
     } catch (error: unknown) {
+      trackCareerEvent("form_error");
       setSubmitStatus("error");
       setErrorText(
         error instanceof Error
@@ -271,6 +294,7 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
           : "Something went wrong. Please email chanukajeewantha00@gmail.com directly."
       );
     } finally {
+      inFlight.current = false;
       setIsSubmitting(false);
     }
   };
@@ -417,7 +441,7 @@ export default function ContactForm({ defaultTargetCountry, defaultDialCode, def
                 disabled={isSubmitting}
                 className="btn btn-primary mt-2 min-h-12 w-full font-bold text-base px-6 py-4 rounded-[12px] disabled:cursor-not-allowed disabled:opacity-70"
               >
-                {isSubmitting ? "Submitting Enquiry..." : marketContext ? "Submit International Enquiry" : "Submit Enquiry"}
+                {isSubmitting ? "Submitting Enquiry..." : "Submit International Enquiry"}
               </button>
             </form>
           </div>

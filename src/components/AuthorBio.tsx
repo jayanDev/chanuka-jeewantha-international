@@ -25,7 +25,7 @@ export default function AuthorBio() {
           <p className="text-sm font-semibold text-brand-main">Founder &amp; Lead Resume / CV Writer</p>
           <p className="mt-3 text-text-body leading-relaxed">
             Chanuka personally writes every resume, CV, and LinkedIn profile - a founder-led premium service, not template
-            editing or junior outsourcing. With a 4.9/5 rating across 380+ senior and executive placements, he helps
+            editing or junior outsourcing. He helps
             professionals compete for roles in the United States, United Kingdom, Australia, Canada, and New Zealand.
           </p>
           <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">

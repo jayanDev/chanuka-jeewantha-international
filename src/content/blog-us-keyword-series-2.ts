@@ -249,13 +249,13 @@ export const usKeywordBlogPosts2: BlogPost[] = [
       },
     ],
     internalLinks: [
-      { label: "LinkedIn optimization service", href: "/services/packages/linkedin-optimization" },
+      { label: "LinkedIn optimization service", href: "/services/packages/linkedin" },
       { label: "Resume writing service", href: "/" },
       { label: "Resume & cover letter", href: "/resume-and-cover-letter" },
       { label: "Packages and pricing", href: "/pricing" },
     ],
     ctaButtons: [
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
       { label: "View Pricing", href: "/pricing" },
     ],
     faqs: [

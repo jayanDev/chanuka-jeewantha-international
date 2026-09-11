@@ -4,104 +4,15 @@ import Link from "next/link";
 import { packageCategories } from "@/lib/packages-catalog";
 import PageHero from "@/components/PageHero";
 import Price from "@/components/Price";
+import { internationalBundles } from "@/lib/international-bundles";
 
 // Sinhala/LKR ebooks are hidden on the international .com site (they move to the .lk site).
 const SHOW_LOCAL_EBOOKS = false;
 
-type PricingBundle = {
-  name: string;
-  priceUsd: number;
-  saveUsd: number;
-  label?: string;
-  audience?: string;
-  highlighted?: boolean;
-  premium?: boolean;
-  includes: string[];
-  cta: string;
-};
-
-const bundles: PricingBundle[] = [
-  {
-    name: "Starter Pack",
-    priceUsd: 179,
-    saveUsd: 98,
-    label: "For graduates and early-career candidates",
-    includes: [
-      "ATS Resume / CV - graduate level",
-      "Cover Letter",
-      "LinkedIn Optimization",
-      "7-day delivery",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Starter Pack",
-  },
-  {
-    name: "Career Pack",
-    priceUsd: 349,
-    saveUsd: 128,
-    label: "Most Popular",
-    audience: "Mid-career professionals",
-    highlighted: true,
-    includes: [
-      "Premium ATS Resume / CV - professional level",
-      "LinkedIn Optimization",
-      "Cover Letter",
-      "30-day support",
-      "1 round of revisions",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Career Pack",
-  },
-  {
-    name: "Career Move Pack",
-    priceUsd: 499,
-    saveUsd: 176,
-    audience: "Professionals making a cross-border move",
-    includes: [
-      "ATS Resume tailored to your target market",
-      "Modern CV format for cross-border applications",
-      "LinkedIn Optimization",
-      "Cover Letter - 2 versions for different roles",
-      "60-day support",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Career Move Pack",
-  },
-  {
-    name: "Executive Brand Suite",
-    priceUsd: 899,
-    saveUsd: 327,
-    audience: "Senior professionals and executives",
-    includes: [
-      "Executive ATS Resume / CV",
-      "Executive LinkedIn Optimization",
-      "Executive Cover Letter",
-      "Modern CV format for senior hiring panels",
-      "1-Hour Strategy Consultation",
-      "90-day premium support",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Executive Brand Suite",
-  },
-  {
-    name: "C-Suite Premium",
-    priceUsd: 1499,
-    saveUsd: 647,
-    audience: "C-Suite, directors, and founders",
-    premium: true,
-    includes: [
-      "C-Suite Premium Resume / CV",
-      "Executive LinkedIn Optimization with content strategy",
-      "Cover Letter",
-      "Modern CV format for executive-level panels",
-      "2-Hour Strategy Sessions",
-      "6-month support",
-      "Quarterly LinkedIn refresh",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose C-Suite Premium",
-  },
-];
+const bundles = internationalBundles.map(bundle => ({
+  ...bundle, priceUsd: bundle.usd, highlighted: bundle.popular,
+  label: bundle.audience, includes: bundle.features, cta: `Choose ${bundle.name}`,
+}));
 
 export default function PricingClient() {
   return (
@@ -115,16 +26,7 @@ export default function PricingClient() {
           { label: "Premium Packages" }
         ]}
       >
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-white/80 text-sm">
-          <span className="flex items-center text-[#C9A961]">
-            {Array.from({ length: 5 }).map((_, i) => (
-              <svg key={i} className="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-            ))}
-          </span>
-          <span>Based on 380+ executive reviews (4.9/5 Rating)</span>
-        </div>
+        <p className="mt-6 text-white/80">Founder-Led Premium Career Branding</p>
       </PageHero>
 
       <section id="bundles" className="w-full bg-white py-[64px] sm:py-[80px] md:py-[96px] scroll-mt-28">
@@ -179,10 +81,7 @@ export default function PricingClient() {
                       <span>{item}</span>
                     </li>
                   ))}
-                  <li className="flex gap-2">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-main" />
-                    <span>Save <Price usd={bundle.saveUsd} /> vs separate services</span>
-                  </li>
+
                 </ul>
                 <Link
                   href={`/contact?package=${encodeURIComponent(bundle.name)}`}

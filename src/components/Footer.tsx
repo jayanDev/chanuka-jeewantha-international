@@ -102,11 +102,11 @@ export default function Footer() {
         <div className="mb-16">
           <h3 className="text-white text-[20px] font-semibold font-heading mb-4">Career Services by Market</h3>
           <ul className="flex flex-wrap gap-x-6 gap-y-3">
-            <li><Link href="/cv-writing/usa" className="hover:text-brand-main transition-colors text-text-light/80">Resume Writing USA</Link></li>
-            <li><Link href="/cv-writing/uk" className="hover:text-brand-main transition-colors text-text-light/80">CV Writing UK</Link></li>
-            <li><Link href="/cv-writing/australia" className="hover:text-brand-main transition-colors text-text-light/80">Resume &amp; CV Writing Australia</Link></li>
-            <li><Link href="/cv-writing/canada" className="hover:text-brand-main transition-colors text-text-light/80">Resume Writing Canada</Link></li>
-            <li><Link href="/cv-writing/new-zealand" className="hover:text-brand-main transition-colors text-text-light/80">CV Writing New Zealand</Link></li>
+            <li><Link href="/en-us" className="hover:text-brand-main transition-colors text-text-light/80">Resume Writing USA</Link></li>
+            <li><Link href="/en-uk" className="hover:text-brand-main transition-colors text-text-light/80">CV Writing UK</Link></li>
+            <li><Link href="/en-au" className="hover:text-brand-main transition-colors text-text-light/80">Resume &amp; CV Writing Australia</Link></li>
+            <li><Link href="/en-ca" className="hover:text-brand-main transition-colors text-text-light/80">Resume Writing Canada</Link></li>
+            <li><Link href="/en-nz" className="hover:text-brand-main transition-colors text-text-light/80">CV Writing New Zealand</Link></li>
           </ul>
         </div>
 

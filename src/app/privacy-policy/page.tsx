@@ -17,9 +17,16 @@ export default function PrivacyPolicyPage() {
         <p className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-brand-main">Legal</p>
         <h1 className="text-[34px] md:text-[48px] font-bold font-heading text-foreground">Privacy Policy</h1>
         <p className="mt-4 text-text-body leading-relaxed">
-          At Chanuka Jeewantha, we are committed to protecting the privacy and security of our customers&apos; personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website. By using our website, you consent to the practices described in this policy.
+          At Chanuka Jeewantha, we are committed to protecting the privacy and security of our customers&apos; personal information. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit or make a purchase on our website. Optional analytics requires a separate choice; using the site or sending an enquiry does not opt you in.
         </p>
 
+ <section className="mt-8 space-y-4 text-sm leading-relaxed text-zinc-700">
+          <h2 className="text-[22px] font-bold">Enquiries and Optional Analytics</h2>
+          <p>The enquiry form sends the information you choose to provide, including any attached CV, through Web3Forms so we can review and respond to your request. Avoid sending identity documents or information unrelated to your career enquiry. Contact us to discuss access, correction or deletion of information you supplied.</p>
+          <p>Where Google Analytics is enabled, it loads only after you allow analytics. Our custom events record page paths and enquiry or booking completion, not form contents, query strings or uploaded documents. Rejecting analytics does not prevent an enquiry. You can revisit Analytics preferences to change your choice.</p>
+          <p>The embedded scheduling calendar loads when you choose to open it. Calendly handles scheduling data under its own privacy policy. You may also book directly on its website. Browser storage remembers your currency selection and analytics preference.</p>
+          <p>Technical hosting and service-provider logs may be processed separately for operation and security. Contact us with questions about how your enquiry information is handled.</p>
+        </section>
  <div className="mt-8 space-y-6 rounded-[18px] border border-zinc-200 bg-white p-6 md:p-8">
           <article>
  <h2 className="text-[22px] font-bold font-heading text-zinc-900">Information We Collect</h2>
@@ -39,7 +46,7 @@ export default function PrivacyPolicyPage() {
               We may use the collected information for the following purposes:
             </p>
             <ul className="mt-2 list-disc pl-5 text-sm leading-relaxed text-zinc-600 space-y-1">
-              <li>To process and fulfill your orders, including shipping and delivery.</li>
+              <li>To review enquiries and deliver the agreed career documents and services.</li>
               <li>To communicate with you regarding your purchases, provide customer support, and respond to inquiries or requests.</li>
               <li>To personalize your shopping experience and present relevant product recommendations and promotions.</li>
               <li>To improve our website, products, and services based on your feedback and browsing patterns.</li>
@@ -53,7 +60,7 @@ export default function PrivacyPolicyPage() {
               We respect your privacy and do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
             </p>
             <ul className="mt-2 list-disc pl-5 text-sm leading-relaxed text-zinc-600 space-y-1">
-              <li><strong>Trusted service providers:</strong> We may share your information with third-party service providers who assist us in operating our website, processing payments, and delivering products. These providers are contractually obligated to handle your data securely and confidentially.</li>
+              <li><strong>Trusted service providers:</strong> We may share your information with third-party service providers who assist us in operating our website, processing payments, and delivering products. Their own privacy policies and service terms also apply.</li>
               <li><strong>Legal requirements:</strong> We may disclose your information if required to do so by law or in response to valid legal requests or orders.</li>
             </ul>
           </article>

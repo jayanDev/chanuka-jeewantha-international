@@ -31,7 +31,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "NY",
     metaTitle: "Resume Writer in New York City - Wall Street, Tech & Media",
     metaDescription:
-      "Premium resume writing in NYC for finance, tech, media, consulting, and executive roles. Founder-led, 90-day interview guarantee.",
+      "Premium resume writing in NYC for finance, tech, media, consulting, and executive roles. Founder-led, agreed revision support.",
     localContext:
       "NYC hiring is concentrated, fast, and dominated by finance, big tech, media, and consulting. Resumes get screened harder here than almost anywhere else in the country.",
     localLandscape: [
@@ -52,7 +52,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "CA",
     metaTitle: "Resume Writer in San Francisco - Tech, AI & VC-Backed Startups",
     metaDescription:
-      "Resume writing for SF Bay Area software, AI, and startup roles. FAANG-aware, ATS-clean, 90-day interview guarantee.",
+      "Resume writing for SF Bay Area software, AI, and startup roles. FAANG-aware, ATS-clean, agreed revision support.",
     localContext:
       "SF and the broader Bay Area hire engineers, product, and growth talent at a higher density than anywhere else on the planet. Resumes are pattern-matched aggressively.",
     localLandscape: [
@@ -73,7 +73,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "CA",
     metaTitle: "Resume Writer in Los Angeles - Entertainment, Tech & Aerospace",
     metaDescription:
-      "Resume writing for LA professionals - entertainment, media, tech, aerospace, healthcare. Founder-led, 90-day interview guarantee.",
+      "Resume writing for LA professionals - entertainment, media, tech, aerospace, healthcare. Founder-led, agreed revision support.",
     localContext:
       "LA hiring is more diverse than its reputation suggests. Entertainment and media are still anchors, but tech, aerospace, healthcare, and finance all hire heavily.",
     localLandscape: [
@@ -94,7 +94,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "IL",
     metaTitle: "Resume Writer in Chicago - Consulting, Finance & Healthcare",
     metaDescription:
-      "Resume writing for Chicago professionals - consulting, finance, healthcare, manufacturing, tech. Founder-led, 90-day interview guarantee.",
+      "Resume writing for Chicago professionals - consulting, finance, healthcare, manufacturing, tech. Founder-led, agreed revision support.",
     localContext:
       "Chicago is one of the deepest US business cities - strong consulting, finance, healthcare, manufacturing, and a growing tech scene around the West Loop and Fulton Market.",
     localLandscape: [
@@ -115,7 +115,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "TX",
     metaTitle: "Resume Writer in Houston - Energy, Healthcare & Aerospace",
     metaDescription:
-      "Resume writing for Houston professionals - energy, oil & gas, healthcare, aerospace, finance. Founder-led, 90-day interview guarantee.",
+      "Resume writing for Houston professionals - energy, oil & gas, healthcare, aerospace, finance. Founder-led, agreed revision support.",
     localContext:
       "Houston hiring is dominated by energy, the Texas Medical Center, and aerospace - three of the largest sectoral hiring engines in the South.",
     localLandscape: [
@@ -136,7 +136,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "MA",
     metaTitle: "Resume Writer in Boston - Biotech, Education & Finance",
     metaDescription:
-      "Resume writing for Boston professionals - biotech, pharma, healthcare, finance, tech, education. Founder-led, 90-day interview guarantee.",
+      "Resume writing for Boston professionals - biotech, pharma, healthcare, finance, tech, education. Founder-led, agreed revision support.",
     localContext:
       "Boston punches above its weight on hiring depth - biotech and pharma rival SF in density, the financial sector is strong, and the academic-to-industry pipeline is unmatched.",
     localLandscape: [
@@ -157,7 +157,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "DC",
     metaTitle: "Resume Writer in Washington DC - Federal, Defense & Policy",
     metaDescription:
-      "Federal and DC-area resume writing - government, contractors, policy, defense, international development. 90-day interview guarantee.",
+      "Federal and DC-area resume writing - government, contractors, policy, defense, international development. agreed revision support.",
     localContext:
       "DC hiring is unique: federal-style resumes, security clearances, and a sharp line between government work and government-contracting work.",
     localLandscape: [
@@ -178,7 +178,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "WA",
     metaTitle: "Resume Writer in Seattle - Tech, Aerospace & Cloud",
     metaDescription:
-      "Resume writing for Seattle tech professionals - Amazon, Microsoft, Boeing, cloud, AI. Founder-led, 90-day interview guarantee.",
+      "Resume writing for Seattle tech professionals - Amazon, Microsoft, Boeing, cloud, AI. Founder-led, agreed revision support.",
     localContext:
       "Seattle is one of the densest tech-hiring markets in the US - Amazon and Microsoft alone employ tens of thousands of engineers, and the wave of AI startups around Lake Union is growing fast.",
     localLandscape: [
@@ -199,7 +199,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "TX",
     metaTitle: "Resume Writer in Austin - Tech, SaaS & Semiconductor",
     metaDescription:
-      "Resume writing for Austin professionals - tech, SaaS, semiconductor, startups. ATS-clean, founder-led, 90-day interview guarantee.",
+      "Resume writing for Austin professionals - tech, SaaS, semiconductor, startups. ATS-clean, founder-led, agreed revision support.",
     localContext:
       "Austin is the fastest-growing US tech city of the last five years - Apple, Tesla, Oracle, Indeed, plus a wave of SaaS startups have pushed hiring volume well past Bay Area density per capita.",
     localLandscape: [
@@ -220,7 +220,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "GA",
     metaTitle: "Resume Writer in Atlanta - Fintech, Logistics & Consulting",
     metaDescription:
-      "Resume writing for Atlanta professionals - fintech, logistics, healthcare, consulting, marketing. 90-day interview guarantee.",
+      "Resume writing for Atlanta professionals - fintech, logistics, healthcare, consulting, marketing. agreed revision support.",
     localContext:
       "Atlanta is the financial-services and logistics capital of the Southeast - fintech is the fastest-growing local segment, with Coca-Cola, Delta, UPS, and Home Depot anchoring the corporate base.",
     localLandscape: [
@@ -241,7 +241,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "TX",
     metaTitle: "Resume Writer in Dallas / Fort Worth - Corporate HQ & Finance",
     metaDescription:
-      "Resume writing for DFW professionals - corporate HQ roles, finance, energy, healthcare, defense. 90-day interview guarantee.",
+      "Resume writing for DFW professionals - corporate HQ roles, finance, energy, healthcare, defense. agreed revision support.",
     localContext:
       "DFW concentrates more Fortune 500 headquarters than almost any other US metro, with a particularly strong corporate-finance, energy, and defense base.",
     localLandscape: [
@@ -262,7 +262,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "PA",
     metaTitle: "Resume Writer in Philadelphia - Healthcare, Pharma & Finance",
     metaDescription:
-      "Resume writing for Philadelphia professionals - healthcare, pharma, finance, biotech, federal. 90-day interview guarantee.",
+      "Resume writing for Philadelphia professionals - healthcare, pharma, finance, biotech, federal. agreed revision support.",
     localContext:
       "Philadelphia has one of the deepest healthcare and pharma hiring markets in the US, with a strong finance and federal-adjacent base.",
     localLandscape: [
@@ -283,7 +283,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "FL",
     metaTitle: "Resume Writer in Miami - Finance, LatAm & Hospitality",
     metaDescription:
-      "Resume writing for Miami professionals - finance, real estate, Latin America business, hospitality, healthcare. 90-day interview guarantee.",
+      "Resume writing for Miami professionals - finance, real estate, Latin America business, hospitality, healthcare. agreed revision support.",
     localContext:
       "Miami has become a major US financial-services hub in the last five years - bilingual roles, Latin America regional positions, and remote-first hires drive much of the market.",
     localLandscape: [
@@ -304,7 +304,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "CO",
     metaTitle: "Resume Writer in Denver - Tech, Aerospace & Energy",
     metaDescription:
-      "Resume writing for Denver and Boulder professionals - tech, aerospace, renewable energy, defense, healthcare. 90-day interview guarantee.",
+      "Resume writing for Denver and Boulder professionals - tech, aerospace, renewable energy, defense, healthcare. agreed revision support.",
     localContext:
       "Denver and the Front Range combine a strong tech scene, federal aerospace contractors, and a growing renewable-energy sector that's pulling talent from coastal cities.",
     localLandscape: [
@@ -325,7 +325,7 @@ export const cityPages: CityPage[] = [
     stateAbbr: "CA",
     metaTitle: "Resume Writer in San Diego - Biotech, Defense & Tech",
     metaDescription:
-      "Resume writing for San Diego professionals - biotech, life sciences, defense, naval, tech. 90-day interview guarantee.",
+      "Resume writing for San Diego professionals - biotech, life sciences, defense, naval, tech. agreed revision support.",
     localContext:
       "San Diego is one of the top biotech clusters in the US, with the largest naval base on the West Coast and a strong life-sciences talent flow from UCSD and Salk.",
     localLandscape: [

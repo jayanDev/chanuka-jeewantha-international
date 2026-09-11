@@ -161,7 +161,7 @@ export default function LocationsIndexPage() {
 
       <PageCTA
         heading="Ready to engage in your city?"
-        subheading="The service is fully remote - fast turnaround, US-tuned writing, 90-day interview guarantee."
+        subheading="The service is fully remote - fast turnaround, US-tuned writing, agreed revision support."
       />
     </>
   );

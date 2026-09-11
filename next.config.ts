@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+	experimental: { cpus: 2 },
 	poweredByHeader: false,
 	compress: true,
 	outputFileTracingIncludes: {
@@ -8,15 +9,17 @@ const nextConfig: NextConfig = {
 	},
 	async redirects() {
 		return [
+			{ source: "/:path*", has: [{ type: "host", value: "chanukajeewantha.com" }], destination: "https://www.chanukajeewantha.com/:path*", permanent: true },
+			{ source: "/services/packages/cv-writing", destination: "/services/packages/ats-cv", permanent: true },
+			{ source: "/services/packages/linkedin-optimization", destination: "/services/packages/linkedin", permanent: true },
+			{ source: "/services/packages/cover-letter-writing", destination: "/services/packages/cover-letter", permanent: true },
+			{ source: "/services/packages/cv-review", destination: "/services/cv-review", permanent: true },
+			{ source: "/blog/category", destination: "/blog", permanent: true },
+			{ source: "/tutorials/category", destination: "/tutorials", permanent: true },
 			{ source: "/services/packages", destination: "/pricing", permanent: true },
 			{
 				// Ebooks were removed from the .com; send old crawled URLs to resources.
 				source: "/ebooks",
-				destination: "/resources",
-				permanent: true,
-			},
-			{
-				source: "/ebooks/:path*",
 				destination: "/resources",
 				permanent: true,
 			},
@@ -27,11 +30,6 @@ const nextConfig: NextConfig = {
 			},
 			{
 				source: "/companies",
-				destination: "/resources",
-				permanent: true,
-			},
-			{
-				source: "/companies/:path*",
 				destination: "/resources",
 				permanent: true,
 			},

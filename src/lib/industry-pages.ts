@@ -56,9 +56,9 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Use LinkedIn headlines and About sections that combine role, domain, and value clearly.",
     ],
     recommendedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
-      { label: "CV Review Service", href: "/services/packages/cv-review" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
+      { label: "CV Review Service", href: "/services/cv-review" },
     ],
     recommendedTools: [
       { label: "ATS CV Audit Tool", href: "/tools/ats-cv-audit" },
@@ -102,9 +102,9 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Position certifications, systems knowledge, and industry exposure more strategically.",
     ],
     recommendedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
-      { label: "CV Review Service", href: "/services/packages/cv-review" },
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
+      { label: "CV Review Service", href: "/services/cv-review" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
     ],
     recommendedTools: [
       { label: "ATS CV Audit Tool", href: "/tools/ats-cv-audit" },
@@ -148,9 +148,9 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Add proof assets such as featured posts, portfolio links, and a personal website when needed.",
     ],
     recommendedServices: [
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
       { label: "Personal Website Service", href: "/services/personal-website" },
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
     ],
     recommendedTools: [
       { label: "LinkedIn Headline Generator", href: "/tools/linkedin-headline-generator" },
@@ -194,9 +194,9 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Use interview stories that demonstrate judgment, empathy, and execution under pressure.",
     ],
     recommendedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
-      { label: "CV Review Service", href: "/services/packages/cv-review" },
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
+      { label: "CV Review Service", href: "/services/cv-review" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
     ],
     recommendedTools: [
       { label: "ATS CV Audit Tool", href: "/tools/ats-cv-audit" },
@@ -240,8 +240,8 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Align the summary to the target function instead of listing broad responsibilities.",
     ],
     recommendedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
-      { label: "CV Review Service", href: "/services/packages/cv-review" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
+      { label: "CV Review Service", href: "/services/cv-review" },
       { label: "Personal Website Service", href: "/services/personal-website" },
     ],
     recommendedTools: [
@@ -286,8 +286,8 @@ export const industryLandingPages: IndustryLandingPage[] = [
       "Build a LinkedIn headline and About section that sound focused and credible, not vague.",
     ],
     recommendedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
       { label: "Career Workshops", href: "/workshops" },
     ],
     recommendedTools: [

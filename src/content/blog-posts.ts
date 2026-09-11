@@ -1,11 +1,11 @@
 import { packageProducts, type PackageProduct } from "@/lib/packages-catalog";
 import { careerGrowthBlogPosts } from "./blog-career-library";
-import { enrichBlogPostContent } from "./blog-content-enrichment";
 import { cvSeriesEn } from "./blog-cv-series-en";
 import { usCareerBlogPosts } from "./blog-us-career-library";
 import { usKeywordBlogPosts } from "./blog-us-keyword-series";
 import { usKeywordBlogPosts2 } from "./blog-us-keyword-series-2";
 import { authorityPosts } from "./blog-authority";
+import { applyReviewedArticle } from "./blog-reviewed";
 
 export type BlogLink = {
   label: string;
@@ -30,6 +30,7 @@ export type BlogPost = {
   content: string;
   category: string;
   publishedAt: string;
+  updatedAt?: string;
   author: string;
   coverImage?: string;
   packageSlug?: string;
@@ -41,10 +42,10 @@ export type BlogPost = {
 };
 
 const servicePathByCategory: Record<string, string> = {
-  "CV Writing": "/services/packages/cv-writing",
-  "Cover Letter Writing": "/services/packages/cover-letter-writing",
-  "LinkedIn Optimization": "/services/packages/linkedin-optimization",
-  "CV Review": "/services/packages/cv-review",
+  "CV Writing": "/services/packages/ats-cv",
+  "Cover Letter Writing": "/services/packages/cover-letter",
+  "LinkedIn Optimization": "/services/packages/linkedin",
+  "CV Review": "/services/cv-review",
 };
 
 type PackageGuideDraft = {
@@ -1203,14 +1204,14 @@ const editorialPosts: BlogPost[] = [
       },
     ],
     internalLinks: [
-      { label: "Professional CV Writing Service", href: "/services/packages/cv-writing" },
-      { label: "CV Review Service", href: "/services/packages/cv-review" },
-      { label: "Cover Letter Writing Service", href: "/services/packages/cover-letter-writing" },
-      { label: "LinkedIn Optimization Service", href: "/services/packages/linkedin-optimization" },
+      { label: "Professional CV Writing Service", href: "/services/packages/ats-cv" },
+      { label: "CV Review Service", href: "/services/cv-review" },
+      { label: "Cover Letter Writing Service", href: "/services/packages/cover-letter" },
+      { label: "LinkedIn Optimization Service", href: "/services/packages/linkedin" },
       { label: "Browse All Blog Articles", href: "/blog" },
     ],
     ctaButtons: [
-      { label: "Request CV Review", href: "/services/packages/cv-review" },
+      { label: "Request CV Review", href: "/services/cv-review" },
       { label: "View CV Writing Packages", href: "/pricing" },
       { label: "Contact for Guidance", href: "/contact" },
     ],
@@ -1283,7 +1284,7 @@ const editorialPosts: BlogPost[] = [
   },
 ];
 
-export const blogPosts: BlogPost[] = [...usKeywordBlogPosts, ...usKeywordBlogPosts2, ...authorityPosts, ...usCareerBlogPosts, ...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn].map(enrichBlogPostContent).sort(
+export const blogPosts: BlogPost[] = [...usKeywordBlogPosts, ...usKeywordBlogPosts2, ...authorityPosts, ...usCareerBlogPosts, ...careerGrowthBlogPosts, ...packageFocusedPosts, ...editorialPosts, ...cvSeriesEn].map(applyReviewedArticle).sort(
   (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
 );
 

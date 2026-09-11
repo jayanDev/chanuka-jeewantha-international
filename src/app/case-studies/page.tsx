@@ -9,7 +9,7 @@ import { caseStudies } from "@/lib/case-studies";
 export const metadata: Metadata = buildPageMetadata({
   title: "Case Studies | Career Profile Transformations",
   description:
-    "Review practical case studies showing CV, LinkedIn, and coaching outcomes from Chanuka Jeewantha's career services.",
+    "Explore the career-writing process and request relevant work samples before choosing your service.",
   path: "/case-studies",
   keywords: ["career case studies", "CV transformation", "LinkedIn case study"],
 });
@@ -45,13 +45,23 @@ export default function CaseStudiesPage() {
             <span className="text-brand-main">Case Studies</span>
           </div>
           <h1 className="font-heading text-[34px] sm:text-[44px] md:text-[56px] lg:text-[72px] font-bold leading-[1.1] max-w-4xl !text-white">
-            Success stories & <span className="text-brand-main">Impact.</span>
+            Career Writing <span className="text-brand-main">In Practice.</span>
           </h1>
         </div>
       </section>
 
  <section className="w-full py-[64px] sm:py-[80px] md:py-[96px] bg-zinc-50">
         <div className="max-w-[1512px] mx-auto px-4 sm:px-6">
+          <div className="mb-12 max-w-3xl">
+            <h2 className="text-2xl font-bold">Understand the work before you decide</h2>
+            <p className="mt-4 text-zinc-700">Your experience, target role and market shape the writing. A profile review identifies the evidence to retain, the gaps to discuss and the structure that makes your story easier to follow.</p>
+            <p className="mt-4 text-zinc-700">Request a relevant sample and discuss the approach with Chanuka. Client documents are only shared with permission; private career details stay private.</p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <Link href="/contact" className="btn btn-secondary-gold">Request a Relevant Sample</Link>
+              <Link href="/#process" className="btn btn-secondary-gold">See the Writing Process</Link>
+              <a href="https://share.google/G26gLzklA9HfIHJ1Y" target="_blank" rel="noopener noreferrer" className="btn btn-secondary-gold">Read Google Reviews</a>
+            </div>
+          </div>
           <div className="flex flex-col gap-16">
             {caseStudies.map((study, index) => (
               <div 

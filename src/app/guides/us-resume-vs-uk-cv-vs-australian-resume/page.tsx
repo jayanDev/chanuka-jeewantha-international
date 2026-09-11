@@ -157,9 +157,9 @@ export default function ResumeComparisonGuide() {
             Get a personally written, ATS-optimized resume or CV tailored to the conventions of your target country.
           </p>
           <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link href="/cv-writing/usa" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">USA</Link>
-            <Link href="/cv-writing/uk" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">UK</Link>
-            <Link href="/cv-writing/australia" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">Australia</Link>
+            <Link href="/en-us" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">USA</Link>
+            <Link href="/en-uk" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">UK</Link>
+            <Link href="/en-au" className="inline-flex min-h-12 items-center justify-center rounded-[10px] border border-zinc-300 px-6 py-3 text-[15px] font-semibold text-foreground transition-colors hover:border-brand-main">Australia</Link>
             <Link href="/pricing" className="inline-flex min-h-12 items-center justify-center rounded-[10px] bg-brand-main px-6 py-3 text-[15px] font-semibold text-[#0A2540] transition-colors hover:bg-[#0A2540] hover:text-white">View packages</Link>
           </div>
         </div>

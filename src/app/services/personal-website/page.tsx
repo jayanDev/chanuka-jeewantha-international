@@ -16,7 +16,7 @@ export const metadata: Metadata = buildPageMetadata({
   keywords: [
     "personal career website",
     "portfolio website for job seekers",
-    "professional personal website sri lanka",
+    "professional international career website",
     "career portfolio service",
   ],
 });
@@ -142,13 +142,13 @@ export default function PersonalWebsiteServicePage() {
               </div>
 
  <div className="mt-8 rounded-[18px] border border-zinc-200 bg-white p-6">
-                <h3 className="text-[26px] font-bold font-heading text-foreground">Proof Example</h3>
+                <h3 className="text-[26px] font-bold font-heading text-foreground">Illustrative Example</h3>
                 <p className="mt-3 text-text-body">
                   See how a personal website can support public proof, stronger digital presence, and a cleaner professional story across CV, LinkedIn, and outreach.
                 </p>
                 <div className="mt-5 flex flex-wrap gap-3">
-                  <Link href="/case-studies/personal-website-career-portfolio-launch" className="rounded-[10px] bg-brand-main px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
-                    View Personal Website Case Study
+                  <Link href="/p/nimal-perera" className="rounded-[10px] bg-brand-main px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
+                    View Illustrative Career Website
                   </Link>
  <Link href="/results" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
                     Browse Results Hub
@@ -164,8 +164,8 @@ export default function PersonalWebsiteServicePage() {
  <Link href="/p/nimal-perera" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
                     View Sample Career Website
                   </Link>
- <Link href="/case-studies/personal-website-career-portfolio-launch" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
-                    Personal Website Case Study
+ <Link href="/p/nimal-perera" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
+                    Illustrative Career Website
                   </Link>
  <Link href="/portfolio" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
                     Browse Portfolio
@@ -176,10 +176,10 @@ export default function PersonalWebsiteServicePage() {
  <div className="rounded-[20px] border border-zinc-200 bg-white p-6">
                 <h3 className="text-[24px] font-bold font-heading text-foreground">Plan Your Stack</h3>
                 <div className="mt-5 flex flex-col gap-3">
- <Link href="/services/packages/linkedin-optimization" className="rounded-[10px] border border-zinc-300 px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
+ <Link href="/services/packages/linkedin" className="rounded-[10px] border border-zinc-300 px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
                     Add LinkedIn Optimization
                   </Link>
- <Link href="/services/packages/cv-writing" className="rounded-[10px] border border-zinc-300 px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
+ <Link href="/services/packages/ats-cv" className="rounded-[10px] border border-zinc-300 px-4 py-3 text-sm font-semibold text-zinc-700 transition-colors hover:border-brand-main hover:text-brand-main">
                     Add CV Writing
                   </Link>
                   <Link href="/contact" className="rounded-[10px] bg-brand-main px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">

@@ -8,9 +8,9 @@ import FAQSection from "@/components/FAQSection";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Resume Writing FAQ | Pricing, Delivery & 90-Day Guarantee",
+  title: "Resume Writing FAQ | Pricing, Delivery & Revisions",
   description:
-    "Answers about premium resume writing for US professionals - pricing, delivery timelines, payment methods, the 90-day interview guarantee, and how the process works.",
+    "Answers about premium resume writing for global professionals - pricing, delivery timelines, payment methods, the agreed revision support, and how the process works.",
   path: "/faq",
 });
 
@@ -34,7 +34,7 @@ export default function FAQPage() {
     },
     {
       q: "What payment methods are available?",
-      a: "Wise, PayPal, Payoneer, Stripe, and bank transfer are supported. Specific payment details are confirmed after your enquiry is reviewed."
+      a: "Available payment methods, settlement currency and payment details are confirmed in your written quote after profile review. Please do not send payment before confirmation."
     },
     {
       q: "How do I start?",

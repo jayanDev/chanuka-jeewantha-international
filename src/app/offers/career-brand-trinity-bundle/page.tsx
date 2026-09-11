@@ -7,7 +7,7 @@ export const metadata = buildPageMetadata({
   title: "Career Brand Trinity Bundle | Bundle Discount",
   description:
     "Configure and order the Career Brand Trinity Bundle with CV, Cover Letter, and LinkedIn package selection and automatic bundle savings.",
-  path: "/offers/career-brand-trinity-bundle",
+  path: "/bundles",
   keywords: ["career brand trinity bundle", "bundle discount", "cv cover letter linkedin bundle"],
 });
 

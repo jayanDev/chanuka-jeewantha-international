@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { tutorialCategories } from "@/lib/tutorials";
+import { tutorialCategories, tutorials } from "@/lib/tutorials";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -26,7 +26,7 @@ export default function TutorialsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {tutorialCategories.map((category) => (
+          {tutorialCategories.filter((category) => tutorials.some((tutorial) => tutorial.categoryId === category.id)).map((category) => (
             <Link
               key={category.id}
               href={`/tutorials/category/${category.slug}`}

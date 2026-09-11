@@ -12,7 +12,6 @@ import SeasonalOfferBanner from "@/components/SeasonalOfferBanner";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import CountrySiteChrome from "@/components/markets/CountrySiteChrome";
 import { markets } from "@/lib/markets";
-import { getServerUser } from "@/lib/auth-server";
 import { getBaseUrl } from "@/lib/site-url";
 
 const siteUrl = getBaseUrl();
@@ -26,7 +25,7 @@ const websiteId = `${siteUrl}#website`;
 
 const organizationLd = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "Organization",
   "@id": organizationId,
   name: "Chanuka Jeewantha",
   url: siteUrl,
@@ -34,8 +33,7 @@ const organizationLd = {
   logo: `${siteUrl}/images/hero-chanuka.jpg`,
   description:
     "Premium remote resume writing, ATS CV writing, LinkedIn optimization, cover letters, and executive career branding by Chanuka Jeewantha for professionals targeting international opportunities.",
-  serviceType: "Resume Writing Service",
-  priceRange: "$179 - $1,499",
+  founder: { "@type": "Person", "@id": `${siteUrl}/#person`, name: "Chanuka Jeewantha", url: `${siteUrl}/about` },
   areaServed: markets.map((market) => market.name),
   contactPoint: {
     "@type": "ContactPoint",
@@ -43,11 +41,6 @@ const organizationLd = {
     areaServed: markets.map((market) => market.name),
     availableLanguage: ["English"],
     url: `${siteUrl}/contact`,
-  },
-  availableChannel: {
-    "@type": "ServiceChannel",
-    serviceUrl: `${siteUrl}/contact`,
-    availableLanguage: ["English"],
   },
   sameAs: [
     "https://www.linkedin.com/in/chanuka-jeewantha/",
@@ -170,13 +163,11 @@ export const metadata: Metadata = {
     : {}),
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const currentUser = await getServerUser();
-
   return (
     <html
       lang="en"
@@ -202,22 +193,23 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteLd) }}
         />
-        {gaMeasurementId ? (
-          <Suspense fallback={null}>
-            <GoogleAnalytics measurementId={gaMeasurementId} />
-          </Suspense>
-        ) : null}
+
         {heartbeatAnalyticsEnabled ? (
           <Suspense fallback={null}>
             <HeartbeatAnalytics />
           </Suspense>
         ) : null}
         <CountrySiteChrome
-          globalHeader={<><AnnouncementBar /><div id="site-nav"><Header initialUser={currentUser} /><SeasonalOfferBanner /><Breadcrumbs /></div></>}
+          globalHeader={<><AnnouncementBar /><div id="site-nav"><Header /><SeasonalOfferBanner /><Breadcrumbs /></div></>}
           globalFooter={<><Footer /><BackToTop /></>}
         >
           {children}
         </CountrySiteChrome>
+        {gaMeasurementId ? (
+          <Suspense fallback={null}>
+            <GoogleAnalytics measurementId={gaMeasurementId} />
+          </Suspense>
+        ) : null}
       </body>
     </html>
   );

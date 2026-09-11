@@ -1,4 +1,6 @@
-export type DigitalResourceType = "Toolkit" | "Template";
+import { resourceGuides } from "@/lib/resource-guides";
+
+export type DigitalResourceType = "Toolkit" | "Template" | "Guide";
 
 export type DigitalResource = {
   slug: string;
@@ -26,6 +28,7 @@ export type DigitalResourceDownload = {
 };
 
 export const digitalResources: DigitalResource[] = [
+  ...resourceGuides,
   {
     slug: "ats-friendly-cv-template-free",
     title: "ATS Friendly CV Template Free",

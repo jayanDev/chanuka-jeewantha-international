@@ -1,14 +1,5 @@
-// -----------------------------------------------------------------------------
-// Currency localization
-//
-// All package prices on the site are defined in USD (the base/source of truth).
-// This module converts a USD amount into the visitor's local currency for
-// display, using a MAINTAINED rate table below. Update the rates here whenever
-// they drift - no external API is required.
-//
-// Checkout is manual (a Wise / PayPal / Stripe payment link is sent after the
-// enquiry), so the invoice can be issued in the displayed currency.
-// -----------------------------------------------------------------------------
+// USD is the base price. Currency estimates share the dated market rate table.
+import { marketRates } from "@/lib/market-rates";
 
 export type CurrencyCode =
   | "USD"
@@ -18,7 +9,6 @@ export type CurrencyCode =
   | "NZD"
   | "EUR"
   | "INR"
-  | "LKR"
   | "AED"
   | "SGD";
 
@@ -28,7 +18,7 @@ export type CurrencyConfig = {
   symbol: string;
   /** Human label for the switcher, e.g. "US Dollar" */
   label: string;
-  /** USD -> this currency multiplier. EDIT THESE as rates move. */
+  /** USD -> this currency multiplier. Maintained in market-rates.ts. */
   rate: number;
   /** Round the converted price to the nearest N for clean pricing. */
   roundTo: number;
@@ -41,16 +31,15 @@ export const BASE_CURRENCY: CurrencyCode = "USD";
 // --- MAINTAINED RATE TABLE -------------------------------------------------
 // Approximate rates. Update periodically. 1 USD = `rate` units of the currency.
 export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
-  USD: { code: "USD", symbol: "$", label: "US Dollar", rate: 1, roundTo: 1, locale: "en-US" },
-  CAD: { code: "CAD", symbol: "CA$", label: "Canadian Dollar", rate: 1.39, roundTo: 5, locale: "en-CA" },
-  GBP: { code: "GBP", symbol: "£", label: "British Pound", rate: 0.79, roundTo: 5, locale: "en-GB" },
-  AUD: { code: "AUD", symbol: "A$", label: "Australian Dollar", rate: 1.53, roundTo: 5, locale: "en-AU" },
-  NZD: { code: "NZD", symbol: "NZ$", label: "NZ Dollar", rate: 1.66, roundTo: 5, locale: "en-NZ" },
-  EUR: { code: "EUR", symbol: "€", label: "Euro", rate: 0.92, roundTo: 5, locale: "en-IE" },
-  INR: { code: "INR", symbol: "₹", label: "Indian Rupee", rate: 86, roundTo: 100, locale: "en-IN" },
-  LKR: { code: "LKR", symbol: "Rs", label: "Sri Lanka Rupee", rate: 300, roundTo: 500, locale: "en-LK" },
-  AED: { code: "AED", symbol: "AED", label: "UAE Dirham", rate: 3.67, roundTo: 5, locale: "en-AE" },
-  SGD: { code: "SGD", symbol: "S$", label: "Singapore Dollar", rate: 1.34, roundTo: 5, locale: "en-SG" },
+  USD: { code: "USD", symbol: "$", label: "US Dollar", ...marketRates.USD, locale: "en-US" },
+  CAD: { code: "CAD", symbol: "CA$", label: "Canadian Dollar", ...marketRates.CAD, locale: "en-CA" },
+  GBP: { code: "GBP", symbol: "£", label: "British Pound", ...marketRates.GBP, locale: "en-GB" },
+  AUD: { code: "AUD", symbol: "A$", label: "Australian Dollar", ...marketRates.AUD, locale: "en-AU" },
+  NZD: { code: "NZD", symbol: "NZ$", label: "NZ Dollar", ...marketRates.NZD, locale: "en-NZ" },
+  EUR: { code: "EUR", symbol: "€", label: "Euro", ...marketRates.EUR, locale: "en-IE" },
+  INR: { code: "INR", symbol: "₹", label: "Indian Rupee", ...marketRates.INR, locale: "en-IN" },
+  AED: { code: "AED", symbol: "AED", label: "UAE Dirham", ...marketRates.AED, locale: "en-AE" },
+  SGD: { code: "SGD", symbol: "S$", label: "Singapore Dollar", ...marketRates.SGD, locale: "en-SG" },
 };
 
 export const CURRENCY_LIST: CurrencyConfig[] = Object.values(CURRENCIES);
@@ -66,7 +55,6 @@ const COUNTRY_TO_CURRENCY: Record<string, CurrencyCode> = {
   AU: "AUD",
   NZ: "NZD",
   IN: "INR",
-  LK: "LKR",
   AE: "AED",
   SG: "SGD",
   // Eurozone
@@ -80,7 +68,7 @@ export function currencyForCountry(countryCode: string | null | undefined): Curr
 }
 
 export function isCurrencyCode(value: string | null | undefined): value is CurrencyCode {
-  return !!value && value in CURRENCIES;
+  return !!value && Object.hasOwn(CURRENCIES, value);
 }
 
 function roundNice(amount: number, roundTo: number): number {
@@ -90,6 +78,7 @@ function roundNice(amount: number, roundTo: number): number {
 
 /** Convert a USD amount into the target currency, rounded to a clean value. */
 export function convertFromUsd(usd: number, code: CurrencyCode): number {
+  if (!Number.isFinite(usd) || usd < 0) throw new Error("Invalid price");
   const cfg = CURRENCIES[code] ?? CURRENCIES[BASE_CURRENCY];
   return roundNice(usd * cfg.rate, cfg.roundTo);
 }
@@ -101,12 +90,12 @@ export function parseUsd(value: string): number {
   return Number.isFinite(n) ? n : 0;
 }
 
-/** Format a USD amount as a localized currency string, e.g. "CA$485", "Rs 53,500". */
+/** Format a USD amount as a localized currency string, e.g. "CA$485", "AED 660". */
 export function formatPrice(usd: number, code: CurrencyCode): string {
   const cfg = CURRENCIES[code] ?? CURRENCIES[BASE_CURRENCY];
   const converted = convertFromUsd(usd, code);
   const grouped = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 }).format(converted);
-  // Symbols with letters (CA$, NZ$, AED, Rs) read better with a space.
+  // Symbols with letters (CA$, NZ$, AED) read better with a space.
   const needsSpace = /[A-Za-z]/.test(cfg.symbol) && cfg.symbol !== "$";
   return `${cfg.symbol}${needsSpace ? " " : ""}${grouped}`;
 }

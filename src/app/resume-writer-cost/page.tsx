@@ -27,7 +27,7 @@ const FAQS = [
   },
   {
     q: "Is a more expensive resume writer always better?",
-    a: "No. Above a certain price point, you're paying for brand, overhead, and account managers rather than better writing. What matters is whether your writer has actually written for your seniority and industry - and whether they back the work with a guarantee.",
+    a: "Not necessarily. Compare relevant experience, sample quality, deliverables and revision scope. Price alone does not establish quality.",
   },
   {
     q: "Why do prices vary so much?",
@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "What should I avoid?",
-    a: "Avoid any service that promises a fast template fill for under $100, any service that won't tell you who is actually writing the document, and any service with no money-back guarantee. The interview-guarantee question is the cleanest filter - services that won't stand behind their work usually have a reason.",
+    a: "Ask who will write your document, what is included and how revisions work. Review samples and terms. Treat guaranteed hiring outcomes with caution: employers make hiring decisions.",
   },
   {
     q: "Do I really need to spend $500+ for a mid-career resume?",
@@ -119,10 +119,10 @@ export default function ResumeWriterCostPage() {
             <div className="mt-12 rounded-[18px] border-2 border-[#C9A961] bg-gradient-to-br from-[#FFFCF3] to-white p-7">
               <span className="text-xs font-bold uppercase tracking-[0.16em] text-[#8C6D30]">Our pricing</span>
               <h3 className="mt-3 font-heading text-[22px] font-bold leading-tight text-[#0A2540] sm:text-[28px]">
-                $179 to $1,499, founder-led, with a 90-day interview guarantee.
+                $179 to $1,499, founder-led, with a agreed revision support.
               </h3>
               <p className="mt-3 text-zinc-700 leading-relaxed">
-                Five bundles covering graduate through C-suite. Every package is personally written by the founder - no outsourcing - and backed by a 90-day, 100% money-back guarantee if you don&apos;t receive interview calls.
+                Five bundles covering graduate through C-suite. Every package is personally written by the founder - no outsourcing - and backed by a agreed document review and revision support.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link href="/pricing" className="inline-flex items-center justify-center bg-[#0A2540] text-white px-5 py-2.5 rounded-[10px] text-sm font-bold transition-colors hover:bg-[#C9A961] hover:text-[#0A2540]">
@@ -205,7 +205,7 @@ export default function ResumeWriterCostPage() {
 
         <PageCTA
           heading="Ready to invest in the right tier?"
-          subheading="See all five packages from $179 to $1,499 - every one backed by the 90-day interview guarantee."
+          subheading="See all five packages from $179 to $1,499 - every one backed by the agreed revision support."
           primaryLabel="See All Packages"
           primaryHref="/pricing"
           secondaryLabel="Request a Profile Review"

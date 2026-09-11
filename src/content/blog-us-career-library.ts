@@ -1,7 +1,7 @@
 import type { BlogFaq, BlogLink, BlogPost, BlogSection } from "./blog-posts";
 
 const usInternalLinks: BlogLink[] = [
-  { label: "Explore Resume Writing Packages", href: "/services/packages/cv-writing" },
+  { label: "Explore Resume Writing Packages", href: "/services/packages/ats-cv" },
   { label: "Compare Career Branding Pricing", href: "/pricing" },
   { label: "Try the ATS CV Audit Tool", href: "/tools/ats-cv-audit" },
   { label: "Optimize Your LinkedIn Headline", href: "/tools/linkedin-headline-generator" },
@@ -9,7 +9,7 @@ const usInternalLinks: BlogLink[] = [
 ];
 
 const usCtas: BlogLink[] = [
-  { label: "View Resume Packages", href: "/services/packages/cv-writing" },
+  { label: "View Resume Packages", href: "/services/packages/ats-cv" },
   { label: "Run ATS Audit", href: "/tools/ats-cv-audit" },
   { label: "Request Career Support", href: "/contact" },
 ];

@@ -93,7 +93,7 @@ export default function LinkedinHeadlineGeneratorPage() {
               A headline works best when your About section, experience entries, and proof assets support the same positioning story. Use this as the first layer, not the whole brand.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/services/packages/linkedin-optimization" className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
+              <Link href="/services/packages/linkedin" className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
                 LinkedIn Optimization
               </Link>
  <Link href="/services/personal-website" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">

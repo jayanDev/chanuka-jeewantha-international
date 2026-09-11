@@ -67,6 +67,16 @@ export default function PortfolioPage() {
             </Link>
           </div>
 
+          {caseStudies.length === 0 && <div className="mb-8 grid gap-8 md:grid-cols-2">
+            <div className="relative aspect-[4/3] overflow-hidden border border-zinc-200 bg-white">
+              <Image src="/images/cv-after-ats-template.svg" alt="Illustrative ATS CV layout, not a client result" fill className="object-contain" sizes="(max-width: 768px) 100vw, 50vw" />
+            </div>
+            <div className="self-center">
+              <h3 className="text-2xl font-semibold">Explore a practical document layout</h3>
+              <p className="mt-4 text-zinc-700">This template illustrates a straightforward CV structure. It is not a client document or a promise of hiring results. Your own version should reflect your experience, target role and application instructions.</p>
+              <Link href="/resources/ats-friendly-cv-template-free" className="btn btn-secondary-gold mt-5">View the CV Template</Link>
+            </div>
+          </div>}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
             {caseStudies.map((study) => (
  <article key={study.slug} className="group overflow-hidden rounded-[20px] border border-zinc-200 bg-white shadow-sm transition-all hover:-translate-y-1 hover:shadow-[0_18px_38px_rgba(0,0,0,0.1)]">

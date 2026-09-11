@@ -3,19 +3,19 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { getBaseUrl } from "@/lib/site-url";
 import { buildPageMetadata } from "@/lib/seo";
-import { featuredReviews, GOOGLE_REVIEWS_URL, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/featured-reviews";
+import { GOOGLE_REVIEWS_URL } from "@/lib/featured-reviews";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 import Price from "@/components/Price";
-import { CALENDLY_URL } from "@/lib/booking-config";
+import { internationalBundles } from "@/lib/international-bundles";
 import { marketAlternates } from "@/lib/markets";
 
-const HOME_TITLE = "#1 Premium ATS Resume Writing Service in United States";
+const HOME_TITLE = "Global Resume & LinkedIn Optimization Services | Chanuka Jeewantha";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
     title: HOME_TITLE,
     description:
-      "Premium ATS resume writing for US professionals - executive CVs, LinkedIn optimization, and cover letters. Personally written, with a 90-day interview guarantee.",
+      "Premium international resume writing, ATS CV writing, LinkedIn optimization, cover letters, foreign job CVs, and executive career branding for global professionals.",
     path: "/",
     alternateLanguages: marketAlternates(),
   }),
@@ -58,104 +58,16 @@ const services = [
   },
 ];
 
-type Bundle = {
-  name: string;
-  priceUsd: number;
-  saveUsd: number;
-  audience: string;
-  delivery: string;
-  includes: string[];
-  cta: string;
-  popular?: boolean;
-  premium?: boolean;
-};
-
-const bundles: Bundle[] = [
-  {
-    name: "Starter Pack",
-    priceUsd: 179,
-    saveUsd: 98,
-    audience: "For graduates & early-career candidates",
-    delivery: "7-day delivery",
-    includes: [
-      "ATS Resume / CV - graduate level",
-      "Cover Letter",
-      "LinkedIn Optimization",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Starter Pack",
-  },
-  {
-    name: "Career Pack",
-    priceUsd: 349,
-    saveUsd: 128,
-    audience: "For mid-career professionals",
-    delivery: "30-day support included",
-    popular: true,
-    includes: [
-      "Premium ATS Resume / CV",
-      "LinkedIn Optimization",
-      "Cover Letter",
-      "1 round of revisions",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Career Pack",
-  },
-  {
-    name: "Career Move Pack",
-    priceUsd: 499,
-    saveUsd: 176,
-    audience: "For cross-border / market-change applicants",
-    delivery: "60-day support included",
-    includes: [
-      "ATS Resume tailored to your target market",
-      "Modern CV format for cross-border roles",
-      "LinkedIn Optimization",
-      "Cover Letter - 2 versions",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Career Move Pack",
-  },
-  {
-    name: "Executive Brand Suite",
-    priceUsd: 899,
-    saveUsd: 327,
-    audience: "For senior professionals & executives",
-    delivery: "90-day premium support",
-    includes: [
-      "Executive ATS Resume / CV",
-      "Executive LinkedIn Optimization",
-      "Executive Cover Letter",
-      "Modern CV format for senior panels",
-      "1-Hour Strategy Consultation",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose Executive Suite",
-  },
-  {
-    name: "C-Suite Premium",
-    priceUsd: 1499,
-    saveUsd: 647,
-    audience: "For C-Suite, directors & founders",
-    delivery: "6-month support",
-    premium: true,
-    includes: [
-      "C-Suite Premium Resume / CV",
-      "Executive LinkedIn with content strategy",
-      "Modern CV format for executive panels",
-      "2-Hour Strategy Sessions",
-      "Quarterly LinkedIn refresh",
-      "90-day interview guarantee - 100% money-back",
-    ],
-    cta: "Choose C-Suite Premium",
-  },
-];
+const bundles = internationalBundles.map(bundle => ({
+  ...bundle, priceUsd: bundle.usd, includes: bundle.features,
+  cta: `Choose ${bundle.name}`,
+}));
 
 const reasons = [
   "Founder-led premium service - not template editing or junior outsourcing",
-  "ATS-optimized, recruiter-readable writing that survives keyword screens",
+  "ATS-friendly, recruiter-readable writing aligned with relevant role requirements",
   "Positioning built for competitive senior and executive-level hiring",
-  "Modern CV and resume formats accepted by global hiring panels",
+  "Country-specific CV and resume direction for global applications",
   "LinkedIn rewrites designed for recruiter search and inbound opportunity flow",
   "Clear career storytelling across graduate, professional, and executive levels",
   "Premium personal branding, not a one-size-fits-all rewrite",
@@ -172,8 +84,8 @@ const processSteps = [
 
 const faqs = [
   [
-    "How does the 90-day interview guarantee work?",
-    "Every package is covered. If you don't receive any interview calls within 90 days of delivery, you get a 100% refund. To qualify you simply need to apply to at least 20 relevant roles in the 90-day window using the documents we deliver. No fine-print games, no partial credits - full money back.",
+    "What revision support is included?",
+    "Revision scope and support periods depend on your selected service. These are confirmed in writing before work starts, so you know what is included.",
   ],
   [
     "Do you work with clients anywhere in the world?",
@@ -193,7 +105,7 @@ const faqs = [
   ],
   [
     "What payment methods are available?",
-    "Wise, PayPal, Payoneer, Stripe, and bank transfer are all supported. Specific payment details are confirmed after your enquiry is reviewed.",
+    "Available payment methods, settlement currency and payment details are confirmed in your written quote after profile review. Please do not send payment before confirmation.",
   ],
   [
     "How do I start?",
@@ -201,12 +113,13 @@ const faqs = [
   ],
 ];
 
-export default async function Home() {
+export default function Home() {
 
   const personLd = {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Chanuka Jeewantha",
+    "@id": `${getBaseUrl()}/#person`,
     jobTitle: "Founder-Led Premium Career Branding Specialist",
     url: getBaseUrl(),
     sameAs: [
@@ -217,29 +130,6 @@ export default async function Home() {
     ],
   };
 
-  const googleRatingLd = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "Resume, CV & LinkedIn Writing Services",
-    provider: {
-      "@type": "Organization",
-      name: "Chanuka Jeewantha",
-      url: getBaseUrl(),
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "5.0",
-      reviewCount: "69",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: featuredReviews.map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: { "@type": "Rating", ratingValue: String(r.rating), bestRating: "5" },
-      reviewBody: r.quote,
-    })),
-  };
 
   return (
     <>
@@ -247,10 +137,7 @@ export default async function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personLd) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(googleRatingLd) }}
-      />
+
 
       {/* 1. Hero Section */}
       <section className="w-full bg-[#0A2540] text-white pt-16 pb-24 md:pt-24 md:pb-32 relative overflow-hidden">
@@ -263,73 +150,27 @@ export default async function Home() {
             {/* Editorial gold accent line */}
             <div className="mb-8 h-px w-16 bg-gradient-to-r from-[#C9A961] to-transparent" />
             <h1 className="font-heading text-[40px] font-bold leading-[1.08] text-white sm:text-[54px] md:text-[68px] tracking-tight max-w-4xl">
-              #1 Premium ATS Resume Writing Service in the <span className="text-[#C9A961]">United States</span>
+              Global Resume, LinkedIn &amp; <span className="text-[#C9A961]">Career Branding</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 md:text-xl font-light">
-              ATS-optimized resumes, executive CVs, LinkedIn profiles, cover letters, and full career-branding suites - personally written for US senior candidates and remote-first opportunities. Backed by a 90-day interview guarantee.
+              Premium ATS-friendly CVs, international resumes, LinkedIn profiles and cover letters for professionals targeting the UAE, UK, Canada, Australia, Europe, New Zealand and remote roles.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row items-center">
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contact"
                 className="btn inline-flex items-center justify-center bg-gradient-to-r from-[#C9A961] to-[#E0C882] hover:from-[#E0C882] hover:to-[#C9A961] text-[#0A2540] font-bold w-full sm:w-auto rounded-[12px] shadow-[0_4px_24px_rgba(201,169,97,0.3)] hover:shadow-[0_8px_32px_rgba(201,169,97,0.5)] transform hover:-translate-y-0.5 transition-all duration-300 border-none"
               >
-                Free Consultation
-              </a>
+                Apply for International Career Support
+              </Link>
               <Link href="/pricing" className="btn btn-secondary-gold w-full sm:w-auto">
                 View Premium Packages
               </Link>
             </div>
 
-            {/* Guarantee chip */}
-            <Link href="#guarantee" className="mt-6 inline-flex items-center gap-2.5 rounded-full border border-[#C9A961]/40 bg-[#C9A961]/10 px-4 py-2 text-sm font-semibold text-[#C9A961] transition-colors hover:bg-[#C9A961]/20">
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                <polyline points="9 12 11 14 15 10" />
-              </svg>
-              90-Day Interview Guarantee &nbsp;<span className="font-normal text-white/70">·</span>&nbsp; <span className="text-white">100% Money-Back</span>
-            </Link>
-
-            {/* Scannable Hero Trust Indicator */}
-            <div className="mt-12 flex flex-wrap items-center gap-4 text-white/80 text-sm border-t border-white/10 pt-8">
-              <div className="flex items-center gap-1">
-                <span className="flex items-center text-[#C9A961]">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="h-4.5 w-4.5 fill-current" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </span>
-                <span className="text-white font-bold ml-1">4.9/5 Rating</span>
-              </div>
-              <span className="h-4 w-px bg-white/20 hidden sm:inline" />
-              <span>
-                Based on 380+ senior & executive placements in <span className="text-[#C9A961] font-semibold">US, UK, AUS, CA, NZ</span>
-              </span>
-              <span className="h-4 w-px bg-white/20 hidden sm:inline" />
-              <a
-                href="https://maps.app.goo.gl/7osd53bHxoc9jQwaA"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
-              >
-                <span className="text-[#C9A961] font-bold">5.0 ★</span>
-                <span>on Google · 69 reviews</span>
-              </a>
-              <span className="h-4 w-px bg-white/20 hidden sm:inline" />
-              <a
-                href="https://www.linkedin.com/in/chanuka-jeewantha/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-white/80 hover:text-white transition-colors"
-              >
-                <svg className="h-4 w-4 text-[#0A66C2] bg-white rounded-sm p-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-                </svg>
-                <span className="text-[#C9A961] font-bold">40,000+</span>
-                <span>LinkedIn followers</span>
-              </a>
+            <div className="mt-10 flex flex-wrap gap-5 border-t border-white/20 pt-6 text-sm text-white/80">
+              <Link href="/about">Personally crafted by Chanuka</Link>
+              <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">Read Google reviews</a>
+              <Link href="/#process">Explore the writing process</Link>
             </div>
           </div>
 
@@ -358,7 +199,7 @@ export default async function Home() {
           <div className="grid grid-cols-2 gap-y-8 md:grid-cols-4 md:gap-x-0 text-center md:text-left">
             {[
               ["Resume & CV Writing", "Founder-led premium service"],
-              ["ATS-Optimized Resumes", "Recruiter-approved formats"],
+              ["ATS-Optimized Resumes", "Recruiter-readable formats"],
               ["LinkedIn Optimization", "Profile strategy & key signals"],
               ["Executive Career Branding", "For competitive global roles"],
             ].map(([title, sub], idx) => (
@@ -507,7 +348,7 @@ export default async function Home() {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 items-stretch">
             {bundles.map((bundle) => {
-              const { name, priceUsd, saveUsd, audience, delivery, includes, cta, popular, premium } = bundle;
+              const { name, priceUsd, audience, delivery, includes, cta, popular, premium } = bundle;
               return (
                 <article
                   key={name}
@@ -563,8 +404,7 @@ export default async function Home() {
                     <li className="flex items-start gap-2">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9A961]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                         <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span className="leading-snug">Save <Price usd={saveUsd} /> vs separate services</span>
+                      </svg><span className="leading-snug">Scope confirmed before work begins</span>
                     </li>
                   </ul>
 
@@ -596,62 +436,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 7b. 90-Day Interview Guarantee */}
-      <section id="guarantee" className="w-full bg-white py-20 md:py-24 scroll-mt-28">
-        <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-[24px] border-2 border-[#C9A961] bg-gradient-to-br from-[#FFFCF3] via-white to-[#FAF8F3] p-8 md:p-12 shadow-[0_20px_60px_rgba(201,169,97,0.18)]">
-            {/* Decorative corner glow */}
-            <div className="absolute -top-12 -right-12 w-64 h-64 bg-[radial-gradient(circle,rgba(201,169,97,0.18),transparent_70%)] pointer-events-none" />
-
-            <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-[auto_1fr] md:items-center md:gap-10">
-              {/* Seal / badge */}
-              <div className="flex justify-center md:justify-start">
-                <div className="relative flex h-32 w-32 items-center justify-center rounded-full bg-[#0A2540] text-white shadow-xl ring-4 ring-[#C9A961]/40 md:h-36 md:w-36">
-                  <div className="absolute inset-2 rounded-full border border-[#C9A961]/40" />
-                  <div className="text-center">
-                    <p className="font-heading text-[28px] font-bold leading-none text-[#C9A961] md:text-[32px]">90</p>
-                    <p className="mt-0.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white/80">Day</p>
-                    <div className="mx-auto my-1.5 h-px w-8 bg-[#C9A961]" />
-                    <p className="text-[9px] font-bold uppercase tracking-[0.12em] text-white">Guarantee</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Copy */}
-              <div className="text-center md:text-left">
-                <span className="text-[#8C6D30] font-semibold uppercase tracking-[0.16em] text-xs">Risk-Free Promise</span>
-                <h2 className="mt-3 font-heading text-[28px] font-bold leading-tight text-[#0A2540] md:text-[40px] tracking-tight">
-                  Get interview calls in 90 days - or your money back.
-                </h2>
-                <p className="mt-4 text-zinc-700 leading-relaxed md:text-lg">
-                  Every package on this site is backed by a <span className="font-bold text-[#0A2540]">100% money-back guarantee</span>. If you don&apos;t receive any interview calls within 90 days of delivery, you get a full refund.
-                </p>
-
-                <ul className="mt-6 grid grid-cols-1 gap-2.5 text-sm text-zinc-700 sm:grid-cols-2">
-                  {[
-                    "Applies to every package",
-                    "Full 100% refund - no partial credits",
-                    "90 days from delivery date",
-                    "Simple claim - no fine-print games",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2">
-                      <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-[#C9A961]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                        <polyline points="20 6 9 17 4 12" />
-                      </svg>
-                      <span className="font-semibold">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <p className="mt-5 text-xs text-zinc-500">
-                  Eligibility requires applying to at least 20 relevant roles in the 90-day window. Full terms on the <Link href="/refund-policy" className="font-semibold text-[#8C6D30] underline hover:text-[#C9A961]">refund policy</Link> page.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* 8. Process Section */}
       <section id="process" className="w-full bg-[#FAF8F3] py-20 md:py-28 border-y border-zinc-200/50 scroll-mt-28">
         <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
@@ -675,147 +459,13 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* 9. Testimonials Section */}
-      <section className="w-full bg-white py-20 md:py-28">
-        <div className="mx-auto max-w-[1512px] px-4 sm:px-6">
-          <div className="mb-16 flex flex-col items-center text-center">
-            <span className="text-[#8C6D30] font-semibold uppercase tracking-wider text-xs">Client Trust</span>
-            <p className="mt-4 font-heading font-bold leading-none text-[#0A2540] text-[88px] md:text-[140px]">
-              {GOOGLE_RATING}<span className="text-[#C9A961]">/5</span>
-            </p>
-            <div className="mt-3 flex items-center gap-1 text-[#C9A961]">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <svg key={i} className="h-7 w-7 md:h-8 md:w-8 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
-              ))}
-            </div>
-            <p className="mt-5 text-lg md:text-2xl font-semibold text-zinc-700">
-              Rated <span className="text-[#0A2540] font-bold">5.0 / 5</span> across <span className="text-[#0A2540] font-bold">{GOOGLE_REVIEW_COUNT} verified Google reviews</span>
-            </p>
-            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary-gold text-sm mt-7">
-              Read all {GOOGLE_REVIEW_COUNT} reviews on Google
-            </a>
-          </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {featuredReviews.map((item) => (
-              <article key={item.name} className="testimonial-card-premium relative rounded-[20px] border border-zinc-200/60 bg-[#FAF8F3] p-8 shadow-sm flex flex-col justify-between overflow-hidden">
-                <span className="text-[#C9A961]/15 font-heading text-[120px] leading-none absolute -top-4 -left-2 select-none pointer-events-none">&ldquo;</span>
-                <div className="relative z-10 pt-4">
-                  {/* 5-star rating */}
-                  <div className="mb-4 flex items-center gap-0.5">
-                    {Array.from({ length: item.rating }).map((_, i) => (
-                      <svg key={i} className="h-4 w-4 fill-[#C9A961]" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-sm leading-relaxed text-zinc-700 italic">&quot;{item.quote}&quot;</p>
-                </div>
-                <div className="mt-8 border-t border-zinc-200/60 pt-4 relative z-10 flex items-center justify-between">
-                  <p className="text-sm font-bold text-[#0A2540]">{item.name}</p>
-                  <span className="text-xs font-semibold text-[#8C6D30]">Verified on Google</span>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9b. LinkedIn Trust Card */}
-      <section className="w-full bg-white py-20 md:py-24">
-        <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
-          <div className="relative overflow-hidden rounded-[24px] bg-gradient-to-br from-[#0A2540] via-[#0E3358] to-[#0A66C2] p-8 md:p-12 shadow-[0_24px_60px_rgba(10,102,194,0.25)]">
-            {/* Decorative glow */}
-            <div className="absolute -top-20 -right-20 w-72 h-72 bg-[radial-gradient(circle,rgba(201,169,97,0.15),transparent_70%)] pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-72 h-72 bg-[radial-gradient(circle,rgba(255,255,255,0.06),transparent_70%)] pointer-events-none" />
-
-            <div className="relative z-10 grid grid-cols-1 gap-8 md:grid-cols-[1fr_auto] md:items-center md:gap-12">
-              <div className="text-center md:text-left">
-                {/* LinkedIn badge */}
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 backdrop-blur-sm ring-1 ring-white/15">
-                  <svg className="h-4 w-4 text-white" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-                  </svg>
-                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-white">LinkedIn</span>
-                </div>
-
-                <p className="mt-5 font-heading text-[44px] font-bold leading-none text-white md:text-[64px]">
-                  40,000<span className="text-[#C9A961]">+</span>
-                </p>
-                <h2 className="mt-3 font-heading text-[22px] font-bold leading-tight text-white md:text-[28px]">
-                  Professionals follow my career advice on LinkedIn.
-                </h2>
-                <p className="mt-4 text-white/75 leading-relaxed md:text-lg">
-                  A community of senior candidates, hiring managers, and recruiters who rely on the same career-branding playbook used in every package on this site.
-                </p>
-
-                <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center md:justify-start">
-                  <a
-                    href="https://www.linkedin.com/in/chanuka-jeewantha/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-[10px] bg-[#0A66C2] px-6 py-3 text-sm font-bold text-white shadow-lg transition-colors hover:bg-white hover:text-[#0A66C2]"
-                  >
-                    <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-                    </svg>
-                    Follow on LinkedIn
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/chanuka-jeewantha/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 rounded-[10px] border border-white/30 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-white/10"
-                  >
-                    View Profile
-                    <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                      <path d="M7 17L17 7M7 7h10v10" />
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
-              {/* Right side: profile preview card */}
-              <a
-                href="https://www.linkedin.com/in/chanuka-jeewantha/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block w-full max-w-sm rounded-[16px] bg-white p-5 shadow-2xl ring-1 ring-white/20 transition-transform hover:-translate-y-1 md:w-[300px]"
-              >
-                <div className="flex items-center gap-3">
-                  <div className="relative h-14 w-14 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-[#0A66C2]/20">
-                    <Image
-                      src="/images/hero-chanuka.jpg"
-                      alt="Chanuka Jeewantha"
-                      fill
-                      sizes="56px"
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="min-w-0 flex-1">
-                    <p className="font-bold text-[#0A2540] truncate">Chanuka Jeewantha</p>
-                    <p className="text-xs text-zinc-500 truncate">Premium Career Branding Specialist</p>
-                  </div>
-                  <svg className="h-5 w-5 flex-shrink-0 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z" />
-                  </svg>
-                </div>
-
-                <div className="mt-4 grid grid-cols-2 gap-2 border-t border-zinc-100 pt-3 text-center">
-                  <div>
-                    <p className="font-heading text-lg font-bold text-[#0A2540]">40K+</p>
-                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">Followers</p>
-                  </div>
-                  <div>
-                    <p className="font-heading text-lg font-bold text-[#0A2540]">8+ yrs</p>
-                    <p className="text-[10px] uppercase tracking-wider text-zinc-500">Experience</p>
-                  </div>
-                </div>
-
-                <p className="mt-3 text-center text-xs font-semibold text-[#0A66C2] group-hover:underline">
-                  + Connect on LinkedIn
-                </p>
-              </a>
-            </div>
+      <section className="w-full bg-white py-20">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <h2 className="font-heading text-[32px] font-bold text-[#0A2540]">Client trust, in their own words</h2>
+          <p className="mt-5 text-zinc-600">Choosing a career writer is a personal decision. Read client feedback on Google and meet the founder who will work on your professional story.</p>
+          <div className="mt-7 flex flex-wrap justify-center gap-4">
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="btn btn-secondary-gold">Read Google Reviews</a>
+            <Link href="/about" className="btn btn-secondary-gold">Meet Chanuka</Link>
           </div>
         </div>
       </section>
@@ -869,7 +519,7 @@ export default async function Home() {
               href="/contact" 
               className="btn inline-flex items-center justify-center bg-gradient-to-r from-[#C9A961] to-[#E0C882] hover:from-[#E0C882] hover:to-[#C9A961] text-[#0A2540] font-bold text-base px-8 py-4 rounded-[12px] shadow-[0_4px_24px_rgba(201,169,97,0.35)] hover:shadow-[0_8px_32px_rgba(201,169,97,0.55)] transform hover:-translate-y-0.5 transition-all duration-300 border-none"
             >
-              Submit an Enquiry
+              Submit International Enquiry
             </Link>
           </div>
         </div>

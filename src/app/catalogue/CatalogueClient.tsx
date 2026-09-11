@@ -425,7 +425,7 @@ export default function CatalogueClient() {
               <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4 rounded-[14px] border border-zinc-200 bg-zinc-50 p-4 text-sm">
                 <div className="rounded-[10px] border border-[#C9A961]/40 bg-white p-4">
                   <p className="font-bold text-foreground mb-1">✨ Signature Series</p>
-                  <p className="text-xs text-zinc-500 mb-2">Personally crafted by Chanuka Jeewantha · CPRW &amp; CPCC</p>
+                  <p className="text-xs text-zinc-500 mb-2">Personally crafted by Chanuka Jeewantha</p>
                   <ul className="space-y-1 text-zinc-700">
                     <li>✓ Strategic industry positioning</li>
                     <li>✓ 30-day post-delivery support</li>

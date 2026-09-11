@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
@@ -38,8 +37,8 @@ const FAQS = [
     a: "For entry-level and early-career? Often yes - combine ChatGPT with a strong template and you'll get something usable. For mid-career and above where positioning and judgment matter, you'll likely want a real writer involved before the final version goes out.",
   },
   {
-    q: "Does the 90-day interview guarantee apply if I used AI tools too?",
-    a: "Yes - the guarantee is on the documents we deliver. What you do alongside the engagement (AI tools, networking, applications) doesn't affect eligibility. You just need to actually apply to 20+ relevant roles using our documents in the 90-day window.",
+    q: "Can I bring an AI-assisted draft?",
+    a: "Yes. Share your draft and target roles. We review accuracy, positioning and readability, then develop the agreed documents around your experience.",
   },
 ];
 
@@ -111,7 +110,7 @@ export default function VsChatGPTPage() {
                 </div>
                 <p className="mt-3 text-sm font-semibold text-emerald-700 uppercase tracking-wide">Wins at</p>
                 <ul className="mt-2 space-y-2 text-sm text-zinc-700">
-                  {["Strategic positioning for the role you actually want", "Cutting bullets that don't earn their place", "Senior / executive tone calibration", "Surfacing outcomes you didn't think to mention", "Achievement bullets that sound like you, not a template", "Money-back interview guarantee"].map((w) => (
+                  {["Strategic positioning for the role you actually want", "Cutting bullets that don't earn their place", "Senior / executive tone calibration", "Surfacing outcomes you didn't think to mention", "Achievement bullets that sound like you, not a template", "Personal document review"].map((w) => (
                     <li key={w} className="flex items-start gap-2">
                       <svg className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                       <span>{w}</span>
@@ -201,7 +200,7 @@ export default function VsChatGPTPage() {
 
         <PageCTA
           heading="Want a writer who beats ChatGPT?"
-          subheading="Every package is personally written and backed by the 90-day interview guarantee. ChatGPT doesn't offer that."
+          subheading="Every package is personally written and supported by a personal review and the revisions included in your selected package."
         />
       </ComparisonPageLayout>
     </>

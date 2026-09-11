@@ -342,5 +342,5 @@ export const geoHreflangAlternates: Record<string, string> = {
   ...Object.fromEntries(
     Object.values(geoPages).map((page) => [page.lang, `/cv-writing/${page.slug}`]),
   ),
-  "x-default": "/cv-writing/usa",
+  "x-default": "/en-us",
 };

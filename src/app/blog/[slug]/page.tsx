@@ -168,7 +168,7 @@ export default async function BlogPostPage({
       jobTitle: "Founder & Lead Resume / CV Writer",
       image: `${baseUrl}/images/hero-chanuka.jpg`,
       description:
-        "Founder-led resume, CV, and LinkedIn writer with 380+ senior and executive placements across the US, UK, Australia, Canada, and New Zealand.",
+        "Founder-led international resume, CV and LinkedIn writer helping professionals present their experience clearly for global roles.",
       knowsAbout: [
         "Resume writing",
         "CV writing",
@@ -493,7 +493,7 @@ export default async function BlogPostPage({
                 </div>
                 <div className="flex flex-col text-center sm:text-left">
                   <h4 className="text-[24px] font-bold font-heading text-foreground mb-2">Chanuka Jeewantha</h4>
-                  <p className="text-text-body mb-4">Professional CV Writer and Career Development Specialist with 8+ years of experience in ATS-friendly positioning and career strategy.</p>
+                  <p className="text-text-body mb-4">Founder-led CV, resume and LinkedIn writer focused on clear career storytelling, ATS-friendly structure and international applications.</p>
                   <Link href="/about" className="text-brand-main font-semibold hover:text-brand-dark transition-colors">View all posts →</Link>
                 </div>
               </div>

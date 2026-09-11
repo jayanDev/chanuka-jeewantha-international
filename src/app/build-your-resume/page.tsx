@@ -141,7 +141,7 @@ export default function BuildYourResumePage() {
             <article className="rounded-[18px] border-2 border-[#C9A961] bg-[#FFFCF3] p-7">
               <h3 className="font-heading text-[20px] font-bold text-[#0A2540]">Have it written for you</h3>
               <p className="mt-3 text-sm leading-relaxed text-zinc-700">
-                For senior roles, career changes, or when you&apos;re not getting interviews, a personally written resume is worth it. ATS-optimized, achievement-led, tailored to your roles, and backed by a 90-day interview guarantee.
+                For senior roles, career changes, or when you&apos;re not getting interviews, a personally written resume is worth it. ATS-optimized, achievement-led, tailored to your roles, and backed by a agreed revision support.
               </p>
               <Link href="/pricing" className="mt-5 inline-flex items-center gap-1.5 text-sm font-bold text-[#8C6D30] hover:text-[#C9A961]">
                 View packages &amp; pricing →
@@ -186,7 +186,7 @@ export default function BuildYourResumePage() {
 
       <PageCTA
         heading="Stuck building it yourself?"
-        subheading="Send your draft and target role for a personal review. We'll tell you honestly whether it's ready - or write it for you, guaranteed."
+        subheading="Send your draft and target role for a personal review and a clear recommendation on the next step."
         primaryLabel="Request a Profile Review"
         secondaryLabel="Run the ATS Check"
         secondaryHref="/tools/ats-cv-audit"

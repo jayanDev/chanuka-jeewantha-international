@@ -7,7 +7,7 @@ export const metadata = buildPageMetadata({
   title: "Application Duo Bundle | Bundle Discount",
   description:
     "Configure and order the Application Duo Bundle with CV and Cover Letter package selection and instant add-to-cart and buy-now actions.",
-  path: "/offers/application-duo-bundle",
+  path: "/bundles",
   keywords: ["application duo bundle", "bundle discount package", "cv and cover letter bundle"],
 });
 

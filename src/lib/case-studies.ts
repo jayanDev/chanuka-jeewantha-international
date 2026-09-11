@@ -1,4 +1,5 @@
 export type CaseStudy = {
+  evidenceVerified?: boolean;
   slug: string;
   title: string;
   category: string;
@@ -16,7 +17,7 @@ export type CaseStudy = {
   }>;
 };
 
-export const caseStudies: CaseStudy[] = [
+const caseStudyDrafts: CaseStudy[] = [
   {
     slug: "faang-offer-8-weeks-ats-cv-transformation",
     title: "From 6 Months of Silence to a FAANG-Level Offer in 8 Weeks",
@@ -48,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
       "Rapid shortlist results after prolonged application silence",
     ],
     relatedServices: [
-      { label: "Professional CV Writing", href: "/services/packages/cv-writing" },
+      { label: "Professional CV Writing", href: "/services/packages/ats-cv" },
       { label: "Book Consultation", href: "/contact" },
       { label: "Compare Pricing", href: "/pricing" },
     ],
@@ -84,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
       "Experience storytelling cleanup",
     ],
     relatedServices: [
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
       { label: "LinkedIn Authority Resources", href: "/resources/linkedin-authority-system" },
       { label: "View Services", href: "/services" },
     ],
@@ -157,11 +158,14 @@ export const caseStudies: CaseStudy[] = [
     ],
     relatedServices: [
       { label: "Personal Website Service", href: "/services/personal-website" },
-      { label: "LinkedIn Optimization", href: "/services/packages/linkedin-optimization" },
+      { label: "LinkedIn Optimization", href: "/services/packages/linkedin" },
       { label: "Portfolio Examples", href: "/portfolio" },
     ],
   },
 ];
+
+// Publish only after outcome evidence and permission to share are recorded.
+export const caseStudies = caseStudyDrafts.filter(study => study.evidenceVerified === true);
 
 export function getCaseStudyBySlug(slug: string) {
   return caseStudies.find((study) => study.slug === slug);

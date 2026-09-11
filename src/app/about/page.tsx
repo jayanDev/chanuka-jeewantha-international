@@ -7,17 +7,17 @@ import { buildBreadcrumbList } from "@/lib/structured-data";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "About Chanuka Jeewantha | Premium US Resume Writer",
+  title: "About Chanuka Jeewantha | Global Career Branding",
   description:
-    "Founder-led premium resume writing for US professionals. 8+ years of experience, 40,000+ LinkedIn followers, and a 5.0-star Google rating across 69 reviews.",
+    "Meet Chanuka Jeewantha, your founder-led international resume, CV and LinkedIn writing specialist. Explore the personal, strategy-first approach.",
   path: "/about",
 });
 
 const aboutStats = [
-  { value: "8+", label: "Years writing for senior hires" },
-  { value: "40,000+", label: "LinkedIn followers" },
-  { value: "5.0★", label: "Google rating · 69 reviews" },
-  { value: "90-day", label: "Interview guarantee" },
+  { value: "Personal", label: "Founder-led writing" },
+  { value: "Global", label: "Target-market positioning" },
+  { value: "ATS", label: "Readable document structure" },
+  { value: "Strategy", label: "Career direction first" },
 ];
 
 export default function AboutPage() {
@@ -63,7 +63,7 @@ export default function AboutPage() {
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[20px] border border-zinc-200 bg-black shadow-lg">
                   <Image
                     src="/images/about-page-chanuka.jpg"
-                    alt="Chanuka Jeewantha, premium US resume writer and career branding specialist"
+                    alt="Chanuka Jeewantha, international resume writer and career branding specialist"
                     fill
                     sizes="(max-width: 1024px) 100vw, 720px"
                     className="object-cover object-[center_10%]"
@@ -72,16 +72,16 @@ export default function AboutPage() {
                 </div>
               </div>
               <p className="text-[20px] md:text-[24px] text-foreground font-medium leading-relaxed">
-                I am Chanuka Jeewantha, a founder-led resume writer and career branding specialist helping US professionals present themselves clearly, confidently, and competitively.
+                I am Chanuka Jeewantha, a founder-led resume writer and career branding specialist helping global professionals present themselves clearly, confidently, and competitively.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                Over the last 8+ years I&apos;ve written and rebuilt resumes, executive CVs, and LinkedIn profiles for candidates competing in the US job market - from software engineers and healthcare professionals to finance leaders, federal applicants, and C-suite executives. Every document is written personally by me. No outsourcing, no junior staff, no AI-generated filler.
+                I personally craft resumes, executive CVs and LinkedIn profiles around your experience, target role and career goals. The work starts with a profile review, then turns your responsibilities and achievements into a clear professional story.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                My approach is practical and strategy-first - built around the systems that actually decide US hiring: applicant tracking systems (ATS), recruiter scanning behavior, and the achievement-based positioning that hiring managers respond to. I study how US recruiters search, what keywords matter for each role, and how to frame your experience so it reads as senior, credible, and worth a call.
+                My approach is practical and strategy-first. I consider the target vacancy, country conventions, recruiter readability and relevant terminology. Your document should make your strengths easy to understand while accurately representing your experience.
               </p>
               <p className="text-text-body text-[16px] md:text-[18px] leading-relaxed">
-                That work has built a following of <strong>40,000+ professionals</strong> on LinkedIn who rely on my career advice, and a <strong>5.0-star rating across 69 verified Google reviews</strong>. I stand behind every package with a 90-day interview guarantee: if you don&apos;t land interview calls, you get your money back.
+                Explore my LinkedIn profile and client reviews to learn more about the service. Before an engagement begins, we confirm the documents, delivery schedule and revision support in writing.
               </p>
 
               {/* Verifiable proof links */}
@@ -98,13 +98,13 @@ export default function AboutPage() {
                   Verify on LinkedIn
                 </a>
                 <a
-                  href="https://maps.app.goo.gl/7osd53bHxoc9jQwaA"
+                  href="https://share.google/G26gLzklA9HfIHJ1Y"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-[10px] border border-zinc-300 bg-white px-4 py-2.5 text-sm font-bold text-foreground transition-colors hover:border-brand-main hover:text-brand-main"
                 >
                   <span className="text-[#C9A961]">★</span>
-                  Read 69 Google Reviews
+                  Read Google Reviews
                 </a>
               </div>
             </div>
@@ -142,12 +142,12 @@ export default function AboutPage() {
                 desc: "Every resume, CV, and LinkedIn profile is written by me from scratch. You work with the person whose name is on the door, not a rotating pool of freelancers.",
               },
               {
-                title: "Built for US hiring systems",
-                desc: "ATS-optimized formatting, US-market keywords, and recruiter-tested structure - so your resume survives the screen and reads as senior to the hiring manager.",
+                title: "Built around your target market",
+                desc: "ATS-friendly formatting, relevant role terminology and a clear structure help recruiters understand the experience you bring.",
               },
               {
-                title: "Backed by a real guarantee",
-                desc: "A 90-day interview guarantee on every package. If the documents don't generate interview calls, you get a full refund. The risk sits with me, not you.",
+                title: "Clear scope and revision support",
+                desc: "Your selected package defines the deliverables and support period. We agree the scope before writing begins and refine the documents within that scope.",
               },
             ].map((item) => (
               <article key={item.title} className="rounded-[16px] border border-zinc-200/80 bg-[#FAF8F3] p-7">

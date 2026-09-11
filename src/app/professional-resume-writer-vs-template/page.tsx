@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
@@ -90,7 +89,7 @@ export default function VsTemplatePage() {
                     ["Senior / executive tone", "Hard to do yourself", "Built in"],
                     ["Career-change reframing", "Very hard", "Core competence"],
                     ["LinkedIn rewrite", "Not included", "Included in bundle"],
-                    ["Money-back guarantee", "No", "90-day interview guarantee"],
+                    ["Personal revision support", "Self-edited", "Agreed package scope"],
                   ].map(([dim, t, w], i) => (
                     <tr key={String(dim)} className={i % 2 === 0 ? "bg-white" : "bg-zinc-50"}>
                       <td className="px-5 py-3.5 font-semibold text-[#0A2540]">{dim}</td>
@@ -173,7 +172,7 @@ export default function VsTemplatePage() {
 
         <PageCTA
           heading="Ready for more than a template?"
-          subheading="See all five packages from $179 to $1,499 - each with the 90-day interview guarantee."
+          subheading="See all five packages from $179 to $1,499 - each with the agreed revision support."
           primaryLabel="See All Packages"
           primaryHref="/pricing"
           secondaryLabel="Request a Profile Review"

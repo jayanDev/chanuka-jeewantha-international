@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { trackCareerEvent } from "@/lib/analytics";
 import { CALENDLY_URL } from "@/lib/booking-config";
 
 declare global {
@@ -35,35 +36,24 @@ export default function CalendlyEmbed({
   const containerRef = useRef<HTMLDivElement>(null);
   const [shouldLoad, setShouldLoad] = useState(false);
 
-  // Defer the heavy Calendly widget (script + iframe) until the section is
-  // near the viewport. This keeps it off the initial mobile load, which is
-  // a major Lighthouse TBT/LCP win on pages where the embed is below the fold.
+  const completed = useRef(new Set<string>());
   useEffect(() => {
-    if (!CALENDLY_URL || shouldLoad) return;
-    const el = sectionRef.current;
-    if (!el) return;
-
-    if (typeof IntersectionObserver === "undefined") {
-      const timer = window.setTimeout(() => setShouldLoad(true), 0);
-      return () => window.clearTimeout(timer);
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          setShouldLoad(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "400px" }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, [shouldLoad]);
+    const receive = (event: MessageEvent) => {
+      const frame = containerRef.current?.querySelector("iframe");
+      if (event.origin !== "https://calendly.com" || !frame || event.source !== frame.contentWindow) return;
+      if (event.data?.event !== "calendly.event_scheduled") return;
+      const uri = event.data?.payload?.event?.uri;
+      if (typeof uri !== "string" || completed.current.has(uri)) return;
+      completed.current.add(uri);
+      trackCareerEvent("booking_completed");
+    };
+    window.addEventListener("message", receive);
+    return () => window.removeEventListener("message", receive);
+  }, []);
 
   useEffect(() => {
     if (!CALENDLY_URL || !shouldLoad) return;
-    const url = `${CALENDLY_URL}${CALENDLY_URL.includes("?") ? "&" : "?"}hide_gdpr_banner=1`;
+    const url = CALENDLY_URL;
 
     const init = () => {
       if (window.Calendly && containerRef.current) {
@@ -105,12 +95,13 @@ export default function CalendlyEmbed({
         <div
           ref={containerRef}
           className="flex items-center justify-center overflow-hidden rounded-[20px] border border-zinc-200 shadow-sm bg-zinc-50"
-          style={{ minWidth: 0, width: "100%", height: "760px" }}
+          style={{ minWidth: 0, width: "100%", height: shouldLoad ? "760px" : "180px" }}
         >
           {!shouldLoad ? (
-            <span className="text-sm text-zinc-400">Loading scheduling calendar...</span>
+            <button type="button" className="btn btn-secondary-gold" onClick={() => setShouldLoad(true)}>Open Scheduling Calendar</button>
           ) : null}
         </div>
+        <p className="mt-4 text-center text-sm text-zinc-600">Scheduling is provided by Calendly. <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" className="underline">Book directly on Calendly</a></p>
       </div>
     </section>
   );

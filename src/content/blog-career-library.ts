@@ -3,7 +3,7 @@ import type { BlogFaq, BlogLink, BlogPost, BlogSection } from "./blog-posts";
 const defaultInternalLinks: BlogLink[] = [
   { label: "Order your CV package", href: "/checkout" },
   { label: "Compare all packages", href: "/pricing" },
-  { label: "Explore CV services", href: "/services/packages/cv-writing" },
+  { label: "Explore CV services", href: "/services/packages/ats-cv" },
   { label: "Read more career guides", href: "/blog" },
   { label: "Talk to Chanuka", href: "/contact" },
 ];

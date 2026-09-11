@@ -93,10 +93,10 @@ export default function AtsCvAuditPage() {
               If the score is weak, move to CV writing or a professional review. If the score is decent but inconsistent, start with the checklist and strengthen your metrics, keywords, and structure.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
-              <Link href="/services/packages/cv-writing" className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
+              <Link href="/services/packages/ats-cv" className="rounded-[10px] bg-brand-main px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-dark">
                 Professional CV Writing
               </Link>
- <Link href="/services/packages/cv-review" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
+ <Link href="/services/cv-review" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">
                 CV Review Service
               </Link>
  <Link href="/career-quiz" className="rounded-[10px] border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-brand-main hover:text-brand-main">

@@ -7,7 +7,7 @@ export const metadata = buildPageMetadata({
   title: "Bulk CV 5-Pack | Bulk Discount Package",
   description:
     "Build and order the Bulk CV 5-Pack with dynamic CV, Cover Letter, and LinkedIn selection. Get bulk discount pricing with fast checkout actions.",
-  path: "/offers/bulk-cv-5-pack",
+  path: "/contact",
   keywords: ["bulk cv 5 pack", "bulk cv package", "bulk discount cv writing"],
 });
 

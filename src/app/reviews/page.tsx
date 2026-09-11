@@ -26,7 +26,7 @@ const linkedinUrl = "https://www.linkedin.com/in/chanuka-jeewantha/";
 const bookingUrl = `${baseUrl}/booking`;
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Chanuka Jeewantha - Professional CV Writing, Linkedin Account Optimization & Career Development Services",
+  title: "Client Reviews and Career Branding Feedback",
   description:
     "Leave a Google Business review for Chanuka Jeewantha and view your provider details, service information, and package details in table format.",
   path: "/reviews",
@@ -57,7 +57,7 @@ const providerRows: TableRow[] = [
   },
   {
     label: "Experience",
-    value: "8+ years of practical experience helping job seekers with ATS-friendly documents and profile positioning",
+    value: "Founder-led support with ATS-friendly documents and profile positioning",
   },
   {
     label: "Website",

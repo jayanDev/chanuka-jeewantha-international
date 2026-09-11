@@ -10,7 +10,7 @@ import PageCTA from "@/components/PageCTA";
 
 const TITLE = "CV Writing Service | Professional CV Writing & Rewrite (US)";
 const DESCRIPTION =
-  "Professional CV writing, rewrite, and preparation service for US and global roles. Personally written, ATS-optimized, and tailored to your target market - with a 90-day interview guarantee.";
+  "Professional CV writing, rewrite, and preparation service for US and global roles. Personally written, ATS-optimized, and tailored to your target market - with a agreed revision support.";
 
 export const metadata: Metadata = {
   ...buildPageMetadata({
@@ -103,7 +103,7 @@ export default function CvWritingServicePage() {
             5.0 on Google · 69 reviews
           </span>
           <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-white/80">
-            90-day interview guarantee
+            agreed revision support
           </span>
         </div>
       </PageHero>
@@ -185,7 +185,7 @@ export default function CvWritingServicePage() {
 
       <PageCTA
         heading="Get a CV that finally lands interviews."
-        subheading="Send your current CV and target roles for a personal review. Every package is backed by a 90-day interview guarantee."
+        subheading="Send your current CV and target roles for a personal review. Every package is backed by a agreed revision support."
       />
     </>
   );

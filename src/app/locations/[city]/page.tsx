@@ -5,7 +5,7 @@ import { buildPageMetadata } from "@/lib/seo";
 import { buildBreadcrumbList, buildFaqPageSchema } from "@/lib/structured-data";
 import { buildServiceSchema } from "@/lib/service-schema";
 import { cityPages, getCityPage, type CityPage } from "@/lib/city-resume-pages";
-import { industryPages, getIndustryPage } from "@/lib/industry-resume-pages";
+import { getIndustryPage } from "@/lib/industry-resume-pages";
 import RelatedPages from "@/components/RelatedPages";
 import PageCTA from "@/components/PageCTA";
 
@@ -52,8 +52,8 @@ function buildCityFaqs(page: CityPage) {
       a: `Standard delivery is 7-14 days depending on package. Faster turnarounds can be requested during the enquiry.`,
     },
     {
-      q: `Is the 90-day interview guarantee available in ${page.city}?`,
-      a: `Yes. Every package on the site - including engagements with ${page.city} clients - is backed by a 90-day, 100% money-back interview guarantee. Full terms are on the refund policy page.`,
+      q: `Is the agreed revision support available in ${page.city}?`,
+      a: `Yes. Revision support for ${page.city} applicants follows the scope confirmed for the selected package. We do not guarantee interviews or jobs. Existing client agreements remain unchanged.`,
     },
   ];
 }
@@ -143,7 +143,7 @@ export default async function CityResumeWriterPage({ params }: PageProps) {
 
           <div className="mt-8 flex flex-wrap items-center gap-3 text-sm">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C9A961]/40 bg-[#C9A961]/10 px-3 py-1 text-[#C9A961] font-semibold">
-              90-Day Interview Guarantee
+              Personal Document Review
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-white/80">
               <span className="font-bold text-[#C9A961]">{page.shortName}, {page.stateAbbr}</span> &nbsp;·&nbsp; Remote delivery

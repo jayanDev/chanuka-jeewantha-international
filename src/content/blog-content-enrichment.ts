@@ -320,7 +320,7 @@ function buildSinhalaFaqs(post: BlogPost, profile: TopicProfile, keyword: string
 function buildInternalLinks(profile: TopicProfile): BlogLink[] {
   if (profile.kind === "cover-letter") {
     return [
-      { label: "Explore Cover Letter Writing Packages", href: "/services/packages/cover-letter-writing" },
+      { label: "Explore Cover Letter Writing Packages", href: "/services/packages/cover-letter" },
       { label: "Compare Career Service Pricing", href: "/pricing" },
       { label: "Contact for Application Support", href: "/contact" },
     ];
@@ -328,7 +328,7 @@ function buildInternalLinks(profile: TopicProfile): BlogLink[] {
 
   if (profile.kind === "linkedin") {
     return [
-      { label: "Explore LinkedIn Account Optimization Packages", href: "/services/packages/linkedin-optimization" },
+      { label: "Explore LinkedIn Account Optimization Packages", href: "/services/packages/linkedin" },
       { label: "Try the LinkedIn Headline Generator", href: "/tools/linkedin-headline-generator" },
       { label: "Compare Career Service Pricing", href: "/pricing" },
     ];
@@ -351,7 +351,7 @@ function buildInternalLinks(profile: TopicProfile): BlogLink[] {
   }
 
   return [
-    { label: "Explore CV Writing Packages", href: "/services/packages/cv-writing" },
+    { label: "Explore CV Writing Packages", href: "/services/packages/ats-cv" },
     { label: "Try the ATS CV Audit Tool", href: "/tools/ats-cv-audit" },
     { label: "Compare Career Service Pricing", href: "/pricing" },
   ];
@@ -360,7 +360,7 @@ function buildInternalLinks(profile: TopicProfile): BlogLink[] {
 function buildCtaButtons(profile: TopicProfile): BlogLink[] {
   if (profile.kind === "linkedin") {
     return [
-      { label: "View LinkedIn Packages", href: "/services/packages/linkedin-optimization" },
+      { label: "View LinkedIn Packages", href: "/services/packages/linkedin" },
       { label: "Generate Headline Ideas", href: "/tools/linkedin-headline-generator" },
       { label: "Contact Chanuka", href: "/contact" },
     ];
@@ -368,14 +368,14 @@ function buildCtaButtons(profile: TopicProfile): BlogLink[] {
 
   if (profile.kind === "cover-letter") {
     return [
-      { label: "View Cover Letter Packages", href: "/services/packages/cover-letter-writing" },
+      { label: "View Cover Letter Packages", href: "/services/packages/cover-letter" },
       { label: "Compare Pricing", href: "/pricing" },
       { label: "Contact Chanuka", href: "/contact" },
     ];
   }
 
   return [
-    { label: "View CV Packages", href: "/services/packages/cv-writing" },
+    { label: "View CV Packages", href: "/services/packages/ats-cv" },
     { label: "Run ATS Audit", href: "/tools/ats-cv-audit" },
     { label: "Contact Chanuka", href: "/contact" },
   ];

@@ -40,7 +40,7 @@ export const industryPages: IndustryPage[] = [
     slug: "federal",
     metaTitle: "Federal Resume Writer - US Government Resumes That Pass",
     metaDescription:
-      "Federal resume writing for USAJOBS applications. KSA, specialized experience, and Schedule A formatting handled by a senior writer. 90-day interview guarantee.",
+      "Federal resume writing for USAJOBS applications. KSA, specialized experience, and Schedule A formatting handled by a senior writer. agreed revision support.",
     h1: "Federal Resume Writer",
     intro:
       "USAJOBS applications fail more often for formatting reasons than for experience reasons. We write federal resumes that survive the HR screen and read clearly to the rating panel.",
@@ -67,7 +67,7 @@ export const industryPages: IndustryPage[] = [
       "Veterans' preference and Schedule A formatting",
       "Security clearance and citizenship placement",
       "Cover letter aligned to the federal hiring panel",
-      "90-day interview guarantee - full refund if no calls",
+      "Revision support within the agreed scope",
     ],
     recommendedPackage: {
       name: "Career Move Pack",
@@ -93,8 +93,8 @@ export const industryPages: IndustryPage[] = [
         a: "Standard turnaround is 10-14 days. Faster delivery can be requested during your enquiry for announcements with short windows.",
       },
       {
-        q: "Is the 90-day interview guarantee available on federal resumes?",
-        a: "Yes. Every package on the site is backed by a 90-day, 100% money-back interview guarantee. See the refund policy for terms.",
+        q: "What does federal resume support include?",
+        a: "We align the document with the vacancy instructions and the experience you can substantiate. Scope and revisions are agreed before work begins. Hiring decisions remain with the employer.",
       },
     ],
     relatedSlugs: ["executive", "military-to-civilian"],
@@ -107,7 +107,7 @@ export const industryPages: IndustryPage[] = [
     slug: "executive",
     metaTitle: "Executive Resume Writer - VP, SVP & Director Level",
     metaDescription:
-      "Executive resume writing for senior leaders, VPs, SVPs, and directors competing for $200K+ roles. Founder-led, 90-day interview guarantee.",
+      "Executive resume writing for senior leaders, VPs, SVPs, and directors competing for $200K+ roles. Founder-led, agreed revision support.",
     h1: "Executive Resume Writer",
     intro:
       "At VP and SVP level the resume is not selling skills - it is selling business outcomes, scope of P&L, and team scale. Most senior candidates still write like a manager. We fix that.",
@@ -134,7 +134,7 @@ export const industryPages: IndustryPage[] = [
       "Executive LinkedIn rewrite (About, headline, experience, skills)",
       "Executive cover letter template you can adapt per application",
       "1-hour strategy consultation included on the Executive Brand Suite",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Executive Brand Suite",
@@ -174,7 +174,7 @@ export const industryPages: IndustryPage[] = [
     slug: "c-suite",
     metaTitle: "C-Suite Resume Writer - CEO, CFO, COO & Founder",
     metaDescription:
-      "C-suite and founder resume writing. Built for board-level reading, executive search firms, and PE/VC introductions. 90-day interview guarantee.",
+      "C-suite and founder resume writing. Built for board-level reading, executive search firms, and PE/VC introductions. agreed revision support.",
     h1: "C-Suite Resume Writer",
     intro:
       "At the CEO, CFO, and founder level, the resume is less a job application and more a credential document - read by boards, search firms, and investors. It has to carry weight at first glance.",
@@ -202,7 +202,7 @@ export const industryPages: IndustryPage[] = [
       "Two 1-hour strategy sessions during the engagement",
       "6-month support window for adjustments and follow-up rewrites",
       "Quarterly LinkedIn refresh for the first year",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "C-Suite Premium",
@@ -242,7 +242,7 @@ export const industryPages: IndustryPage[] = [
     slug: "software-engineer",
     metaTitle: "Software Engineer Resume Writer - Tech & FAANG",
     metaDescription:
-      "Resume writing for software engineers, senior engineers, staff, and engineering leadership. ATS-clean, FAANG-aware, founder-led. 90-day interview guarantee.",
+      "Resume writing for software engineers, senior engineers, staff, and engineering leadership. ATS-clean, FAANG-aware, founder-led. agreed revision support.",
     h1: "Software Engineer Resume Writer",
     intro:
       "Engineering resumes fail for two reasons: they read like a stack list, or they read like a project diary. Recruiters are looking for impact, scope, and decision quality. We write to that.",
@@ -268,7 +268,7 @@ export const industryPages: IndustryPage[] = [
       "Skills section that survives keyword screens without looking like a stack list",
       "LinkedIn rewrite that ranks in recruiter search",
       "Cover letter template you can adapt per company",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -308,7 +308,7 @@ export const industryPages: IndustryPage[] = [
     slug: "healthcare",
     metaTitle: "Healthcare Resume Writer - Nurses, Physicians & Admins",
     metaDescription:
-      "Healthcare resume writing for RNs, NPs, physicians, healthcare administrators, and US travel-nurse and locum applications. 90-day interview guarantee.",
+      "Healthcare resume writing for RNs, NPs, physicians, healthcare administrators, and US travel-nurse and locum applications. agreed revision support.",
     h1: "Healthcare Resume Writer",
     intro:
       "Healthcare hiring in the US sits between two worlds: a strict credentialing process that needs everything documented, and a competitive talent market where the resume still has to sell. We write for both.",
@@ -334,7 +334,7 @@ export const industryPages: IndustryPage[] = [
       "Travel-nurse / locum agency-ready format",
       "Healthcare-admin track for non-clinical leadership roles",
       "LinkedIn rewrite optimized for healthcare recruiter search",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -401,7 +401,7 @@ export const industryPages: IndustryPage[] = [
       "Senior / CFO positioning with capital, M&A, and audit content",
       "LinkedIn rewrite tuned to finance recruiter search behavior",
       "Cover letter template adaptable per firm and per role type",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -441,7 +441,7 @@ export const industryPages: IndustryPage[] = [
     slug: "military-to-civilian",
     metaTitle: "Military to Civilian Resume Writer - Veteran Transition",
     metaDescription:
-      "Military-to-civilian resume writing for transitioning service members. We translate MOS / AFSC / rating into civilian language. 90-day interview guarantee.",
+      "Military-to-civilian resume writing for transitioning service members. We translate MOS / AFSC / rating into civilian language. agreed revision support.",
     h1: "Military to Civilian Resume Writer",
     intro:
       "Civilian recruiters do not know what a Battalion S-3 does, what TS/SCI means in practice, or what scope sits behind a senior NCO billet. The translation problem is real. We solve it.",
@@ -468,7 +468,7 @@ export const industryPages: IndustryPage[] = [
       "Optional second version tuned for federal civilian applications",
       "LinkedIn rewrite that civilian recruiters can actually read",
       "Cover letter framework for civilian outreach",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Move Pack",
@@ -508,7 +508,7 @@ export const industryPages: IndustryPage[] = [
     slug: "marketing",
     metaTitle: "Marketing Resume Writer - Brand, Growth & Performance",
     metaDescription:
-      "Marketing resume writing for brand, growth, performance, content, and product-marketing roles. Outcomes-led, ATS-clean. 90-day interview guarantee.",
+      "Marketing resume writing for brand, growth, performance, content, and product-marketing roles. Outcomes-led, ATS-clean. agreed revision support.",
     h1: "Marketing Resume Writer",
     intro:
       "Marketing resumes either read as &quot;ran campaigns&quot; or as a list of platforms - neither helps a hiring manager assess fit. We rewrite around what actually moved.",
@@ -534,7 +534,7 @@ export const industryPages: IndustryPage[] = [
       "LinkedIn rewrite for marketing-recruiter search",
       "Cover letter framework adaptable per company stage and ICP",
       "Senior / CMO positioning available on the Executive Brand Suite",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -600,7 +600,7 @@ export const industryPages: IndustryPage[] = [
       "Sales-leadership track for Director / VP / CRO candidates",
       "LinkedIn rewrite optimized for sales-recruiter search",
       "Cover letter framework you can adapt per company",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Pack",
@@ -666,7 +666,7 @@ export const industryPages: IndustryPage[] = [
       "Post-MBA resume that integrates the degree as operator credibility",
       "Cover letter framework adapted per recruiting cycle",
       "LinkedIn rewrite for MBA recruiter visibility",
-      "90-day interview guarantee",
+      "agreed revision support",
     ],
     recommendedPackage: {
       name: "Career Move Pack",

@@ -18,7 +18,7 @@ import { careerStagePages } from "@/lib/career-stage-pages";
 import { marketSitemapEntries } from "@/lib/market-seo";
 
 const baseUrl = getBaseUrl();
-const siteLastUpdated = new Date("2026-07-02T00:00:00.000Z");
+
 export const revalidate = 3600;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -53,9 +53,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/workshops",
     "/portfolio",
     "/offers",
-    "/offers/bundles",
-    "/offers/bulk-discount-packages",
-    "/offers/bundle-discount-packages",
     "/pricing",
     "/fiverr-orders",
     "/affiliate",
@@ -67,11 +64,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/privacy-policy",
     "/terms-and-conditions",
     "/resume",
-    "/cv-writing/usa",
-    "/cv-writing/uk",
-    "/cv-writing/australia",
-    "/cv-writing/canada",
-    "/cv-writing/new-zealand",
     "/guides",
     "/guides/us-resume-vs-uk-cv-vs-australian-resume",
     "/guides/ats-cv-vs-normal-cv",
@@ -80,7 +72,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/locations",
     "/career-stage",
     // Comparison / buying-decision pages
-    "/best-resume-writing-services-2026",
     "/resume-writer-cost",
     "/is-a-resume-writer-worth-it",
     "/resume-writer-vs-chatgpt",
@@ -94,7 +85,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const staticEntries = staticRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: route === "/international" ? new Date("2026-09-10T00:00:00Z") : siteLastUpdated,
     changeFrequency: "weekly" as const,
     priority: route === "" ? 1 : 0.7,
   }));
@@ -106,14 +96,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .filter((post) => getBlogPostLanguage(post.slug) !== "si")
     .map((post) => ({
       url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: post.updatedAt ?? post.publishedAt ?? siteLastUpdated,
+      lastModified: post.updatedAt ?? post.publishedAt ?? undefined,
       changeFrequency: "monthly" as const,
       priority: 0.65,
     }));
 
   const blogIndexEntries = [{
     url: `${baseUrl}/blog`,
-    lastModified: siteLastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.72,
   }];
@@ -122,63 +111,54 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     .sort()
     .map((category) => ({
       url: `${baseUrl}${getBlogCategoryPath(category)}`,
-      lastModified: siteLastUpdated,
-      changeFrequency: "weekly" as const,
+        changeFrequency: "weekly" as const,
       priority: 0.69,
     }));
 
   const packageEntries = packageProducts.map((item) => ({
     url: `${baseUrl}/packages/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "weekly" as const,
     priority: 0.72,
   }));
 
   const resourceEntries = digitalResources.map((item) => ({
     url: `${baseUrl}/resources/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.68,
   }));
 
   const toolEntries = careerTools.map((item) => ({
     url: `${baseUrl}/tools/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.69,
   }));
 
   const industryEntries = industryLandingPages.map((item) => ({
     url: `${baseUrl}/services/industries/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.71,
   }));
 
   const resumeWriterIndustryEntries = resumeWriterIndustries.map((item) => ({
     url: `${baseUrl}/resume-writer/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.78,
   }));
 
   const cityEntries = cityPages.map((item) => ({
     url: `${baseUrl}/locations/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.75,
   }));
 
   const careerStageEntries = careerStagePages.map((item) => ({
     url: `${baseUrl}/career-stage/${item.slug}`,
-    lastModified: siteLastUpdated,
     changeFrequency: "monthly" as const,
     priority: 0.74,
   }));
 
   const caseStudyEntries = caseStudies.map((item) => ({
     url: `${baseUrl}/case-studies/${item.slug}`,
-    lastModified: new Date(`${item.year}-01-01T00:00:00.000Z`),
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));

@@ -169,11 +169,11 @@ export default function OffersPageClient() {
                 </svg>
               ))}
             </span>
-            <span>Verified 4.9/5 client satisfaction across executive CV, LinkedIn & cover letter services</span>
+            <span>Founder-led executive CV, LinkedIn and cover letter services</span>
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
-              href="/offers/bundles"
+              href="/bundles"
               className="rounded-[10px] border border-brand-main bg-brand-main/5 px-4 py-2 text-sm font-semibold text-brand-dark transition-colors hover:bg-brand-main hover:text-white"
             >
               View Bundle Offer Packages

@@ -27,11 +27,13 @@ export default function Breadcrumbs() {
           Home
         </Link>
         {segments.map((segment, index) => {
+          // Categories have no intermediate /category index page.
+          if (segment === "category" && ["blog", "tutorials"].includes(segments[0])) return null;
           const href = `/${segments.slice(0, index + 1).join("/")}`;
           const isLast = index === segments.length - 1;
 
           // Special case for 'p' user profile shortlink
-          if (segment === "p" && segments.length === 2) {
+          if ((segment === "p" || segment === "packages" && segments[0] === "services") && index < segments.length - 1) {
              return null;
           }
 

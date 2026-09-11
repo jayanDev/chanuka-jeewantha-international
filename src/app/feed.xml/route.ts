@@ -1,5 +1,6 @@
 import { getCachedBlogListing } from "@/lib/blog-listing";
 import { getBaseUrl } from "@/lib/site-url";
+import { contentDate } from "@/lib/content-date";
 
 function escapeXml(value: string): string {
   return value
@@ -11,20 +12,21 @@ function escapeXml(value: string): string {
 }
 
 export async function GET() {
+  try {
   const baseUrl = getBaseUrl();
   const posts = (await getCachedBlogListing()).slice(0, 50);
 
   const items = posts
     .map((post) => {
       const url = `${baseUrl}/blog/${post.slug}`;
-      const pubDate = (post.publishedAt ?? new Date()).toUTCString();
+      const pubDate = contentDate(post.publishedAt)?.toUTCString();
 
       return `
         <item>
           <title>${escapeXml(post.title)}</title>
           <link>${escapeXml(url)}</link>
           <guid>${escapeXml(url)}</guid>
-          <pubDate>${pubDate}</pubDate>
+          ${pubDate ? `<pubDate>${pubDate}</pubDate>` : ""}
           <category>${escapeXml(post.category)}</category>
           <description>${escapeXml(post.excerpt)}</description>
         </item>`;
@@ -37,7 +39,7 @@ export async function GET() {
     <title>Chanuka Jeewantha Career Blog</title>
     <link>${baseUrl}/blog</link>
     <description>ATS-friendly CV writing, LinkedIn optimization, interview preparation, and career strategy articles.</description>
-    <language>en-lk</language>
+    <language>en</language>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
     ${items}
   </channel>
@@ -49,4 +51,10 @@ export async function GET() {
       "Cache-Control": "s-maxage=3600, stale-while-revalidate=86400",
     },
   });
+  } catch {
+    return new Response("The career blog feed is temporarily unavailable.", {
+      status: 503,
+      headers: { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", "Retry-After": "60" },
+    });
+  }
 }

@@ -160,7 +160,7 @@ function getPrimaryRecommendation(answers: QuizAnswers): Recommendation {
   if (top === "bundle") {
     return {
       label: "Career Brand Trinity Bundle",
-      href: "/offers/career-brand-trinity-bundle",
+      href: "/bundles",
       reason: "Your answers point to a multi-asset upgrade, so the best next step is aligning CV, cover letter, and LinkedIn together.",
     };
   }
@@ -174,21 +174,21 @@ function getPrimaryRecommendation(answers: QuizAnswers): Recommendation {
   if (top === "linkedin") {
     return {
       label: "LinkedIn Optimization Service",
-      href: "/services/packages/linkedin-optimization",
+      href: "/services/packages/linkedin",
       reason: "Your fastest win is stronger recruiter visibility and profile positioning, so LinkedIn optimization is the highest-impact move.",
     };
   }
   if (top === "cvReview") {
     return {
       label: "CV Review Service",
-      href: "/services/packages/cv-review",
+      href: "/services/cv-review",
       reason: "You already have a base CV, so expert review and direction are the most efficient next step before a full rewrite.",
     };
   }
 
   return {
     label: "Professional CV Writing Service",
-    href: "/services/packages/cv-writing",
+    href: "/services/packages/ats-cv",
     reason: "Your answers suggest the biggest leverage point is a stronger ATS-ready CV with clearer role targeting and proof-based writing.",
   };
 }

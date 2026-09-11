@@ -34,8 +34,8 @@ const FAQS = [
     a: "Two cases. First, when you already have a strong resume and just need light polishing - DIY or a $50 review is fine. Second, when the bottleneck isn't your resume but your candidate profile (e.g. you're applying to roles you're not qualified for). A resume writer can't manufacture experience you don't have.",
   },
   {
-    q: "What about the 90-day interview guarantee - is that real?",
-    a: "Yes. Every package on this site is backed by a 90-day, 100% money-back guarantee. If you apply to 20+ relevant roles within 90 days and receive zero interview calls, you get a full refund. Full terms on the refund policy page.",
+    q: "How does revision support work?",
+    a: "The selected service defines your deliverables and revision support. We confirm these in writing before work begins. Hiring outcomes are not guaranteed, and existing client agreements remain unchanged.",
   },
   {
     q: "How do I know if my current resume is the problem?",

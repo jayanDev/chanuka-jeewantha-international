@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { getIndexableFallbackBlogPosts } from "@/lib/blog-discovery";
 import { getBlogPostLanguage } from "@/lib/blog-i18n";
 import { retiredBlogSlugs } from "@/lib/retired-blog-posts";
+import { contentDate } from "@/lib/content-date";
 
 export type BlogListingPost = {
   slug: string;
@@ -35,6 +36,7 @@ const fallbackPosts: BlogListingPost[] = getIndexableFallbackBlogPosts(blogPosts
   excerpt: post.excerpt,
   category: post.category,
   publishedAt: post.publishedAt ? new Date(post.publishedAt) : null,
+  updatedAt: contentDate(post.updatedAt ?? post.publishedAt) ?? null,
   coverImage: post.coverImage,
   packageSlug: post.packageSlug,
   keywords: post.keywords,
@@ -83,7 +85,15 @@ export async function loadMergedBlogListing(): Promise<BlogListingPost[]> {
   }
 }
 
-export const getCachedBlogListing = unstable_cache(loadMergedBlogListing, ["blog-listing:published-global-v2"], {
+const cachedBlogListing = unstable_cache(loadMergedBlogListing, ["blog-listing:published-global-v3"], {
   revalidate: 3600,
   tags: ["blog-listing"],
 });
+
+export async function getCachedBlogListing(): Promise<BlogListingPost[]> {
+  return (await cachedBlogListing()).map((post) => ({
+    ...post,
+    publishedAt: contentDate(post.publishedAt) ?? null,
+    updatedAt: contentDate(post.updatedAt) ?? null,
+  }));
+}

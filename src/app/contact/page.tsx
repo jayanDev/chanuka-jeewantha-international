@@ -14,7 +14,10 @@ export const metadata: Metadata = buildPageMetadata({
 
 const baseUrl = getBaseUrl();
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
+  const query = await searchParams;
+  const requested = query.package ?? query.service;
+  const selection = typeof requested === "string" ? requested : undefined;
   const breadcrumbLd = buildBreadcrumbList([
     { name: "Home", path: "/" },
     { name: "Contact", path: "/contact" },
@@ -63,7 +66,7 @@ export default function ContactPage() {
       />
 
       {/* Client Contact Form Component */}
-      <ContactForm />
+      <ContactForm key={selection} defaultService={selection} />
     </>
   );
 }

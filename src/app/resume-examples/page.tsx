@@ -204,7 +204,7 @@ export default function ResumeExamplesPage() {
             Rather have it written for you?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-zinc-600">
-            Examples show you the target. If you&apos;d rather have a resume built to it - ATS-optimized, achievement-led, and tailored to your roles - every package is personally written and backed by a 90-day interview guarantee.
+            Examples show you the target. If you&apos;d rather have a resume built to it - ATS-optimized, achievement-led, and tailored to your roles - every package is personally written and backed by a agreed revision support.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link href="/pricing" className="inline-flex items-center justify-center rounded-[10px] bg-[#C9A961] px-6 py-3 text-sm font-bold text-[#0A2540] transition-colors hover:bg-[#0A2540] hover:text-white">
@@ -252,7 +252,7 @@ export default function ResumeExamplesPage() {
 
       <PageCTA
         heading="Turn the example into your interview-winning resume."
-        subheading="Submit your current resume and target role for a personal review. Every package is backed by a 90-day interview guarantee."
+        subheading="Submit your current resume and target role for a personal review. Every package is backed by a agreed revision support."
       />
     </>
   );

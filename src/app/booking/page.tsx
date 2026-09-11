@@ -15,7 +15,7 @@ import PageHero from "@/components/PageHero";
 import CalendlyEmbed from "@/components/CalendlyEmbed";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Chanuka Jeewantha - Professional CV Writing, Linkedin Account Optimization & Career Development Services",
+  title: "Book International Career Support",
   description:
     "Book professional CV writing, Linkedin account optimization, cover letter writing, CV review, and career development services with Chanuka Jeewantha. View provider details, booking steps, payment details, and package tables on one page.",
   path: "/booking",
@@ -57,7 +57,7 @@ const providerRows: DetailRow[] = [
   },
   {
     label: "Experience",
-    value: "8+ years of practical experience in ATS-friendly CV writing and career support",
+    value: "Personally crafted ATS-friendly CV writing and career support",
   },
   {
     label: "Website",

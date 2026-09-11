@@ -33,7 +33,7 @@ export const getPublicBlogPost = cache(async (slug: string) => {
   return {
     id: fallback.slug, slug: fallback.slug, title: fallback.title,
     excerpt: fallback.excerpt, content: fallback.content, category: fallback.category,
-    publishedAt: validDate(fallback.publishedAt), updatedAt: validDate(fallback.publishedAt),
+    publishedAt: validDate(fallback.publishedAt), updatedAt: validDate(fallback.updatedAt ?? fallback.publishedAt),
     coverImage: fallback.coverImage ?? null,
   };
 });
