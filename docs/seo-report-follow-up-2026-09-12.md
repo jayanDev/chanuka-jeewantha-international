@@ -56,6 +56,20 @@ Several checks contradict themselves: Analytics is both present and 'not detecte
 - Local built homepage exposes generic and Googlebot preview directives plus the llms.txt alternate. Security contact file returns 200 with text/plain.
 - Actual production collection and post-deployment crawl must be checked after this revision deploys; the earlier 1,207-URL production crawl belongs to `9184a16`.
 
+## Final local verification and deployment blocker
+
+Implementation commit: `f61658a`. Its built preview is available at `http://localhost:3101`.
+
+- Full local production crawl: all 1,214 sitemap URLs returned 200, matched self-canonicals and had no unintended noindex. No broken internal HTML links were detected. Missing routes returned 404 and tested redirects returned 308.
+- Twelve browser samples at 390px/1440px passed without horizontal overflow, runtime errors or failed visible images. Three no-JavaScript samples retained substantive content. These are local checks, not a new mobile Lighthouse or field LCP measurement.
+- Real Google runtime verification from the local preview passed: no Google requests before consent, one page_view acknowledged with HTTP 204 by measurement ID `G-JBG5EY2YXW`, query-free page_location, and no tag reload after revocation. This was one test page view from localhost, not a client enquiry or proof of production collection. No real form was submitted.
+- The image optimiser returned `image/avif`; the directly checked 640px portrait response was 20,970 bytes. The source-JPEG filename warning is not evidence that browsers receive a JPEG.
+- Evidence remains local in `test-results/seo-repairs/verification.json`, `analytics-local-f61658a.json` and the corresponding screenshots.
+
+**Push/deployment is blocked by GitHub authentication.** The push waited in Git Credential Manager. After cancelling that stalled attempt, a non-interactive retry returned `Cannot prompt because user interactivity has been disabled` and `unable to get password from user`. The owner was asked to complete GitHub sign-in, without sharing credentials in chat. No successful push or deployment of this revision is claimed. Vercel was last observed serving `9184a16`.
+
+After authentication: push the committed `main` branch to `origin`, verify Vercel Ready for the new commit, run `SEO_TEST_BASE_URL=https://www.chanukajeewantha.com` with both verification scripts, and verify production page views in the confirmed GA4 property. Keep the already-started GSC validations running; do not restart them repeatedly or unblock private routes.
+
 ## Editorial work and remaining scope
 
 The earlier repair individually rewrote nine GSC-priority articles. This continuation adds twelve individual US-library revisions, retaining existing URLs: IDs 4, 6, 9, 15, 23, 28, 44, 49, 50, 66, 92 and 94. Each has a direct answer, topic-specific sections and examples; relevant technical claims link to official sources. Shared generic FAQs are removed from these twelve.
