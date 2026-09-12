@@ -161,7 +161,7 @@ export const cityPages: CityPage[] = [
     localContext:
       "DC hiring is unique: federal-style resumes, security clearances, and a sharp line between government work and government-contracting work.",
     localLandscape: [
-      "Federal civilian agencies hire through USAJOBS with strict resume conventions (3-8 pages, KSAs, specialized experience statements).",
+      "Federal civilian applications through USAJOBS currently require resumes of two pages or fewer, with qualification evidence aligned to the announcement.",
       "Defense contractors (Booz Allen, BAH, SAIC, Leidos, GDIT, Northrop Grumman, RTX) hire cleared professionals on private-sector format.",
       "Think tanks, NGOs, and policy organizations (Brookings, AEI, RAND, CSIS, USIP) want academic-style CVs with publications.",
       "International development (USAID partners, World Bank, IFC, IDB) expects a development-CV format with country experience and language proficiency.",

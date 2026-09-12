@@ -38,27 +38,27 @@ export const industryPages: IndustryPage[] = [
   // ============================================================
   {
     slug: "federal",
-    metaTitle: "Federal Resume Writer - US Government Resumes That Pass",
+    metaTitle: "Federal Resume Writer - Two-Page USAJOBS Resumes",
     metaDescription:
-      "Federal resume writing for USAJOBS applications. KSA, specialized experience, and Schedule A formatting handled by a senior writer. agreed revision support.",
+      "Announcement-specific federal resume writing for USAJOBS. Two-page resumes, relevant experience and required employment details, with agreed revision support.",
     h1: "Federal Resume Writer",
     intro:
-      "USAJOBS applications fail more often for formatting reasons than for experience reasons. We write federal resumes that survive the HR screen and read clearly to the rating panel.",
+      "Federal applications need concise evidence of the announcement's qualifications. We help organise that evidence within the current two-page USAJOBS resume limit.",
     audience:
       "GS-7 through SES candidates, contractors moving to federal positions, military transitioning to federal civilian roles, and current federal employees pursuing internal promotions.",
     priceRange: "$349 - $1,499",
     problems: [
-      "Federal HR rejects most resumes for length, structure, or missing KSAs - not lack of experience.",
-      "Private-sector resumes (one page, achievement-led) get auto-screened out of USAJOBS.",
-      "Specialized Experience statements need to mirror the announcement language word-for-word.",
-      "Schedule A, veterans' preference, and security clearance details are usually placed wrong or omitted.",
+      "Older long-form federal resumes exceed the current two-page USAJOBS limit.",
+      "Relevant employment entries may omit dates, hours per week or federal series and grade.",
+      "Specialized experience can be difficult to identify in a generic list of duties.",
+      "Eligibility and supporting-document requirements vary by announcement and hiring path.",
       "Months of waiting only to be marked &quot;not qualified&quot; with no feedback.",
     ],
     approachHeading: "How we approach federal resumes",
     approachParagraphs: [
-      "A federal resume is not a private-sector resume with a longer page count. It is a separate document with its own conventions: detailed work history, hours per week, supervisor information, GS-level mapping, and specialized experience statements written in the same vocabulary as the job announcement.",
+      "USAJOBS currently limits resumes to two pages. Relevant entries should identify the employer, job title, month/year dates, hours per week and, for previous federal roles, series and grade. The announcement determines any additional requirements.",
       "Every engagement begins with a detailed review of the target announcement. We extract the &quot;specialized experience&quot; statement, the KSAs, the rating criteria, and the OPM qualification standard. Your resume is then written to address each of these directly, with concrete metrics, scope of responsibility, and outcome statements that the rating panel can score.",
-      "Veterans' preference, Schedule A, and security clearance information are placed where HR expects to find them. Length is calibrated to the seniority of the role - five to seven pages is common for GS-13 and above; fewer for entry roles.",
+      "We check the announcement's required documents separately from the resume. Applicants supply their own eligibility evidence through the official application channel; medical, classified and other sensitive information should not be sent for resume editing. Official instructions take precedence over general writing guidance.",
     ],
     whatsIncluded: [
       "Federal resume formatted for USAJOBS upload (paste-safe)",
@@ -78,7 +78,7 @@ export const industryPages: IndustryPage[] = [
     faqs: [
       {
         q: "What's the difference between a federal resume and a regular resume?",
-        a: "A federal resume is longer (3-8 pages depending on seniority), includes hours per week, supervisor contact info, GS-level mapping, and detailed Specialized Experience statements. Private-sector style - one page, brief bullets - gets auto-screened out. Vocabulary mirrors the announcement exactly.",
+        a: "The current USAJOBS limit is two pages. Federal resumes need explicit qualification evidence and employment details such as hours per week and federal series/grade where applicable. Use the announcement's relevant terms truthfully; do not copy duties as if they were your achievements.",
       },
       {
         q: "Do you write resumes for USAJOBS?",
@@ -86,7 +86,7 @@ export const industryPages: IndustryPage[] = [
       },
       {
         q: "Can you handle SES applications?",
-        a: "Yes. SES applications include the resume, the five Executive Core Qualifications (ECQs) narrative, and Technical Qualifications. We write all three to OPM standard.",
+        a: "Send the specific announcement before booking. Executive application requirements vary; any additional narratives and their scope must be confirmed against the current instructions. Resume writing cannot establish eligibility or guarantee a qualification decision.",
       },
       {
         q: "How long does a federal resume take?",
@@ -459,7 +459,7 @@ export const industryPages: IndustryPage[] = [
     approachParagraphs: [
       "The translation has to be deliberate. A service member's day-to-day responsibilities - operations planning, logistics, personnel management, training pipelines, budget - map cleanly to civilian operations and project-management vocabulary. We write the resume in that vocabulary first, then note the military role for context.",
       "Scope gets surfaced in numbers: people supervised, equipment value, mission tempo, multinational coordination. A combat-arms officer with multiple deployments often has more direct operational responsibility than a civilian VP - the resume needs to show that without the reader needing a glossary.",
-      "Two versions are often delivered: one tuned for federal civilian applications (USAJOBS-ready, veterans' preference, longer format) and one tuned for the private sector (shorter, achievement-led, fewer acronyms). Many transitioning veterans need both.",
+      "A transition may need a private-sector resume and a separate federal version. The federal version must meet the current two-page USAJOBS limit and the announcement's evidence requirements. Confirm the scope of both documents before booking.",
     ],
     whatsIncluded: [
       "Civilian-translated resume - MOS / AFSC / billet rewritten in private-sector language",
@@ -491,7 +491,7 @@ export const industryPages: IndustryPage[] = [
       },
       {
         q: "What about federal civilian transitions?",
-        a: "Federal civilian applications need a federal-style resume (3-8 pages, USAJOBS-ready). We deliver that as an optional second version in the Career Move Pack. See the federal resume page for details.",
+        a: "Federal civilian applications need announcement-specific evidence within the current two-page USAJOBS limit. A separate federal version can be discussed during the enquiry; additional scope is confirmed in writing.",
       },
       {
         q: "Do you work with the DoD SkillBridge program?",

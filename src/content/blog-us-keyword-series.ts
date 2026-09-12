@@ -508,13 +508,14 @@ export const usKeywordBlogPosts: BlogPost[] = [
   // 8 - Federal resume writer
   {
     slug: "federal-resume-writer-usa",
-    title: "Federal Resume Writer: How to Write a USAJOBS-Ready Federal Resume",
+    title: "Federal Resume Writer: The Two-Page USAJOBS Resume",
     excerpt:
-      "Why federal resumes are different, how the USAJOBS and GS process works, and how a federal resume writer helps you meet the strict requirements that trip up most applicants.",
+      "How to prepare a two-page USAJOBS resume with relevant employment details and qualification evidence, using the current announcement as your checklist.",
     content:
-      "A federal resume is unlike anything in the private sector. Applying to US government roles through USAJOBS means meeting strict, specific requirements - and a private-sector resume submitted there is almost always rejected for missing them. A federal resume writer helps you build a document that survives the federal screening process.",
+      "USAJOBS currently accepts resumes of two pages or fewer. The practical challenge is selecting enough relevant evidence to demonstrate the announcement's qualifications without using an outdated long-form federal resume. Writing support can improve presentation, but the hiring agency determines eligibility and selection.",
     category: "US Federal Resume",
     publishedAt: "2026-06-14",
+    updatedAt: "2026-09-11",
     author: AUTHOR,
     keywords: [
       "federal resume writer",
@@ -526,31 +527,32 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         heading: "Why federal resumes are different",
         paragraphs: [
-          "Federal resumes are longer and far more detailed than private-sector ones - commonly three to five pages - because HR specialists and the system score you against specific criteria. Brevity is not a virtue here; completeness is.",
-          "You must include details a corporate resume omits: hours worked per week, exact employment dates, supervisor information, salary, and series/grade for prior federal roles. Missing fields can make an application ineligible on a technicality.",
+          "The two-page limit makes prioritisation important. Select examples of the specialised experience the announcement requires and explain what you personally did, at what level and with what scope. Do not shrink a long resume into unreadable text.",
+          "For relevant roles, include the employer, title, month/year dates and hours per week; identify series and grade for previous federal employment. Check the announcement for any additional fields instead of assuming salary or supervisor details are always required.",
         ],
         bullets: [
-          "Include hours per week, exact dates, and supervisor details",
-          "Mirror the language of the announcement's duties and KSAs",
+          "Include required employment details and evidence of the qualifying work",
+          "Use relevant announcement terminology only where it describes your experience",
           "Address the specialized experience requirement directly",
-          "Expect three to five pages - depth is required, not penalized",
+          "Check the exported file is no more than two pages",
         ],
       },
       {
         heading: "How the USAJOBS and GS process works",
         paragraphs: [
-          "Each announcement lists duties, qualifications, and 'specialized experience.' HR specialists score your resume against those exact terms, so your experience has to be written in the announcement's language and clearly meet the stated requirements.",
-          "The GS pay scale ties to grade and step, and your eligibility depends on demonstrating the qualifying experience for the grade you're targeting. This is where most applicants fall short - not from weak experience, but from not documenting it the federal way.",
+          "Read Qualifications, Required Documents and How You Will Be Evaluated together. Create a private checklist pairing each requirement with a real example and the document that supports it. A writing sample or transcript requested separately does not replace missing resume evidence.",
+          "Check the advertised grade, eligibility route and closing date before preparing the application. A writer cannot determine your legal eligibility or substitute for the agency's qualification assessment. Use the announcement's contact for questions about its requirements.",
         ],
       },
       {
         heading: "When to use a federal resume writer",
         paragraphs: [
-          "If you're transitioning from the private sector or the military, or applying for a higher GS grade, the format and requirements are easy to get wrong. A federal resume writer knows what the system scores and how to document your experience so it qualifies.",
+          "A writer can help a private-sector or military applicant translate relevant work into plain language and organise it within the page limit. Bring the announcement and non-sensitive career facts. Never share classified material, medical eligibility documents or identity numbers for editing.",
         ],
       },
     ],
     internalLinks: [
+      { label: "USAJOBS: current resume requirements", href: "https://help.usajobs.gov/faq/application/documents/resume/what-to-include" },
       { label: "Federal resume writing service", href: "/resume-writer/federal" },
       { label: "Military-to-civilian transition resumes", href: "/resume-writer/military-to-civilian" },
       { label: "Packages and pricing", href: "/pricing" },
@@ -564,12 +566,12 @@ export const usKeywordBlogPosts: BlogPost[] = [
       {
         question: "How long should a federal resume be?",
         answer:
-          "Three to five pages is normal. Federal HR specialists score detailed criteria, so the brevity rules of private-sector resumes don't apply. Leaving out required detail does more harm than length ever does.",
+          "The current USAJOBS limit is two pages. Prioritise the experience that demonstrates the announcement's qualifications and check the rendered file before uploading.",
       },
       {
         question: "Can I use my regular resume for USAJOBS?",
         answer:
-          "Not effectively. Federal applications require specific fields - hours per week, exact dates, supervisor info, and experience written against the announcement's language - that a standard resume omits. A federal-format resume is almost always necessary.",
+          "Use it as a starting point, then check required employment details, qualification evidence and the two-page limit. A generic resume should not be submitted without reviewing the specific announcement.",
       },
     ],
   },
@@ -670,7 +672,7 @@ export const usKeywordBlogPosts: BlogPost[] = [
         bullets: [
           "Resume: short, targeted, role-specific - used for most US jobs",
           "CV: long, comprehensive, academic - used in academia and research",
-          "Federal roles use a separate, longer federal-resume format",
+          "Federal roles need announcement-specific evidence within the current two-page USAJOBS resume limit",
           "When in doubt for a non-academic role, use a resume",
         ],
       },

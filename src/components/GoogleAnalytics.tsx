@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Script from "next/script";
 import Link from "next/link";
-import { ANALYTICS_CONSENT_KEY, publicAnalyticsPath } from "@/lib/analytics";
+import { ANALYTICS_CONSENT_KEY, analyticsReferrer, publicAnalyticsPath, setAnalyticsDisabled } from "@/lib/analytics";
 
 declare global {
   interface Window {
@@ -19,37 +19,75 @@ export default function GoogleAnalytics({ measurementId }: { measurementId: stri
   const [settings, setSettings] = useState(false);
   const [ready, setReady] = useState(false);
   const lastPath = useRef<string | null>(null);
+  const initialized = useRef(false);
   // Enable only after disabling automatic history and form events in GA4.
   const configured = /^G-[A-Z0-9]+$/.test(measurementId) &&
     process.env.NEXT_PUBLIC_GA_MANUAL_EVENTS_READY === "true";
 
+  const prepareAnalytics = useCallback(() => {
+    if (initialized.current) return;
+    initialized.current = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () {
+      // The Google tag command queue requires Arguments objects, not event arrays.
+      // eslint-disable-next-line prefer-rest-params
+      window.dataLayer.push(arguments);
+    };
+    const path = publicAnalyticsPath(window.location.pathname);
+    setAnalyticsDisabled(measurementId, !path);
+    // Queue consent before rendering the Script that downloads Google's runtime.
+    window.gtag("consent", "default", {
+      analytics_storage: "denied", ad_storage: "denied",
+      ad_user_data: "denied", ad_personalization: "denied",
+    });
+    window.gtag("consent", "update", { analytics_storage: "granted" });
+    window.gtag("js", new Date());
+    window.gtag("config", measurementId, {
+      send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false,
+      page_location: window.location.origin + (path ?? "/"),
+      page_referrer: analyticsReferrer(document.referrer, window.location.origin),
+    });
+  }, [measurementId]);
+
   useEffect(() => {
     const timer = window.setTimeout(() => {
-      try { setConsent(localStorage.getItem(ANALYTICS_CONSENT_KEY)); } catch { /* Consent remains unset. */ }
+      try {
+        const saved = localStorage.getItem(ANALYTICS_CONSENT_KEY);
+        if (configured && saved === "accepted") prepareAnalytics();
+        setConsent(saved === "accepted" || saved === "rejected" ? saved : null);
+      } catch { /* Consent remains unset. */ }
     }, 0);
     const sync = (event: StorageEvent) => {
       if (event.key === ANALYTICS_CONSENT_KEY) window.location.reload();
     };
     window.addEventListener("storage", sync);
     return () => { clearTimeout(timer); window.removeEventListener("storage", sync); };
-  }, []);
+  }, [configured, prepareAnalytics]);
 
   useEffect(() => {
     if (!ready || consent !== "accepted") return;
     const path = publicAnalyticsPath(pathname);
+    setAnalyticsDisabled(measurementId, !path);
+    window.gtag?.("set", { page_location: window.location.origin + (path ?? "/"), page_referrer: "" });
     if (!path || path === lastPath.current) return;
     lastPath.current = path;
     window.gtag?.("event", "page_view", {
-      page_path: path, page_location: window.location.origin + path, page_referrer: "",
+      page_path: path, page_location: window.location.origin + path,
+      page_referrer: analyticsReferrer(document.referrer, window.location.origin),
     });
-  }, [pathname, consent, ready]);
+  }, [pathname, consent, ready, measurementId]);
 
   function choose(value: "accepted" | "rejected") {
     try { localStorage.setItem(ANALYTICS_CONSENT_KEY, value); } catch { return; }
+    if (value === "accepted") prepareAnalytics();
     setConsent(value);
     setSettings(false);
-    if (value === "rejected" && ready) {
-      window.gtag?.("consent", "update", { analytics_storage: "denied", ad_storage: "denied" });
+    if (value === "rejected" && initialized.current) {
+      setAnalyticsDisabled(measurementId, true);
+      window.gtag?.("consent", "update", {
+        analytics_storage: "denied", ad_storage: "denied",
+        ad_user_data: "denied", ad_personalization: "denied",
+      });
       // Reload removes the already-loaded third-party runtime after revocation.
       window.location.reload();
     }
@@ -57,16 +95,13 @@ export default function GoogleAnalytics({ measurementId }: { measurementId: stri
 
   if (!configured) return null;
   return <>
-    {consent === "accepted" && <Script
+    {consent === "accepted" && publicAnalyticsPath(pathname) && <Script
       id="career-ga"
       src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
       strategy="afterInteractive"
       onReady={() => {
-        window.dataLayer = window.dataLayer || [];
-        window.gtag = (...args: unknown[]) => { window.dataLayer.push(args); };
-        window.gtag("consent", "default", { analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
-        window.gtag("js", new Date());
-        window.gtag("config", measurementId, { send_page_view: false, allow_google_signals: false, allow_ad_personalization_signals: false, page_referrer: "" });
+        const path = publicAnalyticsPath(window.location.pathname);
+        setAnalyticsDisabled(measurementId, !path);
         setReady(true);
       }}
     />}

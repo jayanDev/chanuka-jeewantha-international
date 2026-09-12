@@ -1,6 +1,17 @@
 export const ANALYTICS_CONSENT_KEY = "career-analytics-consent";
 export type CareerEvent = "form_start" | "form_error" | "generate_lead" | "booking_completed";
 
+export function analyticsReferrer(referrer: string, origin: string): string {
+  try {
+    const url = new URL(referrer);
+    return /^https?:$/.test(url.protocol) && url.origin !== origin ? `${url.origin}/` : "";
+  } catch { return ""; }
+}
+
+export function setAnalyticsDisabled(measurementId: string, disabled: boolean): void {
+  (window as unknown as Record<string, unknown>)[`ga-disable-${measurementId}`] = disabled;
+}
+
 export function analyticsAllowed(): boolean {
   try { return window.localStorage.getItem(ANALYTICS_CONSENT_KEY) === "accepted"; }
   catch { return false; }

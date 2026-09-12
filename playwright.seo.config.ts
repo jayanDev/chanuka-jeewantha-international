@@ -2,7 +2,7 @@ import { defineConfig, devices } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
-  testMatch: "contact-form.spec.ts",
+  testMatch: ["contact-form.spec.ts", "analytics-consent.spec.ts"],
   outputDir: "test-results/seo-playwright",
   workers: 1,
   timeout: 90000,

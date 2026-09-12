@@ -119,6 +119,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
     googleBot: {
       index: true,
       follow: true,
@@ -177,6 +180,7 @@ export default function RootLayout({
       <head>
         <meta name="trustpilot-one-time-domain-verification-id" content="8cebe28a-5167-496a-8a5d-ce46b6d12acf" />
         <link rel="alternate" type="application/rss+xml" title="Chanuka Jeewantha Blog RSS Feed" href={`${siteUrl}/feed.xml`} />
+        <link rel="alternate" type="text/plain" title="Service and content directory" href={`${siteUrl}/llms.txt`} />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col font-body">
         <a

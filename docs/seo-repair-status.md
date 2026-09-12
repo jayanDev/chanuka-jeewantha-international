@@ -2,6 +2,8 @@
 
 Based on the 10-11 September 2026 SEO, AEO and GEO audit.
 
+**Continuation:** See [12 September PDF report and rollout follow-up](seo-report-follow-up-2026-09-12.md) for the latest account actions, additional corrections and remaining editorial scope. The verification and activation checklist below records the earlier repair baseline, not a claim that all external work is still unstarted.
+
 ## Implemented
 
 - [x] Removed the global loading overlay and root authentication lookup. Public content no longer depends on the global cookie lookup. Query-dependent private forms have scoped Suspense boundaries.

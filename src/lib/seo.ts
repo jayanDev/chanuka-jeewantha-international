@@ -57,6 +57,9 @@ export function buildPageMetadata(input: BuildPageMetadataInput): Metadata {
       : {
           index: true,
           follow: true,
+          "max-snippet": -1,
+          "max-image-preview": "large",
+          "max-video-preview": -1,
           googleBot: {
             index: true,
             follow: true,

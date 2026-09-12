@@ -8,9 +8,26 @@ import { getResourceBySlug } from "@/lib/resources";
 import { reviewedArticles } from "@/content/blog-reviewed";
 import { getPostBySlug } from "@/content/blog-posts";
 import { caseStudies } from "@/lib/case-studies";
+import { buildPageMetadata, buildNoIndexMetadata } from "@/lib/seo";
+import { usArticleReviews } from "@/content/blog-us-reviewed";
+import { usCareerBlogPosts } from "@/content/blog-us-career-library";
 import { analyticsAllowed, publicAnalyticsPath, trackCareerEvent, ANALYTICS_CONSENT_KEY } from "@/lib/analytics";
 
 describe("SEO repair invariants", () => {
+  it("allows public previews without removing private noindex controls", () => {
+    expect(buildPageMetadata({ title: "Public", description: "Public page", path: "/" }).robots).toMatchObject({ index: true, "max-snippet": -1, "max-image-preview": "large" });
+    expect(buildNoIndexMetadata({ title: "Private", description: "Private page", path: "/profile" }).robots).toMatchObject({ index: false, googleBot: { nosnippet: true } });
+  });
+  it("applies the twelve individual US article revisions to existing URLs", () => {
+    expect(Object.keys(usArticleReviews)).toHaveLength(12);
+    for (const [id, review] of Object.entries(usArticleReviews)) {
+      const post = usCareerBlogPosts.find(p => p.slug.startsWith(`us-${id}-`));
+      expect(post?.content).toBe(review.answer);
+      expect(post?.sections).toEqual(review.sections);
+      expect(post?.updatedAt).toBe("2026-09-11");
+      expect(post?.faqs).toEqual([]);
+    }
+  });
   it("uses the same bundles and currency amounts globally and in country editions", () => {
     expect(marketBundles).toBe(internationalBundles);
     expect(internationalBundles.map(b => b.usd)).toEqual([179, 349, 499, 899, 1499]);

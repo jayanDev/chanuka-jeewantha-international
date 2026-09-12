@@ -100,7 +100,7 @@ async function main() {
     }
     await context.close();
   } finally { await browser.close(); }
-  const report = { sitemapUrls: urls.length, failures, brokenLinks, probes, visual, results };
+  const report = { base, capturedAt: new Date().toISOString(), sitemapUrls: urls.length, failures, brokenLinks, probes, visual, results };
   await fs.writeFile(path.join(output, 'verification.json'), JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ ...report, results: undefined }, null, 2));
   if (failures.length || brokenLinks.length) process.exitCode = 1;

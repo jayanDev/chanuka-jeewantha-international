@@ -1,0 +1,4 @@
+Contact: mailto:chanukajeewantha00@gmail.com
+Expires: 2027-09-01T00:00:00Z
+Canonical: https://www.chanukajeewantha.com/.well-known/security.txt
+Preferred-Languages: en

@@ -1,4 +1,5 @@
 import type { BlogFaq, BlogLink, BlogPost, BlogSection } from "./blog-posts";
+import { applyUsArticleReview } from "./blog-us-reviewed";
 
 const usInternalLinks: BlogLink[] = [
   { label: "Explore Resume Writing Packages", href: "/services/packages/ats-cv" },
@@ -121,7 +122,7 @@ function buildFaqs(draft: UsArticleDraft): BlogFaq[] {
     {
       question: "Should I use a CV or resume for US jobs?",
       answer:
-        "For most US corporate jobs, use a resume. Academic, medical, research, and some federal contexts may require a longer CV or specialized resume format.",
+        "For most US corporate jobs, use a resume. Academic and research applications may request a CV. USAJOBS federal resumes currently have a two-page limit and announcement-specific requirements.",
     },
     {
       question: `Who should use this guide on ${draft.title.toLowerCase()}?`,
@@ -258,7 +259,7 @@ const resumeDrafts: UsArticleDraft[] = [
     title: "How to Write a US Federal Resume",
     category: "US Federal Resume",
     audience: "applicants targeting US federal government jobs",
-    angle: "Use a more detailed federal format with role duties, hours, employer details, and qualification evidence aligned to the vacancy announcement.",
+    angle: "Meet the current two-page USAJOBS limit with relevant employment details and qualification evidence aligned to the vacancy announcement.",
     keywords: ["US federal resume", "federal resume guide", "USAJOBS resume"],
   },
   {
@@ -1022,7 +1023,7 @@ const usArticleDrafts: UsArticleDraft[] = [
   ...coverLetterDrafts,
 ].slice(0, 100);
 
-export const usCareerBlogPosts: BlogPost[] = usArticleDrafts.map(buildArticle);
+export const usCareerBlogPosts: BlogPost[] = usArticleDrafts.map((draft, index) => applyUsArticleReview(buildArticle(draft, index), index + 1));
 
 if (usCareerBlogPosts.length !== 100) {
   throw new Error(`Expected 100 US-focused blog articles, received ${usCareerBlogPosts.length}.`);

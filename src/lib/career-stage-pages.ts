@@ -67,7 +67,7 @@ export const careerStagePages: CareerStagePage[] = [
       },
       {
         q: "How long should an entry-level resume be?",
-        a: "One page. Always. Federal entry-level applications are the exception (longer is expected) - see the federal resume page.",
+        a: "One page is often enough for entry-level private-sector applications; use a second only when it adds relevant evidence. USAJOBS currently limits federal resumes to two pages. Follow the specific announcement.",
       },
       {
         q: "Is the Starter Pack enough, or do I need a bigger package?",

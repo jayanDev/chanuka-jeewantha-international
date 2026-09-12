@@ -1,5 +1,11 @@
 import { expect, test } from "@playwright/test";
 
+test.beforeEach(async ({ page }) => {
+  // Tests inspect the local queue; never transmit synthetic leads to production GA.
+  await page.route("https://www.googletagmanager.com/**", route => route.fulfill({ status: 200, contentType: "application/javascript", body: "" }));
+  await page.route("https://*.google-analytics.com/**", route => route.abort());
+});
+
 test("confirmed enquiry counts once without exposing form contents", async ({ page }) => {
   let submissions = 0;
   await page.addInitScript(() => {
@@ -18,7 +24,10 @@ test("confirmed enquiry counts once without exposing form contents", async ({ pa
   await page.getByRole("button", { name: "Submit International Enquiry", exact: true }).click();
   await expect(page.getByText(/Thank you - your details have been received/)).toBeVisible();
   expect(submissions).toBe(1);
-  const events = await page.evaluate(() => (window as unknown as { events: unknown[][] }).events);
+  const events = await page.evaluate(() => [
+    ...(window as unknown as { events: unknown[][] }).events,
+    ...(window.dataLayer || []).map(item => Array.from(item as ArrayLike<unknown>)),
+  ]);
   expect(events.filter(e => e[1] === "generate_lead")).toHaveLength(1);
   expect(JSON.stringify(events)).not.toContain("seo-test@example.invalid");
   expect(JSON.stringify(events)).not.toContain("Executive");
@@ -39,5 +48,8 @@ test("failed enquiry preserves the draft and does not count as a lead", async ({
   await page.getByRole("button", { name: "Submit International Enquiry", exact: true }).click();
   await expect(page.getByRole("alert").filter({ hasText: "Please try again." })).toBeVisible();
   await expect(page.getByLabel("Full Name *", { exact: true })).toHaveValue("SEO Test Applicant");
-  expect(await page.evaluate(() => (window as unknown as { events: unknown[][] }).events.filter(e => e[1] === "generate_lead").length)).toBe(0);
+  expect(await page.evaluate(() => [
+    ...(window as unknown as { events: unknown[][] }).events,
+    ...(window.dataLayer || []).map(item => Array.from(item as ArrayLike<unknown>)),
+  ].filter(e => e[1] === "generate_lead").length)).toBe(0);
 });

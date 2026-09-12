@@ -34,15 +34,15 @@ const audiences = [
 const services = [
   {
     title: "ATS Resume & CV Writing",
-    desc: "ATS-optimized resumes and CVs engineered for recruiter scrutiny, hiring-manager logic, and the seniority you are actually competing for.",
+    desc: "A CV or resume written around your target role, with clear achievements, relevant skills and a format that is easy to read and submit online.",
   },
   {
     title: "LinkedIn Profile Optimization",
-    desc: "A recruiter-facing LinkedIn rewrite built around clear positioning, keyword strength, and the credibility signals senior hires are searched on.",
+    desc: "A rewritten headline, About section and experience entries that explain what you do, what you have achieved and which opportunities you are seeking.",
   },
   {
     title: "Cover Letter Writing",
-    desc: "Tailored cover letters that translate your experience into the language of the role, the company, and the hiring committee.",
+    desc: "A focused letter connecting your relevant experience to a specific role and employer, without repeating your entire CV.",
   },
   {
     title: "Executive Resume & Modern CV Format",
@@ -182,10 +182,11 @@ export default function Home() {
               <Image
                 src="/images/hero-chanuka.jpg"
                 alt="Chanuka Jeewantha - premium career branding for senior professionals"
-                fill
+                width={880}
+                height={1100}
                 sizes="(max-width: 480px) 90vw, 440px"
-                className="object-cover"
-                priority
+                className="h-full w-full object-cover"
+                loading="eager"
                 fetchPriority="high"
               />
             </div>
